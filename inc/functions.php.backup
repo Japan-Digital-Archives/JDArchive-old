@@ -1,0 +1,327 @@
+<?php
+
+  $langs = array('en' => 'English', 'ja' => '日本語', 'ko' => '한국어', 'zh' => '中文');
+
+  function add_seed($data) {
+    foreach ($data as &$d) {
+      $d = mysql_real_escape_string($d);
+    }
+    
+    extract($data);
+    
+    $tags = fix_tags($tags);
+    add_tags($tags);
+    
+    $sql = "INSERT IGNORE INTO seeds (url, title, description, frequency, scope, category, language, name, email, tags, location, lat, lng, verified) VALUES ('$url', '$title', '$description', '$frequency', '$scope', '$category', '$language', '$name', '$email', '$tags', '$location', '$lat', '$lng', '$verified')";    
+    $result = mysql_query($sql);
+    
+    // really should check $result here...
+    return;
+  }
+  
+  function add_tags($text) {
+    $tags = explode(",", $text);
+    foreach ($tags as &$tag) {
+      $tag = mysql_real_escape_string($tag);
+      $sql = "INSERT IGNORE INTO tags (name) VALUES ('$tag')";
+      mysql_query($sql);
+    }
+    
+    return;
+  }
+  
+  function edit_seed($data) {
+    foreach ($data as &$d) {
+      $d = mysql_real_escape_string($d);
+    }
+    
+    extract($data);
+    
+    $tags = fix_tags($tags);
+    add_tags($tags);
+    
+    $sql = "UPDATE seeds SET url = '$url', title = '$title', description = '$description', frequency = '$frequency', scope = '$scope', category = '$category', language = '$language', name = '$name', email = '$email', tags = '$tags', location = '$location', lat = '$lat', lng = '$lng', verified = '$verified' WHERE sid = $sid";
+    $result = mysql_query($sql);
+    
+    // really should check $result here...
+    return;
+  }
+  
+  /* converts comma-separated mixed list of tag ids and names to names only */
+  function fix_tags($text) {
+    $tags = explode(",", $text);
+    foreach ($tags as &$tag) {
+      $tag = mysql_real_escape_string($tag);
+      $sql = "SELECT name FROM tags WHERE tid = '$tag'";
+      $result = mysql_query($sql);
+      
+      if (mysql_num_rows($result) != 1) {
+        continue;
+      }
+      
+      $row = mysql_fetch_row($result);
+      $tag = $row[0];
+    }
+  
+    return implode(",", $tags);
+  }
+  
+  function get_seed($sid) {
+    $sid = mysql_real_escape_string($sid);
+    $sql = "SELECT * FROM seeds WHERE sid = $sid";
+    $seeds = array();
+    $result = mysql_query($sql);
+    while ($o = mysql_fetch_object($result)) {
+      $o->tags = explode(',', $o->tags);
+      $seeds[] = $o;
+    }
+    return count($seeds) ? $seeds[0] : null;
+  }
+  
+  function get_seed_number($conditions = array()) {
+    $sql = "SELECT COUNT(*) FROM seeds";
+    if ($conditions) {
+      $sql .= " WHERE";
+      foreach ($conditions as $field => $c) {
+        $c = mysql_real_escape_string($c);
+        if ($field == 'verified') {
+          switch($c) {
+            case 'rejected':
+              $c = 2;
+              break;
+            case 'verified':
+              $c = 1;
+              break;
+            default:
+              $c = 0;
+          }
+        }
+        if ($field == 'name' && $c == 'Anonymous') {
+          $c = '';
+        }
+        $sql .= " $field = '$c' AND";
+      }
+      $sql .= " 1=1";
+    }
+    $number = 0;
+    $result = mysql_query($sql);
+    if (mysql_num_rows($result) == 1) {
+      $row = mysql_fetch_row($result);
+      $number = $row[0];
+    }
+    
+    return $number;
+  }
+  
+  function get_seed_numbers() {
+    $array = array();
+    $sql = "SELECT COUNT(sid) FROM `seeds` WHERE verified = 1";
+    $result = mysql_query($sql);
+    if (mysql_num_rows($result)) {
+      $row = mysql_fetch_row($result);
+      $array['verified'] = $row[0];
+    } else {
+      $array['verified'] = 0;
+    }
+    $sql = "SELECT COUNT(sid) FROM `seeds` WHERE verified = 2";
+    $result = mysql_query($sql);
+    if (mysql_num_rows($result)) {
+      $row = mysql_fetch_row($result);
+      $array['rejected'] = $row[0];
+    } else {
+      $array['rejected'] = 0;
+    }
+    $sql = "SELECT COUNT(sid) FROM `seeds` WHERE verified = 0";
+    $result = mysql_query($sql);
+    if (mysql_num_rows($result)) {
+      $row = mysql_fetch_row($result);
+      $array['notyet'] = $row[0];
+    } else {
+      $array['notyet'] = 0;
+    }
+    
+    $array['all'] = $array['verified'] + $array['rejected'] + $array['notyet'];
+    
+    return $array;
+    
+  }
+  
+  function get_seeds($conditions = array(), $limit = 0) {
+    $sql = "SELECT * FROM seeds";
+    if ($conditions) {
+      $sql .= " WHERE";
+      foreach ($conditions as $field => $c) {
+        $c = mysql_real_escape_string($c);
+        
+        if ($field == 'start') {
+          $sql .= " sid >= $c AND";
+        } else if ($field == 'end') {
+          $sql .= " sid <= $c AND";
+        } else {
+          $sql .= " $field = '$c' AND";
+        }
+      }
+      $sql .= " 1=1";
+    }
+    
+    
+    if ($limit > 0) {
+      $limit = mysql_real_escape_string($limit);
+      $sql .= " ORDER BY added DESC LIMIT $limit";
+    } else {
+      $sql .= " ORDER BY sid DESC";
+    }
+    
+    $seeds = array();
+    $result = mysql_query($sql);
+    while ($o = mysql_fetch_object($result)) {
+      $seeds[] = $o;
+    }
+    
+    return $seeds;
+  }
+  
+  function get_seeds_paginated($conditions, $page, $perpage = 30) {
+    $sql = "SELECT * FROM seeds";
+    if ($conditions) {
+      $sql .= " WHERE";
+      foreach ($conditions as $field => $c) {
+        $c = mysql_real_escape_string($c);
+        if ($field == 'verified') {
+          switch($c) {
+            case 'rejected':
+              $c = 2;
+              break;
+            case 'verified':
+              $c = 1;
+              break;
+            default:
+              $c = 0;
+          }
+        }
+        if ($field == 'name' && $c == 'Anonymous') {
+          $c = '';
+        }
+        $sql .= " $field = '$c' AND";
+      }
+      $sql .= " 1=1";
+    }
+
+    $page = mysql_real_escape_string($page);
+    $start = $perpage * ($page - 1);
+    $sql .= " ORDER BY sid DESC LIMIT $start, $perpage";
+    $seeds = array();
+    $result = mysql_query($sql);
+    while ($o = mysql_fetch_object($result)) {
+      $seeds[] = $o;
+    }
+    
+    return $seeds;
+  }
+  
+  function get_submitters() {
+    $people = array();
+    $sql = "SELECT name, COUNT(*) AS number FROM seeds GROUP BY name ORDER BY number DESC LIMIT 10";
+    $result = mysql_query($sql);
+    while ($o = mysql_fetch_object($result)) {
+      $people[] = $o;
+    }
+    
+    return $people;
+  }
+  
+  function language() {
+    global $langs;
+    $language = isset($_GET["la"]) ? $_GET["la"] : '';
+    if (!array_key_exists($language, $langs)) {
+      $language = 'en';
+    }
+    
+    return $language;
+  }
+  
+  function language_bar($language, $includes = array('en', 'ja', 'zh', 'ko')) {
+    global $langs;
+    echo '<div style="float:right;">';
+    $count = 0;
+    foreach ($langs as $lang => $text) {
+      if ($language == $lang) continue;
+      if (!in_array($lang, $includes)) continue;
+      $count++;
+      echo "<a href='?la=$lang'>$text</a>";
+      if ($count < count($includes) - 1) {
+        echo " | ";
+      }
+    }
+    echo '</div>';
+  }
+  
+  function last_exported_seed() {
+    $array = array();
+    $array['timestamp'] = '';
+    $array['sid'] = '';
+    $sql = "SELECT value, timestamp FROM global WHERE name = 'last_export_start'";
+    $result = mysql_query($sql);
+    
+    if (mysql_num_rows($result) == 1) {
+      $row = mysql_fetch_row($result);
+      $array['timestamp'] = $row[1];
+      $array['sid'] = $row[0];
+    }
+    
+    return $array;
+  }
+  
+  // http://bakery.cakephp.org/articles/view/easy-email-address-encoder
+  function mailto($href, $a = null)
+  {
+    $entities = "";
+    for ($i = 0, $n = strlen($href); $i < $n; $i++) {
+      switch (rand(0, 2))
+      {
+        case 0:
+          $entities .= substr($href, $i, 1);
+          break;
+        case 1:
+          $entities .= "&#" . ord(substr($href, $i, 1)) . ";";
+          break;
+        
+        case 2:
+          $entities .= "&#x" . dechex(ord(substr($href, $i, 1))) . ";";
+          break;
+      }
+    }
+    
+    return "<a href='mailto:{$entities}'>" . (($a) ? $a : $entities) . "</a>";
+  }
+
+  
+  function sidebar($ver = '') {
+    $location = '/templates/side' . $ver . '.php';
+    require(dirname(__FILE__) . $location);
+  }
+  
+  function start($ver = '') {
+    $location = '/templates/start' . $ver . '.php';
+    require(dirname(__FILE__) . $location);
+  }
+  
+  function stop($ver = '') {
+    $location = '/templates/stop' . $ver . '.php';
+    require(dirname(__FILE__) . $location);
+  }
+  
+  /* retrieves all tags */
+  function tags() {
+    $sql = "SELECT tid, name FROM tags";
+    $result = mysql_query($sql);
+    
+    $tags = array();
+    while ($row = mysql_fetch_row($result)) {
+      $tags[] = array("tid" => $row[0], "name" => $row[1]);
+    }
+  
+    return $tags;
+  }
+
+?>

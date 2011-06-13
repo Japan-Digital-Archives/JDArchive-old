@@ -1,0 +1,33 @@
+<?php
+
+require_once(dirname(__FILE__). '/inc/common.php');
+
+$conditions = array();
+
+if (isset($_GET["frequency"])) {
+  $conditions["frequency"] = $_GET["frequency"];
+}
+if (isset($_GET["scope"])) {
+  $conditions["scope"] = $_GET["scope"];
+}
+if (isset($_GET["category"])) {
+  $conditions["category"] = $_GET["category"];
+}
+
+$seeds = get_seeds($conditions);
+
+?>
+
+<html>
+
+<ul>
+
+<?php foreach ($seeds as $seed): ?>
+
+<li><a href="<?php echo $seed->url ?>"><?php echo $seed->url ?></a></li>
+
+<?php endforeach ?>
+
+</ul>
+
+</html>

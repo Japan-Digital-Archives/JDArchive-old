@@ -1,3 +1,9 @@
 Options +FollowSymlinks
+
 RewriteEngine on
-RewriteRule ^([\w]+)(\/)*/?$ $1.php [nc]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^testimonial.*$ /mvc/index.php [NC,L,QSA]
+RewriteRule ^([\w]+)(\/)*/?$ $1.php [NC,L]

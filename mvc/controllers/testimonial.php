@@ -1,6 +1,6 @@
 <?
 
-class testimonialController extends baseController
+class TestimonialController extends BaseController
 {
     public function indexAction()
     {

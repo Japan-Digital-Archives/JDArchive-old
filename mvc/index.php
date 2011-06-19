@@ -28,35 +28,36 @@ Jedarchive_Db::instance();
 
 $uri = $_SERVER['REQUEST_URI'];
 
+// cut off query string
 $uriParts = explode('?', $uri);
 $uri = $uriParts[0];
 
+// cut off id
 $uriParts = explode('#', $uri);
 $uri = $uriParts[0];
 
+// split in sections
 $uriParts = explode('/', $uri);
 array_shift($uriParts);
+
+// determine controller/action name
 $controller = array_shift($uriParts);
 $action = array_shift($uriParts);
 $action = $action ? $action : 'index';
 
+// load file, instantiate controller class, launch action
 $controllerFile = 'controllers/'.$controller.'.php';
-$controllerClass = $controller.'Controller';
+$controllerClass = ucfirst($controller).'Controller';
 $actionMethod = $action.'Action';
 $viewFile = 'views/'.$controller.'/'.$action.'.php';
 
 if (file_exists($controllerFile)) {
     require_once 'controllers/base.php';
     require_once $controllerFile;
-    $controller = new $controllerClass();
+    $controller = new $controllerClass($controller);
     $controller->{$actionMethod}();
 
-    $renderedView = $controller->renderView($viewFile);
-
-    $layout = new stdClass();
-    $layout->contents = $renderedView;
-    include('layout.php');
-
+    print $controller->renderView($viewFile);
 } else {
     header("HTTP/1.0 404 Not Found");
 }

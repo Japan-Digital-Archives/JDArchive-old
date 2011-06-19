@@ -5,7 +5,7 @@
     <title>Digital Archive of Japan's 2011 Disasters</title>
     <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
     <meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
-    <link href="/lib/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="/mvc/css/main.css" rel="stylesheet" type="text/css" media="screen" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     
     <!-- required stylesheet for TextboxList --> 
@@ -45,7 +45,8 @@
         <!-- end #header-wrapper -->
         <div id="page">
           <div id="content">
-            <?= $layout->contents ?>
+            <?= $this->languageBar ?>
+            <?= $this->renderedView ?>
           </div>
           <div style="clear: both;">&nbsp;</div>
         </div>

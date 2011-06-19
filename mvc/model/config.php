@@ -13,7 +13,7 @@ class Jedarchive_Config
      */
     private function __construct($env)
     {
-        $config = parse_ini_file(APPLICATION_PATH . '/config.ini', true);
+        $config = parse_ini_file(APPLICATION_PATH . '/config/config.ini', true);
         $this->_config = $config['base'];
 
         foreach ($config[$env] as $k => $v) {

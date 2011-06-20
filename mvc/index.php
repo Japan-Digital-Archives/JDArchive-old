@@ -55,6 +55,7 @@ if (file_exists($controllerFile)) {
     require_once $controllerFile;
     $controller = new $controllerClass($controller);
 
+    $controller->setParams($_REQUEST);
     print $controller->renderAction($action);
 } else {
     header("HTTP/1.0 404 Not Found");

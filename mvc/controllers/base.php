@@ -25,12 +25,25 @@ class BaseController
     /**
      *
      */
-    protected function _getParam($name) 
+    protected function getParams()
+    {
+        return $this->_params;
+    }
+
+    /**
+     *
+     */
+    protected function getParam($name) 
     {
         if (isset($this->_params[$name])) {
             return $this->_params[$name];
         }
         return null;
+    }
+
+    protected function isPost()
+    {
+        return strtoupper($_SERVER['REQUEST_METHOD']) == 'POST';
     }
 
     /**

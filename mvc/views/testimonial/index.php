@@ -2,7 +2,7 @@
 <p id="directions"><?= $this->t('directions') ?></p>
 <p id="required"><span class="red">*</span><span><?= $this->t('required_field') ?></span></p>
 
-<form>
+<form method="POST">
   <table class="seedform">
     <?= $this->form->text('name') ?>
     <?= $this->form->field(
@@ -24,6 +24,8 @@
     <?= $this->form->time('from') ?>
     <?= $this->form->time('to', array('hint' => 'period_hint')) ?>
     <?= $this->partial('partial/multilocation.php') ?>
+     <?= $this->form->checkbox('terms') ?>
+    <?= $this->form->submit() ?>
 </table>
 </form>
      <? /*

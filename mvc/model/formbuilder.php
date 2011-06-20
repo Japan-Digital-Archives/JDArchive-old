@@ -55,7 +55,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
      */
     public function field($name, $opts)
     {
-        $value = isset($this->_prefill[$name]) ? $this->_prefill[$name] : '';
+        $value = isset($this->_prefill[$name]) ? $this->_prefill[$name] : null;
         
         $opts['type'] = isset($opts['type']) ? $opts['type'] : 'text';
 
@@ -89,7 +89,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
                     'end' => '2015', 
                     'empty' => true
                 ),
-                isset($value['year']) ? $value['year'] : '');
+                (isset($value['year']) && !($value['year'] === '')) ? $value['year'] : null);
             $parts[] = $this->selectField(
                 $name . '[month]', 
                 array(
@@ -97,7 +97,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
                     'end' => '12', 
                     'empty' => true
                 ),
-                isset($value['month']) ? $value['month'] : '');
+                (isset($value['month']) && !($value['month'] === '')) ? $value['month'] : null);
             $parts[] = $this->selectField(
                 $name . '[day]', 
                 array(
@@ -105,7 +105,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
                     'end' => '31', 
                     'empty' => true
                 ),
-                isset($value['day']) ? $value['day'] : '');
+                (isset($value['day']) && !($value['day'] === '')) ? $value['day'] : null);
             $parts[] = $this->t('hour');
             $parts[] = '&nbsp;:&nbsp;';
             $parts[] = $this->selectField(
@@ -115,9 +115,13 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
                     'end' => '24', 
                     'empty' => true
                 ),
-                isset($value['day']) ? $value['day'] : '');                
+                (isset($value['hour']) && !($value['hour'] === '')) ? $value['hour'] : null);
             break;
-            
+
+        case 'checkbox':
+            $parts[] = '<input type="checkbox" name="' . $name . '"' . ($value ? ' checked="checked"' : '') . '/>';
+            break;
+
         case 'string':
             $parts[] = $opts['string'];
             break;
@@ -156,7 +160,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         }
         $parts[] = '<select name="' . $name .'">';            
         foreach ($values as $k => $v) {
-            $xtra = ($value === $k) ? ' selected="selected"' : '';
+            $xtra = ($value == $k && !($value === null)) ? ' selected="selected"' : '';
             $parts[] = '<option value="'.$k.'"' .$xtra. '>'.$v.'</option>';
         }
         $parts[] = '</select>';
@@ -188,4 +192,15 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         return $this->field($name, $opts);
     }
 
+    public function checkbox($name, $opts = array()) 
+    {
+        $opts['type'] = 'checkbox';
+        return $this->field($name, $opts);
+    }
+
+    public function submit($name = 'submit')
+    {
+        $submit = '<input type="submit" name="' . $name . '" value="' . $this->t($name) . '" />';
+        return '<tr><th></th><td>' . $submit . '</td></tr>';
+    }
 }

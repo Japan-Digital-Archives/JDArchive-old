@@ -1,4 +1,41 @@
+var map;
+var geocoder;
+var marker;
 
+function initializeMap() {
+  var latlng = new google.maps.LatLng(38.268215,140.869356);
+  var myOptions = {
+    zoom: 8,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById("map_canvas"),
+      myOptions);
+  
+  geocoder = new google.maps.Geocoder();
+  
+  marker = new google.maps.Marker({
+    position: latlng, 
+    map: map, 
+  });
+  
+  marker.setDraggable(true);
+  google.maps.event.addListener(
+    marker,
+    'dragend',
+    function() {
+      var newpos = marker.getPosition();
+      $('#latlng').html(newpos.toString());
+      $('#lat').val(newpos.lat());
+      $('#lng').val(newpos.lng());
+    });
+}
+
+$(document).ready(function(){
+    initializeMap();
+});
+
+/*
 var lang = 'en';//"<?php echo language(); ?>";
 
 $(function(){
@@ -39,4 +76,4 @@ $(function(){
 	      $(this).attr('href', href + '?la=zh');
 	    });
 	  }
-});
+});*/

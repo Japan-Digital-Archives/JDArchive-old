@@ -5,22 +5,26 @@ class BaseController
     protected $_name = null;
     protected $_params = null;
     protected $_language = null;
-    protected $_prefill = array();
-    protected $_required = array();
 
+    /**
+     *
+     */
     public function __construct($name)
     {
         $this->_name = $name;
-        $this->_i18n = new Jedarchive_I18n();
-        $this->_i18n->setSection($name);
-        $this->languageBar = $this->_i18n->getLanguageBar();
     }
 
+    /**
+     *
+     */
     public function setParams($params)
     {
         $this->_params = $params;
     }
 
+    /**
+     *
+     */
     protected function _getParam($name) 
     {
         if (isset($this->_params[$name])) {
@@ -29,33 +33,46 @@ class BaseController
         return null;
     }
 
-    public function renderView($name) 
+    /**
+     *
+     */
+    public function renderAction($action) 
     {
-        ob_start();
-        include $name;
-        $this->renderedView = ob_get_contents();
-        ob_end_clean();
+        // Create View object
+        $viewFile = APPLICATION_PATH . '/views/'.$this->_name.'/'.$action.'.php';
+        $layoutFile = APPLICATION_PATH . '/views/layout.php';
 
-        ob_start();
-        include(APPLICATION_PATH . '/views/layout.php');
-        $renderedLayout = ob_get_contents();
-        ob_end_clean();
+        $this->view = new Jedarchive_View($viewFile);
+        $this->layout = new Jedarchive_View($layoutFile);
 
-        return $renderedLayout;
+        // Give it a translation object
+        $i18n = new Jedarchive_I18n();
+        $i18n->setSection($this->_name);
+        $this->view->setI18n($i18n);
+        $this->layout->setI18n($i18n);
+
+        // Call the controller action, this populates the view and processes user input
+        $actionMethod = $action . 'Action';
+        $this->{$actionMethod}();
+
+        // Now render the view
+        $renderedAction = $this->view->render();
+
+        // Now render the layout
+        $i18n->setSection('layout');
+        $this->layout->languageBar = $i18n->getLanguageBar();
+        $this->layout->contents = $renderedAction;
+
+        return $this->layout->render();
+        
+
+
+        /*
+        */
+        //return $renderedLayout;
     }
 
     // view helpers
 
-    public function t($key)
-    {
-        return $this->_i18n->getTranslation($key);
-    }
-
-    public function field($opts)
-    {
-        $builder = new Jedarchive_Formbuilder();
-        $builder->setI18n($this->_i18n);
-        return $builder->field($opts, $this->_prefill, $this->_required);
-    }
 
 }

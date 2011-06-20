@@ -3,21 +3,27 @@
 <p id="required"><span class="red">*</span><span><?= $this->t('required_field') ?></span></p>
 
 <form>
-    <table class="seedform">
-        <?= $this->field(array('name' => 'name')) ?>
-        <?= $this->field(array(
-                'name' => 'name_public', 
-                'hint' => 'name_public_hint', 
-                'type' => 'select', 
-                'values' => array('show' => $this->t('show_name_yes'), 'hide' => $this->t('show_name_no')))); ?>
-        <?= $this->field(array('name' => 'email', 'hint' => 'email_hint')) ?>
-        <?= $this->field(array('name' => 'city', 'hint' => 'city_hint')) ?>
-        <?= $this->field(array('name' => 'occupation')) ?>
-        <?= $this->field(array('name' => 'year_of_birth', 'type' => 'select', 'start' => 1900, 'end' => 2010, 'empty' => true)) ?>
-        <?= $this->field(array('name' => 'tell_us_your_story', 'type' => 'textarea')) ?>
-        <?= $this->field(array('name' => 'from', 'type' => 'time')) ?>
-        <?= $this->field(array('name' => 'to', 'hint' => 'period_hint', 'type' => 'time')) ?>
-
+  <table class="seedform">
+    <?= $this->form->text('name') ?>
+    <?= $this->form->field(
+          'name_public',
+          array(
+            'hint' => 'name_public_hint', 
+            'type' => 'select', 
+            'values' => array(
+              'show' => $this->t('show_name_yes'), 
+              'hide' => $this->t('show_name_no')
+            )
+          )
+        ); ?>
+    <?= $this->form->text('email', array('hint' => 'email_hint')) ?>
+    <?= $this->form->text('city', array('hint' => 'city_hint')) ?>
+    <?= $this->form->text('occupation') ?>
+    <?= $this->form->select('year_of_birth', array('start' => 1900, 'end' => 2010, 'empty' => true)) ?>
+    <?= $this->form->textarea('tell_us_your_story') ?>
+    <?= $this->form->time('from') ?>
+    <?= $this->form->time('to', array('hint' => 'period_hint')) ?>
+    <?= $this->partial('partial/multilocation.php') ?>
 </table>
 </form>
      <? /*

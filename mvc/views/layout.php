@@ -2,27 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Digital Archive of Japan's 2011 Disasters</title>
+    <title>Digital Archive of Japan‘s 2011 Disasters</title>
     <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
     <meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
-    <link href="/mvc/css/main.css" rel="stylesheet" type="text/css" media="screen" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    
-    <!-- required stylesheet for TextboxList --> 
-    <link rel="stylesheet" href="/lib/TextboxList/TextboxList.css" type="text/css" media="screen" charset="utf-8" /> 
-    <!-- required stylesheet for TextboxList.Autocomplete --> 
-    <link rel="stylesheet" href="/lib/TextboxList/TextboxList.Autocomplete.css" type="text/css" media="screen" charset="utf-8" /> 
-    
-    <!-- required for TextboxList --> 
-    <script src="/lib/TextboxList/GrowingInput.js" type="text/javascript" charset="utf-8"></script> 
-    
-    <script src="/lib/TextboxList/TextboxList.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/lib/TextboxList/TextboxList.Autocomplete.js" type="text/javascript" charset="utf-8"></script> 
-    <!-- required for TextboxList.Autocomplete if method set to 'binary' --> 
-    <script src="/lib/TextboxList/TextboxList.Autocomplete.Binary.js" type="text/javascript" charset="utf-8"></script>
-    
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-    
+
+    <link href="/mvc/css/main.css" rel="stylesheet" type="text/css" media="screen" />    
     <script src="/mvc/js/main.js"  type="text/javascript"></script>
   </head>
   <body>
@@ -46,7 +32,7 @@
         <div id="page">
           <div id="content">
             <?= $this->languageBar ?>
-            <?= $this->renderedView ?>
+            <?= $this->contents ?>
           </div>
           <div style="clear: both;">&nbsp;</div>
         </div>

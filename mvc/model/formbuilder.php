@@ -48,9 +48,13 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         return $this->_i18n->getTranslation($key);
     }
 
-    public function field($opts)
+    /**
+     * Generate a form element, embedded in a table row so we can easily create
+     * a clean two column form layout.
+     *
+     */
+    public function field($name, $opts)
     {
-        $name = $opts['name'];
         $value = isset($this->_prefill[$name]) ? $this->_prefill[$name] : '';
         
         $opts['type'] = isset($opts['type']) ? $opts['type'] : 'text';
@@ -113,6 +117,10 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
                 ),
                 isset($value['day']) ? $value['day'] : '');                
             break;
+            
+        case 'string':
+            $parts[] = $opts['string'];
+            break;
         }
             
         if (isset($opts['hint'])) {
@@ -123,7 +131,17 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         return implode("\n\t", $parts);
     }
 
-        public function selectField($name, $opts, $value = '')
+    /**
+     * Creates a <select> form element. Either pass in a key 'values' (associative array) or a
+     * 'start' and 'end' to create a numeric range.
+     *
+     * @param $name name of the form element
+     * @param $opts options, accepted keys are 'values', 'start', 'end'
+     * @param $value prefill value
+     *
+     * @return string
+     */
+    public function selectField($name, $opts, $value = '')
     {
         if (isset($opts['values'])) {
             $values = $opts['values'];
@@ -144,4 +162,30 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         $parts[] = '</select>';
         return implode("\n", $parts);
     }
+
+    // convenience functions
+    public function text($name, $opts = array()) 
+    {
+        $opts['type'] = 'text';
+        return $this->field($name, $opts = array());
+    }
+
+    public function select($name, $opts = array()) 
+    {
+        $opts['type'] = 'select';
+        return $this->field($name, $opts);
+    }
+
+    public function textarea($name, $opts = array()) 
+    {
+        $opts['type'] = 'textarea';
+        return $this->field($name, $opts);
+    }
+
+    public function time($name, $opts = array()) 
+    {
+        $opts['type'] = 'time';
+        return $this->field($name, $opts);
+    }
+
 }

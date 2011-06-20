@@ -531,3 +531,12 @@ table.smallleft th {
 p.status {
   margin-bottom: 10px !important;
 }
+
+#map_canvas {
+    width: 550px;
+    height: 300px;
+    position: relative;
+    background-color: rgb(229, 227, 223);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}

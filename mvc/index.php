@@ -48,16 +48,14 @@ $action = $action ? $action : 'index';
 // load file, instantiate controller class, launch action
 $controllerFile = 'controllers/'.$controller.'.php';
 $controllerClass = ucfirst($controller).'Controller';
-$actionMethod = $action.'Action';
-$viewFile = 'views/'.$controller.'/'.$action.'.php';
+//$actionMethod = $action.'Action';
 
 if (file_exists($controllerFile)) {
     require_once 'controllers/base.php';
     require_once $controllerFile;
     $controller = new $controllerClass($controller);
-    $controller->{$actionMethod}();
 
-    print $controller->renderView($viewFile);
+    print $controller->renderAction($action);
 } else {
     header("HTTP/1.0 404 Not Found");
 }

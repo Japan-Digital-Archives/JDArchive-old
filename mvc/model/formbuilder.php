@@ -1,13 +1,16 @@
 <?
 
+/**
+ * Represents a form, has a number of functions to generate form elements,
+ * and can do basic validation.
+ */
 class Jedarchive_Formbuilder extends Jedarchive_Base
 {
     protected $_prefill = array();
     protected $_required = array();
     protected $_i18n = null;
-
-
-   
+    protected $_errorFields = array();
+    protected $_validations = array();
 
     public function getPrefill()
     {
@@ -43,6 +46,11 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         return $this;
     }
 
+    public function setValidations($validations)
+    {
+        $this->_validations = $validations;
+    }
+
     public function t($key)
     {
         return $this->_i18n->getTranslation($key);
@@ -59,7 +67,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         
         $opts['type'] = isset($opts['type']) ? $opts['type'] : 'text';
 
-        $parts[] = '<tr><th><label for="' . $name . '">';
+        $parts[] = '<tr' . (in_array($name, $this->_errorFields) ? ' class="error"' : '') . '><th><label for="' . $name . '">';
         $parts[] = $this->t($name);
         if ($opts['required'] || (isset($this->_required[$name]) && $this->_required[$name])) {
             $parts[]='<span class="required">*</span>';
@@ -140,6 +148,14 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
             $parts[] = '<br />';
             $parts[] = '<span class="hint">' . $this->t($opts['hint']) . '</span>';
         }
+
+        if (in_array($name, $this->_errorFields)) {
+            $parts[] = '<br />';
+            $parts[] = '<span class="errormsg">';
+            $parts[] = $this->t('error_' . $name);
+            $parts[] = '</span>';
+        }
+
         $parts[] = '</td></tr>';
         return implode("\n\t", $parts);
     }
@@ -174,6 +190,38 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         }
         $parts[] = '</select>';
         return implode("\n", $parts);
+    }
+
+
+    public function validate($params)
+    {
+        $this->_errorFields = array();
+        foreach ($this->_required as $field => $req) {
+            if ($req && (!isset($params[$field]) || !$params[$field])) {
+                $this->_errorFields[] = $field;
+            }
+        }
+
+        foreach ($this->_validations as $field => $validate) {
+            $validator = "validate" . ucfirst($validate);
+            if (isset($params[$field]) && $params[$field]) {
+                if ($this->{$validator}($params[$field]) === false) {
+                    $this->_errorFields[] = $field;
+                }                
+            }
+        }
+
+        return empty($this->_errorFields);
+    }
+
+    public function validateEmail($email)
+    {
+        return Jedarchive_Email::isValid(trim($email));
+    }
+
+    public function getErrorFields()
+    {
+        return $this->_errorFields;
     }
 
     // convenience functions

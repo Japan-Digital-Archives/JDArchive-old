@@ -4,6 +4,7 @@ class BaseController
 {
     protected $_name = null;
     protected $_params = null;
+    protected $_postParams = null;
     protected $_language = null;
 
     /**
@@ -28,6 +29,22 @@ class BaseController
     protected function getParams()
     {
         return $this->_params;
+    }
+
+    /**
+     *
+     */
+    public function setPostParams($params)
+    {
+        $this->_postParams = $params;
+    }
+
+    /**
+     *
+     */
+    protected function getPostParams()
+    {
+        return $this->_postParams;
     }
 
     /**

@@ -56,6 +56,7 @@ if (file_exists($controllerFile)) {
     $controller = new $controllerClass($controller);
 
     $controller->setParams($_REQUEST);
+    $controller->setPostParams($_POST);
     print $controller->renderAction($action);
 } else {
     header("HTTP/1.0 404 Not Found");

@@ -558,3 +558,13 @@ a.remove, a.remove:visited {
 #location_list {
     list-style-type: none;
 }
+
+tr.error {
+    background-color: #fee;
+}
+tr.error label, tr.error .errormsg {
+    color: #700;
+}
+tr.error .errormsg {
+    font-style: italic;
+}

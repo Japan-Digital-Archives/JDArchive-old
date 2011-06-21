@@ -1,5 +1,12 @@
 Options +FollowSymlinks
 
+<FilesMatch "^(internal|edit_tag|edit|curate).php$">
+AuthName "Staff Access Only:"
+AuthType Basic
+AuthUserFile /usr/www/users/jedarchi/.htpasswd
+Require valid-user
+</FilesMatch>Options +FollowSymlinks
+
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-d

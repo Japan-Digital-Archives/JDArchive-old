@@ -24,7 +24,7 @@
     <?= $this->form->time('from') ?>
     <?= $this->form->time('to', array('hint' => 'period_hint')) ?>
     <?= $this->partial('partial/multilocation.php') ?>
-     <?= $this->form->checkbox('terms') ?>
+    <?= $this->form->checkbox('terms', array('note' => 'accept_terms', 'label' => 'i_accept')) ?>
     <?= $this->form->submit() ?>
 </table>
 </form>

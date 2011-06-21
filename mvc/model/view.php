@@ -91,4 +91,14 @@ class Jedarchive_View extends Jedarchive_Base
         return $partial->render();
     }
 
+    /**
+     * Do some url processing, in particular adding the language parameter
+     */
+    public function url($url)
+    {
+        if ($this->getI18n()->getCurrent() != $this->getI18n()->getDefault()) {
+            $url .= '?la=' . $this->getI18n()->getCurrent();
+        }
+        return $url;
+    }
 }

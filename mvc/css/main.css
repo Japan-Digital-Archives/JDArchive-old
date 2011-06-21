@@ -540,3 +540,21 @@ p.status {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
+.panTo, .panTo:visited {
+    color: #00f;
+    cursor: hand;
+}
+
+a.remove, a.remove:visited {
+    color: #f00;
+    cursor: hand;
+}
+
+#location_list img {
+    cursor: hand;
+}
+
+#location_list {
+    list-style-type: none;
+}

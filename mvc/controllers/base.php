@@ -77,12 +77,6 @@ class BaseController
         $this->layout->contents = $renderedAction;
 
         return $this->layout->render();
-        
-
-
-        /*
-        */
-        //return $renderedLayout;
     }
 
     // view helpers

@@ -10,20 +10,23 @@
 
     <link href="/mvc/css/main.css" rel="stylesheet" type="text/css" media="screen" />    
     <script src="/mvc/js/main.js"  type="text/javascript"></script>
+    <? if (isset($this->javascriptVariables)) { ?>
+        <script type="text/javascript">var JA = <?= json_encode($this->javascriptVariables) ?>;</script>
+    <? } ?>
   </head>
   <body>
     <div id="wrapper">
       <div id="wrapper-bgtop">
         <div id="header">
           <div id="logo">
-            <a id="jdarchive_logo" href="/"><h1><span style="display:none;">Digital Archive</span></h1></a>
+            <a id="jdarchive_logo" href="<?= $this->url('/') ?>"><h1><span style="display:none;">Digital Archive</span></h1></a>
           </div>
           <!-- end #logo -->
           <div id="menu">
             <ul>
-              <li><a href="/" class="first" data-jp="当企画について" data-zh="About" data-ko="소개 ">About</a></li>
-              <li class="current_page_item"><a href="/contribute/" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</a></li>
-              <li class="last"><a href="/contact/" data-jp="お問い合わせ" data-ko="운영자에게">Contact</a></li>
+              <li><a href="<?= $this->url('/') ?>" class="first"><?= $this->t('about') ?></a></li>
+              <li class="current_page_item"><a href="<?= $this->url('/contribute/') ?>"><?= $this->t('contribute') ?></a></li>
+              <li class="last"><a href="<?= $this->url('/contact/') ?>"><?= $this->t('contact') ?></a></li>
             </ul>
           </div>
         </div>
@@ -45,18 +48,18 @@
       </div>
     </div>
     <!-- end #footer -->
-
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-22729281-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-
+    <? if (APPLICATION_ENV == 'production') { ?>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-22729281-1']);
+        _gaq.push(['_trackPageview']);
+  
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    <? } ?>
   </body>
 </html>

@@ -67,6 +67,12 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
         $parts[] = '</label></th>';
         $parts[] = '<td>';
 
+        if (isset($opts['note'])) {
+            $parts[] = '<div class="note">';
+            $parts[] = $this->t($opts['note']);
+            $parts[] = '</div>';
+        }
+
         switch($opts['type']) {
         case 'text':
             $size = isset($opts['size']) ? $opts['size'] : 60;            
@@ -119,6 +125,9 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
             break;
 
         case 'checkbox':
+            if (isset($opts['label'])) {
+                $parts[] = $this->t($opts['label']);
+            }
             $parts[] = '<input type="checkbox" name="' . $name . '"' . ($value ? ' checked="checked"' : '') . '/>';
             break;
 

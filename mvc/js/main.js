@@ -174,7 +174,7 @@ function JA_Map(lat, lng, zoom, id, type)
                 }
                 var latlng = result[0].geometry.location;
                 map.setCenter(latlng);
-                var marker = new JA_Marker(self.map, self.map.getCenter());
+                var marker = new JA_Marker(map, map.getCenter());
                 marker.setCaption(address);
             }
         );
@@ -201,10 +201,12 @@ $(document).ready(function() {
         }
     });
 
-    $.each(JA.lat, function(idx, val) {        
-        latlng = new google.maps.LatLng(parseFloat(val), parseFloat(JA.lng[idx]));
-        new JA_Marker(JA_Map.instance.map, latlng);
-    });
+    if (typeof JA.lat == 'object') {
+        $.each(JA.lat, function(idx, val) {        
+            latlng = new google.maps.LatLng(parseFloat(val), parseFloat(JA.lng[idx]));
+            new JA_Marker(JA_Map.instance.map, latlng);
+        });
+    }
 
     if (JA_Marker.count == 1) {
         JA_Map.instance.map.panTo(JA_Marker.latest().getPosition());

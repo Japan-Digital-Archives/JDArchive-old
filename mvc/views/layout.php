@@ -36,7 +36,7 @@
         <!-- end #header-wrapper -->
         <div id="page">
           <div id="content">
-            <?= $this->languageBar ?>
+            <?= $this->getI18n()->getLanguageBar() ?>
             <?= $this->contents ?>
           </div>
           <div style="clear: both;">&nbsp;</div>

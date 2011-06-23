@@ -37,12 +37,15 @@ class TestimonialController extends BaseController
             }
         }
 
+        $lats = array();
+        $lngs = array();
         foreach($locations as $idx => $loc) {
-            $jsParams['lat'][$idx] = $loc['lat'];
-            $jsParams['lng'][$idx] = $loc['lng'];
+            $lats[$idx] = $loc['lat'];
+            $lngs[$idx] = $loc['lng'];
         }
 
-        $this->layout->javascriptVariables = $jsParams;
+        $this->jsVar('lat', $lats);
+        $this->jsVar('lng', $lngs);
 
         //echo '<pre>';print_r($testimonial);die();
 
@@ -86,8 +89,9 @@ class TestimonialController extends BaseController
         if ($this->isPost()) {
             $params = $this->getPostParams();
             $this->view->form->setPrefill($params);
-            $jsParams = array('lat' => $this->getParam('lat'), 'lng' => $this->getParam('lng'));
-            $this->layout->javascriptVariables = $jsParams;
+
+            $this->jsVar('lat', $this->getParam('lat'));
+            $this->jsVar('lng', $this->getParam('lng'));
 
             if ($this->view->form->validate($params)) {
                 $data = array();

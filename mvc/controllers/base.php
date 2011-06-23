@@ -7,13 +7,22 @@ class BaseController
     protected $_uriParams = null;
     protected $_postParams = null;
     protected $_language = null;
-
+    protected $_jsVars = array();
     /**
      *
      */
     public function __construct($name)
     {
         $this->_name = $name;
+    }
+
+    public function init()
+    {
+        // Give it a translation object
+        $i18n = new Jedarchive_I18n();
+        $i18n->setSection($this->_name);
+        $this->view->setI18n($i18n);
+        $this->layout->setI18n($i18n);
     }
 
     /**
@@ -72,6 +81,11 @@ class BaseController
         return null;
     }
 
+    protected function jsVar($name, $value)
+    {
+        $this->_jsVars[$name] = $value;
+    }
+
     protected function isPost()
     {
         return strtoupper($_SERVER['REQUEST_METHOD']) == 'POST';
@@ -89,11 +103,7 @@ class BaseController
         $this->view = new Jedarchive_View($viewFile);
         $this->layout = new Jedarchive_View($layoutFile);
 
-        // Give it a translation object
-        $i18n = new Jedarchive_I18n();
-        $i18n->setSection($this->_name);
-        $this->view->setI18n($i18n);
-        $this->layout->setI18n($i18n);
+        $this->init();
 
         // Call the controller action, this populates the view and processes user input
         $actionMethod = $action . 'Action';
@@ -103,9 +113,11 @@ class BaseController
         $renderedAction = $this->view->render();
 
         // Now render the layout
-        $i18n->setSection('layout');
-        $this->layout->languageBar = $i18n->getLanguageBar();
+        $this->layout->getI18n()->setSection('layout');
         $this->layout->contents = $renderedAction;
+
+        $this->layout->javascriptVariables = $this->_jsVars;
+        //echo(json_encode($this->layout->javascriptVariables));die();
 
         return $this->layout->render();
     }

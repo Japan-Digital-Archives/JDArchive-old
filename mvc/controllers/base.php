@@ -4,6 +4,7 @@ class BaseController
 {
     protected $_name = null;
     protected $_params = null;
+    protected $_uriParams = null;
     protected $_postParams = null;
     protected $_language = null;
 
@@ -29,6 +30,19 @@ class BaseController
     protected function getParams()
     {
         return $this->_params;
+    }
+
+    /**
+     *
+     */
+    public function setUriParams($params)
+    {
+        $this->_uriParams = $params;
+    }
+
+    public function getNextUriParam()
+    {
+        return array_shift($this->_uriParams);
     }
 
     /**
@@ -98,5 +112,9 @@ class BaseController
 
     // view helpers
 
-
+    public function redirect($path)
+    {
+        header('Location: ' . $path);
+        exit();
+    }
 }

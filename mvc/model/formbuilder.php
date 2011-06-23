@@ -228,7 +228,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
     public function text($name, $opts = array()) 
     {
         $opts['type'] = 'text';
-        return $this->field($name, $opts = array());
+        return $this->field($name, $opts);
     }
 
     public function select($name, $opts = array()) 
@@ -259,5 +259,12 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
     {
         $submit = '<input type="submit" name="' . $name . '" value="' . $this->t($name) . '" />';
         return '<tr><th></th><td>' . $submit . '</td></tr>';
+    }
+
+    public function hidden($name)
+    {
+        if (isset($this->_prefill[$name])) {
+            return '<input type="hidden" name="'.$name.'" value="'.$this->_prefill[$name].'" />';
+        }
     }
 }

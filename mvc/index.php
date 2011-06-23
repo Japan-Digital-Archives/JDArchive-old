@@ -55,6 +55,7 @@ if (file_exists($controllerFile)) {
     require_once $controllerFile;
     $controller = new $controllerClass($controller);
 
+    $controller->setUriParams($uriParts);
     $controller->setParams($_REQUEST);
     $controller->setPostParams($_POST);
     print $controller->renderAction($action);

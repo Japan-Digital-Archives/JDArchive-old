@@ -16,7 +16,11 @@ class Jedarchive_Db
     {
         $config = Jedarchive_Config::instance()->getDatabaseSettings();
         $this->_connection = mysql_connect($config['host'], $config['user'], $config['password']);
-        mysql_select_db($config['name'], $this->_connection);
+        if ($this->_connection) {
+            mysql_select_db($config['name'], $this->_connection);
+        } else {
+            throw new Exception('Connection to DB failed.');
+        }
     }
 
     /**
@@ -28,5 +32,36 @@ class Jedarchive_Db
             self::$_instance = new Jedarchive_Db(APPLICATION_ENV);
         }
         return self::$_instance;
+    }
+
+    public function query($sql)
+    {
+        return mysql_query($sql);
+    }
+
+    public function fetchRows($sql)
+    {
+        $result = $this->query($sql);
+        
+        $rows = array();
+        while ($rowc = mysql_fetch_object($result)) {
+            $rowa = array();
+            foreach ($rowc as $field => $value) {
+                $rowa[$field] = $value;
+            }
+            $rows[] = $rowa;           
+        }
+
+        return $rows;
+    }
+
+    public function lastInsertId()
+    {
+        return mysql_insert_id();
+    }
+
+    public function escapeString($str)
+    {
+        return mysql_real_escape_string($str);
     }
 }

@@ -1,27 +1,3 @@
-function JA_Location(lat, lng) 
-{
-    if (typeof JA_Location.count == 'undefined') {
-        JA_Location.count = 0;
-        JA_Location.all = [];
-    }
-    
-    this.addToForm = function() {
-        $('#location_list').append('<li>' + this.toString() + '<li>');
-    }
-
-    this.showLatLng = function() {
-        $('#latlng').html(this.toString());
-    }
-
-    this.toString = function() {
-        return Math.round(this.lat*10000)/10000 + ', ' + Math.round(this.lng*10000)/10000;
-    }
-
-    JA_Location.latest = function() {
-        return JA_Location.all[JA_Location.all.length - 1];
-    }
-}
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // JA_Marker
 
@@ -31,7 +7,45 @@ function JA_Marker(map, latlng) {
 JA_Marker.prototype = new google.maps.Marker();
 JA_Marker.count = 0;
 JA_Marker.all = [];
-    
+JA_Marker.getSouthWest = function() 
+{
+    var lat = 90, lng = 180;
+    $.each(JA_Marker.all, function(i, mark) {
+        mark = mark.getPosition();
+        if (mark.lat() < lat) {
+            lat = mark.lat()
+        }
+        if (mark.lng() < lng) {
+            lng = mark.lng()
+        }
+        
+    });
+    return new google.maps.LatLng(lat, lng);
+}
+
+JA_Marker.getNorthEast = function() 
+{
+    var lat = -90, lng = -180;
+    $.each(JA_Marker.all, function(i, mark) {
+        mark = mark.getPosition();
+        if (mark.lat() > lat) {
+            lat = mark.lat()
+        }
+        if (mark.lng() > lng) {
+            lng = mark.lng()
+        }
+    });
+    return new google.maps.LatLng(lat, lng);
+}
+
+JA_Marker.getBounds = function() 
+{
+    return new google.maps.LatLngBounds(this.getSouthWest(), this.getNorthEast());
+}
+
+JA_Marker.latest = function() {
+    return JA_Marker.all[JA_Marker.all.length - 1];
+}
 
 JA_Marker.prototype.initialize = function(map, latlng) 
 {
@@ -149,8 +163,8 @@ function JA_Map(lat, lng, zoom, id, type)
         geocoderRequest = {
             address: address
         };
-        map = this.map;
-        marker = this.marker;
+        var map = this.map;
+        var marker = this.marker;
         this.geocoder.geocode(
             geocoderRequest,
             function(result, status) {
@@ -158,9 +172,9 @@ function JA_Map(lat, lng, zoom, id, type)
                     alert('Google could not locate this address. '+status);
                     return;
                 }
-                latlng = result[0].geometry.location;
+                var latlng = result[0].geometry.location;
                 map.setCenter(latlng);
-                marker = new JA_Marker(self.map, self.map.getCenter());
+                var marker = new JA_Marker(self.map, self.map.getCenter());
                 marker.setCaption(address);
             }
         );
@@ -187,7 +201,37 @@ $(document).ready(function() {
         }
     });
 
-    $.each(JA.lat, function(idx, val) {
-        new JA_Marker(JA_Map.instance.map, new google.maps.LatLng(parseFloat(val), parseFloat(JA.lng[idx])));
+    $.each(JA.lat, function(idx, val) {        
+        latlng = new google.maps.LatLng(parseFloat(val), parseFloat(JA.lng[idx]));
+        new JA_Marker(JA_Map.instance.map, latlng);
     });
+
+    if (JA_Marker.count == 1) {
+        JA_Map.instance.map.panTo(JA_Marker.latest().getPosition());
+    } 
+    if (JA_Marker.count > 1) {
+        JA_Map.instance.map.fitBounds(JA_Marker.getBounds());
+    }
+
+    $('#delete_dialog').dialog(
+        {
+            autoOpen: false,
+            width: 400,
+            modal: true,
+            resizable: false,
+            buttons: {
+                "Delete submission": function() {
+                    window.location.href = $('a.delete_link').attr('href');
+                },
+                "Cancel": function() {
+                    $('#delete_dialog').dialog('close');
+                }
+            }
+        }
+    );
+
+    $('a.delete_link').click(function() {
+        $('#delete_dialog').dialog('open');
+        return false;
+    })
 });

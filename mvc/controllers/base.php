@@ -23,6 +23,7 @@ class BaseController
         $i18n->setSection($this->_name);
         $this->view->setI18n($i18n);
         $this->layout->setI18n($i18n);
+        $this->jsVar('i18n', $i18n->getSectionLang('javascript'));
     }
 
     /**

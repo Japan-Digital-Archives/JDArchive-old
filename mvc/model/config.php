@@ -51,7 +51,7 @@ class Jedarchive_Config
      */
     public function getDatabaseSettings()
     {
-        return $this->_config['database'];
+        return $this->getSetting('database');
     }
 
     /**
@@ -61,7 +61,12 @@ class Jedarchive_Config
      */
     public function getLanguages()
     {
-        return $this->_config['language'];
+        return $this->getSetting('language');
     }
 
+    public function getSetting($key)
+    {
+        return $this->_config[$key];
+    }
+    
 }

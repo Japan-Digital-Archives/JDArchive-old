@@ -1,3 +1,4 @@
+<h2><?= $this->t('confirmation_title') ?></h2>
 <p>Thank you for submitting your testimonial to the Digital Archive of Japan's 2011 Disasters. We are in the process of designing an interface for the archive that will allow visitors to search submitted testimonials. Please visit us again in the coming year as we progress towards that goal.</p>
 
 <p>If you wish to edit or cancel your submitted story, please visit the following link:</p>

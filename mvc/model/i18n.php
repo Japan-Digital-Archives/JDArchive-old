@@ -61,6 +61,29 @@ class Jedarchive_I18n extends Jedarchive_Base
                 return $this->_translations[$section][$key][$this->getDefault()];
             }
         }
-        return "{$section}_{$key}";
+        if ($this->config()->getSetting('log_missing_tags')) {
+            if (!isset($this->_missingTagsLog)) {
+                $this->_missingTagsLog = fopen($this->config()->getSetting('log_missing_tags'), 'a');
+            }
+            fwrite($this->_missingTagsLog, "{$section}__{$key}\n");
+            fflush($this->_missingTagsLog);
+        }
+        return "{$section}__{$key}";
+    }
+
+    public function getSectionLang($section, $lang = null)
+    {
+        if ($lang === null) {
+            $lang = $this->getCurrent();
+        }
+        $result = array();
+        foreach($this->_translations[$section] as $key => $trans) {
+            if (isset($trans[$lang])) {
+                $result[$key] = $trans[$lang];
+            } elseif (isset($trans[$this->getDefault()])) {
+                $result[$key] = $trans[$this->getDefault()];
+            }
+        }
+        return $result;
     }
 }

@@ -59,7 +59,7 @@ JA_Marker.prototype.initialize = function(map, latlng)
     $('#location_list').append('<li id="ja_marker_' + this.index + '" rel="' + this.index + '" >\
 <img src="' + this.iconUrl() + '" /> \
 <a class="panTo caption" href="#"></a> \
-<a class="remove" href="#">(remove)</a> \
+<a class="remove" href="#">(' + JA.t('remove_location') + ')</a> \
 <input type="hidden" class="lat" name="lat[' + this.index + ']" value="" /> \
 <input type="hidden" class="lng" name="lng[' + this.index + ']" value="" /> \
 </li>');
@@ -117,20 +117,20 @@ JA_Marker.prototype.setCaption = function(caption)
 
 function JA_Button(map) {
     this.button = document.createElement("div");
-    this.button.innerHTML = "+ Add location";
+    this.button.innerHTML = JA.t('add_location');
 
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(this.button);
 
     this.setButtonStyle_ = function(button) {
         $(button).attr('style', '\
-            color: #0000cc;\
+            color: #44c;\
             background-color: #fff;\
             font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;\
-            font-size: 15px;\
+            font-size: 13px;\
             padding: 1px;\
             margin-top: 5px;\
             text-align: center;\
-            width: 10em;\
+            width: 8em;\
             cursor: pointer;\
             border-radius: 8px;\
             -webkit-border-radius: 8px;\
@@ -169,7 +169,7 @@ function JA_Map(lat, lng, zoom, id, type)
             geocoderRequest,
             function(result, status) {
                 if (status != 'OK') {
-                    alert('Google could not locate this address. '+status);
+                    alert(JA.t('google_could_not_find_address'));
                     return;
                 }
                 var latlng = result[0].geometry.location;
@@ -215,20 +215,21 @@ $(document).ready(function() {
         JA_Map.instance.map.fitBounds(JA_Marker.getBounds());
     }
 
+    var buttons = []
+    buttons[JA.t('button_delete_submission')] = function() {
+        window.location.href = $('a.delete_link').attr('href');
+    };
+    buttons[JA.t('button_cancel')]=function() {
+        $('#delete_dialog').dialog('close');
+    }
+
     $('#delete_dialog').dialog(
         {
             autoOpen: false,
             width: 400,
             modal: true,
             resizable: false,
-            buttons: {
-                "Delete submission": function() {
-                    window.location.href = $('a.delete_link').attr('href');
-                },
-                "Cancel": function() {
-                    $('#delete_dialog').dialog('close');
-                }
-            }
+            buttons: buttons
         }
     );
 
@@ -237,3 +238,17 @@ $(document).ready(function() {
         return false;
     })
 });
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// i18n
+JA.t = function(key) {
+    if (JA.i18n[key]) {
+        return JA.i18n[key];
+    }
+    if (typeof JA.i18n_missing == 'undefined') {
+        JA.i18n_missing = [];
+    }
+    JA.i18n_missing[JA.i18n_missing.length] = key
+    return key
+}

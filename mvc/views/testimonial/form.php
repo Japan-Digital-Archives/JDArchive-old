@@ -20,7 +20,7 @@
     <?= $this->form->text('city', array('hint' => 'city_hint')) ?>
     <?= $this->form->text('occupation') ?>
     <?= $this->form->select('year_of_birth', array('start' => 1900, 'end' => 2010, 'empty' => true)) ?>
-    <?= $this->form->textarea('tell_us_your_story') ?>
+    <?= $this->form->textarea('tell_us_your_story', array('rows' => 11)) ?>
     <?= $this->form->time('from') ?>
     <?= $this->form->time('to', array('hint' => 'period_hint')) ?>
     <?= $this->partial('partial/multilocation.php') ?>

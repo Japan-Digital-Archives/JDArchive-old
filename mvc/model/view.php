@@ -24,7 +24,7 @@ class Jedarchive_View extends Jedarchive_Base
      */
     public function setVariables($arr)
     {
-        $this->_data = $var;
+        $this->_data = $arr;
     }
 
     /**

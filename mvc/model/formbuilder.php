@@ -92,7 +92,9 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
             break;
 
         case 'textarea':
-            $parts[] = '<textarea name="' . $name . '" cols="60" rows="8">' . $value . '</textarea>';
+            $rows = isset($opts['rows']) ? $opts['rows'] : 8;
+            $cols = isset($opts['cols']) ? $opts['cols'] : 60;
+            $parts[] = '<textarea name="' . $name . '" cols="'.$cols.'" rows="'.$rows.'">' . $value . '</textarea>';
             break;
 
         case 'time':            

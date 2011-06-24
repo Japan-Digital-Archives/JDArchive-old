@@ -89,7 +89,7 @@ JA_Marker.prototype.initialize = function(map, latlng)
 
 JA_Marker.prototype.iconUrl = function()
 {
-    return '/mvc/img/markers/orange_' + String.fromCharCode(65 + this.index) + '.png';
+    return '/mvc/img/markers/red_' + String.fromCharCode(65 + this.index) + '.png';
 }
 
 JA_Marker.prototype.toString = function() 
@@ -215,11 +215,11 @@ $(document).ready(function() {
         JA_Map.instance.map.fitBounds(JA_Marker.getBounds());
     }
 
-    var buttons = []
-    buttons[JA.t('button_delete_submission')] = function() {
+    var buttonz = []
+    buttonz[JA.t('button_delete_submission')] = function() {
         window.location.href = $('a.delete_link').attr('href');
     };
-    buttons[JA.t('button_cancel')]=function() {
+    buttonz[JA.t('button_cancel')]=function() {
         $('#delete_dialog').dialog('close');
     }
 
@@ -229,7 +229,7 @@ $(document).ready(function() {
             width: 400,
             modal: true,
             resizable: false,
-            buttons: buttons
+            buttons: buttonz
         }
     );
 

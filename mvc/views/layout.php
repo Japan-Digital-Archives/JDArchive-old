@@ -16,7 +16,7 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="screen" />    
     <script src="/mvc/js/main.js"  type="text/javascript"></script>
   </head>
-  <body>
+  <body id="<?= $this->bodyId ?>" class="<?= $this->bodyClass ?>">
     <div id="wrapper">
       <div id="wrapper-bgtop">
         <div id="header">
@@ -35,11 +35,9 @@
         <!-- end #header -->
         <!-- end #header-wrapper -->
         <div id="page">
-          <div id="content">
-            <?= $this->getI18n()->getLanguageBar() ?>
+
             <?= $this->contents ?>
-          </div>
-          <div style="clear: both;">&nbsp;</div>
+
         </div>
         <!-- end #page -->
       </div>

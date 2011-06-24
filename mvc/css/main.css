@@ -158,7 +158,7 @@ img.right {
   display: inline-block;
   height: 100px;
   width: 460px;
-  cursor: hand;
+  cursor: pointer;
 }
 
 
@@ -533,7 +533,7 @@ p.status {
 }
 
 #map_canvas {
-    width: 550px;
+    width: 520px;
     height: 300px;
     position: relative;
     background-color: rgb(229, 227, 223);
@@ -543,16 +543,15 @@ p.status {
 
 .panTo, .panTo:visited {
     color: #00f;
-    cursor: hand;
+    cursor: pointer;
 }
 
 a.remove, a.remove:visited {
-    color: #f00;
-    cursor: hand;
+    cursor: pointer;
 }
 
 #location_list img {
-    cursor: hand;
+    cursor: pointer;
 }
 
 #location_list {
@@ -567,4 +566,12 @@ tr.error label, tr.error .errormsg {
 }
 tr.error .errormsg {
     font-style: italic;
+}
+
+.testimonial form th {
+    width: 160px;
+}
+
+textarea {
+    width: 520px;
 }

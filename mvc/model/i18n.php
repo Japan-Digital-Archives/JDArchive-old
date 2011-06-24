@@ -4,6 +4,7 @@ class Jedarchive_I18n extends Jedarchive_Base
 {
     protected $_translations = null;
     protected $_section = null;
+    protected $_language = null;
 
     public function __construct()
     {
@@ -28,11 +29,19 @@ class Jedarchive_I18n extends Jedarchive_Base
     
     public function getCurrent()
     {
+        if ($this->_language) {
+            return $this->_language;
+        }
         if (isset($_GET['la']) && in_array($_GET['la'], array_keys($this->getLanguages()))) {
             return $_GET['la'];
         } else {
             return $this->getDefault();
         }
+    }
+
+    public function setCurrent($lang)
+    {
+        $this->_language = $lang;
     }
 
     public function getLanguageBar()

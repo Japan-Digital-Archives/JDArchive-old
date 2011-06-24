@@ -7,6 +7,7 @@ class TestimonialController extends BaseController
         $this->initForm();
 
         if ($this->handleSubmit()) {
+            $this->handleEmail();
             $this->redirect('/testimonial/confirmation/' . $this->_testimonialId . '/' . $this->id2hash($this->_testimonialId));
         }
     }
@@ -26,6 +27,9 @@ class TestimonialController extends BaseController
         $tblLocation = new Jedarchive_Table('testimonial_location');
 
         $testimonial = $tblTestimonial->fetch('*', array('id' => $id));
+        if (count($testimonial) == 0) {
+            $this->redirect('/testimonial');
+        }
         $testimonial = $testimonial[0];
         $locations = $tblLocation->fetch('*', array('testimonial_id' => $id));
 
@@ -53,6 +57,7 @@ class TestimonialController extends BaseController
         $this->view->deleteLink = '/testimonial/delete/' . $id . '/' . $crc;
 
         if ($this->handleSubmit()) {
+            $this->handleEmail();
             $this->redirect('/testimonial/confirmation/' . $id . '/' . $crc);
         }
     }
@@ -139,6 +144,28 @@ class TestimonialController extends BaseController
                 return true;
             } 
         }
+    }
+
+    protected function handleEmail()
+    {
+        $email1 = $this->getParam('name') . '<' . $this->getParam('email') .'>';
+        $email2 = Jedarchive_Config::instance()->getSetting('email');
+        $mail = new Jedarchive_Mail('testimonial');
+
+        $id = $this->getParam('id');
+        $editUrl = Jedarchive_Config::instance()->getSetting('base_url').'/testimonial/edit/'.$id.'/'.$this->id2hash($id);
+
+        $mail
+            ->setTo($email1)
+            ->setFrom($email2)
+            ->setSubject('testimonial_subject')
+            ->setViewParams(array('link' => $editUrl))
+            ->send();
+        
+        $mail
+            ->setTo($email2)
+            ->setFrom($email1)
+            ->send();
     }
     
     protected function initForm()

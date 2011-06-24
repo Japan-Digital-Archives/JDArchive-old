@@ -8,6 +8,7 @@ class BaseController
     protected $_postParams = null;
     protected $_language = null;
     protected $_jsVars = array();
+
     /**
      *
      */
@@ -115,6 +116,8 @@ class BaseController
 
         // Now render the layout
         $this->layout->getI18n()->setSection('layout');
+        $this->layout->bodyId = $this->_name . '_' . $action;
+        $this->layout->bodyClass = $this->_name . ' ' .  $action;
         $this->layout->contents = $renderedAction;
 
         $this->layout->javascriptVariables = $this->_jsVars;

@@ -7,8 +7,11 @@ defined('APPLICATION_PATH')
 
 // Determine environment
 
-if ($_SERVER['HTTP_HOST'] == 'jedarchive.org' 
-    || $_SERVER['HTTP_HOST'] == 'www.jedarchive.org') {
+if ($_SERVER['HTTP_HOST'] == 'jdarchive.org' 
+    || $_SERVER['HTTP_HOST'] == 'www.jdarchive.org'
+    || $_SERVER['HTTP_HOST'] == 'jedarchive.org'
+    || $_SERVER['HTTP_HOST'] == 'www.jedarchive.org') 
+{
     define('APPLICATION_ENV', 'production');
 } else {
     define('APPLICATION_ENV', 'development');

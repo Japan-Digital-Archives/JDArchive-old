@@ -1,0 +1,431 @@
+# This file is distributed under the same license as the Atahualpa package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Atahualpa 3.3.3\n"
+"Report-Msgid-Bugs-To: http://forum.bytesforall.com/\n"
+"POT-Creation-Date: 2009-07-05 02:02+0100\n"
+"PO-Revision-Date: 2009-07-05 02:06+0100\n"
+"Last-Translator: Bytes For All <lmmmuc@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
+
+#: comments-paged.php:3
+#: comments.php:4
+#: legacy.comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: comments-paged.php:7
+#: comments.php:7
+#: legacy.comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments-paged.php:25
+#: comments.php:20
+#: legacy.comments.php:23
+msgid "No comments yet to "
+msgstr ""
+
+#: comments-paged.php:25
+#: comments.php:21
+#: legacy.comments.php:23
+msgid "1 comment to "
+msgstr ""
+
+#: comments-paged.php:26
+#: comments.php:21
+#: legacy.comments.php:24
+#, php-format
+msgid "% comments to "
+msgstr ""
+
+#: comments-paged.php:30
+#: comments-paged.php:136
+msgid "Pages:"
+msgstr ""
+
+#: comments-paged.php:58
+#: legacy.comments.php:62
+msgid "Gravatar"
+msgstr ""
+
+#: comments-paged.php:72
+#: legacy.comments.php:72
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments-paged.php:79
+#: comments-paged.php:113
+#: legacy.comments.php:75
+#: legacy.comments.php:106
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: comments-paged.php:79
+#: comments-paged.php:113
+#: legacy.comments.php:75
+#: legacy.comments.php:106
+msgid "F jS, Y"
+msgstr ""
+
+#: comments-paged.php:86
+#: comments-paged.php:116
+#: legacy.comments.php:79
+#: legacy.comments.php:108
+msgid "Edit"
+msgstr ""
+
+#: comments-paged.php:151
+#: legacy.comments.php:137
+msgid "Comments are closed."
+msgstr ""
+
+#: comments-paged.php:164
+#: comments.php:96
+#: legacy.comments.php:149
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments-paged.php:168
+#: comments.php:86
+#: legacy.comments.php:153
+#, php-format
+msgid "You must be %slogged in</a> to post a comment."
+msgstr ""
+
+#: comments-paged.php:180
+#: comments.php:109
+#: legacy.comments.php:164
+#, php-format
+msgid "Logged in as %s."
+msgstr ""
+
+#: comments-paged.php:183
+#: comments.php:113
+#: legacy.comments.php:167
+msgid "Log out of this account"
+msgstr ""
+
+#: comments-paged.php:183
+#: comments.php:114
+#: legacy.comments.php:167
+msgid "Logout &raquo;"
+msgstr ""
+
+#: comments-paged.php:190
+#: comments.php:121
+#: legacy.comments.php:173
+msgid "author"
+msgstr ""
+
+#: comments-paged.php:190
+#: comments.php:122
+#: legacy.comments.php:173
+msgid "Name "
+msgstr ""
+
+#: comments-paged.php:191
+#: comments-paged.php:196
+#: comments.php:123
+#: comments.php:130
+#: legacy.comments.php:173
+#: legacy.comments.php:179
+msgid "(required)"
+msgstr ""
+
+#: comments-paged.php:195
+#: comments.php:128
+#: legacy.comments.php:178
+msgid "email"
+msgstr ""
+
+#: comments-paged.php:195
+#: legacy.comments.php:178
+msgid "Mail (will not be published) "
+msgstr ""
+
+#: comments-paged.php:200
+#: comments.php:135
+#: legacy.comments.php:183
+msgid "url"
+msgstr ""
+
+#: comments-paged.php:200
+#: comments.php:136
+#: legacy.comments.php:183
+msgid "Website"
+msgstr ""
+
+#: comments-paged.php:207
+#: comments.php:150
+#: legacy.comments.php:193
+#, php-format
+msgid "You can use %1$sthese HTML tags</a>"
+msgstr ""
+
+#: comments-paged.php:216
+#: comments.php:164
+#: legacy.comments.php:204
+msgid "Submit Comment"
+msgstr ""
+
+#: comments.php:34
+#: comments.php:42
+#: comments.php:52
+msgid " &middot; Reply"
+msgstr ""
+
+#: comments.php:35
+#: comments.php:43
+#: comments.php:53
+msgid "Log in to Reply"
+msgstr ""
+
+#: comments.php:97
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:100
+msgid "Cancel"
+msgstr ""
+
+#: comments.php:129
+msgid "Mail</strong> (will not be published) "
+msgstr ""
+
+#: footer.php:53
+msgid "Meta"
+msgstr ""
+
+#: footer.php:59
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr ""
+
+#: footer.php:60
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:83
+#: footer.php:89
+msgid " queries. "
+msgstr ""
+
+#: footer.php:83
+#: footer.php:89
+msgid " seconds."
+msgstr ""
+
+#: functions.php:392
+msgid "Atahualpa Post Options"
+msgstr ""
+
+#: functions.php:394
+msgid "Atahualpa Page Options"
+msgstr ""
+
+#: functions.php:429
+msgid "Body Title"
+msgstr ""
+
+#: functions.php:435
+msgid "Meta Title"
+msgstr ""
+
+#: functions.php:439
+msgid "Meta Keywords"
+msgstr ""
+
+#: functions.php:443
+msgid "Meta Description"
+msgstr ""
+
+#: functions.php:456
+msgid "Body copy title"
+msgstr ""
+
+#: header.php:64
+msgid "Categories"
+msgstr ""
+
+#: header.php:72
+msgid "Archives"
+msgstr ""
+
+#: legacy.comments.php:133
+msgid "There are no comments yet."
+msgstr ""
+
+#: functions/bfa_calendar_widget.php:13
+msgid "A calendar of your blog's posts"
+msgstr ""
+
+#: functions/bfa_calendar_widget.php:14
+#: functions/bfa_calendar_widget.php:15
+msgid "Calendar"
+msgstr ""
+
+#: functions/bfa_hor_cats.php:41
+msgid "View all posts filed under"
+msgstr ""
+
+#: functions/bfa_meta_tags.php:86
+msgid "l, F jS, Y"
+msgstr ""
+
+#: functions/bfa_meta_tags.php:89
+msgid "F Y"
+msgstr ""
+
+#: functions/bfa_meta_tags.php:98
+msgid "404 - Page not found"
+msgstr ""
+
+#: functions/bfa_recent_comments.php:161
+#: functions/bfa_recent_comments.php:163
+#: functions/bfa_recent_comments.php:165
+#: functions/bfa_recent_comments.php:167
+msgid "On: "
+msgstr ""
+
+#: functions/bfa_recent_comments.php:169
+#: functions/bfa_recent_comments.php:171
+#: functions/bfa_recent_comments.php:173
+#: functions/bfa_recent_comments.php:175
+msgid " on: "
+msgstr ""
+
+#: functions/bfa_search_widget.php:14
+msgid "Search for:"
+msgstr ""
+
+#: functions/bfa_search_widget.php:16
+#: functions/bfa_search_widget.php:24
+#: functions/bfa_search_widget.php:25
+msgid "Search"
+msgstr ""
+
+#: functions/bfa_search_widget.php:23
+msgid "A search form for your blog"
+msgstr ""
+
+#: functions/bfa_text_widget.php:90
+msgid "Arbitrary text or HTML"
+msgstr ""
+
+#: functions/bfa_text_widget.php:92
+msgid "Text"
+msgstr ""
+
+#: functions/bfa_theme_options.php:795
+msgid "Posts"
+msgstr ""
+
+#: functions/bfa_theme_options.php:803
+msgid "Subscribe to the POSTS feed"
+msgstr ""
+
+#: functions/bfa_theme_options.php:821
+msgid "Comments"
+msgstr ""
+
+#: functions/bfa_theme_options.php:829
+msgid "Subscribe to the COMMENTS feed"
+msgstr ""
+
+#: functions/bfa_theme_options.php:847
+msgid "By Email"
+msgstr ""
+
+#: functions/bfa_theme_options.php:855
+msgid "Subscribe by EMAIL"
+msgstr ""
+
+#: functions/bfa_theme_options.php:900
+msgid "Home"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1335
+msgid "&laquo; Newer Entries"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1354
+msgid "Older Entries &raquo;"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1385
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1395
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1986
+#: functions/bfa_theme_options.php:2000
+#: functions/bfa_theme_options.php:2013
+msgid "Tags: "
+msgstr ""
+
+#: functions/bfa_theme_options.php:1987
+#: functions/bfa_theme_options.php:2001
+#: functions/bfa_theme_options.php:2014
+msgid "Category:"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1987
+#: functions/bfa_theme_options.php:2001
+msgid "Leave a comment"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1988
+#: functions/bfa_theme_options.php:2002
+msgid "One comment"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1988
+#: functions/bfa_theme_options.php:2002
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1988
+#: functions/bfa_theme_options.php:2002
+msgid "Comments are closed"
+msgstr ""
+
+#: functions/bfa_theme_options.php:1989
+#: functions/bfa_theme_options.php:2003
+#: functions/bfa_theme_options.php:2014
+msgid "Edit this post"
+msgstr ""
+
+#: functions/bfa_theme_options.php:2278
+msgid "Continue reading %post-title%"
+msgstr ""
+
+#: functions/bfa_theme_options.php:2372
+msgid " &middot; Edit"
+msgstr ""
+
+#: functions/bfa_theme_options.php:2390
+msgid "<p>Comments are closed.</p>"
+msgstr ""
+
+#: functions/bfa_theme_options.php:2492
+msgid "Copyright &copy; %current-year% %home% - All Rights Reserved"
+msgstr ""
+
+#: functions/bfa_theme_options.php:2790
+msgid "Archives by Month"
+msgstr ""
+
+#: functions/bfa_theme_options.php:2829
+msgid "Archives by Category"
+msgstr ""
+

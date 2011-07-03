@@ -33,12 +33,32 @@ if ($curate) {
             <div class="tagcloud">
             
             <?php
+              // find out min and max
+              $min = -1;
+              $max = -1;
+              
               foreach ($cloud as $tag) {
-                if ($tag->count > 20) {
+                if ($min == -1 || $tag->count < $min) {
+                  $min = $tag->count;
+                }
+                if ($max == -1 || $tag->count > $max) {
+                  $max = $tag->count;
+                }
+              }
+              
+              $delta = ($max - $min) / 4;
+              $threshold = array();
+              
+              for ($i = 0; $i < 4; $i++) {
+                $threshold[$i] = $min + $i * $delta;
+              }
+            
+              foreach ($cloud as $tag) {
+                if ($tag->count > $threshold[3]) {
                   $class = "largest";
-                } else if ($tag->count > 10) {
+                } else if ($tag->count > $threshold[2]) {
                   $class = "large";
-                } else if ($tag->count > 7) {
+                } else if ($tag->count > $threshold[1]) {
                   $class = "medium"; 
                 } else {
                   $class = "small";

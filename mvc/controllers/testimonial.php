@@ -43,13 +43,16 @@ class TestimonialController extends BaseController
 
         $lats = array();
         $lngs = array();
+        $names = array();
         foreach($locations as $idx => $loc) {
             $lats[$idx] = $loc['lat'];
             $lngs[$idx] = $loc['lng'];
+            $names[$idx] = $loc['name'];
         }
 
         $this->jsVar('lat', $lats);
         $this->jsVar('lng', $lngs);
+        $this->jsVar('location_name', $names);
 
         //echo '<pre>';print_r($testimonial);die();
 
@@ -97,6 +100,11 @@ class TestimonialController extends BaseController
 
             $this->jsVar('lat', $this->getParam('lat'));
             $this->jsVar('lng', $this->getParam('lng'));
+            $this->jsVar('location_name', $this->getParam('location_name'));
+
+            if (isset($params['passthru']) && $params['passthru']) {
+                return false;
+            }
 
             if ($this->view->form->validate($params)) {
                 $data = array();
@@ -121,7 +129,11 @@ class TestimonialController extends BaseController
                 
                 if (isset($params['lat'])) {
                     foreach ($params['lat'] as $idx => $lat) {
-                        $locations[] = array('lat' => $lat, 'lng' => $params['lng'][$idx]);
+                        $locations[] = array(
+                            'lat' => $lat,
+                            'lng' => $params['lng'][$idx],
+                            'name' => $params['location_name'][$idx]
+                        );
                     }
                 }
 

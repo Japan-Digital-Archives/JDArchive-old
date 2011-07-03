@@ -58,7 +58,8 @@ JA_Marker.prototype.initialize = function(map, latlng)
     this.setMap(map);
     $('#location_list').append('<li id="ja_marker_' + this.index + '" rel="' + this.index + '" >\
 <img src="' + this.iconUrl() + '" /> \
-<a class="panTo caption" href="#"></a> \
+<input type="text" class="location_name" name="location_name[' + this.index + ']" value="" /> \
+<span class="panTo caption" href="#"></span> \
 <a class="remove" href="#">(' + JA.t('remove_location') + ')</a> \
 <input type="hidden" class="lat" name="lat[' + this.index + ']" value="" /> \
 <input type="hidden" class="lng" name="lng[' + this.index + ']" value="" /> \
@@ -71,19 +72,19 @@ JA_Marker.prototype.initialize = function(map, latlng)
         this.updateHtml
     );
 
-    $('#ja_marker_' + this.index + ' img, #ja_marker_' + this.index + ' .panTo').click(function() {
+    $('#ja_marker_' + this.index + ' img, #ja_marker_' + this.index + ' .panTo').click(function(e) {
         idx = parseInt($(this).parent().attr('rel'));
         marker = JA_Marker.all[idx]
         marker.getMap().panTo(marker.getPosition());
-        return false;
+        e.preventDefault();
     });
 
-    $('#location_list .remove').click(function() {
+    $('#location_list .remove').click(function(e) {
         idx = parseInt($(this).parent().attr('rel'));
         marker = JA_Marker.all[idx]
         $('#ja_marker_' + $(this).parent().attr('rel')).remove();
         marker.setMap(null);
-        return false;
+        e.preventDefault();
     })
 }
 
@@ -109,7 +110,12 @@ JA_Marker.prototype.updateHtml = function()
 
 JA_Marker.prototype.setCaption = function(caption)
 {
-    $('#ja_marker_' + this.index + ' .caption').html(caption);
+    $('#ja_marker_' + this.index + ' .caption').html('(' + caption + ')');
+}
+
+JA_Marker.prototype.setName = function(name)
+{
+    $('#ja_marker_' + this.index + ' .location_name').attr('value', name);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -175,7 +181,7 @@ function JA_Map(lat, lng, zoom, id, type)
                 var latlng = result[0].geometry.location;
                 map.setCenter(latlng);
                 var marker = new JA_Marker(map, map.getCenter());
-                marker.setCaption(address);
+                marker.setName(address);
             }
         );
     }
@@ -197,14 +203,17 @@ $(document).ready(function() {
     $('input#address').bind("keypress", function(e) {
         if (e.keyCode == 13) {
             JA_Map.instance.showAddress($('#address').val());
-            return false;
+            e.preventDefault();
         }
     });
 
-    if (typeof JA.lat == 'object') {
+    // Prefill
+
+    if (typeof JA.lat == 'object' & JA.lat != null) {
         $.each(JA.lat, function(idx, val) {        
-            latlng = new google.maps.LatLng(parseFloat(val), parseFloat(JA.lng[idx]));
-            new JA_Marker(JA_Map.instance.map, latlng);
+            var latlng = new google.maps.LatLng(parseFloat(val), parseFloat(JA.lng[idx]));
+            var marker = new JA_Marker(JA_Map.instance.map, latlng);
+            marker.setName(JA.location_name[idx]);
         });
     }
 
@@ -233,9 +242,17 @@ $(document).ready(function() {
         }
     );
 
-    $('a.delete_link').click(function() {
+    $('a.delete_link').click(function(e) {
         $('#delete_dialog').dialog('open');
-        return false;
+        e.preventDefault();
+    })
+
+    $('.languagebar a').click(function(e) {
+        $('#testimonial-form')
+            .attr('action', $(this).attr('href'))
+            .append('<input type="hidden" name="passthru" value="1" />');
+        $('input[type="submit"]').click();
+        e.preventDefault();
     })
 });
 

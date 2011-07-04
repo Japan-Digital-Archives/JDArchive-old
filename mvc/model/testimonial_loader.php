@@ -22,6 +22,33 @@ class Jedarchive_Testimonial_Loader extends Jedarchive_Base
         return $all;
     }
 
+    public function findPreviousId($id)
+    {
+        $result = $this->db()->fetchOne("SELECT id FROM testimonial WHERE id < {$id} ORDER BY id DESC LIMIT 1;");
+        if ($result && isset($result['id'])) {
+            return $result['id'];
+        }
+        return null;
+    }
+
+    public function findNextId($id)
+    {
+        $result = $this->db()->fetchOne("SELECT id FROM testimonial WHERE id > {$id} ORDER BY id ASC LIMIT 1;");
+        if ($result && isset($result['id'])) {
+            return $result['id'];
+        }
+        return null;
+    }
+
+    public function findLastId()
+    {
+        $result = $this->db()->fetchOne("SELECT id FROM testimonial ORDER BY id DESC LIMIT 1;");
+        if ($result && isset($result['id'])) {
+            return $result['id'];
+        }
+        return null;
+    }
+
     protected function createFromRow($data) {
         $testi = new Jedarchive_Testimonial();
         foreach ($data as $k => $v) {
@@ -52,4 +79,6 @@ class Jedarchive_Testimonial_Loader extends Jedarchive_Base
         }
         return $this->_locTable;
     }
+
+    
 }

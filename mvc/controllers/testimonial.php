@@ -85,14 +85,44 @@ class TestimonialController extends BaseController
         
         if ($id) {
             $this->view->testimonial = $loader->load($id);
+            if ($prev = $loader->findPreviousId($id)) {
+                $this->view->previousLink = '/testimonial/browse/'.$prev;
+            }
+            if ($next = $loader->findNextId($id)) {
+                $this->view->nextLink = '/testimonial/browse/'.$next;
+            }
+            $this->view->editLink = '/testimonial/edit/'.$id.'/'.$this->id2hash($id);
+            $this->view->publicLink = '/testimonial/public/'.$id.'/'.$this->id2hash($id, 'public');
             $this->prefillLocationsFor($id);
             $this->jsVar('readonly', true);
             if (is_null($this->view->testimonial)) {
                 $this->redirect('/testimonial/browse');
             }
         } else {
-            $this->view->setViewFile('testimonial/browse-overview.php');
-            $this->view->testimonials = $loader->loadAll();
+            /*$this->view->setViewFile('testimonial/browse-overview.php');
+             $this->view->testimonials = $loader->loadAll();*/
+            $this->redirect('/testimonial/browse/' . $loader->findLastId());
+        }
+    }
+
+    public function publicAction()
+    {
+        $id = $this->getNextUriParam();
+        $loader = new Jedarchive_Testimonial_Loader();
+        
+        if ($id) {
+            $hash = $this->getNextUriParam();
+            if ($hash != $this->id2hash($id, 'public')) {
+                $this->redirect('/testimonial');
+            }
+            $this->view->testimonial = $loader->load($id);
+            $this->prefillLocationsFor($id);
+            $this->jsVar('readonly', true);
+            if (is_null($this->view->testimonial)) {
+                $this->redirect('/testimonial');
+            }
+        } else {
+            $this->redirect('/testimonial');
         }
     }
 
@@ -141,6 +171,8 @@ class TestimonialController extends BaseController
                     }
                 }
 
+                $data['client_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
+                
                 $tblTestimonial = new Jedarchive_Table('testimonial');
                 $tblLocation = new Jedarchive_Table('testimonial_location');
 
@@ -200,9 +232,9 @@ class TestimonialController extends BaseController
         $this->view->form = $form;
     }
     
-    protected function id2hash($id)
+    protected function id2hash($id, $purpose = '')
     {
-        return substr(md5("klfnwe0-23{$id}wfme"), 0, 8);
+        return substr(md5("klfnwe0-23{$id}wfme".$purpose), 0, 12);
     }
 
     protected function prefillLocationsFor($id)

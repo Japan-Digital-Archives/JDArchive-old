@@ -1,26 +1,5 @@
-<h2><?= $this->t('browse_title') ?> #<?= $this->testimonial->getId() ?></h2>
-<ul class='action_links'>
-     <li><a href='<?= $this->editLink ?>'><?= $this->t('edit_delete_link') ?></a></li>
-     <li><a href='<?= $this->publicLink ?>'><?= $this->t('public_link') ?></a></li>
-</ul>
+<h2><?= $this->t('public_title') ?> #<?= $this->testimonial->getId() ?></h2>
 <table>
-    <tr class='prev_next'>
-        <th></th>
-        <td>
-            <? 
-            if (isset($this->previousLink)) { ?>
-                <a href="<?= $this->previousLink ?>"><?= $this->t('previous') ?></a>
-            <? 
-            } 
-
-            if (isset($this->nextLink) && isset($this->previousLink)) {echo "&nbsp;|&nbsp;";}
-
-            if (isset($this->nextLink)) { ?>
-                <a href="<?= $this->nextLink ?>"><?= $this->t('next') ?></a>
-            <? } ?>
-        </td>
-    </tr>
-
 <?
 $fields = array(
     'submitted' => $this->testimonial->getCreated().' ('.$this->testimonial->getClientIp().')',
@@ -50,19 +29,6 @@ foreach ($fields as $key => $content) { ?>
     </tr>   
 <? } ?>
 <?= $this->partial('partial/multilocation.php', array('readonly' => true)) ?>
-
-    <tr class='prev_next'>
-        <th></th>
-        <td>
-            <? if (isset($this->previousLink)) { ?>
-                <a href="<?= $this->previousLink ?>"><?= $this->t('previous') ?></a>
-            <? } 
-            if (isset($this->nextLink) && isset($this->previousLink)) {echo "&nbsp;|&nbsp;";}
-            if (isset($this->nextLink)) { ?>
-                <a href="<?= $this->nextLink ?>"><?= $this->t('next') ?></a>
-            <? } ?>
-        </td>
-    </tr>
 
 </table>
 

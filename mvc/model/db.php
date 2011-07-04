@@ -55,6 +55,10 @@ class Jedarchive_Db
         return $rows;
     }
 
+    public function fetchOne($sql) {
+        return reset($this->fetchRows($sql));
+    }
+
     public function lastInsertId()
     {
         return mysql_insert_id();

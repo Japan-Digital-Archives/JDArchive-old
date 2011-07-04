@@ -579,3 +579,19 @@ tr.error .errormsg {
 textarea {
     width: 520px;
 }
+
+.delete_link {
+    float: right;
+    font-size: 1.3em;
+    padding: 0.2em;
+    border-bottom: 1px solid black;
+}
+
+.delete_link a {
+    display: block;
+    margin-top: -1.5em;
+}
+
+.delete_link img {
+    margin-left: -24px;
+}

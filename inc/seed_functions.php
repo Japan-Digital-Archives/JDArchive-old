@@ -221,6 +221,39 @@
     return $seeds;
   }
   
+  function get_seeds_search($q, $page, $perpage = 30) {
+    $q = mysql_real_escape_string($q);
+    $page = mysql_real_escape_string($page);
+    $start = $perpage * ($page - 1);
+    
+    $sql = "SELECT * FROM seeds WHERE " . search_query($q);
+    $sql .= " ORDER BY sid DESC LIMIT $start, $perpage";
+    
+    $seeds = array();
+    $result = mysql_query($sql);
+    while ($o = mysql_fetch_object($result)) {
+      $o->tags = get_tags($o->sid);
+      $seeds[] = $o;
+    }
+    
+    return $seeds;
+  }
+
+  function get_seeds_search_count($q) {
+    $q = mysql_real_escape_string($q);
+
+    $sql = "SELECT COUNT(sid) FROM seeds WHERE " . search_query($q);
+
+    $number = 0;
+    $result = mysql_query($sql);
+    if (mysql_num_rows($result) == 1) {
+      $row = mysql_fetch_row($result);
+      $number = $row[0];
+    }
+    
+    return $number;
+  }
+
   function get_submitters() {
     $people = array();
     $sql = "SELECT name, COUNT(*) AS number FROM seeds GROUP BY name ORDER BY number DESC LIMIT 8";
@@ -231,6 +264,12 @@
     
     return $people;
   }
+
+  // TODO: Unclear why East Asian Language check works...
+  function is_east_asian($string) {
+    return !preg_match("/^[\x2E80-\x9FFF]/i", $string);
+  }
+  
 
   function last_exported_seed() {
     $array = array();
@@ -248,5 +287,19 @@
     return $array;
   }
   
+
+  function search_query($q) {
+    $sql = "";
+    
+    if (is_east_asian($q)) {
+      $sql .= " title LIKE '%$q%' OR description LIKE '%$q%'";
+    } else {
+      $qs = str_replace(" ", " +", $q);
+      $qs = "+" . $qs;
+      $sql .= " MATCH (title, description) AGAINST ('$qs' IN BOOLEAN MODE)";
+    }
+  
+    return $sql;
+  }
 
 ?>

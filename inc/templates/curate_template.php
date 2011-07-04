@@ -1,5 +1,6 @@
 <?php
 
+$q = isset($_GET['q']) ? $_GET['q'] : false;
 
 $pagelink = $curate ? 'curate' : 'seeds';
 
@@ -35,7 +36,11 @@ if ($filtertag) {
   $conditions['tags'] = $filtertag;
 }
 
-$count = get_seed_number($conditions);
+if ($q) {
+  $count = get_seeds_search_count($q);
+} else {
+  $count = get_seed_number($conditions);
+}
 
 $counts = get_seed_numbers();  // primarily for verification filter only
 if ($count < $perpage * ($page - 1)) {
@@ -45,7 +50,13 @@ if ($count < $perpage * ($page - 1)) {
   header("Location: /$pagelink/?f=$filter&p=$newpage");
 }
 
-$seeds = get_seeds_paginated($conditions, $page);
+
+if ($q) {
+  $seeds = get_seeds_search($q, $page);
+} else {
+  $seeds = get_seeds_paginated($conditions, $page);
+}
+
 $firstseedbase = ($page - 1) * $perpage;
 $lastseed = $firstseedbase + count($seeds);
 
@@ -129,12 +140,14 @@ if ($curate) {
 
 <?php
   $url = '';
-  if ($filter && $filter != 'all') {
+  if ($filter && $filter != 'all' && $curate) {
     $url = "f=$filter";
   } else if ($submitter) {
     $url = "s=$submitter";
   } else if ($filtertag) {
     $url = "t=$filtertag";
+  } else if ($q) {
+    $url = "q=$q";
   }
   
   if ($firstseed > $perpage) {

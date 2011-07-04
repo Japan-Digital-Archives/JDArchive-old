@@ -80,6 +80,8 @@ class TestimonialController extends BaseController
 
     public function browseAction()
     {
+        $this->authenticate();
+
         $id = $this->getNextUriParam();
         $loader = new Jedarchive_Testimonial_Loader();
         

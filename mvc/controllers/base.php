@@ -130,4 +130,10 @@ class BaseController
         header('Location: ' . $path);
         exit();
     }
+
+    protected function authenticate()
+    {
+        $auth = new Jedarchive_Auth();
+        $auth->authenticate();
+    }
 }

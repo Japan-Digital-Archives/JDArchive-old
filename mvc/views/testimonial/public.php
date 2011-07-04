@@ -3,9 +3,8 @@
 <?
 $fields = array(
     'submitted' => $this->testimonial->getCreated().' ('.$this->testimonial->getClientIp().')',
-    'name' => $this->testimonial->getName(),
-    'name_public' => ($this->testimonial->getNamePublic() ? $this->t('show_name_yes') : $this->t('show_name_no')),
-    'email' => $this->testimonial->getEmail(),
+    'name' => ($this->testimonial->getNamePublic() ? $this->testimonial->getName() : $this->t('anonymous')),
+    //'email' => $this->testimonial->getEmail(),
     'city' => $this->testimonial->getCity(),
     'occupation' => $this->testimonial->getOccupation(),
     'year_of_birth' => $this->testimonial->getYearOfBirth(),

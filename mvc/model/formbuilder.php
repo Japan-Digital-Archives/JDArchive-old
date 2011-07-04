@@ -69,7 +69,7 @@ class Jedarchive_Formbuilder extends Jedarchive_Base
 
         $parts[] = '<tr' . (in_array($name, $this->_errorFields) ? ' class="error"' : '') . '><th><label for="' . $name . '">';
         $parts[] = $this->t($name);
-        if ($opts['required'] || (isset($this->_required[$name]) && $this->_required[$name])) {
+        if ((isset($opts['required']) && $opts['required']) || (isset($this->_required[$name]) && $this->_required[$name])) {
             $parts[]='<span class="required">*</span>';
         }
         $parts[] = '</label></th>';

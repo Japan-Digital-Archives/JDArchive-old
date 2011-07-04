@@ -49,7 +49,7 @@ class Jedarchive_Table extends Jedarchive_Base
     public function fetch($fields = '*', $where = null)
     {
         $qry[] = "SELECT";
-        if (is_array($field)) {
+        if (is_array($fields)) {
             $qry[] = implode(',', $fields);
         } else {
             $qry[] = $fields;

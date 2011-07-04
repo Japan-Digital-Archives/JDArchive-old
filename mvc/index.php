@@ -1,9 +1,12 @@
 <? 
 
+
 // Set the application path global
 
 defined('APPLICATION_PATH') 
 || define('APPLICATION_PATH', dirname(__FILE__));
+
+include APPLICATION_PATH . '/globals.php';
 
 // Determine environment
 
@@ -62,6 +65,7 @@ if (file_exists($controllerFile)) {
     $controller->setParams($_REQUEST);
     $controller->setPostParams($_POST);
     print $controller->renderAction($action);
+
 } else {
     header("HTTP/1.0 404 Not Found");
 }

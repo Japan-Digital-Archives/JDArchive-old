@@ -24,14 +24,12 @@ class TestimonialController extends BaseController
         }
 
         $tblTestimonial = new Jedarchive_Table('testimonial');
-        $tblLocation = new Jedarchive_Table('testimonial_location');
 
         $testimonial = $tblTestimonial->fetch('*', array('id' => $id));
         if (count($testimonial) == 0) {
             $this->redirect('/testimonial');
         }
         $testimonial = $testimonial[0];
-        $locations = $tblLocation->fetch('*', array('testimonial_id' => $id));
 
         $testimonial['tell_us_your_story'] = $testimonial['story'];
         $testimonial['name_public'] = $testimonial['name_public'] ? 'show' : 'hide';
@@ -41,18 +39,9 @@ class TestimonialController extends BaseController
             }
         }
 
-        $lats = array();
-        $lngs = array();
-        foreach($locations as $idx => $loc) {
-            $lats[$idx] = $loc['lat'];
-            $lngs[$idx] = $loc['lng'];
-        }
-
-        $this->jsVar('lat', $lats);
-        $this->jsVar('lng', $lngs);
-
         //echo '<pre>';print_r($testimonial);die();
 
+        $this->prefillLocationsFor($id);
         $this->view->form->setPrefill($testimonial);
         $this->view->deleteLink = '/testimonial/delete/' . $id . '/' . $crc;
 
@@ -89,6 +78,24 @@ class TestimonialController extends BaseController
         $locations = $tblLocation->delete(array('testimonial_id' => $id));
     }
 
+    public function browseAction()
+    {
+        $id = $this->getNextUriParam();
+        $loader = new Jedarchive_Testimonial_Loader();
+        
+        if ($id) {
+            $this->view->testimonial = $loader->load($id);
+            $this->prefillLocationsFor($id);
+            $this->jsVar('readonly', true);
+            if (is_null($this->view->testimonial)) {
+                $this->redirect('/testimonial/browse');
+            }
+        } else {
+            $this->view->setViewFile('testimonial/browse-overview.php');
+            $this->view->testimonials = $loader->loadAll();
+        }
+    }
+
     protected function handleSubmit()
     {
         if ($this->isPost()) {
@@ -97,6 +104,11 @@ class TestimonialController extends BaseController
 
             $this->jsVar('lat', $this->getParam('lat'));
             $this->jsVar('lng', $this->getParam('lng'));
+            $this->jsVar('location_name', $this->getParam('location_name'));
+
+            if (isset($params['passthru']) && $params['passthru']) {
+                return false;
+            }
 
             if ($this->view->form->validate($params)) {
                 $data = array();
@@ -121,7 +133,11 @@ class TestimonialController extends BaseController
                 
                 if (isset($params['lat'])) {
                     foreach ($params['lat'] as $idx => $lat) {
-                        $locations[] = array('lat' => $lat, 'lng' => $params['lng'][$idx]);
+                        $locations[] = array(
+                            'lat' => $lat,
+                            'lng' => $params['lng'][$idx],
+                            'name' => $params['location_name'][$idx]
+                        );
                     }
                 }
 
@@ -176,6 +192,7 @@ class TestimonialController extends BaseController
             array(
                 'tell_us_your_story' => true,
                 'terms' => true,
+                'email' => true,
             )
         );
 
@@ -186,5 +203,24 @@ class TestimonialController extends BaseController
     protected function id2hash($id)
     {
         return substr(md5("klfnwe0-23{$id}wfme"), 0, 8);
+    }
+
+    protected function prefillLocationsFor($id)
+    {
+        $tblLocation = new Jedarchive_Table('testimonial_location');
+        $locations = $tblLocation->fetch('*', array('testimonial_id' => $id));
+
+        $lats = array();
+        $lngs = array();
+        $names = array();
+        foreach($locations as $idx => $loc) {
+            $lats[$idx] = $loc['lat'];
+            $lngs[$idx] = $loc['lng'];
+            $names[$idx] = $loc['name'];
+        }
+
+        $this->jsVar('lat', $lats);
+        $this->jsVar('lng', $lngs);
+        $this->jsVar('location_name', $names);
     }
 }

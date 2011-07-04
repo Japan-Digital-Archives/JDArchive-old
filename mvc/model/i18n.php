@@ -53,10 +53,9 @@ class Jedarchive_I18n extends Jedarchive_Base
             if ($lang == $current) {
                 continue;
             }
-            $count++;
             $bar[] = "<a href='?la=$lang'>$text</a>";
         }
-        return '<div style="float:right;">' . implode('|', $bar) . '</div>';
+        return '<div class="languagebar" style="float:right;">' . implode('|', $bar) . '</div>';
     }
 
     public function getTranslation($key)

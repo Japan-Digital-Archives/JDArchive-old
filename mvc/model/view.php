@@ -8,15 +8,9 @@ class Jedarchive_View extends Jedarchive_Base
     /**
      *
      */
-    public function __construct($file)
+    public function __construct($file = null)
     {
-        if (file_exists($file)) {
-            $this->_file = $file;
-        } elseif (file_exists(APPLICATION_PATH . '/views/' . $file)) {
-            $this->_file = APPLICATION_PATH . '/views/' . $file;
-        } else {
-            throw new Exception("View not found " . $file);
-        }
+        $this->_file = $file;
     }
 
     /**
@@ -56,6 +50,13 @@ class Jedarchive_View extends Jedarchive_Base
 
     public function render()
     {
+        if (file_exists($this->_file)) {
+            
+        } elseif (file_exists(APPLICATION_PATH . '/views/' . $this->_file)) {
+            $this->_file = APPLICATION_PATH . '/views/' . $this->_file;
+        } else {
+            throw new Exception("View not found " . $this->_file);
+        }
         ob_start();
         include $this->_file;
         $renderedView = ob_get_contents();
@@ -67,6 +68,11 @@ class Jedarchive_View extends Jedarchive_Base
     public function setI18nSection($section)
     {
         $this->getI18n()->setSection($section);
+    }
+
+    public function setViewFile($file)
+    {
+        $this->_file = $file;
     }
 
     ////////////////////////////////////////////////

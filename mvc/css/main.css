@@ -542,8 +542,12 @@ p.status {
 }
 
 .panTo, .panTo:visited {
-    color: #00f;
     cursor: pointer;
+    font-size: 0.8em;
+}
+
+.location_name {
+    width: 230px;
 }
 
 a.remove, a.remove:visited {
@@ -574,4 +578,20 @@ tr.error .errormsg {
 
 textarea {
     width: 520px;
+}
+
+.delete_link {
+    float: right;
+    font-size: 1.3em;
+    padding: 0.2em;
+    border-bottom: 1px solid black;
+}
+
+.delete_link a {
+    display: block;
+    margin-top: -1.5em;
+}
+
+.delete_link img {
+    margin-left: -24px;
 }

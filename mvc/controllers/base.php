@@ -3,6 +3,7 @@
 class BaseController 
 {
     protected $_name = null;
+    protected $_action = null;
     protected $_params = null;
     protected $_uriParams = null;
     protected $_postParams = null;
@@ -22,6 +23,8 @@ class BaseController
         // Give it a translation object
         $i18n = new Jedarchive_I18n();
         $i18n->setSection($this->_name);
+        $this->view = new Jedarchive_View($this->_name.'/'.$this->_action.'.php');
+        $this->layout = new Jedarchive_View('layout.php');
         $this->view->setI18n($i18n);
         $this->layout->setI18n($i18n);
         $this->jsVar('i18n', $i18n->getSectionLang('javascript'));
@@ -98,13 +101,7 @@ class BaseController
      */
     public function renderAction($action) 
     {
-        // Create View object
-        $viewFile = APPLICATION_PATH . '/views/'.$this->_name.'/'.$action.'.php';
-        $layoutFile = APPLICATION_PATH . '/views/layout.php';
-
-        $this->view = new Jedarchive_View($viewFile);
-        $this->layout = new Jedarchive_View($layoutFile);
-
+        $this->_action = $action;
         $this->init();
 
         // Call the controller action, this populates the view and processes user input

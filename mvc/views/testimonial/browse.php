@@ -3,7 +3,7 @@
      <li><a href='<?= $this->editLink ?>'><?= $this->t('edit_delete_link') ?></a></li>
      <li><a href='<?= $this->publicLink ?>'><?= $this->t('public_link') ?></a></li>
 </ul>
-<table>
+<table class="seedform">
     <tr class='prev_next'>
         <th></th>
         <td>

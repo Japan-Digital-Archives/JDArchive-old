@@ -202,7 +202,7 @@ class TestimonialController extends BaseController
         $email2 = Jedarchive_Config::instance()->getSetting('email');
         $mail = new Jedarchive_Mail('testimonial');
 
-        $id = $this->getParam('id');
+        $id = $this->_testimonialId;
         $editUrl = Jedarchive_Config::instance()->getSetting('base_url').'/testimonial/edit/'.$id.'/'.$this->id2hash($id);
 
         $mail
@@ -215,6 +215,7 @@ class TestimonialController extends BaseController
         $mail
             ->setTo($email2)
             ->setFrom($email1)
+            ->setSubject('testimonial_subject_internal')
             ->send();
     }
     

@@ -52,6 +52,7 @@ JA_Marker.prototype.initialize = function(map, latlng)
     this.index = JA_Marker.count++;
     JA_Marker.all[this.index] = this;
     
+    new google.maps.Marker();
     this.setPosition(latlng);
     this.setDraggable(JA.readonly ? false : true);
     this.setIcon(new google.maps.MarkerImage(this.iconUrl()));

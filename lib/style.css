@@ -531,3 +531,44 @@ table.smallleft th {
 p.status {
   margin-bottom: 10px !important;
 }
+
+
+/* searchbox! */
+.searchbox {
+  padding: 3px;
+  font-size: 15px;
+  border: none;
+  width: 413px;
+}
+
+.searchbox:focus {
+  outline:none;
+}
+
+.searchdiv {
+  width: 450px;
+  border: 1px solid #ccc;
+  padding: 4px;
+  margin-bottom: 10px;
+  display:inline-block;
+}
+
+.searchsubmit {
+  background: url(images/submit.png) no-repeat left top;
+  border: none;
+  cursor: pointer;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+
+}
+
+.searchbigdiv {
+  vertical-align: top;
+}
+
+.droplang {
+  margin-left: 10px;
+}

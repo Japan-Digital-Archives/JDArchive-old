@@ -21,6 +21,10 @@
 <!-- required for TextboxList.Autocomplete if method set to 'binary' --> 
 <script src="/lib/TextboxList/TextboxList.Autocomplete.Binary.js" type="text/javascript" charset="utf-8"></script>
 
+<script src="/lib/search.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lib/jquery.watermark.min.js" type="text/javascript" charset="utf-8"></script>
+
+
 <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
 <script type="text/javascript">

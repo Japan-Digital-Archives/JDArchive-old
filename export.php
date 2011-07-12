@@ -4,7 +4,7 @@ require_once(dirname(__FILE__). '/inc/common.php');
 
 
 
-if (!isset($_GET['start']) && !isset($_GET['end'])) {
+if (!isset($_GET['start']) && !isset($_GET['end'] )) {
   die();
 }
 

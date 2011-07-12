@@ -9,6 +9,7 @@ $page = isset($_GET['p']) ? intval($_GET['p']) : 1;
 $filter = isset($_GET['f']) ? $_GET['f'] : 'all';
 $submitter = isset($_GET['s']) ? $_GET['s'] : '';
 $filtertag = isset($_GET['t']) ? $_GET['t'] : '';
+$filterlang = isset($_GET['l']) ? $_GET['l'] : '';
 
 $people = get_submitters();
 
@@ -35,9 +36,18 @@ if ($filter != 'all') {
 if ($filtertag) {
   $conditions['tags'] = $filtertag;
 }
+if ($filterlang) {
+  $conditions['language'] = $filterlang;
+}
 
 if ($q) {
-  $count = get_seeds_search_count($q);
+  if (strpos($q, "tag:") === 0) {
+    $tag = substr($q, 4);
+    header("Location: /$pagelink/?t=$tag");
+  } else {
+    $count = get_seeds_search_count($q, $filterlang);
+    $searchterm = str_replace('*', '', $q);
+  }
 } else {
   $count = get_seed_number($conditions);
 }
@@ -52,7 +62,7 @@ if ($count < $perpage * ($page - 1)) {
 
 
 if ($q) {
-  $seeds = get_seeds_search($q, $page);
+  $seeds = get_seeds_search($q, $page, $filterlang);
 } else {
   $seeds = get_seeds_paginated($conditions, $page);
 }
@@ -72,6 +82,14 @@ if ($curate) {
 }
 
 ?>
+
+<?php if ($q && $count): ?>
+<script type="text/javascript">
+$(function(){
+  highlightSearchTerms('<?php echo urldecode($searchterm); ?>');
+});
+</script>
+<?php endif ?>
 
 <?php if ($curate): ?>
 <div id="cmenu">
@@ -102,7 +120,7 @@ if ($curate) {
 
 <div id="export">
 
-<p><a id="exportlink" href="export.php" onclick="return export();">Export verified seeds &raquo;</a></p>
+<p><a id="exportlink" href="export.php" onclick="return export_seeds();">Export verified seeds &raquo;</a></p>
 
 
 <table class="smallleft">
@@ -130,12 +148,37 @@ if ($curate) {
 
 <?php if ($curate): ?>
 <div id="seeds">
-<?php elseif (!$curate && $filtertag): ?>
+<?php elseif (!$curate && ($filtertag || $q)): ?>
 <p style="margin-bottom:0;"><a href="/seeds/">&laquo; Back to all seeds</a></p>
-<?php else: ?>
-<p data="KONRADPUTSTUFFHERE"></p>
+<?php /*else: 
+<p data="KONRADPUTSTUFFHERE"></p> */ ?>
 <?php endif ?>
 
+<?php if (!$curate): ?>
+<div class="searchbigdiv">
+<form method="get" action="/seeds/">
+<div class="searchdiv">
+<input class="searchbox" name="q" value="<?php 
+  if ($filtertag) {
+    echo "tag:$filtertag";
+  } else {
+    echo $q;
+  }
+ ?>" id="q" type="text" autocomplete=off />
+<input class="searchsubmit" id="searchsubmitbut" tabindex="0" title="Search" type="submit" value="">
+</div>
+
+<select name="l" class="droplang">
+  <option value="">Search all languages</option>
+  <option value="chinese" <?php if ($filterlang == 'chinese') echo "selected"; ?>>Chinese only</option>
+  <option value="english" <?php if ($filterlang == 'english') echo "selected"; ?>>English only</option>
+  <option value="japanese" <?php if ($filterlang == 'japanese') echo "selected"; ?>>Japanese only</option>
+  <option value="korean" <?php if ($filterlang == 'korean') echo "selected"; ?>>Korean only</option>
+</select>
+</form>
+</div>
+
+<?php endif ?>
 <div id="paginationtop" class="pagination">
 
 <?php
@@ -148,6 +191,12 @@ if ($curate) {
     $url = "t=$filtertag";
   } else if ($q) {
     $url = "q=$q";
+  }
+  
+  // the only filter that can be applied with another...
+  if ($filterlang) {
+    $url .= $url ? "&" : "";
+    $url .= "l=$filterlang";
   }
   
   if ($firstseed > $perpage) {

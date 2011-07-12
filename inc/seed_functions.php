@@ -221,12 +221,13 @@
     return $seeds;
   }
   
-  function get_seeds_search($q, $page, $perpage = 30) {
+  function get_seeds_search($q, $page, $language = '', $perpage = 30) {
     $q = mysql_real_escape_string($q);
     $page = mysql_real_escape_string($page);
+
     $start = $perpage * ($page - 1);
     
-    $sql = "SELECT * FROM seeds WHERE " . search_query($q);
+    $sql = "SELECT * FROM seeds WHERE verified = 1 AND " . search_query($q, $language);
     $sql .= " ORDER BY sid DESC LIMIT $start, $perpage";
     
     $seeds = array();
@@ -239,10 +240,10 @@
     return $seeds;
   }
 
-  function get_seeds_search_count($q) {
+  function get_seeds_search_count($q, $language = '') {
     $q = mysql_real_escape_string($q);
 
-    $sql = "SELECT COUNT(sid) FROM seeds WHERE " . search_query($q);
+    $sql = "SELECT COUNT(sid) FROM seeds WHERE verified = 1 AND " . search_query($q, $language);
 
     $number = 0;
     $result = mysql_query($sql);
@@ -288,16 +289,23 @@
   }
   
 
-  function search_query($q) {
+  function search_query($q, $language) {
     $sql = "";
-    
+    $language = mysql_real_escape_string($language);
+
+    if ($language) {
+      $sql .= " language = '$language' AND";
+    }
+      
     if (is_east_asian($q)) {
-      $sql .= " title LIKE '%$q%' OR description LIKE '%$q%'";
+      $sql .= " (title LIKE '%$q%' OR description LIKE '%$q%' OR tags LIKE '%$q%')";
     } else {
       $qs = str_replace(" ", " +", $q);
       $qs = "+" . $qs;
-      $sql .= " MATCH (title, description) AGAINST ('$qs' IN BOOLEAN MODE)";
+      $sql .= " (MATCH (title, description, tags) AGAINST ('$qs' IN BOOLEAN MODE))";
     }
+    
+
   
     return $sql;
   }

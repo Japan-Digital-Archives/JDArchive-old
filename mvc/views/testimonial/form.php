@@ -26,5 +26,6 @@
     <?= $this->partial('partial/multilocation.php') ?>
     <?= $this->form->checkbox('terms', array('note' => 'accept_terms', 'label' => 'i_accept')) ?>
     <?= $this->form->submit() ?>
+    <input type="hidden" name="la" value="<?= $this->getI18n()->getCurrent() ?>" />
   </table>
 </form>

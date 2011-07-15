@@ -256,7 +256,7 @@ $(document).ready(function() {
         e.preventDefault();
     })
 
-    $('.languagebar a').click(function(e) {
+    $('.testimonial-form .languagebar a').click(function(e) {
         $('#testimonial-form')
             .attr('action', $(this).attr('href'))
             .append('<input type="hidden" name="passthru" value="1" />');

@@ -60,7 +60,7 @@ class TestimonialController extends BaseController
             $this->redirect('/');
         }
 
-        $this->view->editLink = '/testimonial/edit/' . $id . '/' . $crc;
+        $this->view->editLink = '/testimonial/edit/' . $id . '/' . $crc . '?la=' . $this->getParam('la');
     }
 
     public function deleteAction()
@@ -203,7 +203,7 @@ class TestimonialController extends BaseController
         $mail = new Jedarchive_Mail('testimonial');
 
         $id = $this->_testimonialId;
-        $editUrl = Jedarchive_Config::instance()->getSetting('base_url').'/testimonial/edit/'.$id.'/'.$this->id2hash($id);
+        $editUrl = Jedarchive_Config::instance()->getSetting('base_url').'/testimonial/edit/'.$id.'/'.$this->id2hash($id).'?la='.$this->view->getI18n()->getCurrent();
 
         $mail
             ->setTo($email1)

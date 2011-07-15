@@ -1,8 +1,6 @@
+<div id="content">
+     <?= $this->getI18n()->getLanguageBar() ?>
 <h2><?= $this->t('browse_title') ?> #<?= $this->testimonial->getId() ?></h2>
-<ul class='action_links'>
-     <li><a href='<?= $this->editLink ?>'><?= $this->t('edit_delete_link') ?></a></li>
-     <li><a href='<?= $this->publicLink ?>'><?= $this->t('public_link') ?></a></li>
-</ul>
 <table class="seedform">
     <tr class='prev_next'>
         <th></th>
@@ -65,4 +63,11 @@ foreach ($fields as $key => $content) { ?>
     </tr>
 
 </table>
-
+</div>
+<div id="sidebar">
+                <ul class='action_links'>
+                <li><a href='<?= $this->editLink ?>'><?= $this->t('edit_delete_link') ?></a></li>
+                <li><a href='<?= $this->publicLink ?>'><?= $this->t('public_link') ?></a></li>
+                </ul>
+</div>
+<div style="clear: both;">&nbsp;</div>

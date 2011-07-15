@@ -1,3 +1,6 @@
+<div id="content">
+     <?= $this->getI18n()->getLanguageBar() ?>
+
 <h2><?= $this->t('public_title') ?> #<?= $this->testimonial->getId() ?></h2>
 <table class="seedform">
 <?
@@ -30,4 +33,7 @@ foreach ($fields as $key => $content) { ?>
 <?= $this->partial('partial/multilocation.php', array('readonly' => true)) ?>
 
 </table>
-
+</div>
+<div id="sidebar">
+</div>
+<div style="clear: both;">&nbsp;</div>

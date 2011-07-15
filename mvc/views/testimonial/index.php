@@ -1,4 +1,4 @@
-<div id="content">
+<div id="content" class="testimonial-form">
      <?= $this->getI18n()->getLanguageBar() ?>
      <h2><?= $this->t('title') ?></h2>
      <? include 'views/testimonial/form.php' ?>

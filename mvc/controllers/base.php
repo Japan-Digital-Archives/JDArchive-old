@@ -127,6 +127,9 @@ class BaseController
 
     public function redirect($path)
     {
+        if ($this->view->getI18n()->getCurrent() != $this->view->getI18n()->getDefault()) {
+            $path.='?la='.$this->view->getI18n()->getCurrent();
+        }
         header('Location: ' . $path);
         exit();
     }

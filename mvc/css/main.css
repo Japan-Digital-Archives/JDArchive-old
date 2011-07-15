@@ -99,13 +99,13 @@ img.right {
 
 #menu {
   float: right;
-  width: 420px;
+  width: 520px;
 }
 
 #menu ul {
   float: right;
   margin: 0;
-  padding: 50px 0px 0px 0px;
+  padding: 55px 10px 0px 0px;
   list-style: none;
   line-height: normal;
 }
@@ -119,7 +119,7 @@ img.right {
 #menu a {
   display: block;
   float: left;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 10px 0px 10px;
   text-decoration: none;
   text-align: center;
   font-size: 12px;

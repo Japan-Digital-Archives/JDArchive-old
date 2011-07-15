@@ -37,9 +37,11 @@
       <!-- end #logo -->
       <div id="menu">
         <ul>
-          <li><a href="/" class="first" data-jp="当企画について" data-ko="소개 ">About</a></li>
+          <li><a href="/" class="first" data-zh="联系我们" data-jp="当企画について" data-ko="소개 ">About</a></li>
           <li class="current_page_item"><a href="/contribute/" data-jp="投稿方法" data-ko="제출">Contribute</a></li>
-          <li class="last"><a href="/contact/" data-jp="お問い合わせ" data-ko="운영자에게">Contact</a></li>
+          <li class="current_page_item"><a href="/testimonial/" data-jp="わたしの「東日本大震災」">Testimonial</a></li>
+          <li class="current_page_item"><a href="/news/" data-jp="News">News</a></li>
+          <li class="last"><a href="/contact/" data-zh="联系我们" data-jp="お問い合わせ" data-ko="운영자에게">Contact</a></li>
         </ul>
       </div>
     </div>

@@ -9,7 +9,7 @@ start();
 
 <div>
 <?php language_bar($language, array('en', 'ja', 'zh', 'ko')); ?>
-<div><h2 data-jp="当企画について" data-ko="프로젝트 소개">About Us</h2></div>
+<div><h2 data-jp="当企画について" data-zh="关于我们" data-ko="프로젝트 소개">About Us</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>

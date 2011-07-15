@@ -28,6 +28,7 @@
             <ul>
               <li><a href="<?= $this->url('/') ?>" class="first"><?= $this->t('about') ?></a></li>
               <li class="current_page_item"><a href="<?= $this->url('/contribute/') ?>"><?= $this->t('contribute') ?></a></li>
+              <li class="current_page_item"><a href="<?= $this->url('/news/') ?>"><?= $this->t('news') ?></a></li>
               <li class="last"><a href="<?= $this->url('/contact/') ?>"><?= $this->t('contact') ?></a></li>
             </ul>
           </div>

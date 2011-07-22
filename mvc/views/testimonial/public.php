@@ -11,7 +11,7 @@ $fields = array(
     'city' => $this->testimonial->getCity(),
     'occupation' => $this->testimonial->getOccupation(),
     'year_of_birth' => $this->testimonial->getYearOfBirth(),
-    'tell_us_your_story' => $this->testimonial->getStory(),
+    'tell_us_your_story' => nl2br($this->testimonial->getStory()),
     'from' => sprintf('%s-%s-%s ' . $this->t('hour') . ': %s', 
                       $this->testimonial->getFromYear()  ? $this->testimonial->getFromYear()  : '&nbsp;',
                       $this->testimonial->getFromMonth() ? $this->testimonial->getFromMonth() : '&nbsp;',

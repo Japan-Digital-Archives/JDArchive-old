@@ -19,7 +19,17 @@ h2 {
   font-size: 18px;
   margin-bottom: 10px;
 }
-h3 { }
+h3 {
+}
+h4 { 
+  border-bottom-style: solid; 
+  border-bottom-color: #999999;
+  font-size: 16px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  font-style: italic;
+  border-bottom-width: thin;
+}
 
 p, ul, ol {
   margin-top: 0;
@@ -170,6 +180,11 @@ img.right {
   width: 630px;
 }
 
+#contentwide {
+  float: left;
+  width: 910px;
+}
+
 /* Sidebar */
 
 #sidebar {
@@ -251,7 +266,7 @@ img.right {
   text-align: right;
   line-height: normal;
   font-size: 10px;
-  color: #FFFFFF;
+  color: white;
 }
 
 #footer a {
@@ -496,6 +511,10 @@ span.smallspan {
   margin-right:5px;
   border-bottom: 1px dotted red;
   white-space: nowrap;
+}
+
+.inlist li {
+  margin-bottom:5px;
 }
 
 .tagcloud a:hover {

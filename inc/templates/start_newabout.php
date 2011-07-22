@@ -105,4 +105,4 @@ $(function(){
     <!-- end #header -->
     <!-- end #header-wrapper -->
     <div id="page">
-      <div id="content">
+      <div id="contentwide">

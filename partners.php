@@ -4,7 +4,7 @@ require_once(dirname(__FILE__). '/inc/common.php');
 
 $language = language();
 
-start();
+start('_newabout');
 
 ?>
 
@@ -37,8 +37,16 @@ start();
 
 デジタル情報については、ウェブサイトや、電子化された所蔵資料等を広く収集・蓄積しています。このうち、ウェブサイトについては、2002年に発信者との許諾に基づく収集を開始し、2010年4月からは国立国会図書館法に基づき、公的機関の発信するものを網羅的に収集しています。東日本大震災に関連するウェブサイトについても、被災地の地方自治体等を中心に収集しています。
 </p>
-<h3><strong>The Library of Congress</strong></h3>
+<h3><strong>アメリカ議会図書館</strong></h3>
 <br />
+<p>
+<a href="http://www.loc.gov"><img style="padding-left: 5px;" alt="Library of Congress" src="/lib/images/loc-logo.jpg"></a>
+</p>
+<br />
+<p>
+アメリカ議会図書館は連邦政府に属する国内で最も古い文化機関であり、世界で最も秀でた知の宝庫として、比類ない包括的資料を議会や国民に提供しています。当館は1800年に創設され、壮大なコレクションを通じた知へのアクセスを供することで、人類の悟性や叡智のあくなき探求を続けてきました。このコレクションが有するようになった世界に関する知識は、あるものは世界中のほぼすべての言語により書かれており、あるものはアメリカの民間有識者の手によっていて、そしてまたあるものはほとんどあらゆる形式の文化的創作物を通じて得られるものです。私たちは様々なプログラムや企画展を機に、人々の想像力を刺激し、人類がこれまでに成し遂げてきたことを祝福したいと願っています。そうすることで当館は、情報を手にした当事者意識の高い市民を育むことができますし、その上にこそ我が民主主義は成り立っているのです。今日、当館は一般の方、研究者、連邦議会議員、そしてそのスタッフのすべてに仕えており、これらのすべての人たちは情報や了知やインスピレーションを求めてる人々です。私たちが所蔵する豊かな情報資源や貴重な資料の多くは、受賞歴のある議会ウェブサイト www.loc.gov.からアクセスすることも可能です。<br />
+
+</p>
 <h3><strong>ハーバード大学メタ・ラボ</strong></h3>
 <br />
 <p>
@@ -76,12 +84,18 @@ start();
 <p>
 <a href="http://www.ndl.go.jp/en/index.html"><img style="padding-left: 5px;" alt="National Diet Library" src="/lib/images/ndl-logo.gif"></a>
 </p>
-<br />
-<p style="line-height: 170%;">The National Diet Library (NDL) was established in 1948 as the only national library in Japan. Under a system of comprehensive submission of works published within Japan, the library's collected materials are preserved for the long-term as a national cultural heritage. The NDL uses its collections to offer its service to the National Diet, the judiciary, administrative agencies, and the Japanese people.
+<p style="line-height: 170%;">The National Diet Library (NDL) was established in 1948 as the only national library in Japan. Under a system of comprehensive submission of works published within Japan, the library's collected materials are preserved for the long-term as a national cultural heritage. The NDL uses its collections to offer its service to the National Diet, the judiciary, administrative agencies, and the Japanese people.</p>
 
-The NDL also collects and archives a wide array of websites and other digital materials. In 2002, the NDL began harvesting selected websites with the permission of website owners.  Following an amendment to the NDL Law, the NDL began harvesting all government websites in April 2010, including the websites of local governments affected by the disasters in Eastern Japan.
+<p style="line-height: 170%;">The NDL also collects and archives a wide array of websites and other digital materials. In 2002, the NDL began harvesting selected websites with the permission of website owners.  Following an amendment to the NDL Law, the NDL began harvesting all government websites in April 2010, including the websites of local governments affected by the disasters in Eastern Japan.
 </p>
+
 <h3><strong>The Library of Congress</strong></h3>
+<br />
+<p>
+<a href="http://www.loc.gov"><img style="padding-left: 5px;" alt="Library of Congress" src="/lib/images/loc-logo.jpg"></a>
+</p>
+<br />
+<p style="line-height:170%;">The Library of Congress, the nation's oldest federal cultural institution, is the world's preeminent reservoir of knowledge, providing unparalleled integrated resources to Congress and the American people. Founded in 1800, the Library seeks to further human understanding and wisdom by providing access to knowledge through its magnificent collections, which bring to bear the world's knowledge in almost all of the world's languages and America's private sector intellectual and cultural creativity in almost all formats. The Library seeks to spark the public's imagination and celebrate human achievement through its programs and exhibits. In doing so, the Library helps foster the informed and involved citizenry upon which American democracy depends. Today, the Library serves the public, scholars, Members of Congress and their staff-all of whom seek information, understanding and inspiration. Many of the Library's rich resources and treasures may also be accessed through the Library's award-winning Web site <a href="http://www.loc.gov/">www.loc.gov</a>.</p>
 <br />
 <h3><strong>metaLAB (at) Harvard</strong></h3>
 <br />

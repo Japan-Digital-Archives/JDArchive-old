@@ -16,6 +16,8 @@ if ($_SERVER['HTTP_HOST'] == 'jdarchive.org'
     || $_SERVER['HTTP_HOST'] == 'www.jedarchive.org') 
 {
     define('APPLICATION_ENV', 'production');
+} elseif($_SERVER['HTTP_HOST'] == 'beta.jdarchive.org') {
+    define('APPLICATION_ENV', 'testing');
 } else {
     define('APPLICATION_ENV', 'development');
 }

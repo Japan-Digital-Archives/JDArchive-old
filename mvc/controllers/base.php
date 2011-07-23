@@ -109,18 +109,21 @@ class BaseController
         $this->{$actionMethod}();
 
         // Now render the view
-        $renderedAction = $this->view->render();
+        if ($this->view) {
+            $renderedAction = $this->view->render();
 
-        // Now render the layout
-        $this->layout->getI18n()->setSection('layout');
-        $this->layout->bodyId = $this->_name . '_' . $action;
-        $this->layout->bodyClass = $this->_name . ' ' .  $action;
-        $this->layout->contents = $renderedAction;
-
-        $this->layout->javascriptVariables = $this->_jsVars;
-        //echo(json_encode($this->layout->javascriptVariables));die();
-
-        return $this->layout->render();
+            // Now render the layout
+            $this->layout->getI18n()->setSection('layout');
+            $this->layout->bodyId = $this->_name . '_' . $action;
+            $this->layout->bodyClass = $this->_name . ' ' .  $action;
+            $this->layout->contents = $renderedAction;
+            
+            $this->layout->javascriptVariables = $this->_jsVars;
+            //echo(json_encode($this->layout->javascriptVariables));die();
+            
+            return $this->layout->render();
+        }
+        return '';
     }
 
     // view helpers

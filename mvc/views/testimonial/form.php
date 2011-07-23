@@ -25,6 +25,7 @@
     <?= $this->form->time('to', array('hint' => 'period_hint')) ?>
     <?= $this->partial('partial/multilocation.php') ?>
     <?= $this->form->checkbox('terms', array('note' => 'accept_terms', 'label' => 'i_accept')) ?>
+     <?= $this->partial('partial/image-upload.php') ?>
     <?= $this->form->submit() ?>
     <input type="hidden" name="la" value="<?= $this->getI18n()->getCurrent() ?>" />
   </table>

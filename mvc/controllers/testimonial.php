@@ -258,4 +258,19 @@ class TestimonialController extends BaseController
         $this->jsVar('lng', $lngs);
         $this->jsVar('location_name', $names);
     }
+
+    public function uploadImageAction()
+    {
+        // don't render a view
+        $this->view = null;
+
+        $allowedExtensions = array('jpg','jpeg','png',);
+        // max file size in bytes
+        $sizeLimit = 4 * 1024 * 1024;
+        
+        $uploader = new Jedarchive_FileUploader($allowedExtensions, $sizeLimit);
+        $result = $uploader->handleUpload(APPLICATION_PATH.'/uploads/');
+        // to pass data through iframe you will need to encode all html tags
+        echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+    }
 }

@@ -25,7 +25,7 @@ if ($_SERVER['HTTP_HOST'] == 'jdarchive.org'
 // Install autoloader
 
 function __autoload($clz) {
-    if (strpos($clz, 'Jedarchive_') == 0) {
+    if (strpos($clz, 'Jedarchive_') === 0) {
         require APPLICATION_PATH . '/model/' . strtolower(substr($clz, 11)) . '.php';
     }
 }

@@ -3,7 +3,7 @@ Options +FollowSymlinks
 <FilesMatch "^(internal|quicksearch|edit_tag|edit|curate).php$">
 AuthName "Staff Access Only:"
 AuthType Basic
-AuthUserFile /usr/www/users/jedarchi/.htpasswd
+AuthUserFile /usr/www/users/jedarchi/production/.htpasswd
 Require valid-user
 </FilesMatch>
 

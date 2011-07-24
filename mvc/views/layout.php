@@ -16,12 +16,13 @@
 
     <script src="/mvc/js/maps.js" type="text/javascript"></script>
     <script src="/mvc/js/fileuploader.js" type="text/javascript"></script>
+    <script src="/mvc/js/ja-fileuploader.js" type="text/javascript"></script>
     <script src="/mvc/js/main.js" type="text/javascript"></script>
 
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" 
      rel="stylesheet" type="text/css" media="screen" />    
     <link href="/mvc/css/main.css" rel="stylesheet" type="text/css" media="screen" />    
-    <link href="/mvc/css/fileuploader.css" rel="stylesheet" type="text/css" media="screen" />    
+    <link href="/mvc/css/fileuploader.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body id="<?= $this->bodyId ?>" class="<?= $this->bodyClass ?>">
     <div id="wrapper">

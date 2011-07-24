@@ -2,6 +2,9 @@
 
 class BaseController 
 {
+    protected $view = null;
+    protected $layout = null;
+    
     protected $_name = null;
     protected $_action = null;
     protected $_params = null;
@@ -9,6 +12,7 @@ class BaseController
     protected $_postParams = null;
     protected $_language = null;
     protected $_jsVars = array();
+    protected $_config = null;
 
     /**
      *
@@ -28,6 +32,7 @@ class BaseController
         $this->view->setI18n($i18n);
         $this->layout->setI18n($i18n);
         $this->jsVar('i18n', $i18n->getSectionLang('javascript'));
+        $this->_config = Jedarchive_Config::instance();
     }
 
     /**

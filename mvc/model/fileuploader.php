@@ -14,7 +14,7 @@ echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
 
 /**
  * This is based on https://github.com/valums/file-uploader.git. It is licensed as LGPL so we can use
- * it freely. Improvements to this code should be shared with the original author.
+ * it freely.
  */
 class Jedarchive_FileUploader {
     private $allowedExtensions = array();
@@ -82,11 +82,13 @@ class Jedarchive_FileUploader {
         }
         
         $pathinfo = pathinfo($this->file->getName());
-        $filename = $pathinfo['filename'];
-        //$filename = md5(uniqid());
-        $ext = $pathinfo['extension'];
+        //$filename = $this->findNextFileName($ext);
+        $filename = md5(uniqid());
+        $ext = strtolower($pathinfo['extension']);
 
-        if($this->allowedExtensions && !in_array(strtolower($ext), $this->allowedExtensions)){
+        if ($ext == 'jpeg') $ext = 'jpg';
+
+        if($this->allowedExtensions && !in_array($ext, $this->allowedExtensions)){
             $these = implode(', ', $this->allowedExtensions);
             return array('error' => 'File has an invalid extension, it should be one of '. $these . '.');
         }
@@ -99,7 +101,7 @@ class Jedarchive_FileUploader {
         }
         
         if ($this->file->save($uploadDirectory . $filename . '.' . $ext)){
-            return array('success'=>true);
+            return array('success'=>true, 'name' => $filename, 'ext' => $ext);
         } else {
             return array('error'=> 'Could not save uploaded file.' .
                 'The upload was cancelled, or server error encountered');

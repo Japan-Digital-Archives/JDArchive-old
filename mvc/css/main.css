@@ -573,6 +573,10 @@ tr.error .errormsg {
     width: 160px;
 }
 
+.testimonial form td {
+    width: 400px;
+}
+
 textarea {
     width: 520px;
 }
@@ -598,3 +602,4 @@ textarea {
     font-size: 1.3em;
     margin-bottom: 1em;
 }
+

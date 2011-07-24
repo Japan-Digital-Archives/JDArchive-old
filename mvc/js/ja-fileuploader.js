@@ -13,25 +13,29 @@ JA.FileUploader = function(o){
         listElement: null,
                 
         template: '<div class="qq-uploader">' + 
-                '<div class="qq-upload-drop-area"><span>Drop files here to upload</span></div>' +
-                '<div class="qq-upload-button">Upload a file</div>' +
+                //'<div class="qq-upload-drop-area"><span>Drop files here to upload</span></div>' +
                 '<ul class="qq-upload-list"></ul>' + 
+                '<div class="qq-upload-button">' + JA.t('add_image_button') + '</div>' +
              '</div>',
 
         // template for one item in file list
-        fileTemplate: '<li>' +
+        fileTemplate: '<li><div class="qq-upload-wrapper">' +
+                '<div class="qq-upload-thumb"></div>' +
+                '<div class="qq-upload-list-item">' +
                 '<span class="qq-upload-file"></span>' +
                 '<span class="qq-upload-spinner"></span>' +
                 '<span class="qq-upload-size"></span>' +
-                '<a class="qq-upload-cancel" href="#">Cancel</a>' +
-                '<span class="qq-upload-failed-text">Failed</span>' +
+                '<a class="qq-upload-cancel" href="#">' + JA.t('button_cancel') + '</a>' +
+                '<span class="qq-upload-failed-text">' + JA.t('upload_failed') + '</span>' +
+                '</div><div class="clear"></div></div>' + 
             '</li>',        
         
         classes: {
             // used to get elements from templates
+            thumb: 'qq-upload-thumb',
             button: 'qq-upload-button',
-            drop: 'qq-upload-drop-area',
-            dropActive: 'qq-upload-drop-area-active',
+            //drop: 'qq-upload-drop-area',
+            //dropActive: 'qq-upload-drop-area-active',
             list: 'qq-upload-list',
                         
             file: 'qq-upload-file',
@@ -57,7 +61,7 @@ JA.FileUploader = function(o){
     this._button = this._createUploadButton(this._find(this._element, 'button'));        
     
     this._bindCancelEvent();
-    this._setupDragDrop();
+    //this._setupDragDrop();
 };
 
 // inherit from Basic Uploader
@@ -75,7 +79,7 @@ $.extend(JA.FileUploader.prototype, {
         
         return element;
     },
-    _setupDragDrop: function(){
+    /*_setupDragDrop: function(){
         var self = this,
             dropArea = this._find(this._element, 'drop');                        
 
@@ -114,7 +118,7 @@ $.extend(JA.FileUploader.prototype, {
                 dropArea.style.display = 'none';                                            
             }
         });                
-    },
+    },*/
     _onSubmit: function(id, fileName){
         qq.FileUploaderBasic.prototype._onSubmit.apply(this, arguments);
         this._addToList(id, fileName);  
@@ -144,7 +148,10 @@ $.extend(JA.FileUploader.prototype, {
         qq.remove(this._find(item, 'spinner'));
         
         if (result.success){
-            qq.addClass(item, this._classes.success);    
+            qq.addClass(item, this._classes.success);
+            $(this._find(item, 'thumb'))
+                .html('<img src="' + result['thumb'] + '"/>')
+                .css({border: '0px', "background-color" : '#fff', height: 'inherit'});
         } else {
             qq.addClass(item, this._classes.fail);
         }         
@@ -154,7 +161,7 @@ $.extend(JA.FileUploader.prototype, {
         item.qqFileId = id;
 
         var fileElement = this._find(item, 'file');        
-        qq.setText(fileElement, this._formatFileName(fileName));
+        $(fileElement).html(this._formatFileName(fileName));
         this._find(item, 'size').style.display = 'none';        
 
         this._listElement.appendChild(item);
@@ -188,5 +195,109 @@ $.extend(JA.FileUploader.prototype, {
                 qq.remove(item);
             }
         });
-    }    
+    },
+    _formatFileName: function(name) {
+        name =  (-1 !== name.indexOf('.')) ? name.replace(/\.[^\.]*/, '') : name;
+        return '<input type="text" value="' + name + '" />';
+    }
 });
+
+
+JA.UploadButton = function(o){
+    this._options = {
+        element: null,  
+        // if set to true adds multiple attribute to file input      
+        multiple: false,
+        // name attribute of file input
+        name: 'file',
+        onChange: function(input){},
+        hoverClass: 'qq-upload-button-hover',
+        focusClass: 'qq-upload-button-focus'                       
+    };
+    
+    $.extend(this._options, o);
+        
+    this._element = this._options.element;
+    
+    // make button suitable container for input
+    $(this._element).css({
+        position: 'relative',
+        overflow: 'hidden',
+        // Make sure browse button is in the right side
+        // in Internet Explorer
+        direction: 'ltr'
+    });   
+    
+    this._input = this._createInput();
+};
+
+JA.UploadButton.prototype = {
+    /* returns file input element */    
+    getInput: function(){
+        return this._input;
+    },
+    /* cleans/recreates the file input */
+    reset: function(){
+        /*if (this._input.parentNode){
+            qq.remove(this._input);    
+        }                
+        
+        qq.removeClass(this._element, this._options.focusClass);
+        this._input = this._createInput();*/
+    },    
+    _createInput: function(){                
+        var input = document.createElement("input");
+        
+        if (this._options.multiple){
+            input.setAttribute("multiple", "multiple");
+        }
+                
+        input.setAttribute("type", "file");
+        input.setAttribute("name", this._options.name);
+        
+        $(input).css({
+            position: 'absolute',
+            // in Opera only 'browse' button
+            // is clickable and it is located at
+            // the right side of the input
+            width: '200px',
+            height: '30px',
+            fontFamily: 'Arial',
+            // 4 persons reported this, the max values that worked for them were 243, 236, 236, 118
+            "margin-left": '-100px',            
+            "margin-top": '-10px',
+            padding: 0,
+            cursor: 'pointer',
+            opacity: 0
+        });
+        
+        this._element.appendChild(input);
+
+        var self = this;
+        qq.attach(input, 'change', function(){
+            self._options.onChange(input);
+        });
+                
+        qq.attach(input, 'mouseover', function(){
+            qq.addClass(self._element, self._options.hoverClass);
+        });
+        qq.attach(input, 'mouseout', function(){
+            qq.removeClass(self._element, self._options.hoverClass);
+        });
+        qq.attach(input, 'focus', function(){
+            qq.addClass(self._element, self._options.focusClass);
+        });
+        qq.attach(input, 'blur', function(){
+            qq.removeClass(self._element, self._options.focusClass);
+        });
+
+        // IE and Opera, unfortunately have 2 tab stops on file input
+        // which is unacceptable in our case, disable keyboard access
+        if (window.attachEvent){
+            // it is IE or Opera
+            input.setAttribute('tabIndex', "-1");
+        }
+
+        return input;            
+    }        
+};

@@ -73,15 +73,13 @@ $(document).ready(function() {
     ////////////////////////////////////////////////////////////////////////////////
     // Initialize image uploader
 
-    var el = document.getElementById('file-uploader');
-
-    var uploader = new qq.FileUploader({
+    var uploader = new JA.FileUploader({
         element: document.getElementById('file-uploader'),
         action: '/testimonial/uploadImage',
+        allowedExtensions: JA.imageUpload.allowedExtensions,
+        sizeLimit: JA.imageUpload.sizeLimit,
         debug: true
     });
-
-    var el2 = document.getElementById('file-uploader');
 
 });
 

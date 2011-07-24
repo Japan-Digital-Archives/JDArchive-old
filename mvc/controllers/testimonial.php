@@ -2,6 +2,13 @@
 
 class TestimonialController extends BaseController
 {
+    public function init()
+    {
+        parent::init();
+
+        $this->jsVar('imageUpload', $this->_getImageSettings());
+    }
+
     public function indexAction()
     {
         $this->initForm();
@@ -263,14 +270,40 @@ class TestimonialController extends BaseController
     {
         // don't render a view
         $this->view = null;
+        $uploadDir = APPLICATION_PATH.'/uploads/';
+        $thumbDir = APPLICATION_PATH.'/thumbs/';
 
-        $allowedExtensions = array('jpg','jpeg','png',);
-        // max file size in bytes
-        $sizeLimit = 4 * 1024 * 1024;
-        
-        $uploader = new Jedarchive_FileUploader($allowedExtensions, $sizeLimit);
-        $result = $uploader->handleUpload(APPLICATION_PATH.'/uploads/');
+        $thumbPath = '/mvc/thumbs/';
+
+        $settings = $this->_getImageSettings();
+        $uploader = new Jedarchive_FileUploader($settings['allowedExtensions'], $settings['sizeLimit']);
+        $result = $uploader->handleUpload($uploadDir);
+
+        if (isset($result['name']) && isset($result['ext'])) {
+            $src = $uploadDir . $result['name'] . '.' . $result['ext'];
+            $dst = $thumbDir . $result['name'] . '.' . $result['ext'];
+            $result['thumb'] = $thumbPath . $result['name'] . '.' . $result['ext'];
+
+            $imgResizer = new Jedarchive_Image();
+            $imgResizer->resize(80, 60, $src, $dst);
+        }
+
         // to pass data through iframe you will need to encode all html tags
         echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+    }
+
+    /**
+     * Return configuration settings regarding image uploads : the allowed extensions (jpg,png,...)
+     * and the maximum upload size in MB.
+     */
+    protected function _getImageSettings()
+    {
+        $allowedExtensions = explode(',', $this->_config->getSetting('image_upload_extensions'));
+        $sizeLimit = $this->_config->getSetting('image_upload_size_limit_mb') * 1024 * 1024;
+
+        return array(
+            'allowedExtensions' => $allowedExtensions,
+            'sizeLimit' => $sizeLimit
+        );
     }
 }

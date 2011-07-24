@@ -403,7 +403,7 @@ qq.FileUploaderBasic.prototype = {
                         
         } else if (size && size < this._options.minSizeLimit){
             this._error('minSizeError', name);
-            return false;            
+            return false;
         }
         
         return true;                
@@ -746,7 +746,7 @@ qq.UploadButton = function(o){
     this._element = this._options.element;
     
     // make button suitable container for input
-    JA.css(this._element, {
+    $(this._element).css({
         position: 'relative',
         overflow: 'hidden',
         // Make sure browse button is in the right side
@@ -781,17 +781,17 @@ qq.UploadButton.prototype = {
         input.setAttribute("type", "file");
         input.setAttribute("name", this._options.name);
         
-        JA.css(input, {
+        $(input).css({
             position: 'absolute',
             // in Opera only 'browse' button
             // is clickable and it is located at
             // the right side of the input
-            right: 0,
-            top: 0,
+            width: '200px',
+            height: '30px',
             fontFamily: 'Arial',
             // 4 persons reported this, the max values that worked for them were 243, 236, 236, 118
-            fontSize: '118px',
-            margin: 0,
+            "margin-left": '-100px',            
+            "margin-top": '-10px',
             padding: 0,
             cursor: 'pointer',
             opacity: 0
@@ -1040,7 +1040,7 @@ $.extend(qq.UploadHandlerForm.prototype, {
         this.log("innerHTML = " + doc.body.innerHTML);
                         
         try {
-            response = eval("(" + doc.body.innerHTML + ")");
+            response = eval($.parseJSON(doc.body.innerHTML));
         } catch(err){
             response = {};
         }        
@@ -1198,7 +1198,7 @@ $.extend(qq.UploadHandlerXhr.prototype, {
             var response;
                     
             try {
-                response = eval("(" + xhr.responseText + ")");
+                response = $.parseJSON(xhr.responseText);
             } catch(err){
                 response = {};
             }

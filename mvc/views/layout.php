@@ -19,22 +19,23 @@
   <body id="<?= $this->bodyId ?>" class="<?= $this->bodyClass ?>">
     <div id="wrapper">
       <div id="wrapper-bgtop">
-        <div id="header">
-          <div id="logo">
-            <a id="jdarchive_logo" href="<?= $this->url('/') ?>"><h1><span style="display:none;">Digital Archive</span></h1></a>
+        <? if (!isset($this->unbranded)) : ?>
+          <div id="header">
+            <div id="logo">
+              <a id="jdarchive_logo" href="<?= $this->url('/') ?>"><h1><span style="display:none;">Digital Archive</span></h1></a>
+            </div>
+            <!-- end #logo -->
+            <div id="menu">
+              <ul>
+                <li><a href="<?= $this->url('/') ?>" class="first"><?= $this->t('about') ?></a></li>
+                <li class="current_page_item"><a href="<?= $this->url('/contribute/') ?>"><?= $this->t('contribute') ?></a></li>
+                <li class="current_page_item"><a href="<?= $this->url('/news/') ?>"><?= $this->t('news') ?></a></li>
+                <li class="last"><a href="<?= $this->url('/contact/') ?>"><?= $this->t('contact') ?></a></li>
+              </ul>
+            </div>
           </div>
-          <!-- end #logo -->
-          <div id="menu">
-            <ul>
-              <li><a href="<?= $this->url('/') ?>" class="first"><?= $this->t('about') ?></a></li>
-              <li class="current_page_item"><a href="<?= $this->url('/contribute/') ?>"><?= $this->t('contribute') ?></a></li>
-              <li class="current_page_item"><a href="<?= $this->url('/news/') ?>"><?= $this->t('news') ?></a></li>
-              <li class="last"><a href="<?= $this->url('/contact/') ?>"><?= $this->t('contact') ?></a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- end #header -->
-        <!-- end #header-wrapper -->
+          <!-- end #header -->
+        <? endif; ?>
         <div id="page">
 
             <?= $this->contents ?>
@@ -44,9 +45,11 @@
       </div>
     </div>
     <div id="footer-bgcontent">
-      <div id="footer">
-        <p><a href="http://www.fas.harvard.edu/~rijs/"><img src="/lib/images/reisch_logo.png" style="margin-top:2px;" /></a></p>
-      </div>
+      <? if (!isset($this->unbranded)) : ?>
+        <div id="footer">
+          <p><a href="http://www.fas.harvard.edu/~rijs/"><img src="/lib/images/reisch_logo.png" style="margin-top:2px;" /></a></p>
+        </div>
+      <? endif; ?>
     </div>
     <!-- end #footer -->
     <? if (APPLICATION_ENV == 'production') { ?>

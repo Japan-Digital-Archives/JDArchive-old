@@ -131,7 +131,7 @@ class TestimonialController extends BaseController
     protected function handleSubmit()
     {
         if ($this->isPost()) {
-            $params = $this->getPostParams();
+            $params = $this->getParams();
             $this->view->form->setPrefill($params);
 
             $this->jsVar('lat', $this->getParam('lat'));
@@ -230,6 +230,8 @@ class TestimonialController extends BaseController
                 'email' => true,
             )
         );
+
+        $form->setPrefill($this->getParams());
 
         $form->setValidations(array('email' => 'email'));
         $this->view->form = $form;

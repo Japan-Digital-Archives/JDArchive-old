@@ -106,9 +106,23 @@ class php5 {
   }
 }
 
+class phpmyadmin {
+  include apache
+  
+  package {
+    "phpmyadmin": ensure => installed,
+  }
+
+  file { "/etc/apache2/conf.d/phpmyadmin":
+    ensure => "../../phpmyadmin/apache.conf",
+    notify => Exec["reload-apache2"]
+  }
+}
+
 include mysql-server
 include apache
 include php5
+include phpmyadmin
 
 file { "/etc/php5/apache2/conf.d/my.ini":
   content => "[PHP]

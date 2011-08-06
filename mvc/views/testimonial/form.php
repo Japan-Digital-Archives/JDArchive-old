@@ -28,6 +28,7 @@
     <?= $this->form->checkbox('terms', array('note' => 'accept_terms', 'label' => 'i_accept')) ?>
 
     <?= $this->form->submit() ?>
+    <? if ($this->unbranded) echo $this->form->hidden('u'); ?>
     <input type="hidden" name="la" value="<?= $this->getI18n()->getCurrent() ?>" />
   </table>
 </form>

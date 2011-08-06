@@ -31,6 +31,10 @@ class BaseController
         $this->layout = new Jedarchive_View('layout.php');
         $this->view->setI18n($i18n);
         $this->layout->setI18n($i18n);
+        if ($this->getParam('u') == '1') {
+            $this->layout->unbranded = true;
+            $this->view->unbranded = true;
+        }
         $this->jsVar('i18n', $i18n->getSectionLang('javascript'));
         $this->_config = Jedarchive_Config::instance();
     }
@@ -133,12 +137,40 @@ class BaseController
 
     // view helpers
 
+    /**
+     * Redirect to a certain path. This will preserve get parameters, and if necessary
+     * add extra get parameters for language and 'unbranded'.
+     */
     public function redirect($path)
     {
-        if ($this->view->getI18n()->getCurrent() != $this->view->getI18n()->getDefault()) {
-            $path.='?la='.$this->view->getI18n()->getCurrent();
+        $parts = explode('?', $path);
+        $url = reset($parts);
+        $get = array();
+        if (isset($parts[1])) {
+            foreach (explode('&', $parts[1]) as $req) {
+                list($k, $v) = explode('=', $req);
+                $get[$k] = $v;
+            }
         }
-        header('Location: ' . $path);
+
+        if ($this->view->getI18n()->getCurrent() != $this->view->getI18n()->getDefault()) {
+            $get['la'] = $this->view->getI18n()->getCurrent();
+        }
+
+        if ($this->getParam('u')) {
+            $get['u'] = 1;
+        }
+
+        if ($get) {
+            $url .= '?';
+            $p = array();
+            foreach ($get as $k => $v) {
+                $p[] = $k . '=' . $v;
+            }
+            $url .= implode('&', $p);
+        }
+
+        header('Location: ' . $url);
         exit();
     }
 

@@ -269,6 +269,26 @@ $(function(){
     }
   ?>
   </div>
+  <?php if ($curate): ?>
+  <div class="ialinks">
+  	<?php
+  		$scope = $seed->scope;
+  		$frequency = $seed->frequency;
+  		$iaurl=$seed->url;
+  		echo " <a href='$iaurl'>Live Link</a> &nbsp;&nbsp;";
+  		if ($last_exported['sid']<$seed->sid) {
+  			echo "<strong>Not Yet Submitted</strong>&nbsp;&nbsp;";
+  		} else {
+  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>Most Recent</a> </strong> | <strong>
+  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>Earliest</a> </strong>
+  		| <strong>
+  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>All</a> &nbsp;&nbsp;";
+  		}
+	  	echo " Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency)."
+  		"; 
+  	?>
+  </div>
+  <?php endif ?> 
 </div>
 </div>
 
@@ -295,4 +315,4 @@ $(function(){
 
 <?php if ($curate): ?>
 </div>
-<?php endif ?>
+<?php endif ?>	

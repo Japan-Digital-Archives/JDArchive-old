@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS testimonial_image;
 CREATE TABLE testimonial_image (
     id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    testimonial_id INTEGER AUTO_INCREMENT,
+    testimonial_id INTEGER,
     filename VARCHAR(32) CHARACTER SET utf8 COLLATE utf8_general_ci,
     extension CHAR(3) CHARACTER SET utf8 COLLATE utf8_general_ci,
     description VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,

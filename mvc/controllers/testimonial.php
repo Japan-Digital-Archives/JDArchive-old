@@ -272,10 +272,21 @@ class TestimonialController extends BaseController
     {
         // don't render a view
         $this->view = null;
-        $uploadDir = APPLICATION_PATH.'/uploads/';
-        $thumbDir = APPLICATION_PATH.'/thumbs/';
+        $uploadDir = $this->_config->getSetting('upload_dir');
+        $thumbDir = $this->_config->getSetting('thumbs_dir');
+	$thumbPath = '/mvc/thumbs/';
 
-        $thumbPath = '/mvc/thumbs/';
+        if (!is_dir($uploadDir)) {
+	  mkdir($uploadDir);
+	}
+
+	if (!is_dir($thumbDir)) {
+	  mkdir($thumbDir);
+        }
+
+	if (!is_dir(APPLICATION_PATH . '/thumbs/')) {
+	  symlink($thumbDir, APPLICATION_PATH . '/thumbs/');
+	}
 
         $settings = $this->_getImageSettings();
         $uploader = new Jedarchive_FileUploader($settings['allowedExtensions'], $settings['sizeLimit']);

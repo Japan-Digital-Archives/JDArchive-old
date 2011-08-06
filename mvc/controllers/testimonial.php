@@ -1,7 +1,16 @@
 <?
 
+/**
+ * The testimonial controller handles all paths under http://jdarchive.org/testimonial
+ *
+ */
 class TestimonialController extends BaseController
 {
+    /**
+     * Initialize the controller
+     * 
+     * @see BaseController::init()
+     */
     public function init()
     {
         parent::init();
@@ -9,6 +18,9 @@ class TestimonialController extends BaseController
         $this->jsVar('imageUpload', $this->_getImageSettings());
     }
 
+    /**
+     * Show the testimonial form.
+     */
     public function indexAction()
     {
         $this->initForm();
@@ -19,6 +31,11 @@ class TestimonialController extends BaseController
         }
     }
 
+    /**
+     * Edit a testimonial entry. This assumes the path testimonial/edit/<id>/<hash>, with <id> referring
+     * to a specific testimonial, and the hash serving as a security mechanism so the URL can
+     * not be forged.
+     */
     public function editAction()
     {
         $this->initForm();
@@ -46,18 +63,20 @@ class TestimonialController extends BaseController
             }
         }
 
-        //echo '<pre>';print_r($testimonial);die();
-
         $this->prefillLocationsFor($id);
         $this->view->form->setPrefill($testimonial);
         $this->view->deleteLink = '/testimonial/delete/' . $id . '/' . $crc;
 
+        // If the form was succesfully saved, then redirect to the confirmation page
         if ($this->handleSubmit()) {
             $this->handleEmail();
             $this->redirect('/testimonial/confirmation/' . $id . '/' . $crc);
         }
     }
 
+    /**
+     * Show the confirmation page
+     */
     public function confirmationAction()
     {
         $id = $this->getNextUriParam();
@@ -70,6 +89,9 @@ class TestimonialController extends BaseController
         $this->view->editLink = '/testimonial/edit/' . $id . '/' . $crc . '?la=' . $this->getParam('la');
     }
 
+    /**
+     * Delete a testimonial
+     */
     public function deleteAction()
     {
         $id = $this->getNextUriParam();
@@ -85,8 +107,12 @@ class TestimonialController extends BaseController
         $locations = $tblLocation->delete(array('testimonial_id' => $id));
     }
 
+    /**
+     * Browse the testimonials
+     */
     public function browseAction()
     {
+        // make sure a valid user is logged in
         $this->authenticate();
 
         $id = $this->getNextUriParam();
@@ -114,6 +140,10 @@ class TestimonialController extends BaseController
         }
     }
 
+    /**
+     * Display the testimonial data. These links can not be forged, only by publishing
+     * them the data becomes public.
+     */
     public function publicAction()
     {
         $id = $this->getNextUriParam();
@@ -135,8 +165,15 @@ class TestimonialController extends BaseController
         }
     }
 
+    /**
+     * Helper function : handle submitting the testimonial form, either to make a new
+     * testimonial or to edit an existing one.
+     * 
+     * @return true if the testimonial was succesfully saved, false otherwise
+     */
     protected function handleSubmit()
     {
+        // If this is not a post request we don't do anything
         if ($this->isPost()) {
             $params = $this->getParams();
             $this->view->form->setPrefill($params);
@@ -149,7 +186,13 @@ class TestimonialController extends BaseController
                 return false;
             }
 
+            // The form object {@see initForm()} checks for mandatory fields
+            // and well formed email addresses.
+            // 
+            // This way the form object can also show validation errors when rendering the form
+            // again.
             if ($this->view->form->validate($params)) {
+                // populate a data array, to insert into the database
                 $data = array();
                 $locations = array();
 
@@ -199,10 +242,14 @@ class TestimonialController extends BaseController
                 }
                 $this->_testimonialId = $id;
                 return true;
-            } 
+            }
+            return false;
         }
     }
 
+    /**
+     * Send out emails when the form is succesfully submitted.
+     */
     protected function handleEmail()
     {
         $email1 = $this->getParam('name') . '<' . $this->getParam('email') .'>';
@@ -226,11 +273,15 @@ class TestimonialController extends BaseController
             ->send();
     }
     
+    /**
+     * Create the form builder. An object that will be available in the view to render the form.
+     * It also takes care of prefilling existing values, and of validating submissions.
+     */
     protected function initForm()
     {
         $form = new Jedarchive_Formbuilder();
         $form->setI18n($this->view->getI18n());
-        $form->setRequired(
+        $form->setRequired( // these fields are mandatory, they will get a red asterisk and will have to be filled in
             array(
                 'tell_us_your_story' => true,
                 'terms' => true,
@@ -238,17 +289,35 @@ class TestimonialController extends BaseController
             )
         );
 
+        // in case there are errors and we have to show the form again, we want everything to
+        // be filled in as before
         $form->setPrefill($this->getParams());
 
+        // validate the email field to be a valid email address
         $form->setValidations(array('email' => 'email'));
+        
+        // assign the form to the view, so we can use it there
         $this->view->form = $form;
     }
     
+    /**
+     * Create a salted hash to be used in url's.
+     * 
+     * @param int|string $id The field to hash 
+     * @param string $purpose The category of the url, in case we need multiple 
+     *                           types of hashes (in our case public/private)
+     */
     protected function id2hash($id, $purpose = '')
     {
         return substr(md5("klfnwe0-23{$id}wfme".$purpose), 0, 12);
     }
 
+    /**
+     * Load the locations that are marked on the map, and pass them on to javascript
+     * to be rendered.
+     * 
+     * @param int $id Testimonial id
+     */
     protected function prefillLocationsFor($id)
     {
         $tblLocation = new Jedarchive_Table('testimonial_location');
@@ -268,25 +337,28 @@ class TestimonialController extends BaseController
         $this->jsVar('location_name', $names);
     }
 
+    /**
+     * Ajax call to upload an image
+     */
     public function uploadImageAction()
     {
         // don't render a view
         $this->view = null;
         $uploadDir = $this->_config->getSetting('upload_dir');
         $thumbDir = $this->_config->getSetting('thumbs_dir');
-	$thumbPath = '/mvc/thumbs/';
+        $thumbPath = '/mvc/thumbs/';
 
         if (!is_dir($uploadDir)) {
-	  mkdir($uploadDir);
-	}
-
-	if (!is_dir($thumbDir)) {
-	  mkdir($thumbDir);
+            mkdir($uploadDir);
         }
 
-	if (!is_dir(APPLICATION_PATH . '/thumbs/')) {
-	  symlink($thumbDir, APPLICATION_PATH . '/thumbs/');
-	}
+        if (!is_dir($thumbDir)) {
+            mkdir($thumbDir);
+        }
+
+        if (!is_dir(APPLICATION_PATH . '/thumbs/')) {
+            symlink($thumbDir, APPLICATION_PATH . '/thumbs/');
+        }
 
         $settings = $this->_getImageSettings();
         $uploader = new Jedarchive_FileUploader($settings['allowedExtensions'], $settings['sizeLimit']);

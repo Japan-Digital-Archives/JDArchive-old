@@ -1,5 +1,12 @@
 <?
 
+/**
+ * All controllers inherit from the base controller.
+ * 
+ * It does initialization of the layout and the view object, and
+ * contains various helpers that are useful in either the controllers
+ * or the views.
+ */
 class BaseController 
 {
     protected $view = null;
@@ -22,6 +29,9 @@ class BaseController
         $this->_name = $name;
     }
 
+    /**
+     * Controller initialization, this is called before every action
+     */
     public function init()
     {
         // Give it a translation object
@@ -63,6 +73,9 @@ class BaseController
         $this->_uriParams = $params;
     }
 
+    /**
+     * Use this to 'pop off' the next part of the URI
+     */
     public function getNextUriParam()
     {
         return array_shift($this->_uriParams);
@@ -95,18 +108,28 @@ class BaseController
         return null;
     }
 
+    /**
+     * Pass a variable on to javascript, it will be inserted in the page as JSON, accessible
+     * through a JS global object (JA).
+     * 
+     * @param string $name
+     * @param mixed $value
+     */
     protected function jsVar($name, $value)
     {
         $this->_jsVars[$name] = $value;
     }
 
+    /**
+     * Is this a post request, i.e. a form submission
+     */
     protected function isPost()
     {
         return strtoupper($_SERVER['REQUEST_METHOD']) == 'POST';
     }
 
     /**
-     *
+     * Render a specific action. This delegates actual rendering to the view object.
      */
     public function renderAction($action) 
     {
@@ -135,6 +158,18 @@ class BaseController
         return '';
     }
 
+    
+    /**
+     * Use this on controller actions that are private, that need user
+     * authentication. 
+     */
+    protected function authenticate()
+    {
+        $auth = new Jedarchive_Auth();
+        $auth->authenticate();
+    }
+   
+    ////////////////////////////////////////////////////////////////////////////////
     // view helpers
 
     /**
@@ -172,11 +207,5 @@ class BaseController
 
         header('Location: ' . $url);
         exit();
-    }
-
-    protected function authenticate()
-    {
-        $auth = new Jedarchive_Auth();
-        $auth->authenticate();
     }
 }

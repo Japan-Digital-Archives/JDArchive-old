@@ -1,1 +1,6 @@
 mvc/uploads
+mvc/thumbs
+.project
+.settings
+.buildpath
+.vagrant

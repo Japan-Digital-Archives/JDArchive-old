@@ -64,12 +64,20 @@ start('_newabout');
 <br />
 <p style="line-height: 170%;">ハーバード大学地理学分析センター（CGA）は、地理空間に関する新しい技術により、ハーバード大学内におけるあらゆる学問分野の研究および教育を支えるべく、２００６年に創設されました。当センターは、学内のすべての人や組織と恊働することにより、地理情報システム（Geographic Information Systems : GIS）の基盤とサービスの充実を目指してきました。具体的には次のようなことが目標となります。第一に、異なる学問分野の多様な知識や資源から得られた空間データを統合するための、共通のプラットフォームを提供すること。第二に、地理空間を分析するための技術を使用し、向上させ、あるいは学ぶような学問的研究を可能にすること。そして第三に、GIS及び空間分析を指導するための能力を、学内のすべてのレベルにおいて改良すること、です。
 </p>
+<h3><strong>saveMLAK</strong></h3>
+<br />
+<p>
+<a href="http://savemlak.jp/"><img style="padding-left: 5px;" alt="saveMLAK" src="/lib/images/mlak-logo.gif"></a>
+</p>
+<br />
+<p style="line-height: 170%;">saveMLAKは、 博物館・美術館（Museum）、図書館（Library）、文書館（Archives）、公民館（Kominkan） の関係者及び支援者によるプロジェクトです。saveMLAKでは、東日本大震災によって被災した施設や人々が、 どのような被害を受けているのかという被災情報、どのような支援を必要としているのかという救援情報を集め、 集約していくとともに、被災した施設や人々に対して、博物館、図書館、文書館、公民館といった施設やそこに関係している人々ができること、 必要と思われることを行っています。
+</p>
 
 
 
 <?php else: ?>
 
-<p>This digital archive is only possible with the help of our partners. The Internet Archive has been harvesting the websites for the archive, ensuring their long term preservation. The National Diet Library and Library of Congress are offering their expertise and support in the gathering of relevant content for the archive. The metaLAB (at) Harvard is our key design and development partner, working in the coming year to create the archive platform that will produce a rich and robust interface to search, browse and share materials in the archive. Also integral to the design of our archive is the Center for Geographic Analysis, which has been a leader in the collection of rich datasets of geographic data about the disasters in Japan.</p>
+<p>This digital archive is only possible with the help of our partners. The Internet Archive has been harvesting the websites for the archive, ensuring their long term preservation. The National Diet Library and Library of Congress are offering their expertise and support in the gathering of relevant content for the archive. The metaLAB (at) Harvard is our key design and development partner, working in the coming year to create the archive platform that will produce a rich and robust interface to search, browse and share materials in the archive. Also integral to the design of our archive is the Center for Geographic Analysis, which has been a leader in the collection of rich datasets of geographic data about the disasters in Japan. Among its initiatives, the saveMLAK project is working to greatly expand the range of materials archived with the Internet Archive.</p>
 
 <h3><strong>The Internet Archive</strong></h3>
 <br />
@@ -113,6 +121,15 @@ start('_newabout');
 </p>
 <br />
 <p style="line-height: 170%;">The Center for Geographic Analysis (CGA) at Harvard University was established in 2006 to support research and teaching of all disciplines across the University with emerging geospatial technologies. The Center's goal has been to work with entities across the university to strengthen university-wide geographic information systems (GIS) infrastructure and services; provide a common platform for the integration of spatial data from diverse sources and knowledge from multiple disciplines; enable scholarly research that would use, improve or study geospatial analysis techniques; and improve the ability to teach GIS and spatial analysis at all levels across the university.</p>
+
+<h3><strong>saveMLAK</strong></h3>
+<br />
+<p>
+<a href="http://savemlak.jp/"><img style="padding-left: 5px;" alt="saveMLAK" src="/lib/images/mlak-logo.gif"></a>
+</p>
+<br />
+<p style="line-height: 170%;">SaveMLAK is a project led by the staff and supporters of museums, libraries, archives, and community centers (k&#333;minkan) in Japan. The project is collecting information on the harm to people and damage to facilities caused by the 2011 T&#333;hoku earthquake and tsunami as well as identifying their needs in the relief effort. The saveMLAK project works to provide the people and institutions affected by the disaster with whatever assistance that project members in the museum, library, archive, and the k&#333;minkan community can provide.</p>
+
 
 
 <?php endif ?>

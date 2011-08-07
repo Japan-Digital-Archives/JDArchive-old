@@ -17,10 +17,10 @@ JA_Marker = $.extend(
             $.each(JA_Marker.all, function(i, mark) {
                 mark = mark.getPosition();
                 if (mark.lat() < lat) {
-                    lat = mark.lat()
+                    lat = mark.lat();
                 }
                 if (mark.lng() < lng) {
-                    lng = mark.lng()
+                    lng = mark.lng();
                 }
                 
             });
@@ -33,10 +33,10 @@ JA_Marker = $.extend(
             $.each(JA_Marker.all, function(i, mark) {
                 mark = mark.getPosition();
                 if (mark.lat() > lat) {
-                    lat = mark.lat()
+                    lat = mark.lat();
                 }
                 if (mark.lng() > lng) {
-                    lng = mark.lng()
+                    lng = mark.lng();
                 }
             });
             return new google.maps.LatLng(lat, lng);
@@ -89,18 +89,18 @@ $.extend(
             
             $('#ja_marker_' + this.index + ' img, #ja_marker_' + this.index + ' .panTo').click(function(e) {
                 idx = parseInt($(this).parent().attr('rel'));
-                marker = JA_Marker.all[idx]
+                marker = JA_Marker.all[idx];
                 marker.getMap().panTo(marker.getPosition());
                 e.preventDefault();
             });
             
             $('#location_list .remove').click(function(e) {
                 idx = parseInt($(this).parent().attr('rel'));
-                marker = JA_Marker.all[idx]
+                marker = JA_Marker.all[idx];
                 $('#ja_marker_' + $(this).parent().attr('rel')).remove();
                 marker.setMap(null);
                 e.preventDefault();
-            })
+            });
         },
 
         iconUrl: function()
@@ -110,7 +110,7 @@ $.extend(
 
         toString: function() 
         {
-            return Math.round(this.getPosition().lat()*10000)/10000 + ', ' + Math.round(this.getPosition().lng()*10000)/10000;
+            return '' + Math.round(this.getPosition().lat()*10000)/10000 + ', ' + Math.round(this.getPosition().lng()*10000)/10000;
         },
 
         updateHtml: function() 
@@ -165,7 +165,7 @@ function JA_Button(map) {
             -moz-border-radius: 8px;\
             border: 1px solid black;'
         );
-    }
+    };
 
     this.setButtonStyle_(this.button);
 };
@@ -211,7 +211,7 @@ JA_Map.prototype = {
             }
         );
     }
-}
+};
 
 
 $(document).ready(function() {

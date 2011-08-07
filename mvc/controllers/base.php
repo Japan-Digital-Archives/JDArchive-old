@@ -170,39 +170,20 @@ class BaseController
     }
 
     /**
-     * Redirect to a certain path. This will preserve get parameters, and if necessary
-     * add extra get parameters for language and 'unbranded'.
+     * Redirect to a certain path. Combine with {@see url()} to get the magical
+     * language and unbranded parameters
      */
-    public function redirect($path)
+    public function redirect($location)
     {
-        $parts = explode('?', $path);
-        $url = reset($parts);
-        $get = array();
-        if (isset($parts[1])) {
-            foreach (explode('&', $parts[1]) as $req) {
-                list($k, $v) = explode('=', $req);
-                $get[$k] = $v;
-            }
-        }
-
-        if ($this->view->getI18n()->getCurrent() != $this->view->getI18n()->getDefault()) {
-            $get['la'] = $this->view->getI18n()->getCurrent();
-        }
-
-        if ($this->getParam('u')) {
-            $get['u'] = 1;
-        }
-
-        if ($get) {
-            $url .= '?';
-            $p = array();
-            foreach ($get as $k => $v) {
-                $p[] = $k . '=' . $v;
-            }
-            $url .= implode('&', $p);
-        }
-
-        header('Location: ' . $url);
+        header('Location: ' . $location);
         exit();
+    }
+    
+    /**
+     * convenience method for making URL objects
+     */
+    public function url($controller = null, $action = null, $uriParams = array(), $getParams = array())
+    {
+        return new Jedarchive_Url($controller, $action, $uriParams, $getParams);
     }
 }

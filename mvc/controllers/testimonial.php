@@ -18,6 +18,9 @@ class TestimonialController extends BaseController
         $this->jsVar('imageUpload', $this->_getImageSettings());
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
+    // Actions
+    
     /**
      * Show the testimonial form.
      */
@@ -27,7 +30,7 @@ class TestimonialController extends BaseController
 
         if ($this->handleSubmit()) {
             $this->handleEmail();
-            $this->redirect('/testimonial/confirmation/' . $this->_testimonialId . '/' . $this->id2hash($this->_testimonialId));
+            $this->redirect($this->url('testimonial', 'confirmation', array($this->_testimonialId, $this->id2hash($this->_testimonialId))));
         }
     }
 
@@ -44,14 +47,14 @@ class TestimonialController extends BaseController
         $crc = $this->getNextUriParam();
 
         if ($crc != $this->id2hash($id)) {
-            $this->redirect('/testimonial');
+            $this->redirect($this->url('testimonial'));
         }
 
         $tblTestimonial = new Jedarchive_Table('testimonial');
 
         $testimonial = $tblTestimonial->fetch('*', array('id' => $id));
         if (count($testimonial) == 0) {
-            $this->redirect('/testimonial');
+            $this->redirect($this->url('testimonial'));
         }
         $testimonial = $testimonial[0];
 
@@ -63,14 +66,15 @@ class TestimonialController extends BaseController
             }
         }
 
-        $this->prefillLocationsFor($id);
+        $this->_prefillLocations($id);
+        $this->_prefillImages($id);
         $this->view->form->setPrefill($testimonial);
-        $this->view->deleteLink = '/testimonial/delete/' . $id . '/' . $crc;
+        $this->view->deleteLink = $this->url('testimonial', 'delete', array($id, $crc));
 
         // If the form was succesfully saved, then redirect to the confirmation page
         if ($this->handleSubmit()) {
             $this->handleEmail();
-            $this->redirect('/testimonial/confirmation/' . $id . '/' . $crc);
+            $this->redirect($this->url('testimonial', 'confirmation', array($id, $crc)));
         }
     }
 
@@ -83,10 +87,10 @@ class TestimonialController extends BaseController
         $crc = $this->getNextUriParam();
 
         if ($crc != $this->id2hash($id)) {
-            $this->redirect('/');
+            $this->redirect($this->url('testimonial'));
         }
 
-        $this->view->editLink = '/testimonial/edit/' . $id . '/' . $crc . '?la=' . $this->getParam('la');
+        $this->view->editLink = $this->url('testimonial', 'edit', array($id, $crc));
     }
 
     /**
@@ -98,7 +102,7 @@ class TestimonialController extends BaseController
         $crc = $this->getNextUriParam();
 
         if ($crc != $this->id2hash($id)) {
-            $this->redirect('/');
+            $this->redirect($this->url('testimonial'));
         }
         $tblTestimonial = new Jedarchive_Table('testimonial');
         $tblLocation = new Jedarchive_Table('testimonial_location');
@@ -121,22 +125,24 @@ class TestimonialController extends BaseController
         if ($id) {
             $this->view->testimonial = $loader->load($id);
             if ($prev = $loader->findPreviousId($id)) {
-                $this->view->previousLink = '/testimonial/browse/'.$prev;
+                $this->view->previousLink = $this->url('testimonial', 'browse', array($prev));
             }
             if ($next = $loader->findNextId($id)) {
-                $this->view->nextLink = '/testimonial/browse/'.$next;
+                $this->view->nextLink = $this->url('testimonial', 'browse', array($next));
             }
-            $this->view->editLink = '/testimonial/edit/'.$id.'/'.$this->id2hash($id);
-            $this->view->publicLink = '/testimonial/public/'.$id.'/'.$this->id2hash($id, 'public');
-            $this->prefillLocationsFor($id);
+            $this->view->editLink = $this->url('testimonial', 'edit', array($id, $this->id2hash($id)));
+            $this->view->publicLink = $this->url('testimonial', 'public', array($id, $this->id2hash($id, 'public')));
+            
+            $this->_prefillLocations($id);
+            $this->_prefillImages($id);
             $this->jsVar('readonly', true);
             if (is_null($this->view->testimonial)) {
-                $this->redirect('/testimonial/browse');
+                $this->redirect($this->url('testimonial', 'browse'));
             }
         } else {
             /*$this->view->setViewFile('testimonial/browse-overview.php');
              $this->view->testimonials = $loader->loadAll();*/
-            $this->redirect('/testimonial/browse/' . $loader->findLastId());
+            $this->redirect($this->url('testimonial', 'browse', array($loader->findLastId())));
         }
     }
 
@@ -152,36 +158,98 @@ class TestimonialController extends BaseController
         if ($id) {
             $hash = $this->getNextUriParam();
             if ($hash != $this->id2hash($id, 'public')) {
-                $this->redirect('/testimonial');
+                $this->redirect($this->url('testimonial'));
             }
             $this->view->testimonial = $loader->load($id);
-            $this->prefillLocationsFor($id);
+            $this->_prefillLocations($id);
+            $this->_prefillImages($id);
             $this->jsVar('readonly', true);
             if (is_null($this->view->testimonial)) {
-                $this->redirect('/testimonial');
+                $this->redirect($this->url('testimonial'));
             }
         } else {
-            $this->redirect('/testimonial');
+            $this->redirect($this->url('testimonial'));
         }
     }
 
+    
+    /**
+     * Ajax call to upload an image
+     */
+    public function uploadImageAction()
+    {
+        // don't render a view
+        $this->view = null;
+        $settings = $this->_getImageSettings();
+        
+        $uploadDir = Jedarchive_Image::getUploadDir();
+        
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir);
+        }
+        
+        $sizes = array();
+        foreach($this->_config->image_sizes as $name => $size) {
+            $dir = $uploadDir . '/' . $name; 
+            if (!is_dir($dir)) {
+                mkdir($dir);
+            }
+            $sizes[$name] = explode('x', $size);
+        }
+
+        $uploader = new Jedarchive_FileUploader($settings['allowedExtensions'], $settings['sizeLimit']);
+        $result = $uploader->handleUpload($uploadDir);
+
+        if (isset($result['name']) && isset($result['ext'])) {
+            foreach ($sizes as $name => $size) {
+                $src = $uploadDir . '/' . $result['name'] . '.' . $result['ext'];
+                $dst = $uploadDir . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
+
+                $result[$name] = $this->_config->images->upload_path . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
+
+                $imgResizer = new Jedarchive_Image_Resizer();
+                $imgResizer->resize($size[0], $size[1], $src, $dst);
+            }
+        }
+
+        // to pass data through iframe we need to encode all html tags
+        echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////
+    // Helpers
+    
     /**
      * Helper function : handle submitting the testimonial form, either to make a new
      * testimonial or to edit an existing one.
      * 
      * @return true if the testimonial was succesfully saved, false otherwise
      */
-    protected function handleSubmit()
+    private function handleSubmit()
     {
         // If this is not a post request we don't do anything
         if ($this->isPost()) {
             $params = $this->getParams();
+            
+            // Set all the prefill stuff first, in case we need to render the form again
             $this->view->form->setPrefill($params);
 
+            // locations are prefilled through JS
             $this->jsVar('lat', $this->getParam('lat'));
             $this->jsVar('lng', $this->getParam('lng'));
             $this->jsVar('location_name', $this->getParam('location_name'));
 
+            // images are prefilled through JS
+            $imgMapper = new Jedarchive_Image_Mapper();
+            foreach ($params['image_upload'] as $imgData) {
+                $img = $imgMapper->fromFormData($imgData);
+                $imgData = $img->toArray('js-prefill');
+                $imgPrefill[] = $imgData;
+            }
+            $this->jsVar('images', $imgPrefill);
+            
+            // If the user switches language we simply show the form again
+            // including what was already filled in. that's what this is for.
             if (isset($params['passthru']) && $params['passthru']) {
                 return false;
             }
@@ -246,15 +314,18 @@ class TestimonialController extends BaseController
                     $tblLocation->insert($location);
                 }
                 
-                foreach ($params[image_upload] as $img) {
-                    $imgData = array(
-                        'testimonial_id' => $id,
-                        'filename' => $img['name'],
-                    	'extension' => $img['ext'],
-                        'description' => $img['description'],
-                        //lat , lng
-                    );
-                    $tblImage->insert($imgData);
+                $imgSettings = $this->_getImageSettings();
+                $imgMapper = new Jedarchive_Image_Mapper();
+                foreach ($params['image_upload'] as $imgData) {
+                    $img = $imgMapper->fromFormData($imgData);
+                    
+                    if ($img->fileExists()) {
+                        $img->setTestimonialId($id);
+                        $imgMapper->save($img);
+                    } else {
+                        if (APPLICATION_ENV == 'development')
+                            die($fullPath);
+                    }
                 }
                 
                 $this->_testimonialId = $id;
@@ -267,7 +338,7 @@ class TestimonialController extends BaseController
     /**
      * Send out emails when the form is succesfully submitted.
      */
-    protected function handleEmail()
+    private function handleEmail()
     {
         $email1 = $this->getParam('name') . '<' . $this->getParam('email') .'>';
         $email2 = $this->_config->email;
@@ -294,7 +365,7 @@ class TestimonialController extends BaseController
      * Create the form builder. An object that will be available in the view to render the form.
      * It also takes care of prefilling existing values, and of validating submissions.
      */
-    protected function initForm()
+    private function initForm()
     {
         $form = new Jedarchive_Formbuilder();
         $form->setI18n($this->view->getI18n());
@@ -324,18 +395,21 @@ class TestimonialController extends BaseController
      * @param string $purpose The category of the url, in case we need multiple 
      *                           types of hashes (in our case public/private)
      */
-    protected function id2hash($id, $purpose = '')
+    private function id2hash($id, $purpose = '')
     {
         return substr(md5("klfnwe0-23{$id}wfme".$purpose), 0, 12);
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
+    // Helpers for locations
+    
     /**
      * Load the locations that are marked on the map, and pass them on to javascript
      * to be rendered.
      * 
      * @param int $id Testimonial id
      */
-    protected function prefillLocationsFor($id)
+    private function _prefillLocations($id)
     {
         $tblLocation = new Jedarchive_Table('testimonial_location');
         $locations = $tblLocation->fetch('*', array('testimonial_id' => $id));
@@ -354,64 +428,42 @@ class TestimonialController extends BaseController
         $this->jsVar('location_name', $names);
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
+    // Helpers for image upload
+    
     /**
-     * Ajax call to upload an image
+     * Load the images that are linked to a testimonial, and pass them on to javascript
+     * to be rendered.
+     * 
+     * @param int $id Testimonial id
      */
-    public function uploadImageAction()
+    private function _prefillImages($id)
     {
-        // don't render a view
-        $this->view = null;
-        $uploadDir = $this->_config->images->upload_dir;
+        $mapper = new Jedarchive_Image_Mapper();
+        $imgs = $mapper->loadByTestimonial($id);
         
-        if (!(strpos($uploadDir, '/') === 0)) {
-            $uploadDir = APPLICATION_PATH . '/' . $uploadDir;
-        }
-        
-        if (!is_dir($uploadDir)) {
-            mkdir($uploadDir);
+        $data = array();
+        foreach($imgs as $img) {
+            $imgData = $img->toArray('js-prefill');
+            $data[] = $imgData;
         }
         
-        $sizes = array();
-        foreach($this->_config->image_sizes as $name => $size) {
-            $dir = $uploadDir . '/' . $name; 
-            if (!is_dir($dir)) {
-                mkdir($dir);
-            }
-            $sizes[$name] = explode('x', $size);
-        }
-
-        $settings = $this->_getImageSettings();
-        $uploader = new Jedarchive_FileUploader($settings['allowedExtensions'], $settings['sizeLimit']);
-        $result = $uploader->handleUpload($uploadDir);
-
-        if (isset($result['name']) && isset($result['ext'])) {
-            foreach ($sizes as $name => $size) {
-                $src = $uploadDir . '/' . $result['name'] . '.' . $result['ext'];
-                $dst = $uploadDir . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
-
-                $result[$name] = $this->_config->images->upload_path . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
-
-                $imgResizer = new Jedarchive_Image();
-                $imgResizer->resize($size[0], $size[1], $src, $dst);
-            }
-        }
-
-        // to pass data through iframe you will need to encode all html tags
-        echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+        $this->view->images = $imgs;
+        $this->jsVar('images', $data);
     }
 
     /**
      * Return configuration settings regarding image uploads : the allowed extensions (jpg,png,...)
      * and the maximum upload size in MB.
      */
-    protected function _getImageSettings()
+    private function _getImageSettings()
     {
         $allowedExtensions = explode(',', $this->_config->images->upload_extensions);
         $sizeLimit = $this->_config->images->upload_size_limit_mb * 1024 * 1024;
-
+        
         return array(
             'allowedExtensions' => $allowedExtensions,
-            'sizeLimit' => $sizeLimit
+            'sizeLimit' => $sizeLimit,
         );
     }
 }

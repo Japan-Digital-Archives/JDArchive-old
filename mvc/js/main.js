@@ -22,9 +22,9 @@ JA.t = function(key) {
     if (typeof JA.i18n_missing == 'undefined') {
         JA.i18n_missing = [];
     }
-    JA.i18n_missing[JA.i18n_missing.length] = key
-    return key
-}
+    JA.i18n_missing[JA.i18n_missing.length] = key;
+    return key;
+};
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -34,13 +34,13 @@ $(document).ready(function() {
     ////////////////////////////////////////////////////////////////////////////////
     // Confirm deletion
 
-    var buttonz = {}
+    var buttonz = {};
     buttonz[JA.t('button_delete_submission')] = function() {
         window.location.href = $('.delete_link a').attr('href');
     };
     buttonz[JA.t('button_cancel')] = function() {
         $('#delete_dialog').dialog('close');
-    }
+    };
     JA.buttons = buttonz;
     $('#delete_dialog').dialog(
         {
@@ -55,7 +55,7 @@ $(document).ready(function() {
     $('.delete_link a').click(function(e) {
         $('#delete_dialog').dialog('open');
         e.preventDefault();
-    })
+    });
 
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -67,20 +67,31 @@ $(document).ready(function() {
             .append('<input type="hidden" name="passthru" value="1" />');
         $('input[type="submit"]').click();
         e.preventDefault();
-    })
+    });
 
 
     ////////////////////////////////////////////////////////////////////////////////
     // Initialize image uploader
 
-    var uploader = new JA.FileUploader({
-        element: document.getElementById('file-uploader'),
-        action: '/testimonial/uploadImage',
-        allowedExtensions: JA.imageUpload.allowedExtensions,
-        sizeLimit: JA.imageUpload.sizeLimit,
-        debug: true
+    if ($('#file-uploader').length > 0) {
+        var uploader = new JA.FileUploader({
+            element: $('#file-uploader')[0],
+            action: '/testimonial/uploadImage',
+            allowedExtensions: JA.imageUpload.allowedExtensions,
+            sizeLimit: JA.imageUpload.sizeLimit,
+            debug: true
+        });
+    }
+    
+    if (JA.images) {
+        $.each(JA.images, function(idx, val) {
+            uploader._addPrefill(val);
+        });
+    }
+    
+    $('.qq-upload-delete').click(function(e) {
+        $(this).parents('li').remove();
     });
-
 });
 
 

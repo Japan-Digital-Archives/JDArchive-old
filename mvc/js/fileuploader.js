@@ -618,7 +618,9 @@ $.extend(qq.FileUploader.prototype, {
         while (item){            
             if (item.qqFileId == id) return item;            
             item = item.nextSibling;
-        }          
+        }
+        
+        return item;
     },
     /**
      * delegate click event for cancel link 
@@ -1115,7 +1117,7 @@ qq.UploadHandlerXhr.isSupported = function(){
 };
 
 // @inherits qq.UploadHandlerAbstract
-$.extend(qq.UploadHandlerXhr.prototype, qq.UploadHandlerAbstract.prototype)
+$.extend(qq.UploadHandlerXhr.prototype, qq.UploadHandlerAbstract.prototype);
 
 $.extend(qq.UploadHandlerXhr.prototype, {
     /**

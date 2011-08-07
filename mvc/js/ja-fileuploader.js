@@ -27,6 +27,7 @@ JA.FileUploader = function(o){
                 '<span class="qq-upload-size"></span>' +
                 '<a class="qq-upload-cancel" href="#">' + JA.t('button_cancel') + '</a>' +
                 '<span class="qq-upload-failed-text">' + JA.t('upload_failed') + '</span>' +
+                '<span class="qq-upload-delete">' + JA.t('image_delete') + '</span>' +
                 '</div><div class="clear"></div></div>' + 
             '</li>',        
         
@@ -168,12 +169,30 @@ $.extend(JA.FileUploader.prototype, {
     _addToList: function(id, fileName){
         var item = qq.toElement(this._options.fileTemplate);                
         item.qqFileId = id;
-
+        
         var fileElement = this._find(item, 'file');        
         $(fileElement).html(this._formatFileNameHTML(id, fileName));
         this._find(item, 'size').style.display = 'none';        
 
         this._listElement.appendChild(item);
+    },
+    _addPrefill: function(result) {
+        this._addToList(result.filename, result.description);
+        var item = this._getItemByFileId(result.filename);                
+        qq.addClass(item, this._classes.success);
+        $(this._find(item, 'thumb'))
+            .html('<img src="' + result.thumb + '"/>')
+            .css({border: '0px', "background-color" : '#fff', height: 'inherit'});
+        $(item).find('.name').attr('value', result.filename);
+        $(item).find('.ext').attr('value', result.extension);
+        
+        qq.remove(this._find(item, 'cancel'));
+        qq.remove(this._find(item, 'spinner'));
+        
+        var size = this._find(item, 'size');
+        size.style.display = 'inline';
+        
+        qq.setText(size, this._formatSize(result.size));
     },
     _getItemByFileId: function(id){
         var item = this._listElement.firstChild;        

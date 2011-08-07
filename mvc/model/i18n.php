@@ -75,9 +75,9 @@ class Jedarchive_I18n extends Jedarchive_Base
                 return $this->_translations[$section][$key][$this->getDefault()];
             }
         }
-        if ($this->config()->getSetting('log_missing_tags')) {
+        if ($this->config()->log_missing_tags) {
             if (!isset($this->_missingTagsLog)) {
-                $this->_missingTagsLog = fopen($this->config()->getSetting('log_missing_tags'), 'a');
+                $this->_missingTagsLog = fopen($this->config()->log_missing_tags, 'a');
             }
             fwrite($this->_missingTagsLog, "{$section}__{$key}\n");
             fflush($this->_missingTagsLog);

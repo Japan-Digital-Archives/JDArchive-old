@@ -4,7 +4,7 @@ class Jedarchive_Auth extends Jedarchive_Base
 {
     public function __construct()
     {
-        $this->_passwd = $this->readHtpasswd(APPLICATION_PATH . '/' . $this->config()->getSetting('htpasswd_location'));
+        $this->_passwd = $this->readHtpasswd(APPLICATION_PATH . '/' . $this->config()->htpasswd_location);
     }
 
     public function authenticate()

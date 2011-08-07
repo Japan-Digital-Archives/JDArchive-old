@@ -6,7 +6,7 @@
     global $langs;
     $language = isset($_GET["la"]) ? $_GET["la"] : '';
     if (!array_key_exists($language, $langs)) {
-      $language = 'en';
+      $language = 'ja';
     }
     
     return $language;

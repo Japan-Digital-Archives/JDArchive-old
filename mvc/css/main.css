@@ -170,6 +170,11 @@ img.right {
   width: 630px;
 }
 
+#content-wide {
+  float: left;
+  width: 910px;
+}
+
 /* Sidebar */
 
 #sidebar {

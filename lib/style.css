@@ -211,8 +211,8 @@ img.right {
 
 #sidebar li li {
   margin: 0;
-  padding: 12px 0px;
-  border-bottom: 1px dashed #bbb;
+  padding: 8px 0px;
+  /* border-bottom: 1px dashed #bbb; */
 }
 
 #sidebar li li a {

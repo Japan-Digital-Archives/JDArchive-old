@@ -11,8 +11,8 @@ start('_newabout');
 
 
 <div>
-<?php language_bar($language, array('en', 'ja')); ?>
-<div><h2 data-jp="「当企画について」" data-ko="운영자에게">About Us</h2></div>
+<?php language_bar($language, array('en','zh','ja')); ?>
+<div><h2 data-jp="「当企画について」" data-zh="关于我们" data-ko="운영자에게">About Us</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>
@@ -87,7 +87,7 @@ start('_newabout');
 
 <p><strong><a href="testimonial/">Share Your Testimonial</a></strong> - Share your experiences of the disasters directly using our testimonial form. Show us where you where when it happened, where the events took you, and what period of time your testimonial spans. Let future visitors to the archive find your story on the map alongside all the other elements of our archive.</p>
 
-<p><strong><a href="contribute/">Contribute Websites</a></strong> – Are there websites that relate to the disasters you think should be preserved for the future?  Share with us all of the blog entries you found moving, all the websites of organizations and groups who worked together in the aftermath, and sites on the many interesting debates and issues that emerged from it. Give researchers of tomorrow who study this time or anyone who wants to remember a chance to see what is available online to us now.
+<p><strong><a href="contribute/">Contribute Websites</a></strong> – Are there websites that relate to the disasters you think should be preserved for the future?  Share with us all of the blog entries you found moving, all the websites of organizations and groups who worked together in the aftermath, and sites on the many interesting debates and issues that emerged from it. Give researchers of tomorrow who study this time or anyone who wants to remember a chance to see what is available online to us now.</p>
 
 <p><strong><?php echo mailto('submit@jdarchive.org'); ?></strong> - You may also submit links to other kinds of online materials, as well as send us email correspondence (such as reports circulated by people in affected areas of Japan) or documents directly by email. In the email, please include as much contextual information as possible (e.g., who created the record, when, where, and so forth). 
 
@@ -95,6 +95,47 @@ start('_newabout');
 
 
 </p>
+
+<?php elseif ($language == 'zh'): ?>
+
+<p>日本2011灾难数码档案是哈佛大学埃德温·赖肖尔日本研究所与其他合作机构的一项倡议。我们的目标是收集与保存由此灾难产生的数码信息，并使这些信息易于利用。在短期内，我们希望这些记录能作为理解灾难的直接文献；在长期内，我们期待各界的学者们能利用本项目所收集的信息来分析2011年3月11日对日本以及全世界广义的影响与重要性。</p>
+
+<p>本档案在积极地寻找2011年3月11日全面的英文、中文、日文与韩文的资料。我们所收集的资料包括本地性，地域性，国家性与全国性的信息。</p>
+<p>本档案的网站界面完成之后，来客们可以自由搜索：</p>
+<ul class="inlist"><li><a href="content/?la=zh#websites">网站</a> - 在各种语言收录的企业与个人的网站，包括：<ul>
+<li>非政府组织、商业、贸易组织、学校以及政府组织</li>
+<li>受害者、救济人员、科学家、医疗职员与政策家</li></ul></li>
+<li><a href="content/?la=zh#testimonials">个人证言</a>关于灾难与其善后处理</li>
+<li><a href="content/?la=zh#photos">照片与录影</a> - 收藏于本所的合作者或在公共收据库（例如：Flickr、Picasa、YouTube）</li>
+<li><a href="content/?la=zh#audio">音响</a> - 音响录音，包括广播录影</li>
+<li><a href="content/?la=zh#maps">地图与地理数据</a> - 地理研究中心（CGA）与其它合作机构所整理的地理数据</li>
+<li><a href="content/?la=zh#social">社会媒体</a> - Twitter、公开的脸谱网网页与其它社交媒体的传信</li>
+<li><a href="content/?la=zh#text">其他文体资料</a> - 电子邮件、列表服务器传信、报告与文件的PDF等</li>
+<li><a href="content/?la=zh#articles">文件数据库</a> - 搜索本所合作者的媒体、文件数据库的使用权</li>
+</ul>
+
+<p>其中的信息（包括网页与个人证言）是直接由本所收集的。然而，大部分的信息是透过我们的合作机构保存、公开的。您能在以下的链接多了解本档案的综合性的做法：</p>
+
+<p><strong><a href="content/?la=zh">内容与收藏资料</a></strong></p>
+
+<p>我们正在准备一个综合性的网页界面，以方便来客们浏览、搜索与分享这些信息；例如，在阅读个人证言的同时，观看地图以及其时其地的照片或音响报告。本档案的这相面进行处理时，请多包涵。完成之后，此界面能让本档案的利用者无缝地搜索我们所预备的信息，以及各个合作机构所收藏的巨大的数据库。您能在以下的链接多认识本所的合作者：</p>
+
+<p><strong><a href="partners/?la=zh">合作机构网页</a></strong></p>
+
+<div><h2>您的一臂之力</h2></div>
+
+<p>此项目是依靠投稿存在的。它的范围是远远地超过本所的职员所能收集、处理的。我们只能请您投稿您的个人经验、以最详细的程度提供信息来源，给予本项目热烈的支持：</p>
+
+<p><strong><a href="testimonial/?la=zh">分享个人证言</a></strong>： 用本档案的投稿表格，直接分享您与3月11日灾难的个人经验。它是在何时何地发生的？您也能让其他来客透过地图找到您的故事。</p>
+
+<p><strong><a href="contribute/?la=zh">提供网页</a></strong> – ： 您认为有应该保存的相关网页吗？请与我们分享您所注目过的博克项目，或经历过，参加过3月11日善后处理的组织、团队的网页，以及分析、讨论此灾难的网页、留言板等。</p>
+
+<p><strong>提供其他信息</strong> ： 您也能用电子邮件发其他相关的资料（例如，文件、在受害地传阅的报告等）至本档案：<?php echo mailto('submit@jdarchive.org'); ?>。在您的邮件，也请不要忘记以最详细的程度写下材料的相关背景信息（例如、是谁记录的、在何时何地等。）
+
+
+
+</p>
+
 
 
 <?php else: ?>

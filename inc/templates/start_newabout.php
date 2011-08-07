@@ -57,6 +57,13 @@ $(function(){
       var href = $(this).attr('href');
       $(this).attr('href', href + '?la=ko');
     });
+  } else if (lang == 'en') {
+    // fix the urls
+	$('#jdarchive_logo').attr('href', href+'?la=en');
+    $('a[data-en]').each(function() {
+      var href = $(this).attr('href');
+      $(this).attr('href', href + '?la=en');
+    });
   } else if (lang == 'zh') {
 	    $('[data-zh]').each(function() {
 	      $(this).text($(this).attr('data-zh'));
@@ -94,11 +101,11 @@ $(function(){
       <!-- end #logo -->
       <div id="menu">
         <ul>
-          <li><a href="/" class="first" data-jp="当企画について" data-zh="关于我们" data-ko="소개 ">About</a></li>
-          <li class="current_page_item"><a href="/contribute/" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</a></li>
-          <li class="current_page_item"><a href="/testimonial/" data-zh="我的“日本东北大地震”" data-jp="わたしの「東日本大震災」">Testimonial</a></li>
-          <li class="current_page_item"><a href="/news/" data-zh="最新消息" data-jp="News">News</a></li>
-          <li class="last"><a href="/contact/" data-jp="お問い合わせ" data-zh="联系我们" data-ko="운영자에게">Contact</a></li>
+          <li><a href="/" class="first" data-en="About" data-jp="当企画について" data-zh="关于我们" data-ko="소개 ">About</a></li>
+          <li class="current_page_item"><a href="/contribute/" data-en="Contribute" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</a></li>
+          <li class="current_page_item"><a href="/testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-jp="わたしの「東日本大震災」">Testimonial</a></li>
+          <li class="current_page_item"><a href="/news/" data-en="News" data-zh="最新消息" data-jp="News">News</a></li>
+          <li class="last"><a href="/contact/" data-en="Contact" data-jp="お問い合わせ" data-zh="联系我们" data-ko="운영자에게">Contact</a></li>
         </ul>
       </div>
     </div>

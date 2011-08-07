@@ -168,9 +168,6 @@ class BaseController
         $auth = new Jedarchive_Auth();
         $auth->authenticate();
     }
-   
-    ////////////////////////////////////////////////////////////////////////////////
-    // view helpers
 
     /**
      * Redirect to a certain path. This will preserve get parameters, and if necessary

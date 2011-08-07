@@ -19,6 +19,9 @@ class Jedarchive_Base
 
     public function getI18n()
     {
+        if (is_null($this->_i18n)) {
+            $this->_i18n = new Jedarchive_I18n();
+        }
         return $this->_i18n;
     }
 

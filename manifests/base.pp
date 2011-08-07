@@ -49,43 +49,52 @@ class apache {
     require => Package["apache2"],
   }
 
-  file { "/etc/apache2/sites-available/jdarchive":
-    content => "<VirtualHost *:80>
-   DocumentRoot \"/vagrant\"
-   ServerName jdarchive.local
+  define a2site($path, $hostname) {
+    file { "/etc/apache2/sites-available/${name}":
+      content => "<VirtualHost *:80>
+        DocumentRoot \"${path}\"
+        ServerName ${hostname}
+        
+        <Directory />
+          Options FollowSymlinks
+          AllowOverride All
+        </Directory>
+        <Directory \"${path}\">
+          Options Indexes MultiViews FollowSymLinks
+          AllowOverride All
+          Order allow,deny
+          Allow from all
+        </Directory>
+      </VirtualHost>",
+      notify => Exec["reload-apache2"],
+    }
 
-   <Directory />
-       Options FollowSymlinks
-       AllowOverride All
-   </Directory>
-   <Directory \"/vagrant\">
-       Options Indexes MultiViews FollowSymLinks
-       AllowOverride All
-       Order allow,deny
-       Allow from all
-   </Directory>
-
-</VirtualHost>
-"
+    exec { "/usr/sbin/a2ensite ${name}":
+      unless => "/bin/readlink -e ${apache2_sites}-enabled/${name}",
+      notify => Exec["reload-apache2"],
+      require => Package["apache2"],
+    }
   }
 
-  exec { "/usr/sbin/a2ensite jdarchive":
-    unless => "/bin/readlink -e ${apache2_sites}-enabled/jdarchive",
-    notify => Exec["reload-apache2"],
-    require => Package["apache2"],
-  }
-
-  exec { "/usr/sbin/a2enmod rewrite":
-    unless => "/bin/readlink -e ${apache2_mods}-enabled/rewrite.load",
-    notify => Exec["reload-apache2"],
-    require => Package["apache2"],
+  define a2mod() {
+    exec { "/usr/sbin/a2enmod ${name}":
+      unless => "/bin/readlink -e ${apache2_mods}-enabled/${name}.load",
+      notify => Exec["reload-apache2"],
+      require => Package["apache2"],
+    }
   }
 
   exec { "reload-apache2":
     command => "/etc/init.d/apache2 reload",
     refreshonly => true,
-    subscribe => File["/etc/apache2/sites-available/jdarchive"],
-  } 
+  }
+
+  exec { "Switch apache user":
+    command => "sudo sed s/www-data/vagrant/g -i /etc/apache2/envvars",
+    refreshonly => true,
+    path => "/bin:/usr/bin",
+    subscribe => [ Package["apache2"] ],
+  }
 }
 
 class php5 {
@@ -123,6 +132,11 @@ include mysql-server
 include apache
 include php5
 include phpmyadmin
+
+apache::a2site{'jdarchive':
+    path => '/vagrant', 
+    hostname => 'jdarchive.local'
+}
 
 file { "/etc/php5/apache2/conf.d/my.ini":
   content => "[PHP]

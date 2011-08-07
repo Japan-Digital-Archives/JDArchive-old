@@ -1,5 +1,4 @@
-mvc/uploads
-mvc/thumbs
+image_uploads
 .project
 .settings
 .buildpath

@@ -47,7 +47,14 @@ JA.FileUploader = function(o){
             // used in css to hide progress spinner
             success: 'qq-upload-success',
             fail: 'qq-upload-fail'
-        }
+        }, 
+        messages: {
+            typeError: JA.t('upload_typeError'), //"{file} has invalid extension. Only {extensions} are allowed.",
+            sizeError: JA.t('upload_sizeError'), //"{file} is too large, maximum file size is {sizeLimit}.",
+            minSizeError: JA.t('upload_minSizeError'), //"{file} is too small, minimum file size is {minSizeLimit}.",
+            emptyError: JA.t('upload_emptyError'), //"{file} is empty, please select files again without it.",
+            onLeave: JA.t('upload_onLeave') //"The files are being uploaded, if you leave now the upload will be cancelled."            
+        },
     });
     // overwrite options with user supplied    
     $.extend(this._options, o);       
@@ -152,6 +159,8 @@ $.extend(JA.FileUploader.prototype, {
             $(this._find(item, 'thumb'))
                 .html('<img src="' + result['thumb'] + '"/>')
                 .css({border: '0px', "background-color" : '#fff', height: 'inherit'});
+            $(item).find('.name').attr('value', result['name']);
+            $(item).find('.ext').attr('value', result['ext']);
         } else {
             qq.addClass(item, this._classes.fail);
         }         
@@ -161,7 +170,7 @@ $.extend(JA.FileUploader.prototype, {
         item.qqFileId = id;
 
         var fileElement = this._find(item, 'file');        
-        $(fileElement).html(this._formatFileName(fileName));
+        $(fileElement).html(this._formatFileNameHTML(id, fileName));
         this._find(item, 'size').style.display = 'none';        
 
         this._listElement.appendChild(item);
@@ -196,9 +205,12 @@ $.extend(JA.FileUploader.prototype, {
             }
         });
     },
-    _formatFileName: function(name) {
+    _formatFileNameHTML: function(id, name) {
         name =  (-1 !== name.indexOf('.')) ? name.replace(/\.[^\.]*/, '') : name;
-        return '<input type="text" value="' + name + '" />';
+        return '<input type="text" name="image_upload[' + id + '][description]" value="' + name + '" />' +
+                '<input type="hidden" class="name" name="image_upload[' + id + '][name]" value="" />' +
+                '<input type="hidden" class="ext" name="image_upload[' + id + '][ext]" value="" />'
+                ;
     }
 });
 

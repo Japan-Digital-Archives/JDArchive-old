@@ -225,13 +225,18 @@ class TestimonialController extends BaseController
 
                 $data['client_ip'] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
                 
+                // Time to save to the DB, initialize table objects
                 $tblTestimonial = new Jedarchive_Table('testimonial');
                 $tblLocation = new Jedarchive_Table('testimonial_location');
+                $tblImage = new Jedarchive_Table('testimonial_image');
 
+                // save/update the testimonial
                 if (isset($data['id'])) {
                     $id = $data['id'];
                     $tblTestimonial->replace($data);
+                    // if this an update, throw away existing locations first
                     $tblLocation->delete(array('testimonial_id' => $id));
+                    $tblImage->delete(array('testimonial_id' => $id));
                 } else {
                     $id = $tblTestimonial->insert($data);
                 }
@@ -240,6 +245,18 @@ class TestimonialController extends BaseController
                     $location['testimonial_id'] = $id;
                     $tblLocation->insert($location);
                 }
+                
+                foreach ($params[image_upload] as $img) {
+                    $imgData = array(
+                        'testimonial_id' => $id,
+                        'filename' => $img['name'],
+                    	'extension' => $img['ext'],
+                        'description' => $img['description'],
+                        //lat , lng
+                    );
+                    $tblImage->insert($imgData);
+                }
+                
                 $this->_testimonialId = $id;
                 return true;
             }
@@ -253,11 +270,11 @@ class TestimonialController extends BaseController
     protected function handleEmail()
     {
         $email1 = $this->getParam('name') . '<' . $this->getParam('email') .'>';
-        $email2 = Jedarchive_Config::instance()->getSetting('email');
+        $email2 = $this->_config->email;
         $mail = new Jedarchive_Mail('testimonial');
 
         $id = $this->_testimonialId;
-        $editUrl = Jedarchive_Config::instance()->getSetting('base_url').'/testimonial/edit/'.$id.'/'.$this->id2hash($id).'?la='.$this->view->getI18n()->getCurrent();
+        $editUrl = $this->_config->base_url.'/testimonial/edit/'.$id.'/'.$this->id2hash($id).'?la='.$this->view->getI18n()->getCurrent();
 
         $mail
             ->setTo($email1)
@@ -344,20 +361,23 @@ class TestimonialController extends BaseController
     {
         // don't render a view
         $this->view = null;
-        $uploadDir = $this->_config->getSetting('upload_dir');
-        $thumbDir = $this->_config->getSetting('thumbs_dir');
-        $thumbPath = '/mvc/thumbs/';
-
+        $uploadDir = $this->_config->images->upload_dir;
+        
+        if (!(strpos($uploadDir, '/') === 0)) {
+            $uploadDir = APPLICATION_PATH . '/' . $uploadDir;
+        }
+        
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir);
         }
-
-        if (!is_dir($thumbDir)) {
-            mkdir($thumbDir);
-        }
-
-        if (!is_dir(APPLICATION_PATH . '/thumbs/')) {
-            symlink($thumbDir, APPLICATION_PATH . '/thumbs/');
+        
+        $sizes = array();
+        foreach($this->_config->image_sizes as $name => $size) {
+            $dir = $uploadDir . '/' . $name; 
+            if (!is_dir($dir)) {
+                mkdir($dir);
+            }
+            $sizes[$name] = explode('x', $size);
         }
 
         $settings = $this->_getImageSettings();
@@ -365,12 +385,15 @@ class TestimonialController extends BaseController
         $result = $uploader->handleUpload($uploadDir);
 
         if (isset($result['name']) && isset($result['ext'])) {
-            $src = $uploadDir . $result['name'] . '.' . $result['ext'];
-            $dst = $thumbDir . $result['name'] . '.' . $result['ext'];
-            $result['thumb'] = $thumbPath . $result['name'] . '.' . $result['ext'];
+            foreach ($sizes as $name => $size) {
+                $src = $uploadDir . '/' . $result['name'] . '.' . $result['ext'];
+                $dst = $uploadDir . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
 
-            $imgResizer = new Jedarchive_Image();
-            $imgResizer->resize(80, 60, $src, $dst);
+                $result[$name] = $this->_config->images->upload_path . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
+
+                $imgResizer = new Jedarchive_Image();
+                $imgResizer->resize($size[0], $size[1], $src, $dst);
+            }
         }
 
         // to pass data through iframe you will need to encode all html tags
@@ -383,8 +406,8 @@ class TestimonialController extends BaseController
      */
     protected function _getImageSettings()
     {
-        $allowedExtensions = explode(',', $this->_config->getSetting('image_upload_extensions'));
-        $sizeLimit = $this->_config->getSetting('image_upload_size_limit_mb') * 1024 * 1024;
+        $allowedExtensions = explode(',', $this->_config->images->upload_extensions);
+        $sizeLimit = $this->_config->images->upload_size_limit_mb * 1024 * 1024;
 
         return array(
             'allowedExtensions' => $allowedExtensions,

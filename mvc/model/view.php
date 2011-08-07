@@ -1,5 +1,13 @@
 <?
 
+require APPLICATION_PATH . '/model/url.php'; 
+
+/**
+ * 
+ * 
+ *
+ * @author arne
+ */
 class Jedarchive_View extends Jedarchive_Base
 {
     protected $_file = null;
@@ -26,7 +34,11 @@ class Jedarchive_View extends Jedarchive_Base
      */
     public function __get($var)
     {
-        return $this->_data[$var];
+        if (isset($this->_data[$var])) {
+            return $this->_data[$var];
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -100,11 +112,44 @@ class Jedarchive_View extends Jedarchive_Base
     /**
      * Do some url processing, in particular adding the language parameter
      */
-    public function url($url)
+    /*public function url($url)
     {
         if ($this->getI18n()->getCurrent() != $this->getI18n()->getDefault()) {
             $url .= '?la=' . $this->getI18n()->getCurrent();
         }
         return $url;
+    }*/
+    
+        /**
+     * Create a URL
+     * 
+     * @param string $controller
+     * @param string $action
+     * @param array $uriParams
+     * @param array $getParams
+     */
+    public function url($controller = null, $action = null, $uriParams = array(), $getParams = array()) 
+    {
+        return new Jedarchive_Url($controller, $action, $uriParams, $getParams);
+    }
+    
+    /**
+     * Escape HTML
+     * 
+     * @param string $str
+     */
+    public function h($str)
+    {
+        return htmlspecialchars($str);
+    }
+    
+    /**
+     * Clean up HTML, stripping all attributes and only allowing certain tags
+     * @param string $str
+     */
+    public function cleanHtml($str, $allow = '<p><i><b><em><strong><h1><h2><h3><h4><h5><h6><ul><li><br><hr>')
+    {
+        $stripAttr = new Jedarchive_Stripattributes();
+        return strip_tags($stripAttr->strip(strip_tags($str, $allow)));
     }
 }

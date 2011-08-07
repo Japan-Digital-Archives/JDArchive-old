@@ -14,10 +14,10 @@ class Jedarchive_Db
      */
     private function __construct($env)
     {
-        $config = Jedarchive_Config::instance()->getDatabaseSettings();
-        $this->_connection = mysql_connect($config['host'], $config['user'], $config['password']);
+        $config = Jedarchive_Config::instance()->database;
+        $this->_connection = mysql_connect($config->host, $config->user, $config->password);
         if ($this->_connection) {
-            mysql_select_db($config['name'], $this->_connection);
+            mysql_select_db($config->name, $this->_connection);
         } else {
             throw new Exception('Connection to DB failed.');
         }

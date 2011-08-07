@@ -44,7 +44,7 @@ $fields = array(
 foreach ($fields as $key => $content) { ?>
     <tr>
         <th><?= $this->t($key) ?></th>
-        <td><?= $content ?></td>
+        <td><?= $this->cleanHtml($content) ?></td>
     </tr>   
 <? } ?>
 <?= $this->partial('partial/multilocation.php', array('readonly' => true)) ?>

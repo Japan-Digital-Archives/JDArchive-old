@@ -1,5 +1,10 @@
 <?
 
+/**
+ * Load testimonials
+ * 
+ * @author abrasseu
+ */
 class Jedarchive_Testimonial_Loader extends Jedarchive_Base
 {
     protected $_table = null;

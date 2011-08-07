@@ -95,12 +95,12 @@ class Jedarchive_FileUploader {
         
         if(!$replaceOldFile){
             /// don't overwrite previous files that were uploaded
-            while (file_exists($uploadDirectory . $filename . '.' . $ext)) {
+            while (file_exists($uploadDirectory . '/' . $filename . '.' . $ext)) {
                 $filename .= rand(10, 99);
             }
         }
         
-        if ($this->file->save($uploadDirectory . $filename . '.' . $ext)){
+        if ($this->file->save($uploadDirectory . '/' . $filename . '.' . $ext)){
             return array('success'=>true, 'name' => $filename, 'ext' => $ext);
         } else {
             return array('error'=> 'Could not save uploaded file.' .

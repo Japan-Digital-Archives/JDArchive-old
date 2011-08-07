@@ -30,15 +30,15 @@
         <? if (!isset($this->unbranded)) : ?>
           <div id="header">
             <div id="logo">
-              <a id="jdarchive_logo" href="<?= $this->url('/') ?>"><h1><span style="display:none;">Digital Archive</span></h1></a>
+              <a id="jdarchive_logo" href="<?= $this->url() ?>"><h1><span style="display:none;">Digital Archive</span></h1></a>
             </div>
             <!-- end #logo -->
             <div id="menu">
               <ul>
-                <li><a href="<?= $this->url('/') ?>" class="first"><?= $this->t('about') ?></a></li>
-                <li class="current_page_item"><a href="<?= $this->url('/contribute/') ?>"><?= $this->t('contribute') ?></a></li>
-                <li class="current_page_item"><a href="<?= $this->url('/news/') ?>"><?= $this->t('news') ?></a></li>
-                <li class="last"><a href="<?= $this->url('/contact/') ?>"><?= $this->t('contact') ?></a></li>
+                <li><a href="<?= $this->url() ?>" class="first"><?= $this->t('about') ?></a></li>
+                <li class="current_page_item"><a href="<?= $this->url('contribute') ?>"><?= $this->t('contribute') ?></a></li>
+                <li class="current_page_item"><a href="<?= $this->url('news') ?>"><?= $this->t('news') ?></a></li>
+                <li class="last"><a href="<?= $this->url('contact') ?>"><?= $this->t('contact') ?></a></li>
               </ul>
             </div>
           </div>

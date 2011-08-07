@@ -1,10 +1,16 @@
 <?
 
+/**
+ * Internationalization class (i18n). Takes care of loading i18n.ini, containing all the translations.
+ * 
+ * @author arne
+ */
 class Jedarchive_I18n extends Jedarchive_Base
 {
     protected $_translations = null;
     protected $_section = null;
     protected $_language = null;
+    protected $_languages = array();
 
     public function __construct()
     {
@@ -19,7 +25,7 @@ class Jedarchive_I18n extends Jedarchive_Base
 
     public function getLanguages()
     {
-        return $this->config()->getLanguages();
+        return $this->config()->language->toArray();
     }
     
     public function getDefault()

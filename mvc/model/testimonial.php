@@ -1,5 +1,10 @@
 <?
 
+/**
+ * Testimonial data class
+ * 
+ * @author abrasseu
+ */
 class Jedarchive_Testimonial extends Jedarchive_Base
 {
     protected $_id;

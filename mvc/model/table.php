@@ -46,7 +46,7 @@ class Jedarchive_Table extends Jedarchive_Base
         }
     }
 
-    public function fetch($fields = '*', $where = null)
+    public function fetch($fields = '*', $where = null, $orderby = null)
     {
         $qry[] = "SELECT";
         if (is_array($fields)) {
@@ -56,6 +56,10 @@ class Jedarchive_Table extends Jedarchive_Base
         }
         $qry[] = "FROM `" . $this->_name . "`";
         $qry[] = $this->where($where);
+        if ($orderby) {
+            $qry[] = "ORDER BY";
+            $qry[] = $orderby;
+        }
         $qry[] = ';';
         return $this->db()->fetchRows(implode(' ', $qry));
     }

@@ -10,19 +10,30 @@
         <script type="text/javascript">var JA = <?= json_encode($this->javascriptVariables) ?>;</script>
     <? } ?>
 
+    <!-- JS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
-    <script src="/mvc/js/maps.js" type="text/javascript"></script>
-    <script src="/mvc/js/fileuploader.js" type="text/javascript"></script>
-    <script src="/mvc/js/ja-fileuploader.js" type="text/javascript"></script>
-    <script src="/mvc/js/main.js" type="text/javascript"></script>
+    <script src="/lib/TextboxList/GrowingInput.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="/lib/TextboxList/TextboxList.js" type="text/javascript" charset="utf-8"></script>
 
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" 
-     rel="stylesheet" type="text/css" media="screen" />    
-    <link href="/mvc/css/main.css" rel="stylesheet" type="text/css" media="screen" />    
-    <link href="/mvc/css/fileuploader.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="/mvc/js/maps.js?v=2" type="text/javascript"></script>
+    <script src="/mvc/js/fileuploader.js?v=2" type="text/javascript"></script>
+    <script src="/mvc/js/ja-fileuploader.js?v=2" type="text/javascript"></script>
+    <script src="/mvc/js/main.js?v=2" type="text/javascript"></script>    
+    <!--  <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
+        
+    <!-- CSS -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="screen" />    
+    
+    <link href="/mvc/css/main.css?v=2" rel="stylesheet" type="text/css" media="screen" />    
+    <link href="/mvc/css/fileuploader.css?v=2" rel="stylesheet" type="text/css" media="screen" />
+    
+    <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+    
+    <link href="/lib/TextboxList/TextboxList.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" /> 
+    <link href="/lib/TextboxList/TextboxList.Autocomplete.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" /> 
   </head>
   <body id="<?= $this->bodyId ?>" class="<?= $this->bodyClass ?>">
     <div id="wrapper">

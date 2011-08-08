@@ -32,3 +32,8 @@
     <input type="hidden" name="la" value="<?= $this->getI18n()->getCurrent() ?>" />
   </table>
 </form>
+<!-- 
+<div style="display:none;"><div id="image_location">
+    <?= $this->partial('partial/image-location.php') ?>
+</div></div>
+ -->

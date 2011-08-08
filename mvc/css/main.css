@@ -534,7 +534,7 @@ p.status {
   margin-bottom: 10px !important;
 }
 
-#map_canvas {
+#map_canvas, #image_map_canvas {
     width: 520px;
     height: 300px;
     position: relative;
@@ -607,4 +607,53 @@ textarea {
     font-size: 1.3em;
     margin-bottom: 1em;
 }
+
+.qq-upload-file {
+    float: left;
+}
+.qq-upload-right-wrap {
+    float: right;
+}
+
+.image-list-sub-item {
+    margin-bottom: 0.8em;
+    
+}
+
+.image-list-sub-item label {
+    width: 80px;
+    float: left;
+    text-align: right;
+}
+
+.image-list-sub-item .text-input {
+    width: 330px;
+    text-align: left;
+    float: right;
+}
+
+.image-list-sub-item .address-input {
+    width: 205px;
+    text-align: left;
+}
+
+.image-list-sub-item button {
+    width: 110px;
+    float: right;
+}
+
+.image-list-sub-item .instructions, .image-list-sub-item .image_marker {
+    margin-left: 90px;
+    clear: both;
+}
+
+.image-list-sub-item .image_marker {
+    margin-top: 1em;
+}
+
+.image-list-sub-item .textboxlist {
+    width: 333px;
+    float:right;
+}
+
 

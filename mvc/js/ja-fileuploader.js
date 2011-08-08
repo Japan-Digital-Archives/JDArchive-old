@@ -22,13 +22,15 @@ JA.FileUploader = function(o){
         fileTemplate: '<li><div class="qq-upload-wrapper">' +
                 '<div class="qq-upload-thumb"></div>' +
                 '<div class="qq-upload-list-item">' +
-                '<span class="qq-upload-file"></span>' +
-                '<span class="qq-upload-spinner"></span>' +
-                '<span class="qq-upload-size"></span>' +
-                '<a class="qq-upload-cancel" href="#">' + JA.t('button_cancel') + '</a>' +
-                '<span class="qq-upload-failed-text">' + JA.t('upload_failed') + '</span>' +
-                '<span class="qq-upload-delete">' + JA.t('image_delete') + '</span>' +
-                '</div><div class="clear"></div></div>' + 
+                '<div class="qq-upload-file"></div>' +
+                '<div class="qq-upload-right-wrap">' +
+                    '<span class="qq-upload-spinner"></span>' +
+                    '<span class="qq-upload-size"></span>' +
+                    '<a class="qq-upload-cancel" href="#">' + JA.t('button_cancel') + '</a>' +
+                    '<span class="qq-upload-failed-text">' + JA.t('upload_failed') + '</span>' +
+                    '<a class="qq-upload-delete" href="#">' + JA.t('image_delete') + '</a>' +
+                    '</div><div class="clear"></div></div>' +
+                '<div class="clear"></div></div>' +
             '</li>',        
         
         classes: {
@@ -162,6 +164,14 @@ $.extend(JA.FileUploader.prototype, {
                 .css({border: '0px', "background-color" : '#fff', height: 'inherit'});
             $(item).find('.name').attr('value', result['name']);
             $(item).find('.ext').attr('value', result['ext']);
+            $(item).find('.qq-upload-delete').show();
+            
+            var fileElement = this._find(item, 'file');
+            $(fileElement).html($('<div/>').html(result['list-item']).text());
+            
+            var textbox = new $.TextboxList($('#tagbox_'+result.name),{bitsOptions: {
+                editable: {addKeys: 32 }
+            }});
         } else {
             qq.addClass(item, this._classes.fail);
         }         
@@ -170,8 +180,8 @@ $.extend(JA.FileUploader.prototype, {
         var item = qq.toElement(this._options.fileTemplate);                
         item.qqFileId = id;
         
-        var fileElement = this._find(item, 'file');        
-        $(fileElement).html(this._formatFileNameHTML(id, fileName));
+        var fileElement = this._find(item, 'file');
+        $(fileElement).html(this._formatFileName(fileName));
         this._find(item, 'size').style.display = 'none';        
 
         this._listElement.appendChild(item);
@@ -188,11 +198,35 @@ $.extend(JA.FileUploader.prototype, {
         
         qq.remove(this._find(item, 'cancel'));
         qq.remove(this._find(item, 'spinner'));
-        
+        $(item).find('.qq-upload-delete').show();
+
         var size = this._find(item, 'size');
         size.style.display = 'inline';
         
         qq.setText(size, this._formatSize(result.size));
+        
+        var fileElement = this._find(item, 'file');
+        $(fileElement).load(
+                '/testimonial/imageprefill?la=' + JA.language, 
+                {'filename' : result.filename},
+                function() {
+                    var textbox = new $.TextboxList($('#tagbox_'+result.filename),{bitsOptions: {
+                        editable: {addKeys: 32}
+                    }});
+                    
+                    $.each(result.tags, function(idx,tag) {
+                       textbox.add(tag); 
+                    });
+                    
+                    if (result.lat != '0' && result.lng != '0') {
+                        var marker = new JA_Image_Marker(JA_Map.instance.map, new google.maps.LatLng(result.lat, result.lng), 'image_location_' + result.filename);
+                        marker.updateHtml();
+                        marker.makeVisible();
+                        JA_Marker.showAll();
+                    }
+                });
+
+
     },
     _getItemByFileId: function(id){
         var item = this._listElement.firstChild;        
@@ -223,14 +257,21 @@ $.extend(JA.FileUploader.prototype, {
                 qq.remove(item);
             }
         });
-    },
+    }/*,
     _formatFileNameHTML: function(id, name) {
-        name =  (-1 !== name.indexOf('.')) ? name.replace(/\.[^\.]*/, '') : name;
-        return '<input type="text" name="image_upload[' + id + '][description]" value="' + name + '" />' +
+        name =  (-1 !== name.indexOf('.')) ? name.replace(/\.[^\.]* /, '') : name;
+        return 'FILE';
+        /*JA.t('image_description') + '<input type="text" name="image_upload[' + id + '][description]" value="' + name + '" />' +
+               JA.t('image_tags') + '<input type="text" id="tagbox_' + id + '" name="image_upload[' + id + '][tags]" value="" />' +
+               JA.t('image_tags_instructions') + '<br />' +
                 '<input type="hidden" class="name" name="image_upload[' + id + '][name]" value="" />' +
-                '<input type="hidden" class="ext" name="image_upload[' + id + '][ext]" value="" />'
+                '<input type="hidden" class="ext" name="image_upload[' + id + '][ext]" value="" />' +
+                JA.t('image_location') +
+                ' <span class="image_location" id="image_location_' + id + '"><a onClick="javascript:JA.setImageLocation(&quot;'+ id +'&quot;);return false;" href="#">' + JA.t('image_set_location') + '</a><br /><span></span></span><br />';
+                '<input type="hidden" class="lat" name="image_upload[' + id + '][lat]" value="" />' +
+                '<input type="hidden" class="lng" name="image_upload[' + id + '][lng]" value="" />'
                 ;
-    }
+    }*/
 });
 
 
@@ -291,12 +332,12 @@ JA.UploadButton.prototype = {
             // in Opera only 'browse' button
             // is clickable and it is located at
             // the right side of the input
-            width: '200px',
-            height: '30px',
+            right: 0,
+            top: 0,
             fontFamily: 'Arial',
             // 4 persons reported this, the max values that worked for them were 243, 236, 236, 118
-            "margin-left": '-100px',            
-            "margin-top": '-10px',
+            fontSize: '118px',
+            margin: 0,
             padding: 0,
             cursor: 'pointer',
             opacity: 0

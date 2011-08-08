@@ -45,6 +45,7 @@ class BaseController
             $this->layout->unbranded = true;
             $this->view->unbranded = true;
         }
+        $this->jsVar('language', $i18n->getCurrent());
         $this->jsVar('i18n', $i18n->getSectionLang('javascript'));
         $this->_config = Jedarchive_Config::instance();
     }

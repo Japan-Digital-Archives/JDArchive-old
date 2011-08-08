@@ -10,6 +10,7 @@ class Jedarchive_Image extends Jedarchive_Base
     protected $_lat;
     protected $_lng;
     protected $_tags;
+    protected $_address;
     
     public function getId() {return $this->_id;}
     public function getTestimonialId() {return $this->_testimonial_id;}
@@ -19,6 +20,7 @@ class Jedarchive_Image extends Jedarchive_Base
     public function getLat() {return $this->_lat;}
     public function getLng() {return $this->_lng;}
     public function getTags() {return $this->_tags;}
+    public function getAddress() {return $this->_address;}
     
     public function setId($id) {$this->_id = $id; return $this;}
     public function setTestimonialId($testimonial_id) {$this->_testimonial_id = $testimonial_id; return $this;}
@@ -28,6 +30,7 @@ class Jedarchive_Image extends Jedarchive_Base
     public function setLat($lat) {$this->_lat = $lat; return $this;}
     public function setLng($lng) {$this->_lng = $lng; return $this;}
     public function setTags($tags) {$this->_tags = $tags; return $this;}
+    public function setAddress($address) {$this->_address = $address; return $this;}
     
     public function toArray($variant = '')
     {
@@ -40,6 +43,7 @@ class Jedarchive_Image extends Jedarchive_Base
             'lat' => $this->_lat, 
             'lng' => $this->_lng, 
             'tags' => $this->_tags, 
+        	'address' => $this->_address, 
         );
         
         if ('js-prefill' == $variant) {

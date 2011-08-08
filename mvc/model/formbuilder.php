@@ -3,6 +3,8 @@
 /**
  * Represents a form, has a number of functions to generate form elements,
  * and can do basic validation.
+ * 
+ * @author arne
  */
 class Jedarchive_Formbuilder extends Jedarchive_Base
 {

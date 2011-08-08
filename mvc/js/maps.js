@@ -49,6 +49,15 @@ JA_Marker = $.extend(
         
         latest: function() {
             return JA_Marker.all[JA_Marker.all.length - 1];
+        },
+        
+        showAll: function() {
+            if (this.count == 1) {
+                JA_Map.instance.map.panTo(this.latest().getPosition());
+            } 
+            if (this.count > 1) {
+                JA_Map.instance.map.fitBounds(this.getBounds());
+            }
         }
     }
 );
@@ -66,19 +75,11 @@ $.extend(
             this.index = JA_Marker.count++;
             JA_Marker.all[this.index] = this;
             
-            new google.maps.Marker();
             this.setPosition(latlng);
             this.setDraggable(JA.readonly ? false : true);
             this.setIcon(new google.maps.MarkerImage(this.iconUrl()));
             this.setMap(map);
-            $('#location_list').append('<li id="ja_marker_' + this.index + '" rel="' + this.index + '" >\
-<img src="' + this.iconUrl() + '" /> \
-<' + (JA.readonly ? 'span' : 'input') + ' type="text" class="location_name" name="location_name[' + this.index + ']" value="" /> \
-<span class="panTo caption" href="#"></span> \
-' + (JA.readonly ? '' : '<a class="remove" href="#">(' + JA.t('remove_location') + ')</a> ') + '\
-<input type="hidden" class="lat" name="lat[' + this.index + ']" value="" /> \
-<input type="hidden" class="lng" name="lng[' + this.index + ']" value="" /> \
-</li>');
+            this.addToPage();
 
             this.updateHtml();
             google.maps.event.addListener(
@@ -108,14 +109,26 @@ $.extend(
             return '/mvc/img/markers/red_' + String.fromCharCode(65 + this.index) + '.png';
         },
 
-        toString: function() 
+        toStr: function() 
         {
             return '' + Math.round(this.getPosition().lat()*10000)/10000 + ', ' + Math.round(this.getPosition().lng()*10000)/10000;
         },
 
+        addToPage: function()
+        {
+            $('#location_list').append('<li id="ja_marker_' + this.index + '" rel="' + this.index + '" >\
+<img src="' + this.iconUrl() + '" /> \
+<' + (JA.readonly ? 'span' : 'input') + ' type="text" class="location_name" name="location_name[' + this.index + ']" value="" /> \
+<span class="panTo caption" href="#"></span> \
+' + (JA.readonly ? '' : '<a class="remove" href="#">(' + JA.t('remove_location') + ')</a> ') + '\
+<input type="hidden" class="lat" name="lat[' + this.index + ']" value="" /> \
+<input type="hidden" class="lng" name="lng[' + this.index + ']" value="" /> \
+</li>');
+        },
+        
         updateHtml: function() 
         {
-            this.setCaption(this.toString());
+            this.setCaption(this.toStr());
             latlng = this.getPosition();
             lat = latlng.lat();
             lng = latlng.lng();
@@ -135,10 +148,83 @@ $.extend(
             } else {
                 $('#ja_marker_' + this.index + ' .location_name').attr('value', name);
             }
+        },
+        
+        makeVisible: function() {
+            this.getMap().panTo(this.getPosition());
         }
     }
 );
 
+////////////////////////////////////////////////////////////////////////////////
+// JA_Image_Marker
+function JA_Image_Marker(map, latlng, image_id) {
+    this.initialize(map, latlng, image_id);
+}
+
+$.extend(
+        JA_Image_Marker.prototype,
+        JA_Marker.prototype,
+        {
+            initialize: function(map, latlng, image_id) 
+            {
+                this.image_id = image_id;
+                this.index = JA_Marker.count++;
+                JA_Marker.all[this.index] = this;
+                
+                this.setPosition(latlng);
+                this.setDraggable(JA.readonly ? false : true);
+                this.setIcon(new google.maps.MarkerImage(this.iconUrl()));
+                this.setMap(map);
+                this.addToPage();
+    
+                this.updateHtml();
+                google.maps.event.addListener(
+                    this,
+                    'dragend',
+                    this.updateHtml
+                );
+                
+                /*
+                
+                $('#ja_marker_' + this.index + ' img, #ja_marker_' + this.index + ' .panTo').click(function(e) {
+                    idx = parseInt($(this).parent().attr('rel'));
+                    marker = JA_Marker.all[idx];
+                    marker.getMap().panTo(marker.getPosition());
+                    e.preventDefault();
+                });
+                
+                $('#location_list .remove').click(function(e) {
+                    idx = parseInt($(this).parent().attr('rel'));
+                    marker = JA_Marker.all[idx];
+                    $('#ja_marker_' + $(this).parent().attr('rel')).remove();
+                    marker.setMap(null);
+                    e.preventDefault();
+                });
+                */
+            },
+            iconUrl: function()
+            {
+                return '/mvc/img/markers/green_' + String.fromCharCode(65 + this.index) + '.png';
+            },
+            addToPage: function()
+            {
+                $('#' + this.image_id + ' .marker_info').html('<div class="image_marker" id="ja_marker_' + this.index + '" rel="' + this.index + '" >' +
+                        '<img src="' + this.iconUrl() + '" />' +
+                        '<span class="caption" href="#"></span>' +
+                        '</div>');
+            },
+            updateHtml: function() 
+            {
+                this.setCaption(this.toStr());
+                latlng = this.getPosition();
+                lat = latlng.lat();
+                lng = latlng.lng();
+                $('#' + this.image_id + ' .lat').attr('value', lat);
+                $('#' + this.image_id + ' .lng').attr('value', lng);
+            }
+        }
+);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // JA_Button
@@ -180,7 +266,8 @@ function JA_Map(lat, lng, zoom, id, type)
     this.options = {
         zoom: zoom,
         center: this.latlng,
-        mapTypeId: type
+        mapTypeId: type,
+        size: new google.maps.Size(520,300)
     };
     this.map = new google.maps.Map(document.getElementById(id), this.options);
     this.geocoder = new google.maps.Geocoder();
@@ -195,6 +282,7 @@ JA_Map.prototype = {
         geocoderRequest = {
             address: address
         };
+        var self = this;
         var map = this.map;
         var marker = this.marker;
         this.geocoder.geocode(
@@ -206,13 +294,17 @@ JA_Map.prototype = {
                 }
                 var latlng = result[0].geometry.location;
                 map.setCenter(latlng);
-                var marker = new JA_Marker(map, map.getCenter());
+                if (!self.marker) {
+                    var marker = self.createMarker(map, map.getCenter());
+                }
                 marker.setName(address);
             }
         );
+    },
+    createMarker: function(map, center) {
+        return new JA_Marker(map, center);
     }
 };
-
 
 $(document).ready(function() {
     JA_Map.instance = new JA_Map(38.268215, 140.869356, 8, 'map_canvas', google.maps.MapTypeId.ROADMAP);
@@ -244,11 +336,72 @@ $(document).ready(function() {
         });
     }
 
-    if (JA_Marker.count == 1) {
-        JA_Map.instance.map.panTo(JA_Marker.latest().getPosition());
-    } 
-    if (JA_Marker.count > 1) {
-        JA_Map.instance.map.fitBounds(JA_Marker.getBounds());
-    }
+    JA_Marker.showAll();
+
+    // select image location
+    /*
+    JA.image_map = new JA_Map(38.268215, 140.869356, 8, 'image_map_canvas', google.maps.MapTypeId.ROADMAP);
+    JA.image_map.createMarker = function(map, center) {
+        var marker = new JA_Image_Marker(map, center);
+        marker.image_id = JA.current_image;        
+        JA.image_marker = marker;
+        return marker;
+    };
+    $('#image_geocode_button').click(function() {
+        JA.image_map.showAddress($('#image_address').val());
+    });
+    $('input#image_address').bind("keypress", function(e) {
+        if (e.keyCode == 13) {
+            JA.image_map.showAddress($('#image_address').val());
+            e.preventDefault();
+        }
+    });*/
 });
 
+JA.setImageLocation = function(id) {
+    if (typeof JA.images == 'undefined') {
+        JA.images=[];        
+    }
+    if (JA.images[id]) { 
+        var marker = JA.images[id];
+        var image_id = id;
+        var geocoderRequest = {
+            address: $('#image_address_' + id).attr('value')
+        };
+        JA_Map.instance.geocoder.geocode(
+            geocoderRequest,
+            function(result, status) {
+                if (status != 'OK') {
+                    alert(JA.t('google_could_not_find_address'));
+                    return;
+                }
+                var latlng = result[0].geometry.location;
+                JA.images[id].setPosition(latlng);
+                
+                JA.images[id].updateHtml();
+                JA.images[id].makeVisible();
+            }
+        );
+    } else {
+        var image_id = id;
+        var geocoderRequest = {
+            address: $('#image_address_' + id).attr('value')
+        };
+        JA_Map.instance.geocoder.geocode(
+            geocoderRequest,
+            function(result, status) {
+                if (status != 'OK') {
+                    alert(JA.t('google_could_not_find_address'));
+                    return;
+                }
+                var latlng = result[0].geometry.location;
+                var marker = new JA_Image_Marker(JA_Map.instance.map, latlng, 'image_location_' + image_id);
+                JA.images[image_id] = marker;
+                
+                JA.images[id].updateHtml();
+                JA.images[id].makeVisible();
+            }
+        );
+    }
+    return false;
+};

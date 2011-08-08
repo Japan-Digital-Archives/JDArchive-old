@@ -178,8 +178,6 @@ class TestimonialController extends BaseController
      */
     public function uploadImageAction()
     {
-        // don't render a view
-        $this->view = null;
         $settings = $this->_getImageSettings();
         
         $uploadDir = Jedarchive_Image::getUploadDir();
@@ -210,10 +208,44 @@ class TestimonialController extends BaseController
                 $imgResizer = new Jedarchive_Image_Resizer();
                 $imgResizer->resize($size[0], $size[1], $src, $dst);
             }
+            $result['list-item'] = $this->view->partial(
+            	'/partial/image-list-item.php', 
+                array(
+                	'id' => $result['name'],
+                    'name' => $result['filename'],
+                    'ext' => $result['ext']
+                )
+            );
+
         }
 
+        
+        // don't render a view
+        $this->view = null;
+        
         // to pass data through iframe we need to encode all html tags
         echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+        //echo json_encode($result);
+    }
+    
+    public function imageprefillAction()
+    {
+        if ($filename = $this->getParam('filename')) {
+            $mapper = new Jedarchive_Image_Mapper();
+            $img = $mapper->loadByFilename($filename);
+            if ($img) {
+                print $this->view->partial(
+                	'/partial/image-list-item.php', 
+                    array(
+                    	'id' => $filename,
+                        'name' => $img->getDescription(),
+                        'ext' => $img->getExtension(),
+                        'address' => $img->getAddress()
+                    )
+                );                
+            }
+        }
+        exit;
     }
     
     ////////////////////////////////////////////////////////////////////////////////
@@ -227,6 +259,7 @@ class TestimonialController extends BaseController
      */
     private function handleSubmit()
     {
+        
         // If this is not a post request we don't do anything
         if ($this->isPost()) {
             $params = $this->getParams();
@@ -241,12 +274,14 @@ class TestimonialController extends BaseController
 
             // images are prefilled through JS
             $imgMapper = new Jedarchive_Image_Mapper();
-            foreach ($params['image_upload'] as $imgData) {
-                $img = $imgMapper->fromFormData($imgData);
-                $imgData = $img->toArray('js-prefill');
-                $imgPrefill[] = $imgData;
+            if (isset($params['image_upload'])) {
+                foreach ($params['image_upload'] as $imgData) {
+                    $img = $imgMapper->fromFormData($imgData);
+                    $imgData = $img->toArray('js-prefill');
+                    $imgPrefill[] = $imgData;
+                }
+                $this->jsVar('images', $imgPrefill);
             }
-            $this->jsVar('images', $imgPrefill);
             
             // If the user switches language we simply show the form again
             // including what was already filled in. that's what this is for.

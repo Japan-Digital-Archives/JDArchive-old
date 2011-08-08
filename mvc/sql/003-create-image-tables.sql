@@ -7,6 +7,7 @@ CREATE TABLE testimonial_image (
     description VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
     lat FLOAT,
     lng FLOAT,
+    address VARCHAR(255),
     FOREIGN KEY (testimonial_id) REFERENCES testimonial(id)
 ) CHARACTER SET utf8 COLLATE utf8_general_ci;
 

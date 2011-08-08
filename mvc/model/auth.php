@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Perfrom basic HTTP authentication. Credentials are read from an
+ * apace style .htpasswd file.
+ * 
+ * Simply call {@see authenticate} in your controller to protect a certain action.
+ * 
+ * @author arne
+ */
 class Jedarchive_Auth extends Jedarchive_Base 
 {
     public function __construct()

@@ -76,7 +76,7 @@ $(document).ready(function() {
     if ($('#file-uploader').length > 0) {
         var uploader = new JA.FileUploader({
             element: $('#file-uploader')[0],
-            action: '/testimonial/uploadImage',
+            action: '/testimonial/uploadImage?la=' + JA.language,
             allowedExtensions: JA.imageUpload.allowedExtensions,
             sizeLimit: JA.imageUpload.sizeLimit,
             debug: true
@@ -91,6 +91,7 @@ $(document).ready(function() {
     
     $('.qq-upload-delete').click(function(e) {
         $(this).parents('li').remove();
+        e.preventDefault();
     });
 });
 

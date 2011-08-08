@@ -6,8 +6,12 @@
  * Mostly to be used as nested objects, e.g.
  * 
  * $config->image_sizes->thumb
+ * 
+ * In use, once initialized, it's plug-and-play compatible with Zend_Config.
+ * 
+ * @author arne
  */
-class Jedarchive_Config implements Iterator
+class Jedarchive_Config implements Iterator, Countable
 {
     private static $_instance = null;
     private $_data = null;
@@ -165,6 +169,12 @@ class Jedarchive_Config implements Iterator
     {
         return $this->_index < $this->_count;
     }
+    
+    public function count()
+    {
+        return $this->_count;
+    }
+    
     
     public function toArray()
     {

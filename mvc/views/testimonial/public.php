@@ -34,17 +34,9 @@
             <td><?= $this->cleanHtml($content) ?>
             </td>
         </tr>
-        <? } ?>
-        <?= $this->partial('partial/multilocation.php', array('readonly' => true)) ?>
-
-        <? foreach($this->images as $img) { ?>
-        <tr>
-            <th></th>
-            <td><img src="<?= $img->getUrlPath() ?>"
-                alt=" <?= $img->getDescription() ?>" /> <br /> <?= $img->getDescription() ?>
-            </td>
-        </tr>
-        <? } ?>
+    <? } ?>
+    <?= $this->partial('partial/multilocation.php', array('readonly' => true)) ?>
+    <?= $this->partial('partial/images.php', array('images' => $this->images)) ?>
     </table>
 </div>
 <div id="sidebar"></div>

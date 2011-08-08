@@ -1,5 +1,5 @@
 Vagrant::Config.run do |config|
-  config.vm.box = "natty-server"
+  config.vm.box = "natty32"
 
   config.vm.network "10.7.7.2"
 

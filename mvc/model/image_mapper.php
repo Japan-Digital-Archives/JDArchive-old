@@ -1,9 +1,11 @@
 <?php
 
 /**
- * Map between image objects (Jedarchive_Image) and database rows.
+ * Map between image objects (Jedarchive_Image) and database rows, or other data
+ * sources.
  * 
- * In other words, load save image data to/from the DB.
+ * In other words, load save image data to/from the DB. Also creates objects
+ * from form data, we consider that a specific data source.
  * 
  * @author arne
  */
@@ -18,6 +20,9 @@ class Jedarchive_Image_Mapper
      */
     private $_imgTagTable = null;
     
+    /**
+     * Initialize, create table objects
+     */
     public function __construct()
     {
         $this->_imgTable = new Jedarchive_Table('testimonial_image');
@@ -31,7 +36,7 @@ class Jedarchive_Image_Mapper
      */
     public function loadByTestimonial($testimonialId)
     {
-        $rows = $this->_imgTable->fetch('*', array('testimonial_id' => $testimonialId));
+        $rows = $this->_imgTable->fetch('*', array('testimonial_id' => $testimonialId), 'id');
         $imgs = array();
         if (isset($rows) and count($rows) > 0) {
             foreach ($rows as $row) {
@@ -39,6 +44,23 @@ class Jedarchive_Image_Mapper
             }
         }
         return $imgs;
+    }
+    
+    
+    /**
+     * Load all images related to a certain testimonial
+     * 
+     * @param int $testimonialId
+     */
+    public function loadByFilename($name)
+    {
+        $rows = $this->_imgTable->fetch('*', array('filename' => $name));
+        $imgs = array();
+        if (isset($rows) and count($rows) > 0) {
+            foreach ($rows as $row) {
+                return $this->_createFromRow($row);
+            }
+        }
     }
     
     /**
@@ -57,11 +79,22 @@ class Jedarchive_Image_Mapper
             $img->setLat($data['lat']);
         }
         if (isset($data['lng'])) {
-            $img->setLat($data['lng']);
+            $img->setLng($data['lng']);
+        }
+        if (isset($data['tags']) && trim($data['tags'])) {
+            $img->setTags(explode(',', $data['tags']));
+        }
+        if (isset($data['address']) && trim($data['address'])) {
+            $img->setAddress($data['address']);
         }
         return $img;
     }
     
+    /**
+     * Save to the database, either inserting or updating
+     * 
+     * @param Jedarchive_Image $img
+     */
     public function save($img)
     {
         $data = $img->toArray();
@@ -83,6 +116,13 @@ class Jedarchive_Image_Mapper
         }
     }
     
+    /**
+     * Create a new instance of Jedarchive_Image from a database row 
+     * as returned from Jedarchive_Table (basically an associative array).
+     * 
+     * @param array $data
+     * @return Jedarchive_Image
+     */
     private function _createFromRow($data)
     {
         $img = new Jedarchive_Image();
@@ -94,6 +134,12 @@ class Jedarchive_Image_Mapper
         return $img;
     }
     
+    /**
+     * Helper to load all tags form the testimonial_image_tag table
+     * that are linked to a certain image.
+     * 
+     * @param int $id The testimonial_image_id from the image
+     */
     private function _loadTags($id) 
     {
         $rows = $this->_imgTagTable->fetch('*', array('testimonial_image_id' => $id));

@@ -65,9 +65,9 @@ class Jedarchive_Image extends Jedarchive_Base
         $parts = array($basePath);
         if ($variant != 'original') {
             $parts[] = $variant;
-            $extension = $this->_extension;
-        } else {
             $extension = 'jpg';
+        } else {
+            $extension = $this->_extension;
         }
         $parts[] = $this->_filename . '.' . $extension;
         return implode('/', $parts);

@@ -201,9 +201,9 @@ class TestimonialController extends BaseController
         if (isset($result['name']) && isset($result['ext'])) {
             foreach ($sizes as $name => $size) {
                 $src = $uploadDir . '/' . $result['name'] . '.' . $result['ext'];
-                $dst = $uploadDir . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
+                $dst = $uploadDir . '/' . $name . '/' . $result['name'] . '.jpg';
 
-                $result[$name] = $this->_config->images->upload_path . '/' . $name . '/' . $result['name'] . '.' . $result['ext'];
+                $result[$name] = $this->_config->images->upload_path . '/' . $name . '/' . $result['name'] . '.jpg';
 
                 $imgResizer = new Jedarchive_Image_Resizer();
                 $imgResizer->resize($size[0], $size[1], $src, $dst);

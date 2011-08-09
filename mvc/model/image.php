@@ -54,15 +54,31 @@ class Jedarchive_Image extends Jedarchive_Base
         return $data;
     }
 
+    /**
+     * Get a link to an image, 
+     * @param string $variant Thumb or full for the resized versions, 
+     * 'original' for the uploaded version as is
+     */
     public function getUrlPath($variant = 'full')
     {
         $basePath = $this->config()->images->upload_path;
-        return implode('/', array($basePath, $variant, $this->_filename . '.jpg'));
+        $parts = array($basePath);
+        if ($variant != 'original') {
+            $parts[] = $variant;
+            $extension = $this->_extension;
+        } else {
+            $extension = 'jpg';
+        }
+        $parts[] = $this->_filename . '.' . $extension;
+        return implode('/', $parts);
     }
     
+    /**
+     * Get the path on the file system
+     */
     public function getPath()
     {
-        return implode('/', array(self::getUploadDir(), $this->_filename . '.jpg'));
+        return implode('/', array(self::getUploadDir(), $this->_filename . '.' . $this->_extension));
     }
     
     public function getFileSize()

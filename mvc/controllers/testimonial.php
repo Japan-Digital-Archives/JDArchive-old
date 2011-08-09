@@ -339,17 +339,19 @@ class TestimonialController extends BaseController
                     $tblLocation->insert($location);
                 }
                 
-                $imgSettings = $this->_getImageSettings();
-                $imgMapper = new Jedarchive_Image_Mapper();
-                foreach ($params['image_upload'] as $imgData) {
-                    $img = $imgMapper->fromFormData($imgData);
-                    
-                    if ($img->fileExists()) {
-                        $img->setTestimonialId($id);
-                        $imgMapper->save($img);
-                    } else {
-                        if (APPLICATION_ENV == 'development')
-                            die($fullPath);
+                if (isset($params['image_upload'])) {
+                    $imgSettings = $this->_getImageSettings();
+                    $imgMapper = new Jedarchive_Image_Mapper();
+                    foreach ($params['image_upload'] as $imgData) {
+                        $img = $imgMapper->fromFormData($imgData);
+                        
+                        if ($img->fileExists()) {
+                            $img->setTestimonialId($id);
+                            $imgMapper->save($img);
+                        } else {
+                            if (APPLICATION_ENV == 'development')
+                                die($fullPath);
+                        }
                     }
                 }
                 

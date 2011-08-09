@@ -9,7 +9,7 @@ class Jedarchive_Image extends Jedarchive_Base
     protected $_extension;
     protected $_lat;
     protected $_lng;
-    protected $_tags;
+    protected $_tags = array();
     protected $_address;
     
     public function getId() {return $this->_id;}

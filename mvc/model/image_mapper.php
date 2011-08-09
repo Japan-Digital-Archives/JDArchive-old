@@ -108,6 +108,7 @@ class Jedarchive_Image_Mapper
             $img->setId($id);
             $data['id'] = $id;
         }
+
         foreach ($tags as $tag) {
             $this->_imgTagTable->insert(array(
                 'testimonial_image_id' => $data['id'],

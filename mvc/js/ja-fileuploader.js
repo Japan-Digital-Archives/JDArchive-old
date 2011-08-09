@@ -213,13 +213,13 @@ $.extend(JA.FileUploader.prototype, {
                 '/testimonial/imageprefill?la=' + JA.language, 
                 {
                     'filename' : result.filename,
-                    'ext': result.ext,
+                    'ext': result.extension,
                     'description': result.description,
                     'address': result.address ? result.address : ''
                 },
                 function() {
                     var textbox = new $.TextboxList($('#tagbox_'+result.filename),{bitsOptions: {
-                        editable: {addKeys: 32}
+                        editable: {addKeys: [13]}
                     }});
                     
                     if (result.tags) {
@@ -228,7 +228,7 @@ $.extend(JA.FileUploader.prototype, {
                         });
                     }
                     
-                    if (result.lat != '0' && result.lng != '0') {
+                    if (result.lat != '0' && result.lng != '0' && result.lat != '' && result.lng != '') {
                         var marker = new JA_Image_Marker(JA_Map.instance.map, new google.maps.LatLng(result.lat, result.lng), 'image_location_' + result.filename);
                         marker.updateHtml();
                         marker.makeVisible();

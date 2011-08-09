@@ -81,13 +81,17 @@ $(document).ready(function() {
             sizeLimit: JA.imageUpload.sizeLimit,
             debug: true
         });
+        
+        if (JA.images) {
+            $.each(JA.images, function(idx, val) {
+                uploader._addPrefill(val);
+            });
+        }
     }
     
-    if (JA.images) {
-        $.each(JA.images, function(idx, val) {
-            uploader._addPrefill(val);
-        });
-    }
+
+    
+    $('a.fancybox').fancybox();
 });
 
 

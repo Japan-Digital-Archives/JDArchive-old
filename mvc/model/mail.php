@@ -1,5 +1,10 @@
 <?
 
+/**
+ * Class that sends out emails
+ *
+ * @author abrasseu
+ */
 class Jedarchive_Mail extends Jedarchive_Base
 {
     protected $_from;
@@ -27,6 +32,10 @@ class Jedarchive_Mail extends Jedarchive_Base
         $this->_i18n->setSection('mail');
     }
 
+    /**
+     * 
+     * @throws Exception
+     */
     public function send()
     {
         $lang = $this->getI18n()->getCurrent();

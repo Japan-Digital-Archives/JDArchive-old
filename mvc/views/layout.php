@@ -30,8 +30,6 @@
     <link href="/mvc/css/main.css?v=2" rel="stylesheet" type="text/css" media="screen" />    
     <link href="/mvc/css/fileuploader.css?v=2" rel="stylesheet" type="text/css" media="screen" />
     
-    <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-    
     <link href="/lib/TextboxList/TextboxList.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" /> 
     <link href="/lib/TextboxList/TextboxList.Autocomplete.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" /> 
   </head>

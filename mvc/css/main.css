@@ -627,9 +627,9 @@ textarea {
 }
 
 .image-list-sub-item .text-input {
-    width: 330px;
+    width: 320px;
     text-align: left;
-    float: right;
+    display: inline;
 }
 
 .image-list-sub-item .address-input {
@@ -652,7 +652,7 @@ textarea {
 }
 
 .image-list-sub-item .textboxlist {
-    width: 333px;
+    width: 323px;
     float:right;
 }
 

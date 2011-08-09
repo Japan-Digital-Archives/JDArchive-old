@@ -45,10 +45,10 @@ class Jedarchive_Email
                     return false;
                 }
             }
-            if (!(checkdnsrr($domain,"MX") || checkdnsrr($domain,"A"))) {
+            /*if (!(checkdnsrr($domain,"MX") || checkdnsrr($domain,"A"))) {
                 // domain not found in DNS
                 return false;
-            }
+            }*/
         }
         return true;
     }

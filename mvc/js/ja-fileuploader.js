@@ -168,7 +168,10 @@ $.extend(JA.FileUploader.prototype, {
             
             var fileElement = this._find(item, 'file');
             $(fileElement).html($('<div/>').html(result['list-item']).text());
-            
+            $('.qq-upload-delete').click(function(e) {
+                $(this).parents('li').remove();
+                e.preventDefault();
+            });
             var textbox = new $.TextboxList($('#tagbox_'+result.name),{bitsOptions: {
                 editable: {addKeys: 32 }
             }});
@@ -208,15 +211,22 @@ $.extend(JA.FileUploader.prototype, {
         var fileElement = this._find(item, 'file');
         $(fileElement).load(
                 '/testimonial/imageprefill?la=' + JA.language, 
-                {'filename' : result.filename},
+                {
+                    'filename' : result.filename,
+                    'ext': result.ext,
+                    'description': result.description,
+                    'address': result.address ? result.address : ''
+                },
                 function() {
                     var textbox = new $.TextboxList($('#tagbox_'+result.filename),{bitsOptions: {
                         editable: {addKeys: 32}
                     }});
                     
-                    $.each(result.tags, function(idx,tag) {
-                       textbox.add(tag); 
-                    });
+                    if (result.tags) {
+                        $.each(result.tags, function(idx,tag) {
+                           textbox.add(tag); 
+                        });
+                    }
                     
                     if (result.lat != '0' && result.lng != '0') {
                         var marker = new JA_Image_Marker(JA_Map.instance.map, new google.maps.LatLng(result.lat, result.lng), 'image_location_' + result.filename);
@@ -224,6 +234,11 @@ $.extend(JA.FileUploader.prototype, {
                         marker.makeVisible();
                         JA_Marker.showAll();
                     }
+                    
+                    $('.qq-upload-delete').click(function(e) {
+                        $(this).parents('li').remove();
+                        e.preventDefault();
+                    });
                 });
 
 

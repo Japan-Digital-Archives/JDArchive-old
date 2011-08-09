@@ -307,7 +307,7 @@ JA_Map.prototype = {
 };
 
 $(document).ready(function() {
-    JA_Map.instance = new JA_Map(38.268215, 140.869356, 8, 'map_canvas', google.maps.MapTypeId.ROADMAP);
+    JA_Map.instance = new JA_Map(38.268215, 140.869356, 5, 'map_canvas', google.maps.MapTypeId.ROADMAP);
 
     if (!JA.readonly) {
         $(JA_Map.instance.addButton.button).click(function() {
@@ -337,25 +337,6 @@ $(document).ready(function() {
     }
 
     JA_Marker.showAll();
-
-    // select image location
-    /*
-    JA.image_map = new JA_Map(38.268215, 140.869356, 8, 'image_map_canvas', google.maps.MapTypeId.ROADMAP);
-    JA.image_map.createMarker = function(map, center) {
-        var marker = new JA_Image_Marker(map, center);
-        marker.image_id = JA.current_image;        
-        JA.image_marker = marker;
-        return marker;
-    };
-    $('#image_geocode_button').click(function() {
-        JA.image_map.showAddress($('#image_address').val());
-    });
-    $('input#image_address').bind("keypress", function(e) {
-        if (e.keyCode == 13) {
-            JA.image_map.showAddress($('#image_address').val());
-            e.preventDefault();
-        }
-    });*/
 });
 
 JA.setImageLocation = function(id) {

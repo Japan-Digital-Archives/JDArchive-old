@@ -20,7 +20,7 @@
 
     <script src="/lib/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript" charset="utf-8"></script>
 
-    <script src="/mvc/js/maps.js?v=3" type="text/javascript"></script>
+    <script src="/mvc/js/maps.js?v=4" type="text/javascript"></script>
     <script src="/mvc/js/fileuploader.js?v=3" type="text/javascript"></script>
     <script src="/mvc/js/ja-fileuploader.js?v=3" type="text/javascript"></script>
     <script src="/mvc/js/main.js?v=4" type="text/javascript"></script>    

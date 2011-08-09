@@ -173,7 +173,7 @@ $.extend(JA.FileUploader.prototype, {
                 e.preventDefault();
             });
             var textbox = new $.TextboxList($('#tagbox_'+result.name),{bitsOptions: {
-                editable: {addKeys: 32 }
+                editable: {addKeys: [13] }
             }});
         } else {
             qq.addClass(item, this._classes.fail);

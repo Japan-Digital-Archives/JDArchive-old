@@ -88,12 +88,10 @@ $(document).ready(function() {
             uploader._addPrefill(val);
         });
     }
-    
-    $('.qq-upload-delete').click(function(e) {
-        $(this).parents('li').remove();
-        e.preventDefault();
-    });
 });
 
 
-
+jQuery.fn.log = function (msg) {
+  console.log("%s: %o", msg, this);
+  return this;
+};

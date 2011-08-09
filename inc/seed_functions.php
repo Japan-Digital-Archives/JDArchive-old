@@ -257,7 +257,7 @@
 
   function get_submitters() {
     $people = array();
-    $sql = "SELECT name, COUNT(*) AS number FROM seeds GROUP BY name ORDER BY number DESC LIMIT 8";
+    $sql = "SELECT name, COUNT(*) AS number FROM seeds GROUP BY name ORDER BY number DESC LIMIT 10";
     $result = mysql_query($sql);
     while ($o = mysql_fetch_object($result)) {
       $people[] = $o;

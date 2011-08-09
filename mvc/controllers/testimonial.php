@@ -230,20 +230,17 @@ class TestimonialController extends BaseController
     
     public function imageprefillAction()
     {
-        if ($filename = $this->getParam('filename')) {
-            $mapper = new Jedarchive_Image_Mapper();
-            $img = $mapper->loadByFilename($filename);
-            if ($img) {
-                print $this->view->partial(
+        if ($filename = $this->getParam('filename')) {            
+            print $this->view->partial(
                 	'/partial/image-list-item.php', 
                     array(
-                    	'id' => $filename,
-                        'name' => $img->getDescription(),
-                        'ext' => $img->getExtension(),
-                        'address' => $img->getAddress()
+                        'id' => $filename,
+        				'name' => $this->getParam('description'), //$img->getDescription(),
+                        'ext' => $this->getParam('ext'), //$img->getExtension(),
+                        'address' => $this->getParam('address') //$img->getAddress()
                     )
-                );                
-            }
+             );
+
         }
         exit;
     }
@@ -262,6 +259,7 @@ class TestimonialController extends BaseController
         
         // If this is not a post request we don't do anything
         if ($this->isPost()) {
+            //echo '<pre>';print_r($this->getParams());die();
             $params = $this->getParams();
             
             // Set all the prefill stuff first, in case we need to render the form again
@@ -273,15 +271,7 @@ class TestimonialController extends BaseController
             $this->jsVar('location_name', $this->getParam('location_name'));
 
             // images are prefilled through JS
-            $imgMapper = new Jedarchive_Image_Mapper();
-            if (isset($params['image_upload'])) {
-                foreach ($params['image_upload'] as $imgData) {
-                    $img = $imgMapper->fromFormData($imgData);
-                    $imgData = $img->toArray('js-prefill');
-                    $imgPrefill[] = $imgData;
-                }
-                $this->jsVar('images', $imgPrefill);
-            }
+            $this->_prefillImages();
             
             // If the user switches language we simply show the form again
             // including what was already filled in. that's what this is for.
@@ -472,11 +462,21 @@ class TestimonialController extends BaseController
      * 
      * @param int $id Testimonial id
      */
-    private function _prefillImages($id)
+    private function _prefillImages($id = null)
     {
         $mapper = new Jedarchive_Image_Mapper();
-        $imgs = $mapper->loadByTestimonial($id);
-        
+        $imgs = array();
+        if ($id) {
+            $imgs = $mapper->loadByTestimonial($id);
+        } else {
+            if ($this->getParam('image_upload')) {
+                foreach ($this->getParam('image_upload') as $imgData) {
+                    $img = $mapper->fromFormData($imgData);
+                    $imgs[] = $img;
+                }
+            }
+        }
+            
         $data = array();
         foreach($imgs as $img) {
             $imgData = $img->toArray('js-prefill');

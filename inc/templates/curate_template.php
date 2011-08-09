@@ -106,7 +106,7 @@ $(function(){
 
 <hr />
 
-<p class="smallp">Top 8 Contributors:</p>
+<p class="smallp">Top 10 Contributors:</p>
 
 <?php foreach ($people as $person): ?>
 

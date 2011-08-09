@@ -151,7 +151,7 @@ img.right {
   float: left;
   width: 460px;
   margin: 0 auto;
-  background: url(/lib/images/logo5.png) no-repeat left top;
+  background: url(/lib/images/logo-jp.png) no-repeat left top;
 }
 
 #logo h1 {
@@ -272,6 +272,10 @@ table.seedform th, td {
   padding-bottom: 8px;
   padding-right: 10px;
   vertical-align: top;
+}
+
+table.seedform th {
+  width: 100px;
 }
 
 span.hint {

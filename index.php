@@ -61,33 +61,33 @@ start('_newabout');
 
 <p>The Archive actively seeks materials in Japanese, English, Chinese, and Korean on all aspects of the disasters of March 11, 2011, and commentary and reports on recovery efforts in their aftermath.  We include materials on local, regional, national, and global reactions.</p>
 <p>The completed interface will provide searchable access to:</p>
-<ul class="inlist"><li><a href="content/#websites">Websites</a> - a large archived collection of institutional and individual websites in multiple languages, including but not limited to:<ul>
+<ul class="inlist"><li><a href="content/?la=en#websites">Websites</a> - a large archived collection of institutional and individual websites in multiple languages, including but not limited to:<ul>
 <li>NGOs, businesses, trade groups, schools, and government agencies</li>
 <li>victims, relief workers, scientists, medical personnel, and policy makers</li></ul></li>
-<li><a href="content/#testimonials">Personal Testimonies</a> concerning the disasters and aftermath</li>
-<li><a href="content/#photos">Photographs and Videos</a> - Photos and videos collected by photo archive partners or in publicly accessible databases such as Flickr, Picasa, Youtube</li>
-<li><a href="content/#audio">Audio</a> - Recordings of audio, including radio broadcasts</li>
-<li><a href="content/#maps">Maps and Geographic Data</a> - selected geographic data layers prepared by the Center for Geographic Analysis and other partners</li>
-<li><a href="content/#social">Social Media</a> - Twitter, public Facebook pages, and other social media communications </li>
-<li><a href="content/#text">Other Textual Sources</a> - email and listserv communications, PDFs of reports and documents</li>
-<li><a href="content/#articles">Article Databases</a> - access to search the databases of our media and document database partners</li>
+<li><a href="content/?la=en#testimonials">Personal Testimonies</a> concerning the disasters and aftermath</li>
+<li><a href="content/?la=en#photos">Photographs and Videos</a> - Photos and videos collected by photo archive partners or in publicly accessible databases such as Flickr, Picasa, Youtube</li>
+<li><a href="content/?la=en#audio">Audio</a> - Recordings of audio, including radio broadcasts</li>
+<li><a href="content/?la=en#maps">Maps and Geographic Data</a> - selected geographic data layers prepared by the Center for Geographic Analysis and other partners</li>
+<li><a href="content/?la=en#social">Social Media</a> - Twitter, public Facebook pages, and other social media communications </li>
+<li><a href="content/?la=en#text">Other Textual Sources</a> - email and listserv communications, PDFs of reports and documents</li>
+<li><a href="content/?la=en#articles">Article Databases</a> - access to search the databases of our media and document database partners</li>
 </ul>
 
 <p>Some of these, including websites and testimonials, are directly collected by us. Most of them, however, are made accessible and preserved in cooperation with our content partners. Learn more about our meta-archival approach here:</p>
 
-<p><strong><a href="content/">Content and Collection</a></strong></p>
+<p><strong><a href="content/?la=en">Content and Collection</a></strong></p>
 
 <p>We are currently developing an integrated interface to allow visitors to browse, search, and share these materials, for example viewing a personal testimony together with layers of a map, while easily finding photographs and audio reports from that location and similar time period.  Please bear with us while we work on this aspect of the archive.  When completed, this archival platform will allow users to seamlessly search both materials we have assembled ourselves as well as the vast holdings archived by our partner organizations. Read more about our key partners here:</p>
 
-<p><strong><a href="partners/">Partner Page</a></strong></p>
+<p><strong><a href="partners/?la=en">Partner Page</a></strong></p>
 
 <div><h2>How You Can Help</h2></div>
 
 <p>Finally, this project is submission-driven.  Its scope far exceeds the capacity of our own staff to collect and curate the above materials.  We depend on YOU to submit reports of your own experiences and tell us in as much detail as possible about sources of information that you think are important.</p>
 
-<p><strong><a href="testimonial/">Share Your Testimonial</a></strong> - Share your experiences of the disasters directly using our testimonial form. Show us where you where when it happened, where the events took you, and what period of time your testimonial spans. Let future visitors to the archive find your story on the map alongside all the other elements of our archive.</p>
+<p><strong><a href="testimonial/?la=en">Share Your Testimonial</a></strong> - Share your experiences of the disasters directly using our testimonial form. Show us where you where when it happened, where the events took you, and what period of time your testimonial spans. Let future visitors to the archive find your story on the map alongside all the other elements of our archive.</p>
 
-<p><strong><a href="contribute/">Contribute Websites</a></strong> – Are there websites that relate to the disasters you think should be preserved for the future?  Share with us all of the blog entries you found moving, all the websites of organizations and groups who worked together in the aftermath, and sites on the many interesting debates and issues that emerged from it. Give researchers of tomorrow who study this time or anyone who wants to remember a chance to see what is available online to us now.</p>
+<p><strong><a href="contribute/?la=en">Contribute Websites</a></strong> – Are there websites that relate to the disasters you think should be preserved for the future?  Share with us all of the blog entries you found moving, all the websites of organizations and groups who worked together in the aftermath, and sites on the many interesting debates and issues that emerged from it. Give researchers of tomorrow who study this time or anyone who wants to remember a chance to see what is available online to us now.</p>
 
 <p><strong><?php echo mailto('submit@jdarchive.org'); ?></strong> - You may also submit links to other kinds of online materials, as well as send us email correspondence (such as reports circulated by people in affected areas of Japan) or documents directly by email. In the email, please include as much contextual information as possible (e.g., who created the record, when, where, and so forth). 
 
@@ -144,33 +144,33 @@ start('_newabout');
 
 <p>The Archive actively seeks materials in Japanese, English, Chinese, and Korean on all aspects of the disasters of March 11, 2011, and commentary and reports on recovery efforts in their aftermath.  We include materials on local, regional, national, and global reactions.</p>
 <p>The completed interface will provide searchable access to:</p>
-<ul class="inlist"><li><a href="content/#websites">Websites</a> - a large archived collection of institutional and individual websites in multiple languages, including but not limited to:<ul>
+<ul class="inlist"><li><a href="content/?la=en#websites">Websites</a> - a large archived collection of institutional and individual websites in multiple languages, including but not limited to:<ul>
 <li>NGOs, businesses, trade groups, schools, and government agencies
 <li>victims, relief workers, scientists, medical personnel, and policy makers</ul></li>
-<li><a href="content/#testimonials">Personal Testimonies</a> concerning the disasters and aftermath</li>
-<li><a href="content/#photos">Photographs and Videos</a> - Photos and videos collected by photo archive partners or in publicly accessible databases such as Flickr, Picasa, Youtube</li>
-<li><a href="content/#audio">Audio</a> - Recordings of audio, including radio broadcasts</li>
-<li><a href="content/#maps">Maps and Geographic Data</a> - selected geographic data layers prepared by the Center for Geographic Analysis and other partners</li>
-<li><a href="content/#social">Social Media</a> - Twitter, public Facebook pages, and other social media communications </li>
-<li><a href="content/#text">Other Textual Sources</a> - email and listserv communications, PDFs of reports and documents</li>
-<li><a href="content/#articles">Article Databases</a> - access to search the databases of our media and document database partners</li>
+<li><a href="content/?la=en#testimonials">Personal Testimonies</a> concerning the disasters and aftermath</li>
+<li><a href="content/?la=en#photos">Photographs and Videos</a> - Photos and videos collected by photo archive partners or in publicly accessible databases such as Flickr, Picasa, Youtube</li>
+<li><a href="content/?la=en#audio">Audio</a> - Recordings of audio, including radio broadcasts</li>
+<li><a href="content/?la=en#maps">Maps and Geographic Data</a> - selected geographic data layers prepared by the Center for Geographic Analysis and other partners</li>
+<li><a href="content/?la=en#social">Social Media</a> - Twitter, public Facebook pages, and other social media communications </li>
+<li><a href="content/?la=en#text">Other Textual Sources</a> - email and listserv communications, PDFs of reports and documents</li>
+<li><a href="content/?la=en#articles">Article Databases</a> - access to search the databases of our media and document database partners</li>
 </ul>
 
 <p>Some of these, including websites and testimonials, are directly collected by us. Most of them, however, are made accessible and preserved in cooperation with our content partners. Learn more about our meta-archival approach here:</p>
 
-<p><strong><a href="content/">Content and Collection</a></strong></p>
+<p><strong><a href="content/?la=en">Content and Collection</a></strong></p>
 
 <p>We are currently developing an integrated interface to allow visitors to browse, search, and share these materials, for example viewing a personal testimony together with layers of a map, while easily finding photographs and audio reports from that location and similar time period.  Please bear with us while we work on this aspect of the archive.  When completed, this archival platform will allow users to seamlessly search both materials we have assembled ourselves as well as the vast holdings archived by our partner organizations. Read more about our key partners here:</p>
 
-<p><strong><a href="partners/">Partner Page</a></strong></p>
+<p><strong><a href="partners/?la=en">Partner Page</a></strong></p>
 
 <div><h2>How You Can Help</h2></div>
 
 <p>Finally, this project is submission-driven.  Its scope far exceeds the capacity of our own staff to collect and curate the above materials.  We depend on YOU to submit reports of your own experiences and tell us in as much detail as possible about sources of information that you think are important.</p>
 
-<p><strong><a href="testimonial/">Share Your Testimonial</a></strong> - Share your experiences of the disasters directly using our testimonial form. Show us where you where when it happened, where the events took you, and what period of time your testimonial spans. Let future visitors to the archive find your story on the map alongside all the other elements of our archive.</p>
+<p><strong><a href="testimonial/?la=en">Share Your Testimonial</a></strong> - Share your experiences of the disasters directly using our testimonial form. Show us where you where when it happened, where the events took you, and what period of time your testimonial spans. Let future visitors to the archive find your story on the map alongside all the other elements of our archive.</p>
 
-<p><strong><a href="contribute/">Contribute Websites</a></strong> – Are there websites that relate to the disasters you think should be preserved for the future?  Share with us all of the blog entries you found moving, all the websites of organizations and groups who worked together in the aftermath, and sites on the many interesting debates and issues that emerged from it. Give researchers of tomorrow who study this time or anyone who wants to remember a chance to see what is available online to us now.</p>
+<p><strong><a href="contribute/?la=en">Contribute Websites</a></strong> – Are there websites that relate to the disasters you think should be preserved for the future?  Share with us all of the blog entries you found moving, all the websites of organizations and groups who worked together in the aftermath, and sites on the many interesting debates and issues that emerged from it. Give researchers of tomorrow who study this time or anyone who wants to remember a chance to see what is available online to us now.</p>
 
 <p><strong><?php echo mailto('submit@jdarchive.org'); ?></strong> - You may also submit links to other kinds of online materials, as well as send us email correspondence (such as reports circulated by people in affected areas of Japan) or documents directly by email. In the email, please include as much contextual information as possible (e.g., who created the record, when, where, and so forth). 
 

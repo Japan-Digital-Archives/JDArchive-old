@@ -161,6 +161,13 @@ img.right {
   float: left;
   width: 460px;
   margin: 0 auto;
+  background: url(images/logo-jp.png) no-repeat left top;
+}
+
+#logo-en {
+  float: left;
+  width: 460px;
+  margin: 0 auto;
   background: url(images/logo5.png) no-repeat left top;
 }
 

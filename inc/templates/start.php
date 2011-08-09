@@ -50,7 +50,8 @@ $(function(){
     $('[data-ko]').each(function() {
       $(this).text($(this).attr('data-ko'));
     });
-    
+    // fix the logo
+    $('#logo').css('background-image', 'url(http://jdarchive.org/lib/images/logo5.png)'); 
     // fix the urls
 	$('#jdarchive_logo').attr('href', href+'?la=ko');
     $('a[data-ko]').each(function() {
@@ -58,6 +59,8 @@ $(function(){
       $(this).attr('href', href + '?la=ko');
     });
   } else if (lang == 'en') {
+    // fix the logo
+    $('#logo').css('background-image', 'url(http://jdarchive.org/lib/images/logo5.png)');  
     // fix the urls
 	$('#jdarchive_logo').attr('href', href+'?la=en');
     $('a[data-en]').each(function() {
@@ -68,7 +71,8 @@ $(function(){
 	    $('[data-zh]').each(function() {
 	      $(this).text($(this).attr('data-zh'));
 	    });
-
+		// fix the logo
+        $('#logo').css('background-image', 'url(http://jdarchive.org/lib/images/logo5.png)'); 
 	    // fix the urls
 		$('#jdarchive_logo').attr('href', href+'?la=zh');
 	    $('a[data-zh]').each(function() {

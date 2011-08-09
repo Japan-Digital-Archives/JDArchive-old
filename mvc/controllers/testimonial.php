@@ -178,6 +178,9 @@ class TestimonialController extends BaseController
      */
     public function uploadImageAction()
     {
+ini_set("max_execution_time", 60);
+ ini_set("memory_limit", 33554432 * 5);
+
         $settings = $this->_getImageSettings();
         
         $uploadDir = Jedarchive_Image::getUploadDir();

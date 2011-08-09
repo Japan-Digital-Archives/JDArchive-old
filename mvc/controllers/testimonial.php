@@ -367,7 +367,7 @@ class TestimonialController extends BaseController
      */
     private function handleEmail()
     {
-        $email1 = $this->getParam('name') . '<' . $this->getParam('email') .'>';
+        $email1 = '"' . str_replace('"', "'", $this->getParam('name')) . '" <' . $this->getParam('email') .'>';
         $email2 = $this->_config->email;
         $mail = new Jedarchive_Mail('testimonial');
 

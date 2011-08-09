@@ -17,7 +17,7 @@ start('_newabout');
 
 <?php if ($language == 'ja'): ?>
 
-<p>この「２０１１東日本大震災デジタルアーカイブ」プロジェクトは、パートナーの協力なしに実現し得ません。インターネット・アーカイブ（Internet Archive）は我々に多くのウェブサイトを提供し、それらを長期間保存することを約束して下さっています。国立国会図書館（National Diet Library）とアメリカ議会図書館（Library of Congress）からは、当プロジェクトに必要な関連情報を集めるための専門的知識や経験、また支援を提供して頂いています。ハーバード大学メタ・ラボ（metaLAB）は当アーカイブの設計と開発に欠かせない存在であり、現在プラットフォームを生み出すべく活動中で、これにより、我々のアーカイブに収められた資料を検索し、あるいは眺め、そして共有するための豊かで強力なインターフェースが登場することでしょう。地理学分析センター（Center for Geographic Analysis）は、日本で起きた数々の震災に関して豊富な地理学的データを持ち、その収集については牽引的役割を果たしてきた、当アーカイブの設計には不可欠なセンターです。 </p>
+<p>この「２０１１東日本大震災デジタルアーカイブ」プロジェクトは、パートナーの協力なしに実現し得ません。インターネット・アーカイブ（Internet Archive）は我々に多くのウェブサイトを提供し、それらを長期間保存することを約束して下さっています。国立国会図書館（National Diet Library）とアメリカ議会図書館（Library of Congress）からは、当プロジェクトに必要な関連情報を集めるための専門的知識や経験、また支援を提供して頂いています。ハーバード大学メタ・ラボ（metaLAB）は当アーカイブの設計と開発に欠かせない存在であり、現在プラットフォームを生み出すべく活動中で、これにより、我々のアーカイブに収められた資料を検索し、あるいは眺め、そして共有するための豊かで強力なインターフェースが登場することでしょう。地理学分析センター（Center for Geographic Analysis）は、日本で起きた数々の震災に関して豊富な地理学的データを持ち、その収集については牽引的役割を果たしてきた、当アーカイブの設計には不可欠なセンターです。saveMLAKは、数々の取り組みの中でも特に、インターネット・アーカイブにより収集される資料の幅を格段に拡げることに尽力して下さっています。 </p>
 
 <h3><strong>インターネット・アーカイブ</strong></h3>
 <br />
@@ -70,7 +70,7 @@ start('_newabout');
 <a href="http://savemlak.jp/"><img style="padding-left: 5px;" alt="saveMLAK" src="/lib/images/mlak-logo.gif"></a>
 </p>
 <br />
-<p style="line-height: 170%;">saveMLAKは、 博物館・美術館（Museum）、図書館（Library）、文書館（Archives）、公民館（Kominkan） の関係者及び支援者によるプロジェクトです。saveMLAKでは、東日本大震災によって被災した施設や人々が、 どのような被害を受けているのかという被災情報、どのような支援を必要としているのかという救援情報を集め、 集約していくとともに、被災した施設や人々に対して、博物館、図書館、文書館、公民館といった施設やそこに関係している人々ができること、 必要と思われることを行っています。
+<p style="line-height: 170%;">saveMLAKは、 博物館・美術館（Museum）、図書館（Library）、文書館（Archives）、公民館（Kominkan） の関係者及び支援者によるプロジェクトです。saveMLAKでは、東日本大震災によって被災した施設や人々が、 どのような被害を受けているのかという被災情報、どのような支援を必要としているのかという救援情報を集め、 集約していくとともに、被災した施設や人々に対して、博物館、図書館、文書館、公民館といった施設やそこに関係している人々ができること、 必要と思われることを行っています。被災した博物館・美術館、図書館、文書館、公民館のウェブサイト情報を「2011東日本大震災デジタルアーカイブ」プロジェクトに提供しています。
 </p>
 
 
@@ -128,7 +128,7 @@ start('_newabout');
 <a href="http://savemlak.jp/"><img style="padding-left: 5px;" alt="saveMLAK" src="/lib/images/mlak-logo.gif"></a>
 </p>
 <br />
-<p style="line-height: 170%;">SaveMLAK is a project led by the staff and supporters of museums, libraries, archives, and community centers (k&#333;minkan) in Japan. The project is collecting information on the harm to people and damage to facilities caused by the 2011 T&#333;hoku earthquake and tsunami as well as identifying their needs in the relief effort. The saveMLAK project works to provide the people and institutions affected by the disaster with whatever assistance that project members in the museum, library, archive, and the k&#333;minkan community can provide.</p>
+<p style="line-height: 170%;">SaveMLAK is a project led by the staff and supporters of museums, libraries, archives, and community centers (k&#333;minkan) in Japan. The project is collecting information on the harm to people and damage to facilities caused by the 2011 T&#333;hoku earthquake and tsunami as well as identifying their needs in the relief effort. The saveMLAK project works to provide the people and institutions affected by the disaster with whatever assistance that project members in the museum, library, archive, and the k&#333;minkan community can provide. The project is contributing information about the many websites of affected institutions to the digital archive for our web archiving efforts.</p>
 
 
 

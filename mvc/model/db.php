@@ -44,13 +44,15 @@ class Jedarchive_Db
         $result = $this->query($sql);
         
         $rows = array();
-        while ($rowc = mysql_fetch_object($result)) {
+        if($result){
+	while ($rowc = mysql_fetch_object($result)) {
             $rowa = array();
             foreach ($rowc as $field => $value) {
                 $rowa[$field] = $value;
             }
             $rows[] = $rowa;           
         }
+	}
 
         return $rows;
     }

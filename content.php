@@ -11,8 +11,8 @@ start();
 
 
 <div>
-<?php language_bar($language, array('en', 'zh', 'ja')); ?>
-<div><h2 data-zh="内容与收藏资料" data-jp="コンテンツと所蔵情報">Content and Collection</h2></div>
+<?php language_bar($language, array('en', 'zh', 'ko', 'ja')); ?>
+<div><h2 data-zh="内容与收藏资料" data-ko="내용 및 수집 자료들" data-jp="コンテンツと所蔵情報">Content and Collection</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>
@@ -94,6 +94,97 @@ start();
 
 <p>もしもコンテンツ・プロバイダーに関わるお仕事をされていて、お持ちの収録情報に当アーカイブのプラットフォームから検索やアクセスを可能にするAPIを作って頂ける方がいらっしゃれば、<a href="http://jdarchive.org/contact/?la=ja">こちら</a>までご連絡下さい。</p>
 
+<?php elseif ($language == 'ko'): ?>
+
+
+
+
+
+<p>본 일본 2011 재해 프로젝트의 디지털 아카이브는 자체적으로 수집한 자료의 보관공간이자, 다른 공개 데이터베이스로 연결되는 통로입니다.  2011년 3월 일본을 강타한 비극과 같은 일련의 사건에 관한 아카이브를 구축하기 위해서, 우리는 내용 및 기술 파트너와 긴밀히 협력할 것이며, 이를 통하여 폭넓은 자료의 수집과 이러한 자료들을 검색하는 최상의 방법을 개발하고자 합니다</p>
+
+<p>본 작업은 저희만의 노력으로는 가능하지 않습니다. 성공적인 프로젝트는 여러 협력 기관의 도움으로 가능해집니다. </p>
+
+<p><strong><a href="http://jdarchive.org/partners/">협력 기관</a></strong></p>
+
+<p>아래에서 저희 아카이브 통합 컨텐츠의 종류, 해당 콘텐츠에 대한 소스의 일부, 그리고 앞으로 구축될 인터페이스를 소개하고자 합니다. </p>
+
+<h4><a name="websites">웹사이트</a></h4>
+
+<p>소셜 미디어의 성장에도 불구하고, 웹은 여전히 인터넷의 중요한 자리를 차지하고 있습니다. 따라서 우리는 재난에 관련한 무궁한 웹사이트를 수집하고 분류하는 것을 우리 중심 업무로 정했습니다. 블로그의 하나의 글타래이거나 여러 카테고리로 구성된 정부의 웹사이트거나, 포럼 혹은 지역 뉴스 매체 등을 막론하고, 우리 프로젝트의 목적은 미래 세대를 위해 이러한 웹사이트를 보존하는 것입니다.</p>
+
+<p>우리 프로젝트 연구원은 매일 관련된 사이트를 찾고, 우리의 정해진 <a href="http://jdarchive.org/contribute/?la=ko">제출양식</a>을 통해 제출된 여러 정보를 검토합니다. 검색의 효과를 극대화하기 위해서는, 가능한 많은 메타 데이터를 추가해야 합니다: 예를 들어, 서술 자료, 위치 자료, 웹사이트를 지칭하는 키워드나 개념어들(태그)입니다. 이러한 데이터베이스를 구성하기 위해서, 우리 프로젝트 연구원은 메타 데이터를 추가하는데 많은 시간을 할애하고 있습니다.</p>
+
+<p>우리 프로젝트 연구원이나 추천 자료를 제출한 사람이 찾아낸 웹사이트를 보존하기 위해서, “Internet Archive”와 같은 협력기관과 긴밀히 작업하고 있습니다.  우리는 이러한 웹 사이트를 장기적으로 보존하기 위해, 저희의 수준 높은 수집 기술을 바탕으로, 업데이트된 웹사이트의 목록을 “Internet Archive”에 주기적으로 제출하고 있습니다.</p>
+
+<p>우리가 이러한 관련 웹사이트를 폭넓게 모을 수 있도록 도와주시기를 부탁드립니다. 만약 지금 글을 읽고 있는 분께서 특별한 관심이나 전문 영역을 가지고 계시고, 또 재난에 관심이 있으시다면, 우리 양식에 많은 메타 데이터와 링크를 추가해 주십시오.</p>
+
+<p><strong><a href="http://jdarchive.org/contribute/?la=ko">제출양식</a></strong></p>
+
+<p>우리 아카이브의 구성요소의 하나인 아카이브간 검색 및 탐색 인터페이스는 개발 중에 있으며, 이 기간 동안 모든 기능이 작동하지 못할 수도 있습니다. 그 기간 동안에 그 대안으로 기본적인 검색을 가능케 하여, 정보를 추가할 때 우리가 수집하고있는 웹사이트를 둘러볼 수 있도록 하였습니다. 이를 사용하여 검색하고 계시다면, 이것이 최종 결과물이 아닐 뿐 아니라 우리가 구성하고 있는 풍부한 아카이브 데이터베이스의 일부분임을 숙지해주셨으면 좋겠습니다. 또한 참고로 각 링크는 현재 운영 중인 웹사이트로 연결이 되며, 저희 “Internet Archive”에는 저장이 되어 있지 않습니다.</p>
+
+<p><strong><a href="http://jdarchive.org/seeds/">수집된 웹사이트 둘러보기</a></strong></p><br />
+
+<h4><a name="testimonials">개인 수기</a></h4>
+
+<p>웹사이트를 보존하는 일 이외에도, 재난으로 인해 영향을 받거나 그를 경험한 여러 사람들의 목소리와 그 기록을 보존하고자 합니다. 이에, 사람들의 증언 및 수기 등을 모으고 있습니다.</p> 
+
+<p><strong><a href="http://jdarchive.org/testimonial/?la=ko">증언양식</a></strong></p>
+
+<p>최근 재해를 경험했다면, 그 경험과 느낌을 공유해 주십시오. 우리는 "경험"을 넓게 정의하고 있습니다. 영향을 직접적으로 받는 지역에 있는 사람의 증언이나 그에 연결된 사람들뿐 아니라, 복구 및 재건을 위한 구호 활동 혹은 이러한 계획에 참가한 사람들로부터 의견을 듣고 싶습니다. 뿐만 아니라 멀리서 재해를 바라보고 기금 모금 활동 등을 행한 사람들의 생각이나 활동 역시 저희에게 중요합니다.</p>
+
+<p>만약 이러한 증언을 제출해주실 때, 허락해주신다면, 그 증언과 경험은 저희 아카이브에서 다른 사람들의 이야기와 공유될 것이고, 언급하셨던 시간과 장소 역시 공유될 것입니다. 이러한 활동을 통해서, 특정 장소 또는 특정 시간에 아카이브에 실린 내용과 증언이 통합되어 미래 우리의 아카이브에 연구원 및 기타 이용 방문자들의 활용도를 높일 수 있을 것입니다.</p>
+
+<p>경험하셨던 일을 인터넷 등에 쓰셨다면, 그 링크를 저희 정해진 <a href="http://jdarchive.org/contribute/?la=ko">제출양식</a>을 통해 제출해주십시오.  이때 우리의 평가 양식에 직접 텍스트를 복사하여 시간과 장소 정보를 추가해 주시기를 부탁드립니다. 우리는 이미 재해에 대한 개인적인 이야기들도 모으기 시작한 일본의 기관들과 함께 일할 계획입니다. 만약 개인적인 이야기를 자신만의 컬렉션을 만들어서 직접 참여하시고 계시다면, 저희에게 알려주시기 바랍니다. 우리는 여러분이 여러분의 자료를 저희과 공유하듯, 저희 자료를 여러분과 공유하고 싶습니다.</p>
+
+<p>우리가 전반적인 검색 기능 등을 작업하여, "주목할 만한 수기" 등의 페이지를 통해 제출한 자료를 선별하고 페이스북이나 트위터를 통해 이를 읽으실 수 있도록 할 것입니다. </p><br />
+
+<h4><a name="photos">사진 및 영상 자료</a></h4>
+
+<p>재난과 폐허가 일어난 지역 사회, 그리고 동북부 일본 전국에서 진행되는 재건 노력을 담은 강력한 이미지는 전세계 수백만의 사람을 감동시켰습니다. 사진과 비디오를 모으는 노력들은 거의 바로 시작되었습니다. 여기 2011 일본 재해 프로젝트의 디지털 아카이브에 우리는 여러분이 사진을 업로드하는 것이 곧 가능토록 하겠습니다. 그리고 그만큼 중요하게, 우리는 기존 사진 아카이브를 구현하는 노력어 더불어 Flickr나 Picasa, YouTube 등과 협력 관계를 구축하고 이와 같은 공동 데이터베이스에 있는 검색 결과를 통합하기 위해 노력할 것입니다.</p>
+
+<p>이러한 작업을 돕고자 하신다면, 재해와 관련된 이미지를, Flickr나 Picasa, YouTube에 올리실 때에 자료를 다운로드하고 공유할 수 있도록, 크리에이티브 커먼즈(<a href="http://www.cckorea.org/xe/?mid=main">Creative Commons</a>) 라이센스를 허락해주시길 부탁드립니다.</p><br />
+
+<h4><a name="audio">음향 자료</a></h4>
+
+<p>우리는 오디오 자료의 중요성을 충분히 인식하고 있습니다. 따라서 자료를 제공하고 또한 그들의 자료를 우리가 검색할 수 있도록 하는 해당 분야의 파트너와 협력을 모색하고 있습니다. 우리는 모든 형태의 음향 자료에 관심이 있습니다. 예를 들어, 라디오 방송, 구전 녹취, 재난과 그 이후의 있었던 녹음들 말입니다.</p><br />
+
+<h4><a name="maps">지도와 지리적 데이터</a></h4>
+
+<p>하버드대학교의 지리분석센터(CGA, Center for Geographic Analysis)는 이미 일본 센다이 지진 자료 포털(<a href="http://cegrp.cga.harvard.edu/japan/">Japan Sendai Earthquake Data Portal</a>)을 지진 직후에 이미 만들었고, 이를 통해 여러 자원봉사자들과 함께 빠르고 효과적으로 업무를 진행하고 있습니다. 이런 자원봉사진은 “CrisisCommons” 및 “HyperCities”와 같은 단체를 포함하고 있는데, 이를 통해 중요한 기준점 역할을 하는 일반 지리 자료뿐 아니라 일본의 재난에 직접적으로 관련된 지리 자료들까지 포괄하는 폭넓은 자료를 구성할 수 있습니다. 우리는 아카이브의 다른 요소와 이러한 정보를 통합 하기 위해서 중요한 지리적 데이터의 일부를 처리하는 작업에 있어 하버드지리분석센터와 함께 일하고 있습니다. 예제가 구성되면, 이곳에 차후 게시할 것입니다.</p>
+
+<p>저희가 보관하거나 공유하고자하는 지리 데이터가있다면, <a href="http://cegrp.cga.harvard.edu/japan/?q=content/contribute">CGA에</a> 연락하시기를 당부드립니다. CGA에서는 쉐이프파일(블록과 비슷한 지리정보 구성 객체), 벡터 데이터, KML 파일 혹은 테이블 형식의 자료를 업로드하는 방법 등의 정보를 구할 수 있습니다.</p><br />
+
+<h4><a name="social">소셜 미디어</a></h4>
+
+<p>2011년 3월 사회 네트워크를 따라 만들어진 가장 중요한 온라인 커뮤니케이션으로 트위터를 꼽을 수 있습니다. 트위터를 통해 지진과 쓰나미가 일어난 이후에 엄청난 양의 메시지가 전달되었습니다. 그 이후로, 그들의 지리적 위치 정보와 함께 보관된 메시지의 일부를 모으려는 여러 노력들이 있었습니다. 그리고 미국 국회도서관은 트위터의 데이터베이스와 아카이브 컬렉션을 더 오픈하도록 만들고 있습니다. 우리는 사회적 네트워크 차원의 핵심 구성 요소가 된 트위터 아카이브의 자료들을 통합코자 협력제휴를 구축하고, 기술적인 문제들을 해결코자 하고 있습니다. </p>
+
+<p>트위터 이외에 우리는 또한 다른 형태의 소셜 미디어, 예를 들어 재난 이후 다양한 반응을 정리했던 중요한 공개 페이스북 페이지를 찾고 있습니다. 소셜 미디어에 대해 우리가 수립한 정보 구성 전략에 대해서 제안하실 말씀이 있으시면, <a href="http://jdarchive.org/contact/">suggestions</a> 페이지를 활용해 주십시오.</p><br />
+
+
+<h4><a name="text">기타 문헌 자료</a></h4>
+
+<p>2011 일본 재해 프로젝트 디지털 아카이브는 주로 이메일을 모아서 시작했습니다. 처음 아카이브가 시작할 때부터, 우리는 영향을 받은 이들의 경험에 대한 설명과 전문 서신을 공유코자 하는 참여자의 이메일을 수집했습니다. 우리는 재해에 관련하여 적극적으로 의견을 피력하는 여러 listserv 그룹(우편목록 통신)의 중요한 의견을 모아두었습니다. 마지막으로, 우리는 또한 워드문서 및 PDF와 같은 다양한 포맷의 문서 자료 역시 보존하고 있습니다.
+</p> 
+
+<p>이러한 성격의 문헌을 공유하고자하는 경우 저희에게 아래의 이메일로 직접보내주십시오.</p>
+
+<p><strong><?php echo mailto('submit@jdarchive.org'); ?></strong></p>
+
+<p>이메일에는 최대한의 정보(누가 작성했는지, 배포 허가를 취득해야 하는지, 어떠한 전후사정에서 만들어진 정보인지 등)를 담아주시길 부탁드립니다. </p><br />
+
+<h4><a name="articles">기사 데이터베이스</a></h4>
+
+<p>누구라도 Internet Archive 를 통해 정해진 <a href="http://jdarchive.org/contribute/?la=ko">제출 양식</a>을 이용하여 웹사이트를 제출할 수 있게 하는 한편, 방대한 언론 기사 데이터베이스와 재난 관련 출판물과 관련된 중요한 기관들의 협력을 적극적으로 추구하는 데 목표를 두고 있습니다.</p>
+
+<p>온라인 콘텐츠 공급자와 함께 작업하고 계시거나, 수집 자료의 아카이브 플랫폼 접근 검색 권한을 가진 API를 구축하고자 하시는 경우에는 저희에게 <a href="http://jdarchive.org/contact">문의</a>해주세요.</p>
+
+
+
+
+
+
+
+
 <?php elseif ($language == 'zh'): ?>
 
 <p>日本2011灾难数码档案不仅是一个数据库；它同时亦是介绍其他档案与公开数据库的一个窗口。为了创造一个能反映出像2011年3月的日本灾难的事件的纷繁性，我们需要在内容上、技术上与各种合作者共同努力，这样才能扩大资料的范围、开发搜索器资料的最佳界面。</p>
@@ -108,13 +199,13 @@ start();
 
 <p>社会媒体的利用频度兴盛；然而，网页依然是因特网的中心。因此，本项目主要任务之一就是最大限度的辨认以及存档与3月11日灾难有关联的网页。无论是个人的博克项目、政府机关的网页或者是本地的新闻媒体，我们的目标就是保存这些信息资料，以让它们代代相传。</p>
 
-<p>本项目的职员天天寻找相关的网页，而评论透过<a href="http://jdarchive.org/contribute/">我们的表格</a>之投稿。为了使搜索的效果最大化，我们必须以最大限度添加网页资料的元数据：丰富的叙述，地理数据，在网页中提到的关键字与概念的标签。为了达至此目标，本项目的职员一直在为档案中的网页添加元数据。</p>
+<p>本项目的职员天天寻找相关的网页，而评论透过<a href="http://jdarchive.org/contribute/?la=zh">我们的表格</a>之投稿。为了使搜索的效果最大化，我们必须以最大限度添加网页资料的元数据：丰富的叙述，地理数据，在网页中提到的关键字与概念的标签。为了达至此目标，本项目的职员一直在为档案中的网页添加元数据。</p>
 
 <p>为了保存这些被本项目的职员（或者您）所指明的网页，我们与我们最重要的合伙机构之一的网络档案（Internet Archive）密切合作。我们定期地向网络档案提交一大单子的新网页，而网络档案会利用它们大功率的收割技术来捕获并保存这些网页，使它们能被长期保管。</p>
 
 <p>请帮助我们使这个网页收集项目越广阔。若您对3月11日灾难的某方面（例如，日本国内的某地区）特别关心，请考虑透过以下的投稿表格替我们添加链接与元数据：</p>
 
-<p><strong><a href="http://jdarchive.org/contribute/">投稿表格</a></strong></p>
+<p><strong><a href="http://jdarchive.org/contribute/?la=zh">投稿表格</a></strong></p>
 
 <p>如同本项目的其他成分，现在的多数数据搜索·浏览界面正在开发中，暂时不能使用。在这期间，我们创造了一个很简单的搜索·浏览界面，让您能开始接触到我们正在收集的网页（您会到现时版的网页而非网络档案保存版）。这只是一个临时的措施，它并非代表被创造中的多面性界面。</p>
 
@@ -128,7 +219,7 @@ start();
 
 <p>请考虑与我们分享您与大地震和津波的经验。所谓 “经验”，不单指在受害地的人的故事（包括参加救济活动或善后处理的人）。我们也注重在日本国外对此灾难加以注意的事外者的感想与活动。或许您有组织过资金筹集会，或有从一个特定的角度来分析3月11日的意义。若您愿意投稿于本项目，我们会把它输入本档案，而且也能记录下持续时间以及地理数据。这会让往后的研究学者与本档案的其他来客利用您的个人证言与其他数据获得一个富有综合性的故事。</p>
 
-<p>若您已经在网上分享过您的经验，请考虑在本项目的<a href="http://jdarchive.org/contribute/">提交表格</a>输入相关链接，而且也在本项目的网站再次提交您的故事（加入地名与期间）。若您（个人或企业）也在收集关于3月11日的故事，请与我们联系。我们会乐意地与您共同分享彼此的证言收藏。</p>
+<p>若您已经在网上分享过您的经验，请考虑在本项目的<a href="http://jdarchive.org/contribute/?la=zh">提交表格</a>输入相关链接，而且也在本项目的网站再次提交您的故事（加入地名与期间）。若您（个人或企业）也在收集关于3月11日的故事，请与我们联系。我们会乐意地与您共同分享彼此的证言收藏。</p>
 
 <p>在全面的搜索界面被开发之期间，您能透过我们的 “注目证言” 网页，或用本项目的Facebook、Twitter网页，阅读一些已投稿的故事。</p><br />
 
@@ -167,7 +258,7 @@ start();
 
 <h4><a name="articles">资料数据库</a></h4>
 
-<p>虽然任何人能透过这个<a href="http://jdarchive.org/contribute/">提交表格</a>向我们提交能被保存的相关网页，本项目的目标是要与具有丰富的数据库的企业机构合作，共同利用彼此的媒体、出版与资料。</p>
+<p>虽然任何人能透过这个<a href="http://jdarchive.org/contribute/?la=zh">提交表格</a>向我们提交能被保存的相关网页，本项目的目标是要与具有丰富的数据库的企业机构合作，共同利用彼此的媒体、出版与资料。</p>
 
 <p>若您与网上数据提供者有关系，有开发过 （或愿意开发）一个让这个数据提供者的资料透过本档案的界面被搜索的API，<a href="http://jdarchive.org/contact">请联系我们</a>。</p>
 
@@ -187,13 +278,13 @@ start();
 
 <p>Despite the rise of social media, the web is still the heart of content on the Internet. We have therefore made it one of our core tasks to identify and archive thousands of websites related to the disasters. Whether they are single blog entries or multi-layered government websites; forums or local news media, our goal is to preserve these websites for future generations.</p>
 
-<p>Everyday our project staff searches for relevant sites and reviews those that have been submitted via our <a href="http://jdarchive.org/contribute/">contribution form</a>. In order to maximize the effectiveness of search, it is extremely important to add as much metadata as possible: rich descriptions, location data, and tags for keywords and concepts that are mentioned in the websites. To this end website staff members spend much of their time adding this metadata to sites in the collection.</p>
+<p>Everyday our project staff searches for relevant sites and reviews those that have been submitted via our <a href="http://jdarchive.org/contribute/?la=en">contribution form</a>. In order to maximize the effectiveness of search, it is extremely important to add as much metadata as possible: rich descriptions, location data, and tags for keywords and concepts that are mentioned in the websites. To this end website staff members spend much of their time adding this metadata to sites in the collection.</p>
 
 <p>To preserve the websites identified by our own project staff or by any of you who submit recommendations, we work closely with one of our most important partners: the Internet Archive. Periodically we submit a large list of newly processed websites to the Internet Archive which then uses their powerful harvesting technology to capture and preserve these websites for the long-term.</p>
 
 <p>Please help us make this website collection as extensive as it can be. If you have a special interest or area of expertise and have been following the disasters, consider adding links you come across and as much metadata as you find time to enter on our form: </p>
 
-<p><strong><a href="http://jdarchive.org/contribute/">Contribution Form</a></strong></p>
+<p><strong><a href="http://jdarchive.org/contribute/?la=en">Contribution Form</a></strong></p>
 
 <p>As should be noted with other components of our archive, our inter-archival search and browse interface is under development and will not be fully available for some time. In the meantime, we have created a very basic alternative search and browse interface for you to explore the websites we are collecting as we add them. As you use it please keep in mind this is not the final product and but a mere shadow of the rich archive platform we are building. Also note that it links to the live websites and not the preserved copies in the Internet Archive:</p>
 
@@ -207,7 +298,7 @@ start();
 
 <p>Please consider sharing your experiences of the recent disasters.  We define “experience” broadly.  Of course, we hope to preserve testimonials from those in the affected areas or all those connected to them, as well as those who took part in relief efforts or planning for recovery and reconstruction.  But also important are the thoughts and activities of people observing from afar, who might have organized fund-raising efforts or simply wish to reflect on the meaning of this disaster from any perspective.  Submitting your testimonial enables us, with your permission, to share your story with others in the archive and also record a time range and a list of any locations you mentioned. This will enable researchers and other visitors to our archive in the future to integrate your testimony with different kinds of archival content in a particular place or at a particular time.</p>
 
-<p>If you have already written about your experiences online, please submit the link to the <a href="http://jdarchive.org/contribute/">contribution form</a> but consider also copying the text directly into our testimonial form and adding time and location information. We also plan to collaborate with institutional partners in Japan who have already begun collecting personal stories about the disasters.  If you are involved in creating your own collection of personal stories, please contact us.  We are happy to share our collection with you as you share yours with us.</p>
+<p>If you have already written about your experiences online, please submit the link to the <a href="http://jdarchive.org/contribute/?la=en">contribution form</a> but consider also copying the text directly into our testimonial form and adding time and location information. We also plan to collaborate with institutional partners in Japan who have already begun collecting personal stories about the disasters.  If you are involved in creating your own collection of personal stories, please contact us.  We are happy to share our collection with you as you share yours with us.</p>
 
 <p>As we work on the overall search interface, we can offer access to a selection of submissions through a  “featured testimonial” page and through our Facebook and Twitter accounts.</p><br />
 
@@ -248,7 +339,7 @@ start();
 
 <h4><a name="articles">Article Databases</a></h4>
 
-<p>While anyone is free to submit any website to our <a href="http://jdarchive.org/contribute/">contribution form</a> for harvesting by the Internet Archive, our goal is to actively pursue the cooperation of important institutional partners with large databases of media articles and other publications related to the disasters.</p>
+<p>While anyone is free to submit any website to our <a href="http://jdarchive.org/contribute/?la=en">contribution form</a> for harvesting by the Internet Archive, our goal is to actively pursue the cooperation of important institutional partners with large databases of media articles and other publications related to the disasters.</p>
 
 <p>If you work with an online content provider and have or are willing to build an API that will grant our archive platform search access to your collections please <a href="http://jdarchive.org/contact/">contact us</a>.</p>
 

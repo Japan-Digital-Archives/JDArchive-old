@@ -28,21 +28,21 @@
             
             <?php if ($language == 'ja'): ?>
             
-            <p>もしFirefox, Safari, Chrome, Operaなどのブラウザーを使用されているならば、以下のボックスをブックマーク・ツールバーにまでドラッグして下さい。利用できそうなウェブサイトを次回見つけた場合、そのブックマークをクリックして頂ければ、私達が自動的にそのサイトの情報を入力します。<a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jedarchive.org/bookmarklet?la=ja&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=660,height=450'));">JEDArchive link</a></p>
+            <p>もしFirefox, Safari, Chrome, Operaなどのブラウザーを使用されているならば、以下のボックスをブックマーク・ツールバーにまでドラッグして下さい。利用できそうなウェブサイトを次回見つけた場合、そのブックマークをクリックして頂ければ、私達が自動的にそのサイトの情報を入力します。<a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jdarchive.org/bookmarklet?la=ja&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Bookmarklet',%20'toolbar=no,width=660,height=450'));">JDArchive link</a></p>
             
             <?php elseif ($language == 'ko'): ?>
             
-            <p>파이어 폭스, 사파리, 구글 크롬, 혹은 오페라를 쓰시는 사용자분들께서는 <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jedarchive.org/bookmarklet?la=ko&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=660,height=450'));">JEDArchive</a> 링크를 북마크 툴바까지 끌어가 주시길 바랍니다. 혹시나 이번 아카이브에 관련있는 웹페이지를 방문하시게 되었을 경우, 북마크를 눌러주시면 저희가 제출서의 일부분을 자동작성하게 됩니다.</p>
+            <p>파이어 폭스, 사파리, 구글 크롬, 혹은 오페라를 쓰시는 사용자분들께서는 <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jdarchive.org/bookmarklet?la=ko&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Bookmarklet',%20'toolbar=no,width=660,height=450'));">JDArchive</a> 링크를 북마크 툴바까지 끌어가 주시길 바랍니다. 혹시나 이번 아카이브에 관련있는 웹페이지를 방문하시게 되었을 경우, 북마크를 눌러주시면 저희가 제출서의 일부분을 자동작성하게 됩니다.</p>
 
 		<?php elseif ($language == 'zh'): ?>
 		
-		<p>若您利用Firefox、Safari、Chrome或Opera，您可以把这个<a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jedarchive.org/bookmarklet?la=zh&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=660,height=450'));">JEDArchive</a>拉到您的网上书签工具栏上，以更方便资料提供。找到相关资料的话，请按这个网上书签，让我们为您自动填入一些控件。</p>
+		<p>若您利用Firefox、Safari、Chrome或Opera，您可以把这个<a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jdarchive.org/bookmarklet?la=zh&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Bookmarklet',%20'toolbar=no,width=660,height=450'));">JDArchive</a>拉到您的网上书签工具栏上，以更方便资料提供。找到相关资料的话，请按这个网上书签，让我们为您自动填入一些控件。</p>
             
             <?php else: ?>
             
             <p>
             Drag the following
-            <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jedarchive.org/bookmarklet?url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=660,height=450'));">JEDArchive link</a> to your bookmarks toolbar if you're using Firefox, Safari, Chrome or Opera.  Next time you're on a website you think is useful, just click the bookmark and we'll auto-fill some of the fields.
+            <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jdarchive.org/bookmarklet?url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Bookmarklet',%20'toolbar=no,width=660,height=450'));">JDArchive link</a> to your bookmarks toolbar if you're using Firefox, Safari, Chrome or Opera.  Next time you're on a website you think is useful, just click the bookmark and we'll auto-fill some of the fields.
             
             </p>
             

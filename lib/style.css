@@ -178,6 +178,15 @@ img.right {
   cursor: hand;
 }
 
+#featuredleft {
+	float:left;
+	width: 440px;
+}
+
+#featuredright {
+	float:right;
+	width: 440px;
+}
 
 
 /* Content */

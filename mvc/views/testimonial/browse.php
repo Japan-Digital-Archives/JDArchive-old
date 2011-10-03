@@ -30,7 +30,7 @@
             'city' => $this->testimonial->getCity(),
             'occupation' => $this->testimonial->getOccupation(),
             'year_of_birth' => $this->testimonial->getYearOfBirth(),
-            'tell_us_your_story' => nl2br($this->testimonial->getStory()),
+            'tell_us_your_story' => $this->testimonial->getStory(),
             'from' => sprintf('%d-%d-%d ' . $this->t('hour') . ': %d', 
             $this->testimonial->getFromYear(),
             $this->testimonial->getFromMonth(),
@@ -47,7 +47,7 @@
             <tr>
                 <th><?= $this->t($key) ?>
                 </th>
-                <td><?= $this->cleanHtml($content) ?>
+                <td><?= nl2br($this->cleanHtml($content)) ?>
                 </td>
             </tr>
         <? } ?>

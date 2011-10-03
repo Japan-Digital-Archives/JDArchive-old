@@ -31,7 +31,7 @@
         <tr>
             <th><?= $this->t($key) ?>
             </th>
-            <td><?= $this->cleanHtml($content) ?>
+            <td><?= nl2br($this->cleanHtml($content)) ?>
             </td>
         </tr>
     <? } ?>

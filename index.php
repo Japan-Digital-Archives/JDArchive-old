@@ -11,8 +11,8 @@ start('_newabout');
 
 
 <div>
-<?php language_bar($language, array('en','zh','ja')); ?>
-<div><h2 data-jp="「当企画について」" data-zh="关于我们" data-ko="운영자에게">About Us</h2></div>
+<?php language_bar($language, array('en','zh','ko','ja')); ?>
+<div><h2 data-jp="「当企画について」" data-zh="关于我们" data-ko="프로젝트 소개">About Us</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>
@@ -23,7 +23,8 @@ start('_newabout');
 <p>インターフェースが完成した暁には下記のような情報の検索が可能となります：</p>
 <ul class="inlist"><li><a href="content/?la=ja#websites">ウェブサイト</a> - 複数の言語で書かれた、団体や個人の膨大な量のアーカイブ。次のものはその一例です。<ul>
 <li>NGO、企業、業界団体、学校、政府機関</li>
-<li>被災者、救援活動に携わる方、科学者、医療関係者、議員</li></ul></li>
+<li>被災者、救援活動に携わる方、科学者、医療関係者、議員</li>
+</ul></li>
 <li><a href="content/?la=ja#testimonials">個人的な体験　</a> 震災やその後に関するもの</li>
 <li><a href="content/?la=ja#photos">写真や動画　</a> - 写真を保存している私たちのパートナーにより集められた写真や動画、あるいはFlickr、Picasa、YouTubeなど一般に公開されているデータベースから得られるもの</li>
 <li><a href="content/?la=ja#audio">音声</a> - ラジオ放送などを録音したもの</li>
@@ -33,13 +34,13 @@ start('_newabout');
 <li><a href="content/?la=ja#articles">記事データベース</a> - 私たちのパートナーが所有するメディア・書類データベースへのアクセス</li>
 </ul>
 
-<p>ウェブサイトや個々人の体験など、これらのうちのいくつかは私たちによって直接収集されています。しかし大部分はパートナーの協力を得て保存され、閲覧が可能となっています。アーカイブについてのより詳しいメタ情報はこちらにございます。</p>
+<p>ウェブサイトや個々人の体験など、これらのうちのいくつかは私たちによって直接収集されています。しかし大部分はパートナーの協力を得て保存され、閲覧が可能となっています。アーカイブについてのより詳しいメタ情報はこちらにございます。<a href="content/?la=ja">コンテンツと所蔵情報</a></p>
 
-<p><strong><a href="content/?la=ja">コンテンツと所蔵情報</a></strong></p>
+<p>現在構築中の統合的インターフェースにより、当デジタルアーカイブを訪れた方は上記のような情報を閲覧・検索し、また共有することができます。例えば、個人的な体験を地図情報とあわせて読む一方で、その付近で、あるいは同じ時期に起きたことの、写真や音声による記録も簡単に見つけることができます。当デジタルアーカイブがこのような機能を備えるまで今しばらくお待ち下さい。デジタルアーカイブの中に収められたウェブサイトをご覧になるため、しばらくの間こちらをご利用下さい：</p>
 
-<p>現在構築中の統合的インターフェースにより、当デジタルアーカイブを訪れた方は上記のような情報を閲覧・検索し、また共有することができます。例えば、個人的な体験を地図情報とあわせて読む一方で、その付近で、あるいは同じ時期に起きたことの、写真や音声による記録も簡単に見つけることができます。当デジタルアーカイブがこのような機能を備えるまで今しばらくお待ち下さい。完成した際には、私たちが独自に収集した資料だけでなく、パートナーである諸団体が所有している豊富なアーカイブも、まるで流れるように検索して頂くことがこの企画の目的です。主なパートナーに関する詳細はこちらをお読み下さい。</p>
+<p><strong><a href="seeds/?la=ja">ウェブ・アーカイブを検索する</a></strong></p>
 
-<p><strong><a href="partners/?la=ja">パートナーについて</a></strong></p>
+完成した際には、私たちが独自に収集した資料だけでなく、パートナーである諸団体が所有している豊富なアーカイブも、まるで流れるように検索して頂くことがこの企画の目的です。主なパートナーに関する詳細はこちらをお読み下さい。<a href="partners/?la=ja">パートナーについて</a></p>
 
 <div><h2>ご協力のお願い</h2></div>
 
@@ -57,41 +58,39 @@ start('_newabout');
 
 <?php elseif ($language == 'ko'): ?>
 
-<p>The Digital Archive of Japan's 2011 Disasters project is an initiative of the Edwin O. Reischauer Institute of Japanese Studies at Harvard University in collaboration with several partners.  We aim to collect, preserve, and make accessible as much of the digital record of the disasters as possible, to enable scholarly research and analysis of the events and their effect.  We hope that the records preserved will be useful both in the near term as a source of direct information about the disasters, as well as long into the future as scholars seek to understand the events of March 11, 2011 and their impact on Japan and on the world.</p>
+<p>2011년 일본 대재해 디지털 아카이브 프로젝트는 하버드 대학의 에드윈 O. 라이샤워 일본학 연구소(Edwin O. Reischauer Institute of Japanese Studies)와 여러 관련 기관과의 공동 연구로 기획되었습니다. 재해와 관련된 디지털 기록을 최대한 수집 및 저장하여, 이용 가능한 형태로 만듦으로써, 재해와 그 영향에 관한 학술적 연구와 분석을 가능하도록 하는데에 목표를 두고 있습니다.  저장된 기록들은 미시적으로는 이 재해에 대한 직접적 정보 공급처의 역할을 할 뿐만 아니라, 거시적으로는 학자들이3.11 일본 대재해를 이해하고, 일본과 전세계에 미친 영향에 대해 연구하는데 활용되기를 희망하고 있습니다. </p>
 
-<p>The Archive actively seeks materials in Japanese, English, Chinese, and Korean on all aspects of the disasters of March 11, 2011, and commentary and reports on recovery efforts in their aftermath.  We include materials on local, regional, national, and global reactions.</p>
-<p>The completed interface will provide searchable access to:</p>
-<ul class="inlist"><li><a href="content/?la=en#websites">Websites</a> - a large archived collection of institutional and individual websites in multiple languages, including but not limited to:<ul>
-<li>NGOs, businesses, trade groups, schools, and government agencies</li>
-<li>victims, relief workers, scientists, medical personnel, and policy makers</li></ul></li>
-<li><a href="content/?la=en#testimonials">Personal Testimonies</a> concerning the disasters and aftermath</li>
-<li><a href="content/?la=en#photos">Photographs and Videos</a> - Photos and videos collected by photo archive partners or in publicly accessible databases such as Flickr, Picasa, Youtube</li>
-<li><a href="content/?la=en#audio">Audio</a> - Recordings of audio, including radio broadcasts</li>
-<li><a href="content/?la=en#maps">Maps and Geographic Data</a> - selected geographic data layers prepared by the Center for Geographic Analysis and other partners</li>
-<li><a href="content/?la=en#social">Social Media</a> - Twitter, public Facebook pages, and other social media communications </li>
-<li><a href="content/?la=en#text">Other Textual Sources</a> - email and listserv communications, PDFs of reports and documents</li>
-<li><a href="content/?la=en#articles">Article Databases</a> - access to search the databases of our media and document database partners</li>
+<p>본 아카이브는 3.11 일본 재해에 관련된 모든 정보 가운데, 일본어, 영어, 중국어, 한국어를 기반으로 하는 자료들을 적극적으로 구하고 있으며, 재난 이후의 복구 활동에 관한 논평이나 기사도 찾고 있습니다. 이에는 국지적, 지역적, 국가적, 그리고 나아가 전세계적 반응에 관한 자료가 포함됩니다. </p>
+<p>완성된 인터페이스의 접근 및 검색 권한이 주어질 자료는 다음과 같습니다. </p>
+<ul class="inlist"><li><a href="content/?la=ko#websites">웹사이트</a> - 다국적 언어의 기관 및 개인 웹사이트의 대규모 저장 모음<ul>
+<li>NGO, 사업체, 무역 단체, 학교, 정부기관 외</li>
+<li>희생자, 구호 작업자, 과학자, 의료팀, 정책 입안자 외</li></ul></li>
+<li><a href="content/?la=ko#testimonials">개인체험수기</a> 재해와 이후 시기 여파 관련</li>
+<li><a href="content/?la=ko#photos">사진 및 영상 자료 </a> - 사진 아카이브 제휴기관이나 Flickr, Picasa, Youtube와 같은 공개 데이터베이스에 의해서 수집된 사진과 영상</li>
+<li><a href="content/?la=ko#audio">음향자료 </a> - 라디오 방송을 포함한 녹음된 음향 자료</li>
+<li><a href="content/?la=ko#maps">지도와 지리적 데이터 </a> - 하버드 지리분석센터(Center for Geographic Analysis)와 기타 제휴기관이  제공한 지리적 데이터 계층 </li>
+<li><a href="content/?la=ko#social">소셜 미디어 </a> - 트위터, 공개된 페이스북 페이지, 기타 소셜 미디어 통신 매체</li>
+<li><a href="content/?la=ko#text">기타 원본 자료 </a> - 이메일, 우편목록 통신(listserv), 기사나 문서의PDF 파일</li>
+<li><a href="content/?la=ko#articles">기사 데이터베이스 </a> - 미디어와 문서 데이터베이스 협력체의 자료 열람 권한</li>
 </ul>
 
-<p>Some of these, including websites and testimonials, are directly collected by us. Most of them, however, are made accessible and preserved in cooperation with our content partners. Learn more about our meta-archival approach here:</p>
+<p>상기 목록 중 웹사이트와 체험수기를 포함한 일부는 프로젝트가 직접 수집합니다. 그러나 대부분은 협력체의의 협조아래 접근 가능한 형태로 저장됙게 됩니다. 저희의 공동 아카이브에 관한 추가적인 정보는 아래의 링크에서 확인하실 수 있습니다.</p>
 
-<p><strong><a href="content/?la=en">Content and Collection</a></strong></p>
+<p><strong><a href="content/?la=en">내용과 수집 자료들</a></strong></p>
 
-<p>We are currently developing an integrated interface to allow visitors to browse, search, and share these materials, for example viewing a personal testimony together with layers of a map, while easily finding photographs and audio reports from that location and similar time period.  Please bear with us while we work on this aspect of the archive.  When completed, this archival platform will allow users to seamlessly search both materials we have assembled ourselves as well as the vast holdings archived by our partner organizations. Read more about our key partners here:</p>
+<p>현재 저희 프로젝트는 방문자가 이러한 자료들을 열람, 검색, 공유할 수 있도록 하는 통합 인터페이스를 개발 중에 있습니다. 예를 들어, 지도에서 해당된 지역에 관련된 개인들의 수기를 함께 볼 수 있도록 함과 동시에 해당 위치나 근접 시기의 사진과 녹음된 기사를 용이하게 찾아 볼 수 있도록 할 것입니다.  이러한 기능을 제공하는 본 아카이브 개발에 일정시간이 소요됨을 양해구합니다. 아카이브 구축이 완료되면, 사용자들은  저희가 직접 취합한 자료들과  더불어 협력 기관에 의해 저장된 방대한 양의 자료들을 모두 검색 가능하게 됩니다. 저희의 주요 협력 기관들은 아래에서 살펴 볼 수 있습니다.</p>
 
-<p><strong><a href="partners/?la=en">Partner Page</a></strong></p>
+<p><strong><a href="partners/?la=en">협력기관 소개</a></strong></p>
 
-<div><h2>How You Can Help</h2></div>
+<div><h2>도움 주실 방법</h2></div>
 
-<p>Finally, this project is submission-driven.  Its scope far exceeds the capacity of our own staff to collect and curate the above materials.  We depend on YOU to submit reports of your own experiences and tell us in as much detail as possible about sources of information that you think are important.</p>
+<p>본 프로젝트는 자료 제출을 중심으로 하고 있습니다. 저희가 다루고자 하는 규모와 범위는 광대하여, 자료를 취합하고 소개하는 저희 프로젝트 소속원들만의 노력으로는 한계가 있습니다. 따라서 자신의 경험을 공유하거나, 중요한 정보원들을 최대한 소개해 주는 등의 여러분의 노력에 상당부분 의존하고 있습니다. </p>
 
-<p><strong><a href="testimonial/?la=en">Share Your Testimonial</a></strong> - Share your experiences of the disasters directly using our testimonial form. Show us where you where when it happened, where the events took you, and what period of time your testimonial spans. Let future visitors to the archive find your story on the map alongside all the other elements of our archive.</p>
+<p><strong><a href="testimonial/?la=en">수기 공모</a></strong> - 수기 공모 페이지를 통하여 여러분들의 이번 재해 경험을 직접 공유해 주십시오. 재해가 있던 시기에 어느 장소에서, 어느 시간대에 있었던 수기인지를 알려주십시오. 그리하면 차후에 아카이브 이용자들이 여러분의 수기를 지도 상에서 다른 요소들과 함께 찾아 볼 수 있을 것입니다. </p>
 
-<p><strong><a href="contribute/?la=en">Contribute Websites</a></strong> – Are there websites that relate to the disasters you think should be preserved for the future?  Share with us all of the blog entries you found moving, all the websites of organizations and groups who worked together in the aftermath, and sites on the many interesting debates and issues that emerged from it. Give researchers of tomorrow who study this time or anyone who wants to remember a chance to see what is available online to us now.</p>
+<p><strong><a href="contribute/?la=en">웹사이트 기고</a></strong> – 이번 재해와 관련하여 나중을 위해 저장되었으면 좋겠다고 생각되는 웹사이트가 있습니까? 인상적인 블로그, 재난 이후 활동하고 있는 기관이나 단체의 웹사이트, 재난 이후 생겨난 다양한 주제들을 둘러싼 논의나 이슈들에 관련된 웹사이트 등이 있다면 공유해 주십시오. 지금의 사태를 연구하게 될 미래의 학자들이나 이를 기억하고자 하는 모든 이들에게 지금 인터넷 상에서 가능한 것들을 접할 수 있는 기회를 허락해 주십시오.</p>
 
-<p><strong><?php echo mailto('submit@jdarchive.org'); ?></strong> - You may also submit links to other kinds of online materials, as well as send us email correspondence (such as reports circulated by people in affected areas of Japan) or documents directly by email. In the email, please include as much contextual information as possible (e.g., who created the record, when, where, and so forth). 
-
-
+<p><strong><?php echo mailto('submit@jdarchive.org'); ?></strong> - 이 외에도 주고 받은 이메일(일본 관련 지역의 사람들 사이에서 통신한 내용 등)이나 문서들을 비롯해 기타 종류의 인터넷 자료들을 접할 수 있는 링크들을 저희 이메일을 통해 제출하실 수 있습니다. 이메일에는 최대한의 맥락 관련 정보를 담아주시길 부탁드립니다. (예를 들어, 누가, 언제, 어디서 작성된 기록인지 등) 
 
 
 </p>
@@ -114,13 +113,14 @@ start('_newabout');
 <li><a href="content/?la=zh#articles">文件数据库</a> - 搜索本所合作者的媒体、文件数据库的使用权</li>
 </ul>
 
-<p>其中的信息（包括网页与个人证言）是直接由本所收集的。然而，大部分的信息是透过我们的合作机构保存、公开的。您能在以下的链接多了解本档案的综合性的做法：</p>
+<p>其中的信息（包括网页与个人证言）是直接由本所收集的。然而，大部分的信息是透过我们的合作机构保存、公开的。您能在以下的链接多了解本档案的综合性的做法：<a href="content/?la=zh">内容与收藏资料</a></p>
 
-<p><strong><a href="content/?la=zh">内容与收藏资料</a></strong></p>
+<p>我们正在准备一个综合性的网页界面，以方便来客们浏览、搜索与分享这些信息；例如，在阅读个人证言的同时，观看地图以及其时其地的照片或音响报告。本档案的这相面进行处理时，请多包涵。您能暂时利用这个方法搜索本档案的网页：</p>
 
-<p>我们正在准备一个综合性的网页界面，以方便来客们浏览、搜索与分享这些信息；例如，在阅读个人证言的同时，观看地图以及其时其地的照片或音响报告。本档案的这相面进行处理时，请多包涵。完成之后，此界面能让本档案的利用者无缝地搜索我们所预备的信息，以及各个合作机构所收藏的巨大的数据库。您能在以下的链接多认识本所的合作者：</p>
+<p><strong><a href="seeds/?la=zh">搜索档案</a></strong></p>
 
-<p><strong><a href="partners/?la=zh">合作机构网页</a></strong></p>
+
+完成之后，此界面能让本档案的利用者无缝地搜索我们所预备的信息，以及各个合作机构所收藏的巨大的数据库。您能在以下的链接多认识本所的合作者：<a href="partners/?la=zh">合作机构网页</a></p>
 
 <div><h2>您的一臂之力</h2></div>
 
@@ -156,13 +156,13 @@ start('_newabout');
 <li><a href="content/?la=en#articles">Article Databases</a> - access to search the databases of our media and document database partners</li>
 </ul>
 
-<p>Some of these, including websites and testimonials, are directly collected by us. Most of them, however, are made accessible and preserved in cooperation with our content partners. Learn more about our meta-archival approach here:</p>
+<p>Some of these, including websites and testimonials, are directly collected by us. Most of them, however, are made accessible and preserved in cooperation with our content partners. Learn more about our meta-archival approach here: <a href="content/?la=en">Content and Collection</a>.</p>
 
-<p><strong><a href="content/?la=en">Content and Collection</a></strong></p>
+<p>We are currently developing an integrated interface to allow visitors to browse, search, and share these materials, for example viewing a personal testimony together with layers of a map, while easily finding photographs and audio reports from that location and similar time period.  Please bear with us while we work on this aspect of the archive. For now we offer this temporary way to access the websites in the archive:
 
-<p>We are currently developing an integrated interface to allow visitors to browse, search, and share these materials, for example viewing a personal testimony together with layers of a map, while easily finding photographs and audio reports from that location and similar time period.  Please bear with us while we work on this aspect of the archive.  When completed, this archival platform will allow users to seamlessly search both materials we have assembled ourselves as well as the vast holdings archived by our partner organizations. Read more about our key partners here:</p>
+<p><strong><a href="seeds/?la=en">Search the Archive</a></strong></p>
 
-<p><strong><a href="partners/?la=en">Partner Page</a></strong></p>
+When completed, this archival platform will allow users to seamlessly search both materials we have assembled ourselves as well as the vast holdings archived by our partner organizations. Read more about our key partners here: <a href="partners/?la=en">Partner Page</a>.</p>
 
 <div><h2>How You Can Help</h2></div>
 

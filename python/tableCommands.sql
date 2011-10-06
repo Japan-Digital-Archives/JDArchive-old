@@ -1,13 +1,11 @@
-CREATE TABLE tweets (tweetId INT,userId VARCHAR(50), createdAt DATETIME, twitterId VARCHAR(75), geoInfo NVARCHAR(500), Text NVARCHAR(1000));
-ALTER TABLE tweets ADD PRIMARY KEY (tweetId);
-ALTER TABLE tweets ADD INDEX(tweetId);
-ALTER TABLE tweets MODIFY userId VARCHAR(50) NOT NULL;
-ALTER TABLE tweets MODIFY createdAt DATETIME NOT NULL;
-ALTER TABLE tweets MODIFY twitterId VARCHAR(75) NOT NULL;
-ALTER TABLE tweets MODIFY Text VARCHAR(500) NOT NULL;
-ALTER TABLE tweets MODIFY COLUMN tweetId INT NOT NULL AUTO_INCREMENT;
+SET NAMES 'utf8';
 
--- insert these two lines into /etc/mysql/my.cnf under the [mysqld] section
--- default-character-set=utf8
--- skip-character-set-client-handshake
--- Tue, 04 Oct 2011 02:51:27 +0000
+DROP TABLE IF NOT EXISTS `tweets`;
+CREATE TABLE `tweets` (
+  `tweetId` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `userId` varchar(50) NOT NULL,
+  `createdAt` datetime NOT NULL,
+  `twitterId` varchar(75) NOT NULL,
+  `geoInfo` varchar(500) DEFAULT NULL,
+  `Text` varchar(500) NOT NULL,
+) ENGINE=Innodb DEFAULT CHARSET=utf8;

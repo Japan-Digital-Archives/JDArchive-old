@@ -25,7 +25,7 @@ start();
 
 <?php else: ?>
 
-<p>If you have any questions or suggestions, please e-mail us at <?php echo mailto('info@jdarchive.org'); ?>.</p>
+<p>If you have any questions or suggestions, please email us at <?php echo mailto('info@jdarchive.org'); ?>.</p>
 
 <?php endif ?>
 

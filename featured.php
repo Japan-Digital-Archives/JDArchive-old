@@ -50,6 +50,13 @@ start('_newabout');
 
 <div id="featuredleft">
 
+<p>초등학교 저학년부터 교육 받은 오까시의 "오"의뜻은 일본어의 "오사나이"( 뜻; 밀지 않는다 ), " 까"는 "까케나이" ( 뜻; 뛰지 않는다 ), "시"는 샤베라나이 ( 뜻 ; 말하지 않는다의 뜻이나 다른 사람과의 트러불이 발생하더라도 서로 참아야 한다 라는 뜻이랍니다. 재미있는 표현 이었고 그대로 실천하는 아름다은 모습에 주재원인 저로서는 감탄을 할 수 밖에 없었습니다. - 동경도 신주쿠구 | <span data-jp="匿名" data-zh="匿名" data-ko="익명">Anonymous</span> <a data-jp="続きを読む" data-zh="详细" data-ko="전체 내용 보기" href='http://jdarchive.org/testimonial/public/60/223f0e6ae15f'>Read More</a>
+
+</p>
+
+<hr />
+
+
 <p>「FMラジオでニュースを聞くと、事務所付近を含む函館港の周囲一帯には、「大津波警報」と「避難指示」（勧告よりも深刻）が出されていると報じられた。津波の予想到達時刻は16:10．時計をみると16時。もう10分の猶予しかない。」 - 函館市海岸町 | 星野　裕 <a data-jp="続きを読む" data-zh="详细" data-ko="전체 내용 보기" href='http://jdarchive.org/testimonial/public/58/899e83bc9331'>Read More</a>
 
 </p>

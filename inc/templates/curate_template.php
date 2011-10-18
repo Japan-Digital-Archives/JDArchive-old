@@ -277,9 +277,10 @@ $(function(){
   	<?php
   		$scope = $seed->scope;
   		$frequency = $seed->frequency;
+		$isArchived = $seed->isArchived;
   		$iaurl=$seed->url;
   		echo " <a href='$iaurl'>Live Link</a> &nbsp;&nbsp;";
-  		if ($last_exported['sid']<$seed->sid) {
+  		if ($isArchived==0) {
   			echo "<strong>Not Yet Submitted</strong>&nbsp;&nbsp;";
   		} else {
   		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>Most Recent</a> </strong> | <strong>

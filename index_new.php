@@ -7,8 +7,9 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 
 ?>
 
+<div id="outerbox">
 
-<div class="homebutton" style="background:black;">
+<div id="homebuttonblack">
 
 	<div class="homelogoleft">
 	   <img src="lib/images/logo120.png">
@@ -20,15 +21,23 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 	
 </div>
 
-<div class="homebutton" style="background:white">
+<div id="spacer" style="height:50px;"></div>
+
+<div id="homebuttonwhite">
 	
 	<div class="buttontextleft">
 	 <h2 style="color:2E2E2E;">The Archive<br /> We Are Building</h2>
 	</div>
 	
+	
+	
 	<div class="homelogoright">
 	   <img src="lib/images/logo120.png">
 	</div>
+
+</div>
+
+
 
 </div>
 

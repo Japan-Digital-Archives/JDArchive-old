@@ -19,90 +19,65 @@ h2 {
   margin-bottom: 10px;
 }
 
-h3 {
-}
-
-h4 { 
-  border-bottom-style: solid;
-  font-size: 16px;
-  margin-bottom: 12px;
-  margin-top: 12px;
-  font-style: italic;
-  border-bottom-width: thin;
-}
-
 p, ul, ol {
   margin-top: 0;
   line-height: 160%;
   text-align: justify;
 }
 
-ul, ol {
-  margin: 0;
+#outerbox {
+	width: 660px;
+	margin: 0 auto;
+	height:400px;
+	padding-top: 50px;
+	background: white;
 }
 
-li {
-  margin-bottom: 15px;
-}
-
-hr {
-  color: #eee;
-  background-color: #eee;
-  height: 1px;
-  border: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-a { 
-  color: #ba0600; 
-  text-decoration: none;
-}
-
-a:hover { 
-  text-decoration: underline;
-}
-
-a img {
-  border: none;
-}
-
-img.left {
-  float: left;
-  margin: 7px 30px 0 0;
-}
-
-img.right {
-  float: right;
-  margin: 7px 0 0 30px;
-}
-
-.list1 li {
-  float: left;
-  line-height: normal;
-}
-
-.list1 li img {
-  margin: 0 30px 30px 0;
-}
-
-.list1 li.alt img {
-  margin-right: 0;
-}
-
-#wrapper {
-
-	width: 600px;
-	padding-top: 100px;
-	
-
-}
-
-div.homebutton {
+#homebuttonwhite {
+  background: white;
+  border-style: solid;
+  border-color: #999999;
+  border-width: 1px;
   clear: both;
   width: 600px;
   height: 150px;
   margin: 0 auto;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+#homebuttonblack {
+  background:black;
+  border-style: solid;
+  border-color: #999999;
+  border-width: 1px;
+  clear: both;
+  width: 600px;
+  height: 150px;
+  margin: 0 auto;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+
+#homebuttonblack:hover {
+  
+	background-color: #333333;
+  
+}
+
+#homebuttonwhite:hover {
+  
+	background-color: #e6e6e6;
+  
 }
 
 
@@ -141,7 +116,7 @@ div.homebutton {
 
 #footer {
   clear: both;
-  width: 600px;
+  width: 660px;
   height: 65px;
   margin: 0 auto;
   background: black;

@@ -1,0 +1,8 @@
+10/17/2011
+This script should probably be run ~daily to check and see if new seeds have been added to the archives.
+
+It is dependent upon the Mechanize and MySqlDB python packages to be installed.
+
+Also, run the included .sql file to add the new field into the DB. 
+
+-EJ

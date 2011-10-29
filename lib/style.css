@@ -102,6 +102,24 @@ img.right {
 #wrapper {
 }
 
+#homebuttonblack a {
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+
+#homebuttonblack a:hover {
+	text-decoration: none;
+}
+
+#homebuttonwhite a {
+	text-decoration: none;
+}
+
+#homebuttonwhite a:hover {
+	text-decoration: none;
+}
+
 /* Header */
 
 #header-wrapper {

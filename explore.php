@@ -10,33 +10,33 @@
 
 
 <div>
-<?php language_bar($language, array('en', 'ja', 'ko')); ?>
-<div><h2 data-jp="" data-ko="">Explore the Archive Now</h2></div>
+<?php language_bar($language, array('en', 'ja')); ?>
+<div><h2 data-jp="ここまでのアーカイブ" data-ko="">Explore the Archive Now</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>
 
-<h5><a href="../seeds/">Search the Web Archive</a></h5>
+<h5><a href="../seeds/">ウェブ・アーカイブを検索する</a></h5>
 
-<p>While our full interface is being developed you may search the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. From there you can go to the live version of that website online or the archived copies at the Internet Archive.</p>
+<p>暫定的にご用意した検索エンジンをご利用になることで、当アーアイブに収蔵されたウェブサイトやそれらについての情報、例えばページのタイトルや説明、関連するタグなどを検索することができます。検索結果を通じて、オンライン上に存在するウェブサイトそのものへと移動するか、またはインターネット・アーカイブに保存されたコピーをご覧頂くこともできます。</p>
 
-<h5><a href="../contribute/">Contribute</a></h5>
+<p class ="learn"><strong><a href="../contribute/">皆様からのご協力</a></strong> -
+アーカイブに適うと皆様が考える震災関連のウェブサイトは収蔵されていましたか？もしそうでなければ、投稿用のページかまたはJDArchiveのブックマークをお使いになり投稿にご協力下さい。</p>
 
-<p>Have you found websites related to the disasters that you think should be archived? Consider submitting them through our form or using our bookmarklet: <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jedarchive.org/bookmarklet?internal=true&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=660,height=450'));">JDArchive</a></p>
+<h5><a href="../featured/">特選　わたしの「東日本大震災」を読む</a></h5>
 
-<h5><a href="../featured/">Read our Featured Testimonials</a></h5>
+<p>これまでに皆様から寄せられた「わたしの『東日本大震災』」から、いつくかの投稿をご紹介しております。近い将来にはすべての投稿をご覧頂けるようになり、新しいインターフェースにも完全に統合されることになります。</p>
 
-<p>Visit our featured testimonial page to read some of the contributions to the testimonial collection so far. We will be adding the ability to search all testimonials soon and they will also be fully integrated in the final interface.</p>
+<p class ="learn"><strong><a href="../testimonial/">皆様からのご協力</a></strong> - 震災に関するあなたの物語をみんなで共有しませんか。あの3月11日の、そしてその後の、震災にまつわる個人的な体験をできる限り多く集めたいと望んでおります。</p>
 
-<h5><a href="http://worldmap.harvard.edu/japanmap/">Browse our Map Layers</a></h5>
+<h5><a href="http://worldmap.harvard.edu/japanmap/">地理空間情報レイヤーを閲覧する</a></h5>
 
-<p>Together with the Center for Geographic Analysis we are preparing a growing number of rich map layers that can allow anyone to browse some of the many rich data sets that have been shared with the Japan Sendai Earthquake Data Portal, often available only thanks to the hard work of volunteer organizations, or by institutions who graciously shared their data in the aftermath of the disaster.</p>
+<p>地理学分析センターと恊働することで、私たちがご提供する地理空間情報レイヤーは深化し続けています。このレイヤー情報により、同センターが制作したJapan Sendai Earthquake Data Portalと共有している豊富なデータをどなたでもご覧頂くことができます。これは、ボランティア機関による多大なご努力や震災後に寛大にもその情報を提供して下さっている機関なくしてはなし得ないでしょう。</p>
 
-<div id = "learn">
-<p><strong><a href="../maps/">Learn More</a></strong>－ Read more about the layers, their sources, and find links to download the data.</p>
-</div>
+<p class= "learn"><strong><a href="../maps/">さらに詳しい情報を見る</a></strong>－ レイヤーやその元となった資料の詳細、またデータをダウンロードするためのリンクはこちらをご覧下さい。</p>
 <hr />
-<p>Below is a list of some of the other leading projects engaged in archiving of the disasters, many of whom are close partners working with us in building a content rich archival platform.</p>
+<br />
+<p>震災関連アーカイブへの取り組みにおいて主導的役割を果たしているプロジェクトをいくつかご紹介致します。これらの多くのプロジェクトとは豊富な密接なパートナー関係にあり、豊富な情報量を持つアーカイブ・プラットフォームの構築に向けて連携しております。</p>
 <br />
 <div id = "projects">
 <h3><a href="http://www.dcrc.tohoku.ac.jp/archive/">みちのく震録伝</a></h3>
@@ -98,31 +98,30 @@
 </div>
 
 
-<?php elseif ($language == 'ko'): ?>
+<?php //elseif ($language == 'ko'): ?>
 
-<p>TODO</p>
 
-<?php elseif ($language == 'zh'): ?>
+<?php //elseif ($language == 'zh'): ?>
 
 <?php else: ?>
 
-<h5><a href="../seeds/">Search the Web Archive</a></h5>
+<h5><a href="../seeds/?la=en">Search the Web Archive</a></h5>
 
-<p>While our full interface is being developed you may <a href="../seeds/">search</a> the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. From there you can go to the live version of that website online or the archived copies at the Internet Archive.</p>
+<p>While our full interface is being developed you may <a href="../seeds/?la=en">search</a> the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. From there you can go to the live version of that website online or the archived copies at the Internet Archive.</p>
 
-<p class ="learn"><strong><a href="../contribute/">Contribute</a></strong> - Have you found websites related to the disasters that you think should be archived? Consider submitting them through our <a href="../contribute/">form</a> or using our bookmarklet: <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jedarchive.org/bookmarklet?internal=true&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=660,height=450'));">JDArchive</a></p>
+<p class ="learn"><strong><a href="../contribute/?la=en">Contribute</a></strong> - Have you found websites related to the disasters that you think should be archived? Consider submitting them through our <a href="../contribute/?la=en">form</a>.</p>
 
 <h5><a href="../featured/">Read our Featured Testimonials</a></h5>
 
 <p>Visit our featured testimonial page to read some of the contributions to the testimonial collection so far. We will be adding the ability to search all testimonials soon and they will also be fully integrated in the final interface.</p>
 
-<p class ="learn"><strong><a href="../testimonial/">Contribute</a></strong> - Would you like to share your story of the earthquake and tsunami? We hope to collect as many personal stories of the events on and after March 11, 2011 in Japan as possible.</p>
+<p class ="learn"><strong><a href="../testimonial/?la=en">Contribute</a></strong> - Would you like to share your story of the earthquake and tsunami? We hope to collect as many personal stories of the events on and after March 11, 2011 in Japan as possible.</p>
 
 <h5><a href="http://worldmap.harvard.edu/japanmap/">Browse our Map Layers</a></h5>
 
 <p>Together with the Center for Geographic Analysis we are preparing a growing number of rich map layers that can allow anyone to browse some of the many rich data sets that have been shared with the Japan Sendai Earthquake Data Portal, often available only thanks to the hard work of volunteer organizations, or by institutions who graciously shared their data in the aftermath of the disaster.</p>
 
-<p class="learn"><strong><a href="../maps/">Learn More</a></strong> － Read more about the layers, their sources, and find links to download the data.</p>
+<p class="learn"><strong><a href="../maps/?la=en">Learn More</a></strong> － Read more about the layers, their sources, and find links to download the data.</p>
 <hr />
 <br />
 <p>Below is a list of some of the other leading projects engaged in archiving of the disasters, many of whom are close partners working with us in building a content rich archival platform.</p>
@@ -136,7 +135,7 @@
           <p>The National Diet Library, JAPAN</p>
           <p>As the only national library in Japan, the National Diet Library (NDL) can harvest and archive a wide array of government websites, including the websites of local governments affected by the disasters in Eastern Japan, and other digital materials without permission under the current NDL Law in order to preserve records and cultural heritage of the experience of the massive Eastern Japan Great Earthquake Disaster to pass on to the future generations. The NDL is also collaborates with Internet Archive, a non-profit organization on digital library, and Edwin O. Reischauer Institute at Harvard University.</p>
 <br />
-      <h3><a href="http://www.smt.city.sendai.jp/en/">To Not Forget March 11th</a></h3>
+      <h3><a href="http://recorder311.smt.jp/">To Not Forget March 11th</a></h3>
           <p>Sendai Mediatheque</p>
           <p>In view of the new belief that disaster relief effort can be supported by information dissemination and that records of the disaster can be priceless assets for the future, Sendai Mediatheque (SMT), one of the cutting-edge information centers in Japan, is leading a unique disaster recovery archiving project. In collaboration with citizens, experts, and SMT staff, this archive project focuses on recording the recovery and rebuilding process from the disaster while disseminating thoughts and information through various media, such as images, photos, sounds, and texts. </p>
 <br />

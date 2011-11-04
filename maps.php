@@ -11,23 +11,23 @@
 
 
 <div>
-<?php language_bar($language, array('en', 'ja', 'ko')); ?>
-<div><h2 data-jp="" data-ko="">Maps</h2></div>
+<?php language_bar($language, array('en', 'ja')); ?>
+<div><h2 data-jp="Maps" data-ko="">Maps</h2></div>
 </div>
 
 <?php $language = language(); ?>
             
-<?php if ($language == 'ja'): ?>
+<?php //if ($language == 'ja'): ?>
           
-<?php elseif ($language == 'zh'): ?>       
+<?php //elseif ($language == 'zh'): ?>       
             
-<?php elseif ($language == 'ko'): ?>           
+<?php //elseif ($language == 'ko'): ?>           
         
-<?php else: ?>
-<h3>Browse information and download links of our Japan map layers</h3>
+<?php //if: ?>
+<p>Browse information and download links of our Japan map layers</p>
 
 <div class="toc">
-<strong id="0">Utilities & Infrastructure</strong>
+<h3 id="0">Utilities & Infrastructure</h3>
 <br />
 <p><a id="1" href="http://worldmap.harvard.edu/maps/japanmap/02">Nuclear Power Plants</a></p>
 <ul>
@@ -106,7 +106,7 @@
 </ul>
 
 <br />
-<strong id="12">Place Locations</strong>
+<h3 id="12">Place Locations</h3>
 <br />
 <p><a id="13" href="http://worldmap.harvard.edu/maps/japanmap/48">Registered Religious Buildings</a></p>
 <ul>
@@ -116,7 +116,7 @@
 </ul>
 
 <br />
-<strong id="14">Rivers, Streams, Lakes</strong>
+<h3 id="14">Rivers, Streams, Lakes</h3>
 <br />
 <p><a id="15" href="http://worldmap.harvard.edu/maps/japanmap/49">Lakes</a></p>
 <ul>
@@ -126,18 +126,13 @@
 </ul>
 
 <br />
-<strong id="16">Imagery & Base Maps</strong>
+<h3 id="16">Imagery & Base Maps</h3>
 <br />
 <p><a id="17" href="http://worldmap.harvard.edu/maps/japanmap/BAh">Before/After Rikuzen Takata</a></p>
 <ul>
 <li>Satellite imagery of Rikuzen Takata before (03/01/07) and after (03/14/11) the tsunami. </li>
 <li>Source: <a href="http://earthobservatory.nasa.gov/IOTD/view.php?id=49684">NASA Observatory</a></li>
-<li> Download Data: 
-	<ul>
-		<li><a href="http://warp.worldmap.harvard.edu/maps/59#Export_tab">Before</a></li>
-		<li><a href="http://warp.worldmap.harvard.edu/maps/60#Export_tab">After</a></li>
-	</ul>
-</li>
+<li> Download Data: <a href="http://warp.worldmap.harvard.edu/maps/59#Export_tab">Before</a>, <a href="http://warp.worldmap.harvard.edu/maps/60#Export_tab">After</a></li>
 </ul>
 
 <p><a id="18" href="http://worldmap.harvard.edu/maps/japanmap/5B">1978 Southeast Tohoku Topography</a></p>
@@ -147,7 +142,7 @@
 	<li><a href="http://warp.worldmap.harvard.edu/maps/94#Export_tab">Download Data</a></li>
 </ul>
 <br />
-<strong id="19">2011 Tohoku Disaster</strong>
+<h3 id="19">2011 Tohoku Disaster</h3>
 <br />
 <p><a id="20" href="http://worldmap.harvard.edu/maps/japanmap/BAg">Tsunami Inundation of Miyagi/Fukushima</a></p>
 <ul> 
@@ -162,22 +157,13 @@
 <ul>
 	<li>Reported Casualties from the 2011 Tohoku Disaster compiled by CATDAT</a></li>
 	<li>Source: <a href="http://earthquake-report.com/2011/05/25/japan-tsunami-a-massive-update-for-our-catdat-situation-report-part-15/">Earthquake Report by CATDAT: The Integrated Historical Global Catastrophe Database</a></li>
-	<li>Download Data:
-		<ul><li><a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt3Join_g37">03/18</a></li>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt19JoinFinal_TK0">04/09</a></li>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:Slct_Casualty2010Join1_Final_zDe">07/25</a></li></ul>
-	</li>
+	<li>Download Data: <a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt3Join_g37">03/18</a>, <a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt19JoinFinal_TK0">04/09</a>, <a href="http://worldmap.harvard.edu/data/geonode:Slct_Casualty2010Join1_Final_zDe">07/25</a></li>
 </ul>
 <p><a id="22" href="http://worldmap.harvard.edu/maps/japanmap/7R">Shelter Population (3/18, 4/9, and 7/25)</a></p>
 <ul>
 	<li>Reported Shelter Population after the Tohoku Tsunami compiled by CATDAT</li>
 	<li>Source: <a href="http://earthquake-report.com/2011/05/25/japan-tsunami-a-massive-update-for-our-catdat-situation-report-part-15/">Earthquake Report by CATDAT: The Integrated Historical Global Catastrophe Database</a></li>
-	<li>Download Data:
-		<ul>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt3Join_3Y4">03/18</a></li>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt19EditFinal_G3d">04/09</a></li>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:Slct_Casualty2010Join1_Final_O4M">07/25</a></li>
-		</ul></li>
+	<li>Download Data: <a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt3Join_3Y4">03/18</a>, <a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt19EditFinal_G3d">04/09</a>, <a href="http://worldmap.harvard.edu/data/geonode:Slct_Casualty2010Join1_Final_O4M">07/25</a></li>
 </ul>
 <p><a id="23" href="http://worldmap.harvard.edu/maps/japanmap/7U">Shelters</a></p>
 <ul>
@@ -196,29 +182,24 @@
 	<li>Magenta - lights obscured by clouds.</li>
 	</ul></li>
 	<li>Source: <a href="http://www.ngdc.noaa.gov/dmsp/data/web_data/japan/japan.html">U.S. Air Force Defense Meteorological Satellite Program (DMSP)</a></li>
-	<li>Download Data:
-		<ul><li><a href="http://worldmap.harvard.edu/data/geonode:F18201103100955.composite_Jyo">03/10</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:F18201103110943.composite_VLS">03/11</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:F18201103120930.composite_w3e">03/12</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:F18201103130918.composite_93x">03/13</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:F18201103161023.composite_HAV">03/16</a></li>
-		</ul>
-	</li>
+	<li>Download Data: <a href="http://worldmap.harvard.edu/data/geonode:F18201103100955.composite_Jyo">03/10</a>, 
+	<a href="http://worldmap.harvard.edu/data/geonode:F18201103110943.composite_VLS">03/11</a>, 
+	<a href="http://worldmap.harvard.edu/data/geonode:F18201103120930.composite_w3e">03/12</a>,
+	<a href="http://worldmap.harvard.edu/data/geonode:F18201103130918.composite_93x">03/13</a>,
+	<a href="http://worldmap.harvard.edu/data/geonode:F18201103161023.composite_HAV">03/16</a></li>
 </ul>
 <br />
-<strong id="25">Radiation</strong>
+<h3 id="25">Radiation</h3>
 <br />
 <p><a id="26" href="http://worldmap.harvard.edu/maps/japanmap/BAk">SPEEDI Radiation Levels</a></p> 
 <ul>
 	<li>The maximum radiation level (nGy/hr) of the day (2/28, 03/10, 03/15 and 03/16) harvested by Marian Steinbach from the Ministry of Education, Culture, Sports, Science and Technology’s (MEXT) System for Prediction of Environment Emergency Dose Information (SPEEDI).</li>
 	<li>Source: <a href="http://www.sendung.de/japan-radiation-open-data/">Marian Steinbach</a></li> 
 	<li>Download Data:
-		<ul>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:_joinMaxUTM54N_psW">02/28</a></li>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:_JoinMaxUTM54N_khO">03/10</a></li>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:_JoinMaxUTM54N_nRb">03/15</a></li>
-		<li><a href="http://worldmap.harvard.edu/data/geonode:_JoinMaxUTM54N_gW7">03/16</a></li>
-		</ul>
+		<a href="http://worldmap.harvard.edu/data/geonode:_joinMaxUTM54N_psW">02/28</a>,
+		<a href="http://worldmap.harvard.edu/data/geonode:_JoinMaxUTM54N_khO">03/10</a>,
+		<a href="http://worldmap.harvard.edu/data/geonode:_JoinMaxUTM54N_nRb">03/15</a>,
+		<a href="http://worldmap.harvard.edu/data/geonode:_JoinMaxUTM54N_gW7">03/16</a>
 	</li>
 </ul>
 <p><a id="27" href="http://worldmap.harvard.edu/maps/japanmap/BAm">Radiation Pathways</a></p> 
@@ -228,7 +209,7 @@
 	<li><a href="http://warp.worldmap.harvard.edu/maps/221#Export_tab">Download Data</a></li>
 </ul> 
 <br />
-<strong id="28">Earth Sciences</strong>
+<h3 id="28">Earth Sciences</h3>
 <br />
 <p><a id="29" href="http://worldmap.harvard.edu/maps/japanmap/7d">03/11 ShakeMap Intensity</a></p>
 <ul>
@@ -249,7 +230,7 @@
 	<li><a href="http://worldmap.harvard.edu/data/geonode:__0320_UTM54N_TVM">Download Data</a></li>
 </ul>
 <br />
-<strong id="32">Society & Demographics</strong>
+<h3 id="32">Society & Demographics</h3>
 <br />
 <p><a id="33" href="http://worldmap.harvard.edu/maps/japanmap/_x">65+ Population</a></p> 
 <ul>
@@ -268,11 +249,8 @@
 	<li>Japan's Population Density from the 1999 and 2005 Population Census (population/square km)</li>
 	<li>Source: <a href="http://www.e-stat.go.jp/SG1/estat/GL08020103.do?_toGL08020103_&tclassID=000001007609&cycleCode=0&requestSender=search">E-STAT: Portal Site of Official Statistics of Japan</a></li>
 	<li>Download Data:
-		<ul>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:jpn_Census95Final_UTF_obv">1999</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:PopCensus2005_kGk">2005</a></li>
-		</ul>
-	</li>
+		<a href="http://worldmap.harvard.edu/data/geonode:jpn_Census95Final_UTF_obv">1999</a>,
+		<a href="http://worldmap.harvard.edu/data/geonode:PopCensus2005_kGk">2005</a></li>
 </ul>
 <p><a id="36" href="http://worldmap.harvard.edu/maps/japanmap/_9 ">Densely Inhabited Areas</a></p>
 <ul>
@@ -287,19 +265,16 @@
 	<li><a href="http://worldmap.harvard.edu/data/geonode:world_urban_areas_110_million_fSE">Download Data</a></li>
 </ul>
 <br />
-<strong id="38">Economic Activities & Employment</strong>
+<h3 id="38">Economic Activities & Employment</h3>
 <br />
 <p><a id="39" href="http://worldmap.harvard.edu/maps/japanmap/BAB">Goods Transport: Metal & Machinery</a></p>
 <ul>
 	<li>Metal and Machinery Goods transported from Miyagi, Iwate, and Fukushima Prefectures in tons.</li>
 	<li>Source: <a href="http://nlftp.mlit.go.jp/ksj/jpgis/jpgis_datalist.html">Ministry of Land Infrastructure Transport and Tourism (MLIT)</a></li>
 	<li>Download Data: 
-		<ul>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:Miyagi_Goods_NxA">Miyagi</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:Iwate_Goods_9Wu">Iwate</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:Fukushima_Goods_dBY">Fukushima</a></li>
-		</ul>
-	</li>
+		<a href="http://worldmap.harvard.edu/data/geonode:Miyagi_Goods_NxA">Miyagi</a>,
+		<a href="http://worldmap.harvard.edu/data/geonode:Iwate_Goods_9Wu">Iwate</a>,
+		<a href="http://worldmap.harvard.edu/data/geonode:Fukushima_Goods_dBY">Fukushima</a></li>
 </ul>
 <p><a id="40" href="http://worldmap.harvard.edu/maps/japanmap/BAD">Sector Employment</a></p> 
 <ul>
@@ -308,15 +283,12 @@ Secondary Sector: manufacturing, mining, and construction
 Tertiary Sector: Services industry ie: retail sales, distribution, entertainment, law, banking, clerical services etc.</li>
 	<li>Source: <a href="http://www.e-stat.go.jp/SG1/estat/GL08020103.do?_toGL08020103_&tclassID=000001007609&cycleCode=0&requestSender=search">E-STAT: Portal Site of Official Statistics of Japan</a></li>
 	<li>Download Data:
-		<ul>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:slct_2005Indus_UTF_AdU">Primary</a></li> 
-			<li><a href="http://worldmap.harvard.edu/data/geonode:slct_2005Indus_UTF_tHl">Secondary</a></li>
-			<li><a href="http://worldmap.harvard.edu/data/geonode:slct_2005Indus_UTF_DpY">Tertiary</a></li>
-		</ul>
-	</li> 
+		<a href="http://worldmap.harvard.edu/data/geonode:slct_2005Indus_UTF_AdU">Primary</a>, 
+		<a href="http://worldmap.harvard.edu/data/geonode:slct_2005Indus_UTF_tHl">Secondary</a>,
+		<a href="http://worldmap.harvard.edu/data/geonode:slct_2005Indus_UTF_DpY">Tertiary</a></li>
 </ul>
 <br /> 
-<strong id="41">Transportation</strong>
+<h3 id="41">Transportation</h3>
 <br />
 <p><a id="42" href="http://worldmap.harvard.edu/maps/japanmap/BAE">Ferry</a></p> 
 <ul>
@@ -349,7 +321,7 @@ Tertiary Sector: Services industry ie: retail sales, distribution, entertainment
 	<li><a href="http://worldmap.harvard.edu/data/geonode:roadl_jpn_Ke9">Download Data</a></li>
 </ul>
 <br />
-<strong id="47">Boundaries</strong>
+<h3 id="47">Boundaries</h3>
 <br />
 <p><a id="48" href="http://worldmap.harvard.edu/maps/japanmap/BAH">2010 Municipal Districts</a></p> 
 <ul>
@@ -365,7 +337,7 @@ Tertiary Sector: Services industry ie: retail sales, distribution, entertainment
 </ul>
 
 </div>						 
-<?php endif ?>
+<?php //endif ?>
 <?php
 stop('_map');
 ?>

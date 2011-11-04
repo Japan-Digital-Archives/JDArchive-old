@@ -6,11 +6,12 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 //$language = language();
 
 ?>
+<link href="/lib/launch.css" rel="stylesheet" type="text/css" media="screen" />
 
 <div id="outerbox">
 
 <div id="homebuttonblack">
-	<a href="../explore/" style="text-decoration:none;">
+	<a href="../explore/?la=en">
 	<div class="homelogoleft">
 	   <img src="lib/images/logo120.png">
 	</div>
@@ -21,24 +22,40 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 	</a>
 </div>
 
-<div id="spacer" style="height:50px;"></div>
-
 <div id="homebuttonwhite">
-	<a href="../new/" style="text-decoration:none;">
+	<a href="../new/?la=en">
 	<div class="buttontextleft">
-	 <h2 style="color:2E2E2E;">The Archive<br /> We Are Building</h2>
+	 <h2 style="color:2E2E2E;">The Archive<br /> We Are Building <br/>
+	 これからの<br/>アーカイブ</h2>
 	</div>
-	
-	
-	
 	<div class="homelogoright">
 	   <img src="lib/images/logo120.png">
 	</div>
 	</a>
 </div>
 
+<!--<div id="homebuttonwhite">
+	<a href="../new/">
+	<div class="buttontextleft">
+	 <h2 style="color:2E2E2E;">これからの<br/>アーカイブ</h2>
+	</div>
+	<div class="homelogoright">
+	   <img src="lib/images/logo120.png">
+	</div>
+	</a>
+</div>-->
 
-
+<div id="homebuttonblack">
+	<a href="../explore/">
+	<div class="homelogoleft">
+	   <img src="lib/images/logo120.png">
+	</div>
+	
+	<div class="buttontextright">
+		<h2 style="color:white;">ここまでの<br />アーカイブ</h2>
+	</div>
+	</a>
+</div>
 </div>
 
 <div id="footer">
@@ -46,7 +63,7 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
     <div class="footerleft">
     <img src="lib/images/logo-trans.png">
     </div>
-    <p><a href="http://www.fas.harvard.edu/~rijs/"><img src="/lib/images/reisch_logo.png" style="margin-top:2px;" /></a></p>
+    <p><a href="http://www.fas.harvard.edu/~rijs/"><img src="/lib/images/reisch_logo.png" style="margin-top:2px; border:none;" /></a></p>
 </div>
 </div>
 

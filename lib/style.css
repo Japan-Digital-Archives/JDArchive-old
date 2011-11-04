@@ -102,23 +102,6 @@ img.right {
 #wrapper {
 }
 
-#homebuttonblack a {
-	text-decoration: none;
-	text-align: center;
-	display: block;
-}
-
-#homebuttonblack a:hover {
-	text-decoration: none;
-}
-
-#homebuttonwhite a {
-	text-decoration: none;
-}
-
-#homebuttonwhite a:hover {
-	text-decoration: none;
-}
 
 /* Header */
 
@@ -269,7 +252,7 @@ img.right {
 .toc li {
   margin-left: 20px;
   margin-bottom: 0px;
-  padding: 0;
+  padding: 3px 0 3px 0;
 }
 
 .toc li ul {
@@ -291,7 +274,7 @@ img.right {
 
 .toc p {
   margin: 0;
-  padding: 5px 0px 2px 14px;
+  padding: 5px 0px 5px 14px;
   color: #888;
   line-height: 100%;
 }
@@ -318,9 +301,14 @@ img.right {
   text-decoration: underline;
 }
 
-div.top {
-	text-align: center;
-	margin: 600px 0 0 0;
+#toplink {
+	display:none;
+	position:fixed;
+	right: 5px;
+	bottom: 5px;
+	text-decoration:none;
+	padding:10px;
+	*height: 1.5%;
 }
 
 /* Sidebar */

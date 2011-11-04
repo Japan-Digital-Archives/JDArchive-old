@@ -25,11 +25,24 @@ p, ul, ol {
   text-align: justify;
 }
 
+a img {
+	border: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 #outerbox {
-	width: 660px;
+	width: 980px;
 	margin: 0 auto;
-	height:400px;
+	height:660px;
 	padding-top: 50px;
+	padding-bottom: 50px;
 	background: white;
 }
 
@@ -39,9 +52,10 @@ p, ul, ol {
   border-color: #999999;
   border-width: 1px;
   clear: both;
+  float: right;
   width: 600px;
-  height: 150px;
-  margin: 0 auto;
+  height: 250px;
+  margin: 0 50px 50px auto;
   -moz-border-radius: 15px;
   border-radius: 15px;
   
@@ -56,9 +70,10 @@ p, ul, ol {
   border-color: #999999;
   border-width: 1px;
   clear: both;
+  float: left;
   width: 600px;
   height: 150px;
-  margin: 0 auto;
+  margin: 0 auto 50px 50px;
   -moz-border-radius: 15px;
   border-radius: 15px;
   
@@ -89,10 +104,11 @@ p, ul, ol {
   margin: 13px 13px 13px 25px;
 }
 
+
 .homelogoright {
   float: right;
   width: 125px;
-  margin: 13px 25px 13px 13px; 
+  margin: 63px 25px 13px 13px; 
   
   }
 
@@ -116,7 +132,7 @@ p, ul, ol {
 
 #footer {
   clear: both;
-  width: 660px;
+  width: 980px;
   height: 65px;
   margin: 0 auto;
   background: black;

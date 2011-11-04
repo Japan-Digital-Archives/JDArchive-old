@@ -10,53 +10,34 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 
 <div id="outerbox">
 
-<div id="homebuttonblack">
-	<a href="../explore/">
-	<div class="homelogoleft">
+<table>
+	<tr>
+		<td><div class="homelogoleft">
 	   <img src="lib/images/logo120.png">
-	</div>
-	
-	<div class="buttontextright">
-		<h2 style="color:white;">Explore the<br /> Archive Now</h2>
-	</div>
-	</a>
-</div>
-
-
-<div id="homebuttonwhite">
-	<a href="../new/">
-	<div class="buttontextleft">
+	</div></td>
+		<td>
+			<div class="buttontextright">
+		<h2 style="color:white;">Explore the<br /> Archive Now</h2></div>
+		</td>
+	</tr>
+	<tr>
+		<td><div class="buttontextleft">
 	 <h2 style="color:2E2E2E;">これからの<br/>アーカイブ</h2>
-	</div>
-	<div class="homelogoright">
-	   <img src="lib/images/logo120.png">
-	</div>
-	</a>
-</div>
-
-<div id="homebuttonwhite">
-	<a href="../new/">
-	<div class="buttontextleft">
+	</div></td>
+		<td><div class="buttontextleft">
 	 <h2 style="color:2E2E2E;">The Archive<br /> We Are Building
-	</div>
-	<div class="homelogoright">
-	   <img src="lib/images/logo120.png">
-	</div>
-	</a>
-</div>
-
-
-<div id="homebuttonblack">
-	<a href="../explore/">
-	<div class="homelogoleft">
-	   <img src="lib/images/logo120.png">
-	</div>
-	
-	<div class="buttontextright">
+	</div></td>
+	</tr>
+	<tr>
+		<td><div class="buttontextright">
 		<h2 style="color:white;">ここまで<br />の<br/>アーカイブ</h2>
 	</div>
-	</a>
-</div>
+</td>
+		<td><div class="homelogoleft">
+	   <img src="lib/images/logo120.png">
+	</div></td>
+	</tr>
+</table>
 </div>
 
 <div id="footer">

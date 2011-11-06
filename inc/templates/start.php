@@ -9,7 +9,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
 <!-- required stylesheet for CSSDropDownMenu -->
-<link rel="stylesheet" href="lib/cssmenu.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/lib/cssmenu.css" type="text/css" media="screen" />
 
 <!-- required stylesheet for TextboxList --> 
 <link rel="stylesheet" href="/lib/TextboxList/TextboxList.css" type="text/css" media="screen" charset="utf-8" /> 
@@ -114,14 +114,14 @@ $(function(){
           <li class="current_page_item" style="width:7.6em;"><strong data-en="Contribute" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</strong>
           	<ul>
           		<li><a href="../contribute/" data-en="Website" data-zh="网站" data-jp="ウェブサイト" data-ko="웹사이트">Website</a></li>
-          		<li><a href="../testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonial</a>          	</il>
+          		<li><a href="../testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonial</a></li>
           	</ul>
           </li>
           <?php else: ?>
           <li class="current_page_item" style=""><strong data-en="Contribute" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</strong>
           	<ul class="fat">
           		<li><a href="../contribute/" data-en="Website" data-zh="网站" data-jp="ウェブサイト" data-ko="웹사이트">Website</a></li>
-          		<li><a href="../testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonial</a>          	</il>
+          		<li><a href="../testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonial</a></li>
           	</ul>
           </li>
           <?php endif ?>

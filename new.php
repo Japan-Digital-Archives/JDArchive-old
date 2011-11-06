@@ -12,7 +12,7 @@
 
 <div>
 <?php language_bar($language, array('en', 'ja')); ?>
-<div><h2 data-jp="これからのアーカイブ" data-ko="">The Archive We are Building</h2></div>
+<div><h2 data-jp="これからのアーカイブ">The Archive We are Building</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>

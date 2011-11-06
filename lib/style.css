@@ -131,15 +131,17 @@ img.right {
 }
 
 #menu li {
+  position: relative;
   display: block;
   float: left;
+  padding-bottom: 1px;
   border-right: 1px solid #ccc;
 }
 
-#menu a {
+#menu a, #menu strong {
   display: block;
   float: left;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 2px 10px;
   text-decoration: none;
   text-align: center;
   font-size: 12px;

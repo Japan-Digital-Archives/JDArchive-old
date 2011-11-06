@@ -38,7 +38,13 @@ a:hover {
 }
 
 table {
-	float: center;
+	clear: both;
+	margin: 0 auto;
+}
+
+td {
+	height: 160px;
+	width: 360px;
 }
 
 #outerbox {
@@ -50,16 +56,15 @@ table {
 	background: white;
 }
 
-#homebuttonwhite {
+.homebuttonwhite {
   background: white;
   border-style: solid;
   border-color: #999999;
   border-width: 1px;
-  clear: both;
-  float: right;
-  width: 300px;
-  height: 170px;
-  margin: 0 50px 50px auto;
+  display: inline-block;
+  width: 350px;
+  height: 150px;
+  margin: 0 0px 0px 0;
   -moz-border-radius: 15px;
   border-radius: 15px;
   
@@ -68,16 +73,15 @@ table {
   box-shadow: 5px 5px 5px #ccc;
 }
 
-#homebuttonblack {
+.homebuttonblack {
   background:black;
   border-style: solid;
   border-color: #999999;
   border-width: 1px;
-  clear: both;
-  float: left;
-  width: 300px;
-  height: 170px;
-  margin: 0 auto 50px 50px;
+  display: inline-block;
+  width: 350px;
+  height: 150px;
+  margin: 0 0 0px 0px;
   -moz-border-radius: 15px;
   border-radius: 15px;
   
@@ -87,13 +91,13 @@ table {
 }
 
 
-#homebuttonblack:hover {
+.homebuttonblack:hover {
   
 	background-color: #333333;
   
 }
 
-#homebuttonwhite:hover {
+.homebuttonwhite:hover {
   
 	background-color: #e6e6e6;
   
@@ -104,32 +108,50 @@ table {
 
 .homelogoleft {
   float: left;
-  width: 125px;
+  width: 123px;
   margin: 13px 13px 13px 25px;
 }
 
 
 .homelogoright {
   float: right;
-  width: 125px;
+  width: 123px;
   margin: 13px 25px 13px 13px; 
   
   }
 
 .buttontextright {
-	margin-top: 18px;
-	margin-left: 30px;
-	position: relative;
-	width: 280px;
+	margin-top: 25px;
+	margin-left: 55px;
+	width: 320px;
+	float: center;
 	
 }
 
 .buttontextleft {
-	margin-top: 18px;
-	margin-left: 30px;
-	float: left;
-	width: 280px;
+	margin-top: 25px;
+	margin-left: 20px;
+	width: 320px;
+	float:center;
 	
+}
+
+/* no link button */
+.buttonblack {
+  background:black;
+  border-style: solid;
+  border-color: #999999;
+  border-width: 1px;
+  display: inline-block;
+  width: 350px;
+  height: 150px;
+  margin: 0 0 0px 0px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
 }
 
 /* Footer */

@@ -15,25 +15,26 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 		<td><div class="homelogoleft">
 	   <img src="lib/images/logo120.png">
 	</div></td>
-		<td>
+		<td style="background: black;">
 			<div class="buttontextright">
-		<h2 style="color:white;">Explore the<br /> Archive Now</h2></div>
+		<h2 style="color:white;">これからの<br />アーカイブ</h2></div>
 		</td>
 	</tr>
 	<tr>
-		<td><div class="buttontextleft">
-	 <h2 style="color:2E2E2E;">これからの<br/>アーカイブ</h2>
+		<td style="background: black;"><div class="buttontextleft">
+	 <h2 style="color:white;">Explore the<br/>Archive Now</h2>
 	</div></td>
-		<td><div class="buttontextleft">
-	 <h2 style="color:2E2E2E;">The Archive<br /> We Are Building
-	</div></td>
+		<td><div class="homebuttonwhite">
+			<div class="buttontextleft">
+	 			<h2 style="color:2E2E2E;">ここまでの<br/>アーカイブ</h2></div>
+	 		</div></td>
 	</tr>
 	<tr>
 		<td><div class="buttontextright">
-		<h2 style="color:white;">ここまで<br />の<br/>アーカイブ</h2>
+		<h2 style="color:2E2E2E;">The Archive<br />We Are Building</h2>
 	</div>
 </td>
-		<td><div class="homelogoleft">
+		<td style="background:black;"><div class="homelogoleft">
 	   <img src="lib/images/logo120.png">
 	</div></td>
 	</tr>

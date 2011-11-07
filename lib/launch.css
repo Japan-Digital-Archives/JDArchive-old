@@ -14,9 +14,25 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 44px; }
-h2 { 
+
+.englishtitle { 
   font-size: 40px;
-  padding: 25px 0;
+  padding-top: 10px;
+  text-align:center;
+  line-height: 60px;
+}
+
+.txtwhite {
+	color:white;
+}
+
+.txtgrey {
+	color:#888888;
+}
+
+.japanesetitle { 
+  font-size: 40px;
+  padding: 12px 0;
   text-align:center;
 }
 
@@ -72,6 +88,23 @@ td {
   -moz-box-shadow: 5px 5px 5px #ccc;
   -webkit-box-shadow: 5px 5px 5px #ccc;
   box-shadow: 5px 5px 5px #ccc;
+}
+
+.homelogobox {
+  background: white;
+  display: inline-block;
+  width: 350px;
+  height: 150px;
+  margin: 0 0px 0px 0;
+}
+
+.japaneselogo {
+	padding-top:10px;
+	padding-left:7px;
+}
+
+.englishlogo {
+	padding-top:5px
 }
 
 .homebuttonblack {
@@ -182,19 +215,36 @@ td {
 #footer {
   clear: both;
   width: 980px;
-  height: 65px;
-  margin: 0 auto;
+  height: 50px;
+  margin: 0 auto 20px auto;
+
   background: black;
 }
 
+
 #footer p {
-  padding: 7px;
-  text-align: right;	
+  margin: 0;
+  padding: 2px 16px 0px 0px;
+  text-align: right;
+  line-height: normal;
+  font-size: 10px;
+  color: white;
 }
+
 
 .footerleft {
   margin-left: 10px;
-  margin-top: 5px;
+  margin-top: 6px;
+  line-height: 16px;
   float: left;	
+  color: white;
+}
+
+.footerleft a {
+	color:white;
+}
+
+.footerleft a:hover {
+	text-decoration: underline;
 }
 

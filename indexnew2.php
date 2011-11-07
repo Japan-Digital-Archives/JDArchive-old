@@ -6,7 +6,7 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 //$language = language();
 
 ?>
-<link href="/lib/launch2.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/lib/launch.css" rel="stylesheet" type="text/css" media="screen" />
 
 <div id="outerbox">
 <table>

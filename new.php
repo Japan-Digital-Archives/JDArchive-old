@@ -1,10 +1,4 @@
-<html>
-<head>
-<style type="text/css">
-
-</style>
-</head>
-</html><?php
+<?php
   
   require_once(dirname(__FILE__). '/inc/common.php');
   
@@ -17,22 +11,27 @@
 
 
 <div>
-<?php language_bar($language, array('en', 'ja', 'ko')); ?>
-<div><h2 data-jp="" data-ko="">The Archive We are Building</h2></div>
+<?php language_bar($language, array('en', 'ja')); ?>
+<div><h2 data-jp="これからのアーカイブ">The Archive We are Building</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>
+<p>2011年東日本大震災デジタルアーカイブは現在、ユーザにご利用頂くための画期的なインターフェースを構築中です。このインターフェースは、日本や世界で進められているアーカイブプロジェクトがそれぞれ完結した独自の体系を持つことを尊重しながらも、それらをひとつに結びつけることで、単なる個と個の総和を超えた複合体を創ることを目指しています。これにより、多くのプラットフォームに渡って存在するアーカイブ資料を、多様な方法により検索し、クロス・レファレンスすることが可能となります。</p>
+<p>私たちはこのデジタルアーカイブを活発な公共空間として構想しています。コンテンツは絶え間なく拡大し続け、アーカイブを作ることと利用することはもはや区別しがたいものとなるでしょう。というのも、アーカイブ資料にアクセスする際、ユーザはキーワードや説明などの新しい情報を加えることで、その資料の意味をさらに奥行きのあるものにすることができるのです。この新しい情報であるメタ・データもアーカイブの一部となり、その後に利用するユーザが当該資料をより容易に検索し、より深く理解する助けとなります</p>
+<p>私たちはこのデジタルアーカイブを活発な公共空間として構想しています。コンテンツは絶え間なく拡大し続け、アーカイブを作ることと利用することはもはや区別しがたいものとなるでしょう。というのも、アーカイブ資料にアクセスする際、ユーザはキーワードや説明などの新しい情報を加えることで、その資料の意味をさらに奥行きのあるものにすることができるのです。この新しい情報であるメタ・データもアーカイブの一部となり、その後に利用するユーザが当該資料をより容易に検索し、より深く理解する助けとなります</p>
+
+<p>以下の動画はこの新しいインターフェースにより可能となることの一部をご紹介しています。</p>
 <div id = "vimeo">
 <p><iframe src="http://player.vimeo.com/video/30186707?byline=0&amp;portrait=0" width="620" height="419" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe></p>
 
 <p><iframe src="http://player.vimeo.com/video/30186749?byline=0&amp;portrait=0" width="620" height="457" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe></p>
 </div>
 <?php else: ?>
-<p>The Digital Archive of Japan's 2011 Disasters is currently building an archival interface which embraces a new distributed model for archiving in our connected age, which will be ready in 2012. It is an archive with a strong emphasis on building a powerful experience for the user yet provides access to content from a wide range of sources. </p> 
+<p>The Digital Archive of Japan's 2011 Disasters is currently building an innovative user interface that will knit together separate digital archives into a whole that will be greater than the sum of the parts, while respecting the independent integrity of each archiving project.  This will enable multiple ways to access and cross-reference archived materials across many platforms.</p> 
 
-<p>From the user’s perspective, searching and manipulation of items in the digital archive  takes place in a single location, giving them the power to see a wide range of diverse materials together and in relation to each other even as each item retains a connection to its source. Each of our collaborating partners share access to their materials while being left free to focus on the development and preservation of their own collections, which are often already accessible online. Beyond our own partners, the interface connects directly to publicly searchable social media available online.</p>
+<p>We envision this archive as an active public space.  Its content will be consistently expanding, and there is no firm boundary between the process of building and using the archive.  As users access the archived materials, they will have the opportunity to give these materials greater meaning by adding new information such as keywords or explanations.  This new information (metadata) will become part of the archive and help future users gain better access and understanding of the materials.</p>
 
-<p>Every visitor to our digital archive is a potential contributor and curator.  They may contribute their own content directly but also add contextual information to any archive items, including tags and location information. Finally, the archive allows users to organize materials they have discovered and curate collections of their own which can be shared with the world.</p>
+<p>Users will be able to sort materials ranging from blogs or other text narratives or analyses, to photographs, sound recordings and moving pictures by date and time, and place, as well as topic.  And each user will be able to create personal “collections” of materials around the theme of his or her interest and leave a record of that collection for others to share or to view (if the user chooses to do so).</p>
 
 <p>The following videos demonstrate some of the capabilities of new interface:</p>
 

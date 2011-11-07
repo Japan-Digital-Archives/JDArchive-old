@@ -4,7 +4,7 @@
   
   $language = language();
   
-  start();
+  start('_newabout');
   
   ?>
 
@@ -16,5 +16,5 @@
 </div>
 
 <?php
-stop();
+stop('9');
 ?>

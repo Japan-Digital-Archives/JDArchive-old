@@ -4,19 +4,19 @@
         <ul class="toc">     
             <?php $language = language(); ?>
             
-            <?php if ($language == 'ja'): ?>
+            <?php //if ($language == 'ja'): ?>
        
 
             
-            <?php elseif ($language == 'zh'): ?>
+            <?php //elseif ($language == 'zh'): ?>
             
      
             
-            <?php elseif ($language == 'ko'): ?>
+            <?php //elseif ($language == 'ko'): ?>
             
            
             
-            <?php else: ?>
+            <?php //else: ?>
 
             <h3><a href="#0">Utilities & Infrastucture</a></h3>
             <ul>
@@ -90,11 +90,8 @@
 						<li><a href="#48"><strong>2010 Municipal Districts</strong></a></li>
 						<li><a href="#49"><strong>Prefectures</strong></a></li>
             </ul>
-            <div class="top"><strong><a href="#menu">Top</a></strong></div>
-            <div class="top"><strong><a href="#menu">Top</a></strong></div>
-            <div class="top"><strong><a href="#menu">Top</a></strong></div>
-            <div class="top"><strong><a href="#menu">Top</a></strong></div>
-            <?php endif ?>
+            <!--<div id="toplink"><strong><a href="#menu">Top</a></strong></div> -->
+            <?php //endif ?>
         </ul>
       </div>
       <!-- end #sidebar -->

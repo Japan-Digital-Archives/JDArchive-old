@@ -10,7 +10,8 @@
           </li>
           <li>
               <h2><a href="../featured/">Featured Testimonials</a></h2>
-              <p>Visit our featured testimonial page to read some of the contributions to the testimonial collection.</p>
+              <p>Visit our featured testimonial page to read some of the contributions to the testimonial collection or submit your own story through our 
+              <a href="../testimonial/">form</a>.</p>
           </li>
           <li>
               <h2><a href="http://worldmap.harvard.edu/japanmap/">Browse our Map Layers</a></h2>

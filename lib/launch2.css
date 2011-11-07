@@ -15,7 +15,7 @@ h1, h2, h3 {
 
 h1 { font-size: 44px; }
 h2 { 
-  font-size: 47px;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
@@ -37,25 +37,34 @@ a:hover {
 	text-decoration: none;
 }
 
+table {
+	clear: both;
+	margin: 0 auto;
+}
+
+td {
+	height: 160px;
+	width: 360px;
+}
+
 #outerbox {
 	width: 980px;
 	margin: 0 auto;
-	height:660px;
+	height:500px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background: white;
 }
 
-#homebuttonwhite {
+.homebuttonwhite {
   background: white;
   border-style: solid;
   border-color: #999999;
   border-width: 1px;
-  clear: both;
-  float: right;
-  width: 600px;
-  height: 250px;
-  margin: 0 50px 50px auto;
+  display: inline-block;
+  width: 350px;
+  height: 150px;
+  margin: 0 0px 0px 0;
   -moz-border-radius: 15px;
   border-radius: 15px;
   
@@ -64,16 +73,15 @@ a:hover {
   box-shadow: 5px 5px 5px #ccc;
 }
 
-#homebuttonblack {
+.homebuttonblack {
   background:black;
   border-style: solid;
   border-color: #999999;
   border-width: 1px;
-  clear: both;
-  float: left;
-  width: 600px;
+  display: inline-block;
+  width: 350px;
   height: 150px;
-  margin: 0 auto 50px 50px;
+  margin: 0 0 0px 0px;
   -moz-border-radius: 15px;
   border-radius: 15px;
   
@@ -83,13 +91,13 @@ a:hover {
 }
 
 
-#homebuttonblack:hover {
+.homebuttonblack:hover {
   
 	background-color: #333333;
   
 }
 
-#homebuttonwhite:hover {
+.homebuttonwhite:hover {
   
 	background-color: #e6e6e6;
   
@@ -100,32 +108,50 @@ a:hover {
 
 .homelogoleft {
   float: left;
-  width: 125px;
+  width: 123px;
   margin: 13px 13px 13px 25px;
 }
 
 
 .homelogoright {
   float: right;
-  width: 125px;
-  margin: 63px 25px 13px 13px; 
+  width: 123px;
+  margin: 13px 25px 13px 13px; 
   
   }
 
 .buttontextright {
-	margin-top: 18px;
-	margin-left: 10px;
-	float: right;
-	width: 380px;
+	margin-top: 25px;
+	margin-left: 55px;
+	width: 320px;
+	float: center;
 	
 }
 
 .buttontextleft {
-	margin-top: 18px;
-	margin-left: 30px;
-	float: left;
-	width: 400px;
+	margin-top: 25px;
+	margin-left: 20px;
+	width: 320px;
+	float:center;
 	
+}
+
+/* no link button */
+.buttonblack {
+  background:black;
+  border-style: solid;
+  border-color: #999999;
+  border-width: 1px;
+  display: inline-block;
+  width: 350px;
+  height: 150px;
+  margin: 0 0 0px 0px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
 }
 
 /* Footer */

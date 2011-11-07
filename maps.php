@@ -19,7 +19,7 @@
             
 <?php if ($language == 'en'): ?>
 
-<p>震災関連のレイヤー情報とリンクのダウンロード</p>
+<p>Browse information and download links of our Japan map layers.</p>
 
 <div class="toc">
 <h3 id="0">Utilities & Infrastructure</h3>

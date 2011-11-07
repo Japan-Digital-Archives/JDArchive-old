@@ -21,9 +21,11 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 	</div>
 </td>
 <td>
-		<div class="homelogoleft">
-	   		<img src="lib/images/logo120.png">
-		</div>	
+	<div class="buttonwhite">
+		<div class="logolarge">
+	   		<img src="lib/images/logo_large_w.png">
+		</div>
+	</div>	
 </td>
 </tr>
 <tr>
@@ -49,8 +51,8 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 <tr>
 <td>
 	<div class="buttonblack">
-		<div style="margin: 25px 0 0 50px;">
-	   		<img src="lib/images/logo5.png">
+		<div class="logolarge">
+	   		<img src="lib/images/logo_large_en.png">
 		</div>
 	</div>
 </td>

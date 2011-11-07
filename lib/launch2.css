@@ -119,6 +119,11 @@ td {
   margin: 13px 25px 13px 13px; 
   
   }
+  
+.logolarge {
+	margin: 20px 0 0 20px;
+	float: center;
+}
 
 .buttontextright {
 	margin-top: 25px;
@@ -139,6 +144,23 @@ td {
 /* no link button */
 .buttonblack {
   background:black;
+  border-style: solid;
+  border-color: #999999;
+  border-width: 1px;
+  display: inline-block;
+  width: 350px;
+  height: 150px;
+  margin: 0 0 0px 0px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.buttonwhite {
+  background:white;
   border-style: solid;
   border-color: #999999;
   border-width: 1px;

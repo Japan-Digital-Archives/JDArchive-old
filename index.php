@@ -6,18 +6,17 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 //$language = language();
 
 ?>
+<link href="/lib/launch.css" rel="stylesheet" type="text/css" media="screen" />
 
 <div id="outerbox">
 <table>
 <tr>
 <td>
-	<div class="homebuttonblack">
-		<a href="../explore/?la=en">
-		<div class="buttontextright">
+	<a href="../explore/?la=en">
+		<div class="homebuttonblack">
 	 		<h2 style="color:white;">Explore the<br/>Archive Now</h2>
 	 	</div>
-	 	</a>
-	</div>
+	</a>
 </td>
 <td>
 	<div class="buttonwhite">
@@ -29,22 +28,18 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 </tr>
 <tr>
 <td>
-	<div class="homebuttonwhite">
-		<a href="../new/?la=en">
-	 	<div class="buttontextleft">
-			<h2 style="text-align:center; color:2E2E2E;">The Archive<br/> We Are Building</h2>
+	<a href="../new/?la=en">
+		<div class="homebuttonwhite">
+			<h2 style="color:2E2E2E;">The Archive<br/> We Are Building</h2>	
 		</div>
-		</a>
-	</div>
+	</a>
 </td>
 <td>
-	<div class="homebuttonblack">
-		<a href="../explore/?la=ja">
-		<div class="buttontextright">
+	<a href="../explore/?la=ja">
+		<div class="homebuttonblack">
 	 		<h2 style="color:white;">ここまでの<br/>アーカイブ</h2>
 	 	</div>
-		</a>
-	</div>
+	</a>
 </td>
 </tr>
 <tr>
@@ -56,13 +51,11 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 	</div>
 </td>
 <td>
-	<div class="homebuttonwhite">
-		<a href="../new/?la=ja">
-		<div class="buttontextright">
+	<a href="../new/?la=ja">
+		<div class="homebuttonwhite">
 			<h2 style="color:2E2E2E;">これからの<br />アーカイブ</h2>
 		</div>
-		</a>
-	</div>
+	</a>
 </td>
 </tr>
 </table>

@@ -12,48 +12,48 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 <table>
 <tr>
 <td>
-	<a href="../explore/?la=en">
+	<a href="../explore/?la=ja">
 		<div class="homebuttonblack">
-	 		<h2 style="color:white;">Explore the<br/>Archive Now</h2>
+	 		<p class="japanesetitle txtwhite">ここまでの<br/>アーカイブ</p>
 	 	</div>
 	</a>
-</td>
-<td>
-	<div class="buttonwhite">
+</td><td>
+	<div class="homelogobox">
 		<div class="logolarge">
-	   		<img src="lib/images/logo_large_w.png">
+	   		<img class="japaneselogo" src="lib/images/logo_large_ja.png">
 		</div>
 	</div>	
 </td>
 </tr>
 <tr>
 <td>
-	<a href="../new/?la=en">
+	<a href="../new/?la=ja">
 		<div class="homebuttonwhite">
-			<h2 style="color:2E2E2E;">The Archive<br/> We Are Building</h2>	
+			<p class="japanesetitle txtgrey">これからの<br />アーカイブ</p>
 		</div>
 	</a>
 </td>
 <td>
-	<a href="../explore/?la=ja">
+	<a href="../explore/?la=en">
 		<div class="homebuttonblack">
-	 		<h2 style="color:white;">ここまでの<br/>アーカイブ</h2>
+	 		<p class="englishtitle txtwhite">Explore the<br/>Archive Now</p>
 	 	</div>
 	</a>
 </td>
+
 </tr>
 <tr>
 <td>
-	<div class="buttonblack">
+	<div class="homelogobox">
 		<div class="logolarge">
-	   		<img src="lib/images/logo_large_en.png">
+	   		<img class="englishlogo" src="lib/images/logo_large_w.png">
 		</div>
 	</div>
 </td>
 <td>
-	<a href="../new/?la=ja">
+	<a href="../new/?la=en">
 		<div class="homebuttonwhite">
-			<h2 style="color:2E2E2E;">これからの<br />アーカイブ</h2>
+			<p class="englishtitle txtgrey">The Archive<br/> We Are Building</p>	
 		</div>
 	</a>
 </td>
@@ -61,11 +61,12 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 </table>
 
 </div>
-<div id="footer">
+<div id="footer-bgcontent">
+  <div id="footer">
     <div class="footerleft">
-    <img src="lib/images/logo-trans.png">
+    <a href="http://twitter.com/#!/jdarchive"><img style="padding-top:4px" src="/lib/images/t.png"></a> <br />
+    <a href="https://www.facebook.com/pages/Digital-Archive-of-Japans-2011-Disasters/143040332434759"><img src="/lib/images/f.png"></a>
     </div>
     <p><a href="http://www.fas.harvard.edu/~rijs/"><img src="/lib/images/reisch_logo.png" style="margin-top:2px; border:none;" /></a></p>
 </div>
-
 

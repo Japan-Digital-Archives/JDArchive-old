@@ -11,7 +11,7 @@
 
 <div>
 <?php language_bar($language, array('en', 'ja')); ?>
-<div><h2 data-jp="ここまでのアーカイブ" data-ko="">Explore the Archive Now</h2></div>
+<div><h2 data-jp="ここまでのアーカイブ">Explore the Archive Now</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>
@@ -32,7 +32,7 @@
 
 <p>地理学分析センターと恊働することで、私たちがご提供する地理空間情報レイヤーは深化し続けています。このレイヤー情報により、同センターが制作したJapan Sendai Earthquake Data Portalと共有している豊富なデータをどなたでもご覧頂くことができます。これは、ボランティア機関による多大なご努力や震災後に寛大にもその情報を提供して下さっている機関なくしてはなし得ないでしょう。</p>
 
-<p class= "learn"><strong><a href="../maps/">さらに詳しい情報を見る</a></strong>－ レイヤーやその元となった資料の詳細、またデータをダウンロードするためのリンクはこちらをご覧下さい。</p>
+<p class= "learn"><strong><a href="../maps/?la=ja">さらに詳しい情報を見る</a></strong>－ レイヤーやその元となった資料の詳細、またデータをダウンロードするためのリンクはこちらをご覧下さい。</p>
 <hr />
 <br />
 <p>震災関連アーカイブへの取り組みにおいて主導的役割を果たしているプロジェクトをいくつかご紹介致します。これらの多くのプロジェクトとは豊富な密接なパートナー関係にあり、豊富な情報量を持つアーカイブ・プラットフォームの構築に向けて連携しております。</p>
@@ -106,13 +106,15 @@
 
 <?php else: ?>
 
+<p>The Digital Archive of Japan's 2011 Disasters project is an initiative of the Edwin O. Reischauer Institute of Japanese Studies at Harvard University in collaboration with several partners. We aim to collect, preserve, and make accessible as much of the digital record of the disasters as possible, to enable scholarly research and analysis of the events and their effect.</p>
+
 <h5><a href="../seeds/?la=en">Search the Web Archive</a></h5>
 
 <p>With this preliminary tool, you can <a href="../seeds/?la=en">search</a> the collection of harvested websites and the information about each site we have collected, including the page title, description, and associated keyword tags. From there you can go to the live version of that website online or the archived copies at the Internet Archive.</p>
 
 <p class ="learn"><strong><a href="../contribute/?la=en">Contribute</a></strong> - Have you found websites related to the disasters that you think should be archived? Consider submitting them through our <a href="../contribute/?la=en">form</a>.</p>
 
-<h5><a href="../featured/">Read our Featured Testimonials</a></h5>
+<h5><a href="../featured/?la=en">Read our Featured Testimonials</a></h5>
 
 <p>Visit our featured testimonial page to read some of the contributions to the testimonial collection so far. We will be adding the ability to search all testimonials soon and they will also be fully integrated in the final interface.</p>
 

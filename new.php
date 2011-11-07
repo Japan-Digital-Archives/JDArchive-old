@@ -61,7 +61,7 @@
 
 <p>ウェブサイトや個々人の体験など、これらのうちのいくつかは私たちによって直接収集されています。しかし大部分はパートナーの協力を得て保存され、閲覧が可能となっています。アーカイブについてのより詳しいメタ情報はこちらにございます。<a href="content/?la=ja">コンテンツと所蔵情報</a></p>
 
-<p>完成した際には、私たちが独自に収集した資料だけでなく、パートナーである諸団体が所有している豊富なアーカイブも、まるで流れるように検索して頂くことがこの企画の目的です。主なパートナーに関する詳細はこちらをお読み下さい。<a href="partners/?la=ja">パートナーについて</a></p>
+<p>完成した際には、私たちが独自に収集した資料だけでなく、パートナーである諸団体が所有している豊富なアーカイブも、まるで流れるように検索して頂くことがこの企画の目的です。主なパートナーに関する詳細はこちらをお読み下さい。<a href="../partners/?la=ja">パートナーについて</a></p>
 
 
 <?php elseif ($language == 'zh'): ?>
@@ -128,7 +128,7 @@
 
 <p>Some of these, including websites and testimonials, are directly collected by us. Most of them, however, are made accessible and preserved in cooperation with our content partners. Learn more about our meta-archival approach here: <a href="content/?la=en">Content and Collection</a>.</p>
 
-<p>Read more about our key partners here: <a href="partners/?la=en">Partner Page</a>.</p>
+<p>Read more about our key partners here: <a href="../partners/?la=en">Partner Page</a>.</p>
 
 <?php endif ?>
 

@@ -20,7 +20,7 @@ start('_newabout');
 
 <p>Testimonials submitted to the archive will become part of the integrated search and browse interface that we are currently building for all components of the archive. Visitors to the archive will be able to explore testimonials by directly browsing the whole collection or discover them on the map or in keyword searches together with other materials. In the meantime we would like to highlight some of the recent submissions to the testimonial collection here.</p>
 
-<p>Please consider <a href="http://jdarchive.org/testimonial/">adding a testimonial</a> of your own experiences of the disasters in Japan and its aftermath. We have recently added the ability to upload pictures with the testimonials and we will continue to add new contributions to the list below.</p>
+<p>Please consider <a href="http://jdarchive.org/testimonial/?la=en">adding a testimonial</a> of your own experiences of the disasters in Japan and its aftermath. We have recently added the ability to upload pictures with the testimonials and we will continue to add new contributions to the list below.</p>
 
 <?php elseif ($language == 'zh'): ?>
 

@@ -14,7 +14,7 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 <td>
 	<a href="../explore/?la=ja">
 		<div class="homebuttonblack">
-	 		<p class="japanesetitle txtwhite">ここまでの<br/>アーカイブ</p>
+	 		<p class="japanesetitle txtwhite">現在の<br/>アーカイブ</p>
 	 	</div>
 	</a>
 </td><td>

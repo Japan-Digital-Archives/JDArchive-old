@@ -11,7 +11,7 @@
 
 <div>
 <?php language_bar($language, array('en', 'ja')); ?>
-<div><h2 data-jp="ここまでのアーカイブ">Explore the Archive Now</h2></div>
+<div><h2 data-jp="現在のアーカイブ">Explore the Archive Now</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>

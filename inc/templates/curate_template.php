@@ -75,6 +75,25 @@ $firstseed = $seeds ? $firstseedbase + 1 : $firstseedbase;
 $counts = get_seed_numbers();
 $last_exported = last_exported_seed();
 
+//doing some localization stuff here
+
+$basePath = realpath('./inc/lang');
+$langPath = $basePath."/".$filterlang.".txt";
+
+if (!file_exists($langPath)) {
+	$langPath = realpath($basePath."/curate_template.english.txt");
+}
+
+$langFileCont = file_get_contents($langPath);
+$transDict = json_decode($langFileCont, true);
+
+$notSumbitTxt = $transDict["notSumbitTxt"];
+$liveLinkTxt = $transDict["liveLinkTxt"];
+$mostRecentTxt = $transDict["mostRecentTxt"];
+$earliestTxt = $transDict["earliestTxt"];
+$allTxt = $transDict["allTxt"];
+$notInArchiveTxt = $transDict["notInArchiveTxt"];
+
 if ($curate) {
   start('_curate');
 } else {
@@ -279,15 +298,20 @@ $(function(){
   		$scope = $seed->scope;
   		$frequency = $seed->frequency;
 		$isArchived = $seed->isArchived;
+		$currentSid = $seed->sid;
+		$lastExportId = $last_exported["sid"];
   		$iaurl=$seed->url;
-  		echo " <a href='$iaurl'>Live Link</a> &nbsp;&nbsp;";
-  		if ($isArchived==0) {
-  			echo "<strong>Not Yet Submitted</strong>&nbsp;&nbsp;";
-  		} else {
-  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>Most Recent</a> </strong> | <strong>
-  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>Earliest</a> </strong>
+  		echo " <a href='$iaurl'>$liveLinkTxt</a> &nbsp;&nbsp;";
+  		if ($currentSid > $lastExportId) {
+  			echo "<strong>$notSumbitTxt</strong>&nbsp;&nbsp;";
+  		} else if ($isArchived='0') {
+			echo "<strong>$notInArchiveTxt</strong>&nbsp;&nbsp;";
+		}
+		else {
+  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>$mostRecentTxt</a> </strong> | <strong>
+  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>$earliestTxt</a> </strong>
   		| <strong>
-  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>All</a> &nbsp;&nbsp;";
+  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>$allTxt</a> &nbsp;&nbsp;";
   		}
 	  	echo " Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency)."
   		"; 

@@ -97,6 +97,7 @@ $notInArchiveTxt = $transDict["notInArchiveTxt"];
 if ($curate) {
   start('_curate');
 } else {
+  $language = language();
   start();
 }
 
@@ -176,8 +177,24 @@ $(function(){
 
 <?php if (!$curate): ?>
 <div>
-<h2>ウェブ・アーカイブを検索する</h3>
-<p>暫定的な検索エンジンをご用意致しました。私たちは現在、当アーカイブに収蔵された多くの資料や記録を結ぶべくインターフェースを構築中です。しかしそれが完成するまでの間であっても、収集されたウェブサイトやそれらについての情報（例えばページのタイトルや説明、関連するタグなど）を検索することができます。現段階では、検索結果はオンライン上に存在するウェブサイトそのものにリンクされていますが、まもなくしてインターネット・アーカイブに収められたコピーへとつながることになります。</p></div>
+<div>
+<?php language_bar($language, array('en','zh','ko','ja')); ?>
+<div><h2 data-jp="ウェブ・アーカイブを検索する" data-ko="웹 아카이브 검색" data-zh="搜索网上档案">Search the Web Archive</h2></div>
+</div>
+
+<?php if ($language=='ja'): ?>
+<p>暫定的な検索エンジンをご用意致しました。私たちは現在、当アーカイブに収蔵された多くの資料や記録を結ぶべくインターフェースを構築中です。しかしそれが完成するまでの間であっても、収集されたウェブサイトやそれらについての情報（例えばページのタイトルや説明、関連するタグなど）を検索することができます。現段階では、検索結果はオンライン上に存在するウェブサイトそのものにリンクされていますが、まもなくしてインターネット・アーカイブに収められたコピーへとつながることになります。</p>
+<?php elseif ($language == 'ko'): ?>
+<p>저희의 임시 검색 기능을 소개합니다.  다양한 아카이브 내용에 접속할 수 있는 최종 인터페이스는 현재 구축 중에 있습니다. 작업이 완료되기까지 수집된 웹사이트들과 각 사이트들의 정보를 제목, 설명, 관련키워드 태그 등을 통해 검색해 보실 수 있습니다.  현재는 검색결과가 실제의 웹사이트로 연결되지만, 곧 인터넷 아카이브에 저장된 웹사이트사본으로 연결되게 될 것입니다.</p>
+
+<?php elseif ($language == 'zh'):?>
+<p>欢迎来到我们临时及部分的搜索引擎。综合本档案各个部分的全体界面正在开发 中。您现在能暂时搜索已被“收割”的网页以及关于各个网页的资料（包括 网页标 题，简述，有关的关键字标签）。此时，您的搜索结果会连接到网页的实况版；然 而，这将会与网页档案（Internet Archive）所收藏的复本连接。</p>
+
+<?php else: ?>
+<p>Welcome to our temporary and partial search engine. The full interface which connects the many components of the archive is currently being developed. In the meantime, you may search the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. Currently, result will link to the live version of the website but soon this will be connected to the archived copy at the Internet Archive.</p>
+
+<?php endif ?>
+</div>
 <div class="searchbigdiv">
 <form method="get" action="/seeds/">
 <div class="searchdiv">

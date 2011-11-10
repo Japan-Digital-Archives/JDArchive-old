@@ -103,9 +103,9 @@
 <br />
 <h3 id="12">位置情報</h3>
 <br />
-<p><a id="13" href="http://worldmap.harvard.edu/maps/japanmap/48">登録有形文化財（宗教建造物）</a></p>
+<p><a id="13" href="http://worldmap.harvard.edu/maps/japanmap/48">国指定文化財（宗教建造物）</a></p>
 <ul>
-<li>国登録有形文化財（宗教建造物：神社、寺院、教会など）の位置</li>
+<li>国指定文化財（国宝・重要・登録有形）建造物の位置</li>
 <li>出典: <a href="http://www.bunka.go.jp/bsys/">文化庁</a></li>
 	<li><a href="http://worldmap.harvard.edu/data/geonode:RegReli_UTM54N_eNl">データをダウンロードする:</a></li>
 </ul>
@@ -123,14 +123,14 @@
 <br />
 <h3 id="16">画像、基本図</h3>
 <br />
-<p><a id="17" href="http://worldmap.harvard.edu/maps/japanmap/BAh">陸前高田の津波の前と後のイメージ</a></p>
+<p><a id="17" href="http://worldmap.harvard.edu/maps/japanmap/BAh">陸前高田の津波の前と後の衛星画像</a></p>
 <ul>
 <li>津波前（2007年3月１日）と後（2011年3月14日）の陸前高田を撮影した衛星画像</li>
 <li>出典: <a href="http://earthobservatory.nasa.gov/IOTD/view.php?id=49684">アメリカ国際宇宙局（NASA)</a></li>
 <li>データをダウンロードする: <a href="http://warp.worldmap.harvard.edu/maps/59#Export_tab">津波前</a>, <a href="http://warp.worldmap.harvard.edu/maps/60#Export_tab">津波後</a></li>
 </ul>
 
-<p><a id="18" href="http://worldmap.harvard.edu/maps/japanmap/5B">1978年東北地方南東部地勢図</a></p>
+<p><a id="18" href="http://worldmap.harvard.edu/maps/japanmap/5B">1978年 東北地方南東部地勢図</a></p>
 <ul>
 	<li>1978年東北南東部の２万５千分１地勢図のモザイク表示</li>
 	<li>出典: <a href="http://www.gsi.go.jp/ENGLISH/index.html">国土地理院</a></li>
@@ -148,9 +148,9 @@
 	<li><a href="http://worldmap.harvard.edu/data/geonode:UNOSAT_Tsunami_StandingWater_xkn">データをダウンロードする</a></li>
 <a href="http://worldmap.harvard.edu/data/geonode:DLR_20110316_japan_earthquake_floodmask_tsx_20110312_utm54n_cRL"></a></li>
 </ul>
-<p><a id="21" href="http://worldmap.harvard.edu/maps/japanmap/7P">犠牲者数（2011年3月18日、4月9日、7月25日）</a></p>
+<p><a id="21" href="http://worldmap.harvard.edu/maps/japanmap/7P">死人数（2011年3月18日、4月9日、7月25日）</a></p>
 <ul>
-	<li>2011年東日本大震災による犠牲者数</li>
+	<li>2011年東日本大震災による死人数</li>
 	<li>出典: <a href="http://earthquake-report.com/2011/05/25/japan-tsunami-a-massive-update-for-our-catdat-situation-report-part-15/">Earthquake Report by CATDAT: The Integrated Historical Global Catastrophe Database</a></li>
 	<li>データをダウンロードする: <a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt3Join_g37">3月18日</a>, <a href="http://worldmap.harvard.edu/data/geonode:CasualtyRpt19JoinFinal_TK0">4月9日</a>, <a href="http://worldmap.harvard.edu/data/geonode:Slct_Casualty2010Join1_Final_zDe">7月25日</a></li>
 </ul>
@@ -212,9 +212,9 @@
 	<li>出典: <a href="http://earthquake.usgs.gov/earthquakes/shakemap/global/shake/c0001xgp/">United States Geologic Survey (USGS)</a></li>
 	<li><a href="http://worldmap.harvard.edu/data/geonode:InstruIntensity_Clip_dOd">データをダウンロードする</a></li>
 </ul>
-<p><a id="30" href="http://worldmap.harvard.edu/maps/japanmap/_u">今後30年間における地震発生の確率</a></p> 
+<p><a id="30" href="http://worldmap.harvard.edu/maps/japanmap/_u">今後30年間における震度6以上の地震発生確率</a></p> 
 <ul>
-	<li>防災科学技術研究所（J-SHIS)による、震度6弱以上の揺れに見舞われる確率の分布図</li>
+	<li>•	防災科学技術研究所（J-SHIS)による、今後30年間における震度6弱以上の揺れに見舞われる確率確率論的地震動予測地図</li>
 	<li>出典: <a href="http://www.j-shis.bosai.go.jp/download">防災科学技術研究所</a></li>
 	<li><a href="http://worldmap.harvard.edu/data/geonode:_yr_65shinshp2_UTF_scD">データをダウンロードする</a></li>
 </ul>
@@ -227,13 +227,13 @@
 <br />
 <h3 id="32">社会、人口統計</h3>
 <br />
-<p><a id="33" href="http://worldmap.harvard.edu/maps/japanmap/_x">65歳以上人口</a></p> 
+<p><a id="33" href="http://worldmap.harvard.edu/maps/japanmap/_x">65歳以上の人口割合</a></p> 
 <ul>
 	<li>2005年国勢調査による65歳以上人口の割合</li>
 	<li>出典: <a href="http://www.e-stat.go.jp/SG1/estat/GL08020103.do?_toGL08020103_&tclassID=000001007609&cycleCode=0&requestSender=search">政府統計の総合窓口（ｅ－Ｓｔａｔ）</a></li>
 	<li><a href="http://worldmap.harvard.edu/data/geonode:PopCensus2005_vpg">データをダウンロードする</a></li>
 </ul>
-<p><a id="34" href="http://worldmap.harvard.edu/maps/japanmap/_z">人口増加</a></p>
+<p><a id="34" href="http://worldmap.harvard.edu/maps/japanmap/_z">人口増減率</a></p>
 <ul>
 	<li>2005年国勢調査による2000−2005年の間の人口増減率</li>
 	<li>出典: <a href="http://www.e-stat.go.jp/SG1/estat/GL08020103.do?_toGL08020103_&tclassID=000001007609&cycleCode=0&requestSender=search">政府統計の総合窓口（ｅ－Ｓｔａｔ）</a></li>
@@ -262,7 +262,7 @@
 <br />
 <h3 id="38">経済活動、雇用</h3>
 <br />
-<p><a id="39" href="http://worldmap.harvard.edu/maps/japanmap/BAB">工業品輸送</a></p>
+<p><a id="39" href="http://worldmap.harvard.edu/maps/japanmap/BAB">貨物地域流動量（金属・機械工業品）</a></p>
 <ul>
 	<li>宮城県、岩手県、福島県からの金属・機械工業品の輸送トン数</li>
 	<li>出典: <a href="http://nlftp.mlit.go.jp/ksj/jpgis/jpgis_datalist.html">国土交通省</a></li>
@@ -273,7 +273,7 @@
 </ul>
 <p><a id="40" href="http://worldmap.harvard.edu/maps/japanmap/BAD">産業別就業者数</a></p> 
 <ul>
-	<li>•	2005年国勢調査による産業別就業者数（第１次産業：農業・林業・漁業、　第2次産業：製造業・鉱業・建設業、第3次産業：小売業・卸売業・娯楽業・法律サービス・金融業・事務業などのサービス業）</li>
+	<li>2005年国勢調査による産業別就業者数（第１次産業：農業・林業・漁業、　第2次産業：製造業・鉱業・建設業、第3次産業：小売業・卸売業・娯楽業・法律サービス・金融業・事務業などのサービス業）</li>
 	<li>出典: <a href="http://www.e-stat.go.jp/SG1/estat/GL08020103.do?_toGL08020103_&tclassID=000001007609&cycleCode=0&requestSender=search">政府統計の総合窓口（ｅ－Ｓｔａｔ）</a></li>
 	<li>データをダウンロードする:
 		<a href="http://worldmap.harvard.edu/data/geonode:slct_2005Indus_UTF_AdU">第１次産業</a>, 
@@ -307,7 +307,7 @@
 	<li>出典: <a href="http://nlftp.mlit.go.jp/ksj/jpgis/jpgis_datalist.html">国土交通省</a></li>
 	<li><a href="http://worldmap.harvard.edu/data/geonode:Airport_Pt_Join_ZF7">データをダウンロードする</a></li>
 </ul>
-<p><a id="46" href="http://worldmap.harvard.edu/maps/japanmap/BAI">道路網</a></li>	 
+<p><a id="46" href="http://worldmap.harvard.edu/maps/japanmap/BAI">道路</a></li>	 
 <ul>
 	<li>道路網</li> 
 	<li>出典: <a href="http://www1.gsi.go.jp/geowww/globalmap-gsi/download/download2.html">世界地図</a></li> 
@@ -316,7 +316,7 @@
 <br />
 <h3 id="47">行政区域</h3>
 <br />
-<p><a id="48" href="http://worldmap.harvard.edu/maps/japanmap/BAH">2010年市町村等行政区域</a></p> 
+<p><a id="48" href="http://worldmap.harvard.edu/maps/japanmap/BAH">2010年 市町村等行政区域</a></p> 
 <ul>
 	<li>2010年市町村等行政区域</li>
 	<li>出典: <a href="http://nlftp.mlit.go.jp/ksj/jpgis/jpgis_datalist.html">国土交通省</a></li>

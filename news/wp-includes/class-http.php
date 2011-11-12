@@ -669,7 +669,7 @@ class WP_Http_Fsockopen {
 		//fsockopen has issues with 'localhost' with IPv6 with certain versions of PHP, It attempts to connect to ::1,
 		// which fails when the server is not set up for it. For compatibility, always connect to the IPv4 address.
 		if ( 'localhost' == strtolower($fsockopen_host) )
-			$fsockopen_host = '127.0.0.1';
+			$fsockopen_host = 'localhost';
 
 		// There are issues with the HTTPS and SSL protocols that cause errors that can be safely
 		// ignored and should be ignored.

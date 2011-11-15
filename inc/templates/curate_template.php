@@ -310,9 +310,11 @@ $(function(){
 	  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>$mostRecentTxt</a> </strong> | <strong>
 	  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>$earliestTxt</a> </strong>
 	  		| <strong>
-	  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>$allTxt</a> &nbsp;&nbsp;";
+	  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>$allTxt</a> &nbsp;&nbsp;</strong>";
 	  		}
-		  	echo " Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency).""; 
+			if($curate) {
+		  		echo " <strong>Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency).""; 
+			}
   	?>
   </div>
 

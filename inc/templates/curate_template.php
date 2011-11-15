@@ -309,7 +309,7 @@ $(function(){
     }
   ?>
   </div>
-  <?php if ($curate): ?>
+
   <div class="ialinks">
   	<?php
   		$scope = $seed->scope;
@@ -321,20 +321,19 @@ $(function(){
   		echo " <a href='$iaurl'>$liveLinkTxt</a> &nbsp;&nbsp;";
   		if ($currentSid > $lastExportId) {
   			echo "<strong>$notSumbitTxt</strong>&nbsp;&nbsp;";
-  		} else if ($isArchived='0') {
+  		} else if ($isArchived=='0') {
 			echo "<strong>$notInArchiveTxt</strong>&nbsp;&nbsp;";
 		}
 		else {
-  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>$mostRecentTxt</a> </strong> | <strong>
-  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>$earliestTxt</a> </strong>
-  		| <strong>
-  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>$allTxt</a> &nbsp;&nbsp;";
-  		}
-	  	echo " Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency)."
-  		"; 
+	  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>$mostRecentTxt</a> </strong> | <strong>
+	  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>$earliestTxt</a> </strong>
+	  		| <strong>
+	  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>$allTxt</a> &nbsp;&nbsp;";
+	  		}
+		  	echo " Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency).""; 
   	?>
   </div>
-  <?php endif ?> 
+
 </div>
 </div>
 

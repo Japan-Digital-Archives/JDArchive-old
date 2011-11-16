@@ -64,9 +64,6 @@
 <h3><a href="http://www.japanfocus.org/">アジア太平洋ジャーナル：ジャパン・フォーカス</a></h3>
 <p>アジア太平洋ジャーナルは、日本や太平洋地域に影響を与える諸問題についての掘り下げた論文を幅広く提供する雑誌です。震災後は特に地震、津波、とりわけ福島の原発事故に関わる英語で書かれた論文を精力的に掲載しています。</p>
 <br />
-<h3><a href="http://www.japanfocus.org/">アサヒ・ジャパン・ウォッチ　3/11 Disaster in Japan</a></h3>
-<p>朝日新聞は日本における主要な新聞の一つであり、記事、写真、豊富なインタラクティブ・グラフィックスを含めた震災とその後に関する報道記事を、総合的な資料として発信しています。</p>
-<br />
 <h3><a href="http://savemlak.jp/wiki/saveMLAK">save MLAK</a></h3>
 <p>博物館・美術館（Museum）、図書館（Library）、文書館（Archives）、公民館（Kominkan） の関係者及び支援者によるサポートネットワークであるsaveMLAKは、東日本大震災によって被災した施設や人々が、 どのような被害を受けているのかという被災情報、どのような支援を必要としているのかという救援情報を共有し、施設の復旧や展示物の修復に向けて協力できる専門の知識や技能を持ったボランティアの派遣など、必要と思われることを提供しています。2011年東日本大震災デジタルアーカイブの収集・保存活動に対しても、被災した諸機関のウェブサイトについての情報を多数提供して下さっています。</p>
 <br />
@@ -151,9 +148,6 @@
 <br />
       <h3><a href="http://www.japanfocus.org/">The Asia-Pacific Journal: Japan Focus</a></h3>
       <p>The Asia-Pacific Journal, which provides a range of in-depth articles on issues affecting Japan and the entire region has been especially active in the aftermath of the disasters in posting articles in the English language related to the earthquake, tsunami, and especially the nuclear disaster in Fukushima.</p>
- <br />
-      <h3><a href="http://www.japanfocus.org/">Asahi Japan Watch - 3/11 Disaster in Japan</a></h3>
-      <p>Asahi, one of Japan’s leading newspapers, has created a comprehensive resource for news coverage about the disasters going back to March 11th, including articles, photographs, and rich interactive graphics.</p>
 <br />
       <h3><a href="http://savemlak.jp/wiki/saveMLAK">save MLAK (Save Museum, Library, Archives, and Kominkan)</a></h3>
       <p>The saveMLAK is a project led by the staff and supporters of museums, libraries, archives, and community centers (kōminkan) in Japan. The project is collecting information on the harm to people and damage to facilities caused by the Eastern Japan Great Earthquake Disaster as well as identifying their needs in the relief effort. The saveMLAK project works to provide the people and institutions affected by the disaster with whatever assistance that project members in the museum, library, archive, and the kōminkan community can provide. The project is contributing information about the many websites of affected institutions to the Digital Archive of Japan's 2011 Disasters for our web archiving efforts.</p>

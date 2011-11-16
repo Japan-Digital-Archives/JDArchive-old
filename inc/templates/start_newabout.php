@@ -111,7 +111,7 @@ $(function(){
         <ul>
           <li><a href="../explore/" class="first" data-en="About" data-zh="关于我们" data-jp="当企画について" data-ko="소개">About</a></li>
           	<?php if ($language == 'en'): ?>
-          <li class="current_page_item" style="width:7.6em;"><strong data-en="Contribute" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</strong>
+          <li class="current_page_item" style="width:7.62em;"><strong data-en="Contribute" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</strong>
           	<ul>
           		<li><a href="../contribute/" data-en="Website" data-zh="网站" data-jp="ウェブサイト" data-ko="웹사이트">Website</a></li>
           		<li><a href="../testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonial</a>          	</li>

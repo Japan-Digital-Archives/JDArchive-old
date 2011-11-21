@@ -102,6 +102,7 @@ if ($curate) {
 
 ?>
 
+
 <?php if ($q && $count): ?>
 <script type="text/javascript">
 $(function(){
@@ -170,7 +171,7 @@ $(function(){
 <?php elseif (!$curate && ($filtertag || $q)): ?>
 <p style="margin-bottom:0;"><a href="/seeds/">&laquo; Back to all seeds</a></p>
 <?php /*else: 
-<p data="KONRADPUTSTUFFHERE">Welcome to our temporary search engine. The full interface which connects the many components of the archive is currently being developed. In the meantime, you may search the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. Currently, search results will link to the live version of the website but soon this will be connected to the archived copy at the Internet Archive.</p> */ ?>
+<p data="en">Welcome to our temporary search engine. The full interface which connects the many components of the archive is currently being developed. In the meantime, you may search the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. Currently, search results will link to the live version of the website but soon this will be connected to the archived copy at the Internet Archive.</p> */ ?>
 <?php endif ?>
 
 <?php if (!$curate): ?>

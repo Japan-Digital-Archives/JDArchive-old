@@ -5,11 +5,8 @@
 <title>Digital Archive of Japan's 2011 Disasters</title>
 <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
 <meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
-<link href="/lib/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/lib/launch.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
-<!-- required stylesheet for CSSDropDownMenu -->
-<link rel="stylesheet" href="/lib/cssmenu.css" type="text/css" media="screen" />
 
 <!-- required stylesheet for TextboxList --> 
 <link rel="stylesheet" href="/lib/TextboxList/TextboxList.css" type="text/css" media="screen" charset="utf-8" /> 
@@ -32,7 +29,7 @@
 
 <script type="text/javascript">
 
-var lang = "<?php echo language(); ?>";
+var lang = "ja";
 
 $(function(){
    var href = $('#jdarchive_logo').attr('href');
@@ -96,42 +93,5 @@ $(function(){
   })();
 
 </script>
-<?php $language = language(); ?>
 
 </head>
-<body>
-<div id="wrapper">
-  <div id="wrapper-bgtop">
-    <div id="header">
-      <div id="logo">
-        <a id="jdarchive_logo" href="/"><h1><span style="display:none;">Digital Archive</span></h1></a>
-       </div>
-      <!-- end #logo -->
-      <div id="menu">
-        <ul>
-          <li><a href="../explore/" class="first" data-en="About" data-zh="关于我们" data-jp="当企画について" data-ko="소개">About</a></li>
-          <?php if ($language == 'en'): ?>
-          <li class="current_page_item" style="width:7.6em;"><strong data-en="Contribute" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</strong>
-          	<ul>
-          		<li><a href="../contribute/" data-en="Website" data-zh="网站" data-jp="ウェブサイト" data-ko="웹사이트">Website</a></li>
-          		<li><a href="../testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonial</a></li>
-          	</ul>
-          </li>
-          <?php else: ?>
-          <li class="current_page_item" style=""><strong data-en="Contribute" data-zh="投稿方法" data-jp="投稿方法" data-ko="제출">Contribute</strong>
-          	<ul class="fat">
-          		<li><a href="../contribute/" data-en="Website" data-zh="网站" data-jp="ウェブサイト" data-ko="웹사이트">Website</a></li>
-          		<li><a href="../testimonial/" data-en="Testimonial" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonial</a></li>
-          	</ul>
-          </li>
-          <?php endif ?>
-          <li class="current_page_item"><a href="../featured/" data-en="Testimonials" data-zh="我的“日本东北大地震”" data-ko="개인체험수기" data-jp="わたしの「東日本大震災」">Testimonials</a></li>
-          <li class="current_page_item"><a href="../news/" data-en="News" data-zh="最新消息" data-ko="뉴스" data-jp="News">News</a></li>
-          <li class="last"><a href="../contact/" data-en="Contact" data-jp="お問い合わせ" data-zh="联系我们" data-ko="운영자에게">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- end #header -->
-    <!-- end #header-wrapper -->
-    <div id="page">
-      <div id="content">

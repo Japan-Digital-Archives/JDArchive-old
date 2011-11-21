@@ -1,0 +1,137 @@
+/*==============================================================================
+
+	GRC multi-level script-free pure-CSS menuing system stylesheet.
+   This code is hereby placed into the public domain by its author
+   Steve Gibson. It may be freely used for any purpose whatsoever.
+
+	Computed Geometries:	with a default 12px font, 1.0em == 12px and
+	1px == 0.08333em.
+	Thus, our 98px wide Freeware & Research buttons are 8.166666em wide.
+
+==============================================================================*/
+
+ /*================= STYLES FOR THE GRC MASTHEAD & CONTROLS ==================*/
+
+.menuminwidth0 {             /* for all browsers (non-IE) that obey min-width */
+	position:relative;
+	border:0;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:55px;/* 36px masthead height + 18px button height + 1px lower border*/
+	min-width:560px;
+}
+
+/* suppress our whole menu when not an interactive mode (when printing, etc.) */
+@media print, projection { .menuminwidth0 { d\isplay:none; } }
+
+* html .menuminwidth1 { /* this allows IE5/6 to simulate min-width capability */
+	position:relative;  /* we can simulate a minimum width by creating a large */
+	float:left;          /* border in this first div, then placing our content */
+	height: 1px;          /* into a second nested div (see 2nd nested div next */
+	border-left:560px solid #fff;    /* CSS box-model borders are a fixed size */
+}
+
+* html .menuminwidth2 {    /* used to simulate min-width capability for IE5/6 */
+	position:relative;
+	margin-left:-560px;
+	height: 1px;
+}
+
+
+ /*========================= TOP OF THE MENU CASCADE =========================*/
+
+
+#menu ul li table {
+	margin:-1px 0;              /* IE5 needs -1px top and bottom table margins */
+	m\argin:0;               /* re-zero the table margins for everyone but IE5 */
+	border-collapse:collapse;      /* IE5 needs this for the sub-menus to work */
+	font-size:12px;        /* this sets the base font size for our entire menu */
+}
+
+#drop {
+	display:block;
+	padding:0px 0.33em;	       /* this sets the l/r margins for our menu item */
+	margin:0;
+	text-align:right;   /* this right alignment goes with the float:left below */
+	cursor:pointer;      /* IE tries to switch back to an I-beam, don't let it */
+	cursor:hand;           /* IE5 only knows about "hand", so set it both ways */
+}
+
+.drop span {        /* this simultaneously left and right aligns the text and */
+	float:left;       /* the >> in the drop-down menus which link to sub-menus */
+}
+
+/*======================== TOP LEVEL MENU DEFINITIONS ========================*/
+
+#menu ul li ul {
+	display:none;                  /* initially hide the entire list hierarchy */
+	padding:1px;                               /* this is our box border width */
+}
+
+/*======================== 2ND LEVEL MENU DEFINITIONS ========================*/
+
+#menu ul li:hover ul,
+#menu ul li a:hover ul {                           /* 2nd level drop-down box */
+	display:block;
+	position:absolute;
+	margin:0;
+	top:16px;              /* place us just up underneath the top-level images */
+	left:-1px;       /* left-align our drop-down to the previous button border */
+	height:auto;      /* the drop-down height will be determiend by line count */
+	width:7.46em;
+	color:white;                        /* this sets the unselected-text color */
+	background:black;         /* this sets our menu's effective "border" color */
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #ccc;
+}
+
+#menu ul li:hover ul.leftbutton,
+#menu ul li a:hover ul.leftbutton {/* our first dropdown should not be skewed */
+	left:0px;
+}
+
+#menu ul li:hover ul.fat,
+#menu ul li a:hover ul.fat {             /* 2nd level fat drop-down box */
+	width:13.6em;
+}
+
+#menu ul.rightmenu li:hover ul,
+#menu ul.rightmenu li a:hover ul {    /* 2nd level neighborhood drop-down box */
+	left:auto;
+	right:0;         /* nudge the right menu right to line up under the border */
+}
+
+* html #menu ul.rightmenu li a:hover ul {         /* IE5/6 needs a tweak here */
+	right:-1px;
+}
+
+#menu ul li:hover ul li,
+#menu ul li a:hover ul li {
+	border-right: none;
+	margin: 5px 0 5px 0;
+}
+
+#menu ul li:hover ul li a,
+#menu ul li a:hover ul li a {                   /* 2nd level unselected items */
+	margin:0;
+	padding:0 10px 0 10px;
+	height:auto;
+	color: white;               /* this sets the unselected drop-down text color */
+	background:black;       /* this sets the drop-down menu background color */
+	width:5.6em;
+	text-align:left;
+}
+
+#menu ul li:hover ul.fat li a,
+#menu ul li a:hover ul.fat li a { 
+	width:12em;
+} 
+
+#menu ul li:hover ul li:hover a,
+#menu ul li a:hover ul li a:hover {                /* 2nd level selected item */
+	text-decoration: underline;
+}
+

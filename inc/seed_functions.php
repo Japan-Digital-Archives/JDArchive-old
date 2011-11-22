@@ -298,11 +298,16 @@
     }
       
     if (is_east_asian($q)) {
-      $sql .= " (title LIKE '%$q%' OR description LIKE '%$q%' OR tags LIKE '%$q%')";
+      $sql .= " (title LIKE '%$q%' OR description LIKE '%$q%' OR tags LIKE '%$q%' OR sid LIKE '%$q%')";
     } else {
-      $qs = str_replace(" ", " +", $q);
-      $qs = "+" . $qs;
-      $sql .= " (MATCH (title, description, tags) AGAINST ('$qs' IN BOOLEAN MODE))";
+	$terms = explode(" ", $q);
+	$qs = "";
+	foreach ($terms as &$item) {
+		$qs = $qs . "+" . $item . "* "; 
+	}
+      //$qs = str_replace(" ", " +", $q);
+      //$qs = "+" . $qs;
+      $sql .= " ((MATCH (title, description, tags) AGAINST ('$qs' IN BOOLEAN MODE)) OR sid LIKE '%$q%')";
     }
     
 

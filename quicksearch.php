@@ -47,15 +47,15 @@ if (isset($term)) {
 					  $added = $row["added"];
 					  $isArchived = $row["isArchived"];
 					  if ($isArchived==1) {
-	  						$archived="Yes";
+	  						$archived="yes";
 	  				  } else {
-	  				  	$archived="No";
+	  				  	$archived="no";
 	  				  }
 				
 					  echo("<p>".$count.")&nbsp;<strong><a href=\"http://www.jdarchive.org/edit/?sid=$zid\">$title</a></strong> <br />");
-					  echo("<p><strong>#".$zid." Name:</strong> ".$name." <strong>Frequency:</strong> ".$frequency." <strong>Scope:</strong> ".$scope." <strong>");
-					  if ($archived=="Yes") {
-					  	echo ("<a href='http://wayback.archive-it.org/2438/*/".$zurl."'>Yes</a>");
+					  echo("<strong>#".$zid." Name:</strong> ".$name." <strong>Frequency:</strong> ".$frequency." <strong>Scope:</strong> ".$scope." <strong>Archived: </strong>");
+					  if ($archived=="yes") {
+					  	echo ("<a href='http://wayback.archive-it.org/2438/*/".$zurl."'>yes</a>");
 					  } else { echo $archived; }
 					  echo ("<br />");
 					  echo("<a href=\"$zurl\">$zurl</a></p>");

@@ -2,6 +2,7 @@
   <select name="field" id="field">
     <option value="url">URL</option>
     <option value="title">Title</option>
+    <option value="num">Seed Number</option>
   </select>&nbsp;&nbsp;
   <input name="term" type="text" id="term" size="60" />
 	<p>

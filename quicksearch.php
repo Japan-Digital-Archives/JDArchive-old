@@ -41,8 +41,19 @@ if (isset($term)) {
 				  $title = $row["title"];
 				  $zurl = $row["url"];
 				  $zid = $row["sid"];
+				  $frequency = $row["frequency"];
+				  $scope = $row["scope"];
+				  $name = $row["name"];
+				  $added = $row["added"];
+				  $isArchived = $row["isArchived"]
+				  if ($isArchived==1) {
+  						$archived="Yes";
+  				  } else
+  				  	$archived="No";
+  				  }
 			
 				  echo("<p>".$count.")&nbsp;<strong><a href=\"http://www.jdarchive.org/edit/?sid=$zid\">$title</a></strong> <br />");
+				  echo("<p>Name: ".$name." Frequency: ".$frequency." Scope: ".$scope." Archived: ".$archived;
 				  echo("<a href=\"$zurl\">$zurl</a></p>");
 				  $count++ ;
 				  }

@@ -9,7 +9,9 @@ if (isset($_POST['field']) && isset($_POST['term'])) {
   $term = $_POST['term'];
 
   if($field=="url") {
-  $query = "SELECT * FROM `seeds` WHERE `".$field."` LIKE '".$term."%' LIMIT 400";
+  $query = "SELECT * FROM `seeds` WHERE `url` LIKE '".$term."%' LIMIT 400";
+  } elseif ($field=="num") {
+  	$query = "SELECT * FROM `seeds` WHERE `sid` LIKE '".$term."' LIMIT 400";
 } else {
 	$query = "SELECT * FROM `seeds` WHERE `".$field."` LIKE '%".$term."%' LIMIT 400";
 }

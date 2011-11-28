@@ -53,7 +53,11 @@ if (isset($term)) {
 	  				  }
 				
 					  echo("<p>".$count.")&nbsp;<strong><a href=\"http://www.jdarchive.org/edit/?sid=$zid\">$title</a></strong> <br />");
-					  echo("<p>Name: ".$name." Frequency: ".$frequency." Scope: ".$scope." Archived: ".$archived);
+					  echo("<p><strong>#".$zid." Name:</strong> ".$name." <strong>Frequency:</strong> ".$frequency." <strong>Scope:</strong> ".$scope." <strong>");
+					  if ($archived=="Yes") {
+					  	echo ("<a href='http://wayback.archive-it.org/2438/*/".$zurl."'>Yes</a>");
+					  } else { echo $archived; }
+					  echo ("<br />");
 					  echo("<a href=\"$zurl\">$zurl</a></p>");
 					  $count++ ;
 					  }

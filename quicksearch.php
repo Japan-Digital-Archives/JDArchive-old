@@ -53,7 +53,7 @@ if (isset($term)) {
   				  }
 			
 				  echo("<p>".$count.")&nbsp;<strong><a href=\"http://www.jdarchive.org/edit/?sid=$zid\">$title</a></strong> <br />");
-				  echo("<p>Name: ".$name." Frequency: ".$frequency." Scope: ".$scope." Archived: ".$archived;
+				  echo("<p>Name: ".$name." Frequency: ".$frequency." Scope: ".$scope." Archived: ".$archived);
 				  echo("<a href=\"$zurl\">$zurl</a></p>");
 				  $count++ ;
 				  }

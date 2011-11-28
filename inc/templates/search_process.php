@@ -11,7 +11,8 @@ if (isset($_POST['field']) && isset($_POST['term'])) {
   if($field=="url") {
   $query = "SELECT * FROM `seeds` WHERE `url` LIKE '".$term."%' LIMIT 400";
   } elseif ($field=="num") {
-  	$query = "SELECT * FROM `seeds` WHERE `sid` LIKE '".$term."' LIMIT 400";
+  	$plushundred = $term+200;
+  	$query = "SELECT * FROM `seeds` WHERE `sid` BETWEEN '".$term."' AND '".$plushundred."'";
 } else {
 	$query = "SELECT * FROM `seeds` WHERE `".$field."` LIKE '%".$term."%' LIMIT 400";
 }

@@ -45,7 +45,7 @@ if (isset($term)) {
 				  $scope = $row["scope"];
 				  $name = $row["name"];
 				  $added = $row["added"];
-				  $isArchived = $row["isArchived"]
+				  $isArchived = $row["isArchived"];
 				  if ($isArchived==1) {
   						$archived="Yes";
   				  } else

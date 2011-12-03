@@ -38,14 +38,29 @@ if (isset($term)) {
 				$count=1;
 				// now you can display the results returned
 				  while ($row=mysql_fetch_array($numresults)) {
-				  $title = $row["title"];
-				  $zurl = $row["url"];
-				  $zid = $row["sid"];
-			
-				  echo("<p>".$count.")&nbsp;<strong><a href=\"http://www.jdarchive.org/edit/?sid=$zid\">$title</a></strong> <br />");
-				  echo("<a href=\"$zurl\">$zurl</a></p>");
-				  $count++ ;
-				  }
+					  $title = $row["title"];
+					  $zurl = $row["url"];
+					  $zid = $row["sid"];
+					  $frequency = $row["frequency"];
+					  $scope = $row["scope"];
+					  $name = $row["name"];
+					  $added = $row["added"];
+					  $isArchived = $row["isArchived"];
+					  if ($isArchived==1) {
+	  						$archived="yes";
+	  				  } else {
+	  				  	$archived="no";
+	  				  }
+				
+					  echo("<p>".$count.")&nbsp;<strong><a href=\"http://www.jdarchive.org/edit/?sid=$zid\">$title</a></strong> <br />");
+					  echo("<strong>#".$zid." Added:</strong> ".$added." <strong>Name:</strong> ".$name." <strong>Frequency:</strong> ".$frequency." <strong>Scope:</strong> ".$scope." <strong>Archived: </strong>");
+					  if ($archived=="yes") {
+					  	echo ("<a href='http://wayback.archive-it.org/2438/*/".$zurl."'>yes</a>");
+					  } else { echo $archived; }
+					  echo ("<br />");
+					  echo("<a href=\"$zurl\">$zurl</a></p>");
+					  $count++ ;
+					  }
 				
 			
 				?>

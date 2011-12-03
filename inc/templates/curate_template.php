@@ -172,7 +172,7 @@ $(function(){
 <?php elseif (!$curate && ($filtertag || $q)): ?>
 <p style="margin-bottom:0;"><a href="/seeds/">&laquo; Back to all seeds</a></p>
 <?php /*else: 
-<p data="en">Welcome to our temporary search engine. The full interface which connects the many components of the archive is currently being developed. In the meantime, you may search the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. Currently, search results will link to the live version of the website but soon this will be connected to the archived copy at the Internet Archive.</p> */ ?>
+<p data="en">Welcome to our temporary search engine. The full interface which connects the many components of the archive is currently being developed. In the meantime, you may search the collection of harvested websites and the information about each site we have collected here, including the page title, description, and associated keyword tags. Currently, search results will link to the live version of the website but soon this will be connected to the archived copy at the Internet Archive. The collection contains a very large number of Japanese and English language websites, but also significant Chinese and Korean language sites as well.</p> */ ?>
 <?php endif ?>
 
 <?php if (!$curate): ?>
@@ -309,7 +309,7 @@ $(function(){
     }
   ?>
   </div>
-  <?php if ($curate): ?>
+
   <div class="ialinks">
   	<?php
   		$scope = $seed->scope;
@@ -321,20 +321,21 @@ $(function(){
   		echo " <a href='$iaurl'>$liveLinkTxt</a> &nbsp;&nbsp;";
   		if ($currentSid > $lastExportId) {
   			echo "<strong>$notSumbitTxt</strong>&nbsp;&nbsp;";
-  		} else if ($isArchived='0') {
+  		} else if ($isArchived=='0') {
 			echo "<strong>$notInArchiveTxt</strong>&nbsp;&nbsp;";
 		}
 		else {
-  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>$mostRecentTxt</a> </strong> | <strong>
-  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>$earliestTxt</a> </strong>
-  		| <strong>
-  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>$allTxt</a> &nbsp;&nbsp;";
-  		}
-	  	echo " Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency)."
-  		"; 
+	  		echo "<strong>Archived Copies: <a href='http://wayback.archive-it.org/2438/9/$iaurl'>$mostRecentTxt</a> </strong> | <strong>
+	  		<a href='http://wayback.archive-it.org/2438/20110301000000/$iaurl'>$earliestTxt</a> </strong>
+	  		| <strong>
+	  		<a href='http://wayback.archive-it.org/2438/*/$iaurl'>$allTxt</a> &nbsp;&nbsp;</strong>";
+	  		}
+			if($curate) {
+		  		echo " <strong>Scope: </strong>".ucfirst($scope)." &nbsp;&nbsp;<strong>Frequency:</strong> ".ucfirst($frequency).""; 
+			}
   	?>
   </div>
-  <?php endif ?> 
+
 </div>
 </div>
 

@@ -54,20 +54,22 @@ a:hover {
 	text-decoration: none;
 }
 
-table {
+#links {
 	clear: both;
 	margin: 0 auto;
+	background: url(images/tab_bg_jp.png) no-repeat left top;
+	float: center;
 }
 
 td {
-	height: 160px;
-	width: 360px;
+	height: 200px;
+	width: 400px;
 }
 
 #outerbox {
 	width: 980px;
 	margin: 0 auto;
-	height:500px;
+	height:400px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background: white;
@@ -90,12 +92,12 @@ td {
   box-shadow: 5px 5px 5px #ccc;
 }
 
-.homelogobox {
+#homelogoboxjp, #homelogoboxen {
   background: white;
   display: inline-block;
   width: 350px;
   height: 150px;
-  margin: 0 0px 0px 0;
+  margin: 0 0px 0px 10px;
 }
 
 .japaneselogo {

@@ -3,57 +3,40 @@
 require_once(dirname(__FILE__). '/inc/common.php');
 require_once(dirname(__FILE__). '/inc/templates/head.php');
 
-//$language = language();
-
 ?>
 <link href="/lib/launch.css" rel="stylesheet" type="text/css" media="screen" />
+<script charset="utf-8" src="/lib/launch.js" type="text/javascript"></script>
 
 <div id="outerbox">
-<table>
+<table id="links">
 <tr>
 <td>
+	<div id="homelogoboxjp" onClick="initJp();">
+		<div class="logolarge">
+	   		<img class="japaneselogo" src="lib/images/logo_large_ja.png">
+		</div>
+	</div>
+</td>
+<td id="explore">
 	<a href="../explore/?la=ja">
 		<div class="homebuttonblack">
 	 		<p class="japanesetitle txtwhite">現在の<br/>アーカイブ</p>
 	 	</div>
 	</a>
-</td><td>
-	<div class="homelogobox">
-		<div class="logolarge">
-	   		<img class="japaneselogo" src="lib/images/logo_large_ja.png">
-		</div>
-	</div>	
 </td>
 </tr>
 <tr>
 <td>
-	<a href="../new/?la=ja">
-		<div class="homebuttonwhite">
-			<p class="japanesetitle txtgrey">これからの<br />アーカイブ</p>
-		</div>
-	</a>
-</td>
-<td>
-	<a href="../explore/?la=en">
-		<div class="homebuttonblack">
-	 		<p class="englishtitle txtwhite">Explore the<br/>Archive Now</p>
-	 	</div>
-	</a>
-</td>
-
-</tr>
-<tr>
-<td>
-	<div class="homelogobox">
+	<div id="homelogoboxen" onClick="initEn();">
 		<div class="logolarge">
 	   		<img class="englishlogo" src="lib/images/logo_large_w.png">
 		</div>
 	</div>
 </td>
-<td>
-	<a href="../new/?la=en">
+<td id="new" style="padding-bottom: 25px">
+	<a href="../new/?la=ja">
 		<div class="homebuttonwhite">
-			<p class="englishtitle txtgrey">The Archive<br/> We Are Building</p>	
+			<p class="japanesetitle txtgrey">これからの<br />アーカイブ</p>
 		</div>
 	</a>
 </td>

@@ -1,0 +1,8 @@
+{
+	"notSumbitTxt":"Not Yet Submitted", 
+	"liveLinkTxt":"Live Link", 
+	"mostRecentTxt":"Most Recent", 
+	"earliestTxt":"Earliest", 
+	"allTxt":"All", 
+	"notInArchiveTxt":"Not in Archive"
+}

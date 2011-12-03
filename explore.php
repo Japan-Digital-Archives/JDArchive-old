@@ -11,7 +11,7 @@
 
 <div>
 <?php language_bar($language, array('en', 'ja')); ?>
-<div><h2 data-jp="ここまでのアーカイブ">Explore the Archive Now</h2></div>
+<div><h2 data-jp="現在のアーカイブ">Explore the Archive Now</h2></div>
 </div>
 
 <?php if ($language == 'ja'): ?>
@@ -58,14 +58,11 @@
 <br />
 <h3>3.11将来への記憶</h3>
 <a href="http://jyoho.kahoku.co.jp/imagedb/cgi-bin/user_shinsai_search.cgi">河北新報</a>
-<p><a href="http://flat.kahoku.co.jp/sub/volunteer/">ボランティア情報 　絆　3.11大震災</a></p>
+<p><a href="http://flat.kahoku.co.jp/sub/volunteer/index.htm">ボランティア情報 　絆　3.11大震災</a></p>
 <p>「ふらっと」は、河北新報社によって運営されている実験的取り組みの一つであるブログで、市民参加型の地域ソーシャル・ネットワーキング・サービスとして３月１１日以前から既に開設されていました。震災後は、多様なボランティア団体からの支援がこのブログを強力に後押しし、震災関連情報に特化した「絆」と呼ばれるサブカテゴリーを生み出しました。その一方で同社の「３．１１大震災　将来への記憶」は、同じように一般の方からの投稿を中心として、写真や動画の保存を進めています。</p>
 <br />
 <h3><a href="http://www.japanfocus.org/">アジア太平洋ジャーナル：ジャパン・フォーカス</a></h3>
 <p>アジア太平洋ジャーナルは、日本や太平洋地域に影響を与える諸問題についての掘り下げた論文を幅広く提供する雑誌です。震災後は特に地震、津波、とりわけ福島の原発事故に関わる英語で書かれた論文を精力的に掲載しています。</p>
-<br />
-<h3><a href="http://www.japanfocus.org/">アサヒ・ジャパン・ウォッチ　3/11 Disaster in Japan</a></h3>
-<p>朝日新聞は日本における主要な新聞の一つであり、記事、写真、豊富なインタラクティブ・グラフィックスを含めた震災とその後に関する報道記事を、総合的な資料として発信しています。</p>
 <br />
 <h3><a href="http://savemlak.jp/wiki/saveMLAK">save MLAK</a></h3>
 <p>博物館・美術館（Museum）、図書館（Library）、文書館（Archives）、公民館（Kominkan） の関係者及び支援者によるサポートネットワークであるsaveMLAKは、東日本大震災によって被災した施設や人々が、 どのような被害を受けているのかという被災情報、どのような支援を必要としているのかという救援情報を共有し、施設の復旧や展示物の修復に向けて協力できる専門の知識や技能を持ったボランティアの派遣など、必要と思われることを提供しています。2011年東日本大震災デジタルアーカイブの収集・保存活動に対しても、被災した諸機関のウェブサイトについての情報を多数提供して下さっています。</p>
@@ -147,13 +144,10 @@
           <p>Collaborating with citizens and local governments affected by the disaster as well as research institutions, universities, NPOs, volunteers, and commercial companies, 311 Marugoto Archive offers an e-community platform to support disaster recovery and rebuilding efforts. The project aims to restore and regenerate a memory of the lost past by offering digitization of memory while recording the recovery process and valuable information resources produced in the process for future disaster education, disaster prevention and research as a whole.</p>
 <br />
       <h3><a href="http://jyoho.kahoku.co.jp/imagedb/cgi-bin/user_shinsai_search.cgi">3.11 The Great Earthquake: Memory for Future</a></h3>  
-      <p>A volunteer base <a href="http://flat.kahoku.co.jp/sub/volunteer/">blog site</a> at Kahoku, called “furatto” (ふらっと), is viewed as experimental citizen’s media and has been in practice since before March 11th. After this disaster, strong supporters in various volunteer groups enhanced the blog site, eventually creating a subcategory site called “kizuna” (絆) which particularly focuses on disaster related information. Whereas, Kahoku’s “3.11 The Great Earthquake: Memory for Future,“ which is also on a volunteer basis, focuses on images and video.</p>
+      <p>A volunteer base <a href="http://flat.kahoku.co.jp/sub/volunteer/index.htm">blog site</a> at Kahoku, called “furatto” (ふらっと), is viewed as experimental citizen’s media and has been in practice since before March 11th. After this disaster, strong supporters in various volunteer groups enhanced the blog site, eventually creating a subcategory site called “kizuna” (絆) which particularly focuses on disaster related information. Whereas, Kahoku’s “3.11 The Great Earthquake: Memory for Future,“ which is also on a volunteer basis, focuses on images and video.</p>
 <br />
       <h3><a href="http://www.japanfocus.org/">The Asia-Pacific Journal: Japan Focus</a></h3>
       <p>The Asia-Pacific Journal, which provides a range of in-depth articles on issues affecting Japan and the entire region has been especially active in the aftermath of the disasters in posting articles in the English language related to the earthquake, tsunami, and especially the nuclear disaster in Fukushima.</p>
- <br />
-      <h3><a href="http://www.japanfocus.org/">Asahi Japan Watch - 3/11 Disaster in Japan</a></h3>
-      <p>Asahi, one of Japan’s leading newspapers, has created a comprehensive resource for news coverage about the disasters going back to March 11th, including articles, photographs, and rich interactive graphics.</p>
 <br />
       <h3><a href="http://savemlak.jp/wiki/saveMLAK">save MLAK (Save Museum, Library, Archives, and Kominkan)</a></h3>
       <p>The saveMLAK is a project led by the staff and supporters of museums, libraries, archives, and community centers (kōminkan) in Japan. The project is collecting information on the harm to people and damage to facilities caused by the Eastern Japan Great Earthquake Disaster as well as identifying their needs in the relief effort. The saveMLAK project works to provide the people and institutions affected by the disaster with whatever assistance that project members in the museum, library, archive, and the kōminkan community can provide. The project is contributing information about the many websites of affected institutions to the Digital Archive of Japan's 2011 Disasters for our web archiving efforts.</p>

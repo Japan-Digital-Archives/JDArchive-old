@@ -50,6 +50,19 @@ start('_newabout');
 
 <div id="featuredleft">
 
+<p>「すぐ止むのかと思いつつ、食器戸棚を押さえるが、長い・強い。（中略）いつまでも続く地震に一人で大きな声で「お願い！止んで」と叫んでいた。」 - 岩手県盛岡市 | <span data-jp="匿名" data-zh="匿名" data-ko="익명">Anonymous</span> <a data-jp="続きを読む" data-zh="详细" data-ko="전체 내용 보기" href='http://jdarchive.org/testimonial/public/70/f192b33b2403'>Read More</a>
+
+</p>
+
+<hr />
+
+<p>「私の会社は古川、妻の会社は涌谷で、自宅は石巻。妻と両親、長女、長男の6人家族です。震災当日は中学校の卒業式の日、小学校は通常登校日で家族4人は家で地震にあいました。」
+ - 宮城県石巻市 | <span data-jp="匿名" data-zh="匿名" data-ko="익명">Anonymous</span> <a data-jp="続きを読む" data-zh="详细" data-ko="전체 내용 보기" href='http://jdarchive.org/testimonial/public/66/adee8e5d2c88'>Read More</a>
+
+</p>
+
+<hr />
+
 <p>"초등학교 저학년부터 교육 받은 오까시의 "오"의뜻은 일본어의 "오사나이"( 뜻; 밀지 않는다 ), " 까"는 "까케나이" ( 뜻; 뛰지 않는다 ), "시"는 샤베라나이 ( 뜻 ; 말하지 않는다의 뜻이나 다른 사람과의 트러불이 발생하더라도 서로 참아야 한다 라는 뜻이랍니다. 재미있는 표현 이었고 그대로 실천하는 아름다은 모습에 주재원인 저로서는 감탄을 할 수 밖에 없었습니다." - 동경도 신주쿠구 | <span data-jp="匿名" data-zh="匿名" data-ko="익명">Anonymous</span> <a data-jp="続きを読む" data-zh="详细" data-ko="전체 내용 보기" href='http://jdarchive.org/testimonial/public/60/223f0e6ae15f'>Read More</a>
 
 </p>
@@ -138,6 +151,12 @@ start('_newabout');
 </div>
 
 <div id="featuredright">
+
+<p>「既に陸の孤島化した牧山から移動も出来ず日が暮れる頃には、旧北上川の対岸にある門脇地区で大きな火柱が見えた。プロパンガスのボンベが爆発する音が多数響き渡り地獄のようであった。 」 - 東松島市 | 桃菜花月　嵩人 <a data-jp="続きを読む" data-zh="详细" data-ko="전체 내용 보기" href='http://jdarchive.org/testimonial/public/69/f220b17e190e'>Read More</a>
+
+</p>
+
+<hr />
 
 <p>「両親宅で、津波の風景を何度も見てしまった子どもは、それから2か月くらい、地震と津波におびえて、精神的におかしかったです。ＮＹテロのとき、子どもに映像を見せるなと言われていたのを思い出して、帰宅後は見せませんでしたが、長い間、ひきづっていました。(中略）原発が大変なことになっていることを知りませんでした。ちゃんと情報を得ている人は、すでに東京からも避難を始めていたのです。それだけは、今も、大変後悔していることです。原発が理由ではなく、子どもの精神安定のために4月初めまで3週間近く関西へ疎開しており、そこで、原発事故の恐ろしさを知りました。」 - 東京都目黒区 | <span data-jp="匿名" data-zh="匿名" data-ko="익명">Anonymous</span> <a data-jp="続きを読む" data-zh="详细" data-ko="전체 내용 보기" href='http://jdarchive.org/testimonial/public/63/c58d5130600d'>Read More</a>
 

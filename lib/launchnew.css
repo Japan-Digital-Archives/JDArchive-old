@@ -54,16 +54,14 @@ a:hover {
 	text-decoration: none;
 }
 
-#links {
+table {
 	clear: both;
 	margin: 0 auto;
-	background: url(images/tab_bg_jp.png) no-repeat left top;
-	float: center;
 }
 
 td {
-	height: 200px;
-	width: 400px;
+	height: 160px;
+	width: 360px;
 }
 
 #outerbox {
@@ -92,12 +90,12 @@ td {
   box-shadow: 5px 5px 5px #ccc;
 }
 
-#homelogoboxjp, #homelogoboxen {
+.homelogobox {
   background: white;
   display: inline-block;
   width: 350px;
   height: 150px;
-  margin: 0 0px 0px 10px;
+  margin: 0 0px 0px 0;
 }
 
 .japaneselogo {

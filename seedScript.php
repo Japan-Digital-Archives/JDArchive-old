@@ -1,5 +1,9 @@
 <?php
 
-echo exec('/usr/local/bin/python /usr/home/jedarchi/public_html/production/python/seedFreq.py');
+$arr = array();
+exec('/usr/home/jedarchi/bin/freqScript.sh', $arr);
 
+foreach($arr as &$val) {
+    print html_entity_decode(utf8_decode($val), ENT_NOQUOTES, 'UTF-8');
+}
 ?>

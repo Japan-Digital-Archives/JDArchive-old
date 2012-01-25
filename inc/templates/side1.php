@@ -1,4 +1,4 @@
-      <div id="sidebar">
+   <div id="sidebar">
         <ul>
           <li>
             <h2 data-zh="关于本项目" data-jp="この企画について" data-ko="이 프로젝트에 대하여">About this project</h2>
@@ -42,7 +42,7 @@
             
             <p>
             Drag the following
-            <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jdarchive.org/bookmarklet?url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Bookmarklet',%20'toolbar=no,width=660,height=450'));">JDArchive link</a> to your bookmarks toolbar if you're using Firefox, Safari, Chrome or Opera.  Next time you're on a website you think is useful, just click the bookmark and we'll auto-fill some of the fields.
+            <a class="bookmarklet" href="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://jdarchive.org/bookmarklet?la=en&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Bookmarklet',%20'toolbar=no,width=660,height=450'));">JDArchive link</a> to your bookmarks toolbar if you're using Firefox, Safari, Chrome or Opera.  Next time you're on a website you think is useful, just click the bookmark and we'll auto-fill some of the fields.
             
             </p>
             

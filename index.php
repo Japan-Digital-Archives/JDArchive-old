@@ -5,7 +5,7 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 
 ?>
 <link href="/lib/launch.css" rel="stylesheet" type="text/css" media="screen" />
-<script charset="utf-8" src="/lib/launch.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <div id="outerbox">
 <table id="links">
@@ -42,6 +42,8 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 </td>
 </tr>
 </table>
+<script charset="utf-8" src="/lib/launch.js" type="text/javascript"></script>
+
 
 </div>
 <div id="footer-bgcontent">

@@ -62,8 +62,15 @@ a:hover {
 }
 
 td {
-	height: 190px;
-	width: 400px;
+	width: 395px;
+}
+
+td#new {
+	padding-bottom: 20px;
+}
+
+tr {
+	height: 200px;
 }
 
 #outerbox {

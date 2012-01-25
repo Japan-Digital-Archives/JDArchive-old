@@ -26,14 +26,14 @@ require_once(dirname(__FILE__). '/inc/templates/head.php');
 </td>
 </tr>
 <tr>
-<td>
+<td style="padding-bottom:20px;">
 	<div id="homelogoboxen" onClick="initEn();">
 		<div class="logolarge">
 	   		<img class="englishlogo" src="lib/images/logo_large_w.png">
 		</div>
 	</div>
 </td>
-<td id="new" style="padding-bottom: 25px">
+<td id="new">
 	<a href="../new/?la=ja">
 		<div class="homebuttonwhite">
 			<p class="japanesetitle txtgrey">これからの<br />アーカイブ</p>

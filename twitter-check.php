@@ -12,8 +12,11 @@ $total = mysql_result($result, 0);
 // last tweet time and date
 $result = mysql_query("SELECT * FROM tweets ORDER BY tweetId DESC LIMIT 1");
 $row = mysql_fetch_array($result);
+$date = $row["createdAt"];
 
-$date = $row["added"];
+// unique users
+$result = mysql_query("SELECT COUNT(DISTINCT userId) FROM tweets");
+$totalusers = mysql_result($result, 0);
 
 start();
 ?>
@@ -26,8 +29,12 @@ start();
 		<td><? echo $total; ?></td>
 	</tr>
 	<tr>
-		<td>Last Tweet:</td>
+		<td>Last tweet:</td>
 		<td><? echo $date; ?></td>
+	</tr>
+	<tr>
+		<td>Unique users:</td>
+		<td><? echo $totalusers; ?></td>
 	</tr>
 </table>
 </div>

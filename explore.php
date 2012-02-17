@@ -1,3 +1,4 @@
+
 <?php
   
   require_once(dirname(__FILE__). '/inc/common.php');
@@ -15,6 +16,7 @@
 </div>
 
 <?php if ($language == 'ja'): ?>
+
 
 <h5><a href="../seeds/">ウェブ・アーカイブを検索する</a></h5>
 

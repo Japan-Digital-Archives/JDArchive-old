@@ -60,7 +60,7 @@ start();
 <p><a href="<?php echo $backurl; ?>">&laquo; Back to All Seeds</a></p>
 
 <div>
-<div style="float:right;"><a href="" id="editme" onload="editme()" onclick="editme(); return false;">Edit Information</a></div>
+<div style="float:right;"><a href="" id="editme" onload="editme(); return false;" onclick="editme(); return false;">Edit Information</a></div>
 <div><h2>Edit Submission</h2></div>
 </div>
 
@@ -70,6 +70,10 @@ start();
 
 
 require(dirname(__FILE__) . '/inc/templates/form.php');
+?>
+<script type="text/javascript">
+$(document).ready(editme);
+</script>
 
-
+<?php
 stop('_edit');

@@ -300,7 +300,6 @@ function stopRKey(evt) {
       <input type="checkbox" name="language[]" value="japanese" /><span  data-zh="日语" data-jp="日本語" data-ko="일본어">Japanese</span>&nbsp;&nbsp;
       <input type="checkbox" name="language[]" value="chinese" /><span  data-zh="中文" data-jp="中国語" data-ko="중국어">Chinese</span>&nbsp;&nbsp;
       <input type="checkbox" name="language[]" value="korean" /><span  data-zh="韩语" data-jp="韓国語" data-ko="한국어" >Korean</span>&nbsp;&nbsp;
-      <input type="checkbox" name="language[]" value="other" /><span  data-zh="其他" data-jp="その他の言語" data-ko="다른 언어" >Other</span>&nbsp;&nbsp;
   </td>
 </tr>
 

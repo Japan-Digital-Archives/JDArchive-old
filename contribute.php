@@ -1,11 +1,11 @@
 <?php
-
+header("Cache-Control: must-revalidate, max-age=600");
+header("Vary: Accept-Encoding");
 require_once(dirname(__FILE__). '/inc/common.php');
 
 $internal = false;
 $language = language();
-header("Cache-Control: must-revalidate, max-age=600");
-header("Vary: Accept-Encoding");
+
 
 require(dirname(__FILE__) . '/inc/templates/form_process.php');
 

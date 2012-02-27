@@ -1,9 +1,8 @@
 <?php
-
-require_once(dirname(__FILE__). '/inc/common.php');
-require_once(dirname(__FILE__). '/inc/templates/head.php');
 header("Cache-Control: must-revalidate, max-age=600");
 header("Vary: Accept-Encoding");
+require_once(dirname(__FILE__). '/inc/common.php');
+require_once(dirname(__FILE__). '/inc/templates/head.php');
 
 ?>
 <link href="/lib/launch.css" rel="stylesheet" type="text/css" media="screen" />

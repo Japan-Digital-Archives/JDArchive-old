@@ -1,6 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+header("Cache-Control: must-revalidate, max-age=600");
+header("Vary: Accept-Encoding");
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Digital Archive of Japan‘s 2011 Disasters</title>
     <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
@@ -36,6 +41,7 @@
     <link href="/lib/TextboxList/TextboxList.Autocomplete.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
     
     <link href="/lib/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
+
   </head>
   <body id="<?= $this->bodyId ?>" class="<?= $this->bodyClass ?>">
     <div id="wrapper">
@@ -58,7 +64,7 @@
           <!-- end #header -->
         <? endif; ?>
         <div id="page">
-
+sfdgsdfgsdfg
             <?= $this->contents ?>
 
         </div>

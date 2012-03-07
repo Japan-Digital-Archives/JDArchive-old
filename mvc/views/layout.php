@@ -64,7 +64,7 @@ header("Vary: Accept-Encoding");
           <!-- end #header -->
         <? endif; ?>
         <div id="page">
-sfdgsdfgsdfg
+
             <?= $this->contents ?>
 
         </div>

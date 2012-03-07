@@ -75,13 +75,13 @@
 		</div>
 		<input type="submit" name="register" id="register-button" class="btn rounded bluegrad" value="新規登録"> 
 	</form>
+	<div id="results"></div>
 </div>
 
 <div id="logo">
 	<img class="japaneselogo" src="lib/images/logo_large_ja.png">
 </div>
 
-<div id="results"><div>
 
 </div>
 

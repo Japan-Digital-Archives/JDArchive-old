@@ -144,7 +144,7 @@ a .archi:hover{
 	display: inline;
 	float: left;
 	width: 540px;
-	height: 80px;
+	margin-bottom: 10px;
 }
 
 .fields {
@@ -192,6 +192,10 @@ a .archi:hover{
 	border-style: solid;
 	border-color: red;
 	border-width: 2px;
+}
+
+#results {
+	font-size: 2em;
 }
 
 #logo {

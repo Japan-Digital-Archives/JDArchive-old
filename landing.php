@@ -1,8 +1,6 @@
-<?php
-
-require_once(dirname(__FILE__). '/inc/common.php');
-
-?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--[if lt IE 9 ]>    <html xmlns="http://www.w3.org/1999/xhtml" class="ie8">    <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -11,6 +9,10 @@ require_once(dirname(__FILE__). '/inc/common.php');
 <meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
 <link href="/lib/landing.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+<script charset="utf-8" src="/lib/landing.js" type="text/javascript"></script>
+
+
 </head>
 
 <body>
@@ -20,7 +22,7 @@ require_once(dirname(__FILE__). '/inc/common.php');
 			<img src="/lib/images/header-jp.png">
 		</div>
 		<div id="language">
-			<a id="lang">English</a>
+			<span id="lang">English</span>
 		</div>
 		
 	</header>
@@ -30,10 +32,10 @@ require_once(dirname(__FILE__). '/inc/common.php');
 <div id="content">
 
 <div id="middle">
-	<div id="register-header">試作モデル αlfa（要登録）</div>
+	<div id="register-header">試作モデル αlfa（要登録）:</div>
 	
 	<div id="prototype">
-		<img class="prototype-ss" src="lib/images/prototype_ss.png">
+		<img class="prototype-ss" src="lib/images/prototype_ss2.png">
 	</div>
 
 	<div id="archi-links">
@@ -56,26 +58,34 @@ require_once(dirname(__FILE__). '/inc/common.php');
 
 <div id="bottom-bar">
 <div id="register">
-	<div id="register-form">
-		<div>
-		<div id="name" class="label">お名前</div>
-		<input type="text" placeholder="name" name="name" id="home-name-text-field" class="large" size="30" value="">
+	<form name="register-form" id="register-form" action="process.php" method="POST">  
+		<div class="fields">
+			<div class="fieldcontainer">
+				<div class="label">
+			    	<label for="name" id="name" >お名前</label> 
+				</div> 
+				<input type="text" name="name" id="home-name-text-field" class="large" size="30" value="">
+			</div>
+			<div class="fieldcontainer" style="padding-top:15px;">
+				<div class="label">
+					<label for="email" id="email">Eメール</label>  
+				</div>
+				<input type="text" name="email" id="home-email-text-field" class="large" size="30" value="">
+			</div>
 		</div>
-		<div style="padding-top:15px;">
-		<div id="email" class="label">Eメール</div>
-		<input type="text" placeholder="email address" name="email" id="home-email-text-field" class="large" size="30" value="">
-		</div>
-	</div>
-	<button id="register-button" class="btn rounded bluegrad">新規登録</button>
+		<input type="submit" name="register" id="register-button" class="btn rounded bluegrad" value="新規登録"> 
+	</form>
 </div>
 
 <div id="logo">
 	<img class="japaneselogo" src="lib/images/logo_large_ja.png">
 </div>
-</div>
+
+<div id="results"><div>
 
 </div>
 
-<script charset="utf-8" src="/lib/landing.js" type="text/javascript"></script>
+</div>
 
 </body>
+</html>

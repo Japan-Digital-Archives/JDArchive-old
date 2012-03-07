@@ -1,5 +1,9 @@
+.ie8 html {
+    margin-left: 50px;
+}
+
 body {
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 0;
   background: #FFFFFF;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -21,8 +25,18 @@ a:hover {
 	text-decoration: underline;
 }
 
+span#lang{
+	text-decoration: none;
+	color: #d72627;
+}
+
+span#lang:hover {
+	text-decoration: underline;
+}
+
 ul {
 	list-style: none;
+	vertical-align: top;
 	margin: 0;
 	padding: 0;
 }
@@ -53,6 +67,7 @@ h2 {
 	cursor: pointer;
 	font-size: 13px;
 	float: right;
+	padding-right: 30px;
 }
 
 #title {
@@ -71,7 +86,8 @@ h2 {
 #register-header {
 	float: left;
 	font-size: 2em;
-	width: 900px;
+	width: 500px;
+	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -87,7 +103,8 @@ h2 {
 }
 
 #archi-links {
-	display: inline-block;
+	display: inline;
+	float: left;
 	padding-top: 10px;
 	width: 400px;
 }
@@ -108,7 +125,7 @@ a .archi:hover{
 
 .archi:hover {
 	background-color: #e6e6e6;
-	margin-left: 30px;
+	margin-left: 10px;
 }
 
 /* Bottom-bar: forms, register button, logo */
@@ -121,34 +138,47 @@ a .archi:hover{
 #register {
 	display: inline;
 	float: left;
-	width: 530px;
-	padding-top: 20px;
-}
-
-.large {
-	float: right;
-	font-size: 2em;
-	height: 30px;
-	width: 270px;
-}
-
-.label {
-	display:inline;
-	font-size: 2em;
 }
 
 #register-form {
 	display: inline;
 	float: left;
-	width: 370px;
+	width: 540px;
+	height: 80px;
 }
+
+.fields {
+	display: inline;
+	float: left;
+	width: 380px;
+}
+
+.fieldcontainer {
+	height: 40px; 
+	position: relative;
+}
+
+.label {
+	font-size: 2em;
+	position:absolute; 
+	padding-top:5px;
+}
+
+
+.large {
+	float: right;
+	font-size: 2em;
+	height: 40px;
+	width: 270px;
+}
+
 
 #register-button {
 	display: inline;
+	float: right;
     color: #FFFFFF;
-    float: left;
     height: 80px;
-    /*width: 125px;*/
+    margin-top: 9px;
     margin-left: 12px;
 }
 
@@ -156,6 +186,12 @@ a .archi:hover{
 #register-button:hover {
 	background-position: 0 -15px;
 	text-decoration: none;
+}
+
+.error {
+	border-style: solid;
+	border-color: red;
+	border-width: 2px;
 }
 
 #logo {
@@ -172,6 +208,7 @@ a .archi:hover{
     border-style: solid;
     border-width: 1px;
     background-color: #FFFFFF;
+    -webkit-appearance: button;
 }
 
 .shadow {
@@ -185,12 +222,23 @@ a .archi:hover{
 .rounded {
 	-moz-border-radius: 6px 6px 6px 6px;
     -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .bluegrad {
 	background-color: #339BB9;
     background-image: -moz-linear-gradient(center top , #5BC0DE, #339BB9);
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#5BC0DE), to(#339BB9) );
+	background-image: -ms-linear-gradient(top, #5BC0DE, #339BB9);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5BC0DE), color-stop(100%, #339BB9) );
+	background-image: -webkit-linear-gradient(top, #5BC0DE, #339BB9);
+	background-image: -o-linear-gradient(top, #5BC0DE, #339BB9);
+	background-image: linear-gradient(top, #5BC0DE, #339BB9);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#339bb9', GradientType=0 );
+	border-color: #339BB9 #339BB9 #22697D;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }

@@ -85,11 +85,11 @@ $row = array
 if ($ss->addRow($row)) {
 	if ($lang === 'English') {
           send_mail('en', $name, $email);
-		echo "Thank you for registering";
+		echo "Thank you for registering.<br />Confirmation email sent.";
 	}
 	else {
 		send_mail('jp', $name, $email);
-		echo "ご登録ありがとうございます";
+		echo "ご登録ありがとうございます<br />Eメールをご確認下さい";
 	}
 }
 // unsuccessful

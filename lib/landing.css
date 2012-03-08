@@ -137,6 +137,7 @@ a .archi:hover{
 }
 
 #register {
+	width: 540px;
     display: inline;
     float: left;
 }

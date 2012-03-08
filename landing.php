@@ -45,16 +45,16 @@ header("Vary: Accept-Encoding");
 	<div id="archi-links">
 	<ul>
 		<li id="l1"><a href="../explore/?la=ja">
-			<button class="btn shadow archi">このアーカイブについて</button>
+			<div class="btn shadow archi">このアーカイブについて</div>
 		</a></li>
 		<li id="l2"><a href="../seeds/?la=ja">
-			<button class="btn shadow archi">ウェブ・アーカイブ検索</button>
+			<div class="btn shadow archi">ウェブ・アーカイブ検索</div>
 		</a></li>
 		<li id="l3"><a href="http://worldmap.harvard.edu/japanmap/">
-			<button class="btn shadow archi">震災情報レイヤー地図</button>
+			<div class="btn shadow archi">震災情報レイヤー地図</div>
 		</a></li>
 		<li id="l4"><a href="../featured/?la=ja">
-			<button class="btn shadow archi">わたしの「東日本大震災」</button>
+			<div class="btn shadow archi">わたしの「東日本大震災」</div>
 		</a></li>
 	</ul>
 	</div>

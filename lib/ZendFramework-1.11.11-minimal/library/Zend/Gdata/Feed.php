@@ -15,89 +15,111 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage App
+ * @subpackage Gdata
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: Feed.php 23775 2011-03-01 17:25:24Z ralph $
  */
 
 /**
- * @see Zend_Gdata_App_Entry
+ * @see Zend_Gdata
  */
-require_once 'Zend/Gdata/App/Entry.php';
+require_once 'Zend/Gdata.php';
 
 /**
- * @see Zend_Gdata_App_FeedSourceParent
+ * @see Zend_Gdata_App_Feed
  */
-require_once 'Zend/Gdata/App/FeedSourceParent.php';
+require_once 'Zend/Gdata/App/Feed.php';
 
 /**
- * Atom feed class
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Extension_OpenSearchTotalResults
+ */
+require_once 'Zend/Gdata/Extension/OpenSearchTotalResults.php';
+
+/**
+ * @see Zend_Gdata_Extension_OpenSearchStartIndex
+ */
+require_once 'Zend/Gdata/Extension/OpenSearchStartIndex.php';
+
+/**
+ * @see Zend_Gdata_Extension_OpenSearchItemsPerPage
+ */
+require_once 'Zend/Gdata/Extension/OpenSearchItemsPerPage.php';
+
+/**
+ * The Gdata flavor of an Atom Feed
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage App
+ * @subpackage Gdata
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
-        implements Iterator, ArrayAccess, Countable
+class Zend_Gdata_Feed extends Zend_Gdata_App_Feed
 {
 
     /**
-     * The root xml element of this data element
+     * The classname for individual feed elements.
      *
      * @var string
      */
-    protected $_rootElement = 'feed';
+    protected $_entryClassName = 'Zend_Gdata_Entry';
 
     /**
-     * Cache of feed entries.
+     * The openSearch:totalResults element
      *
-     * @var array
+     * @var Zend_Gdata_Extension_OpenSearchTotalResults|null
      */
-    protected $_entry = array();
+    protected $_totalResults = null;
 
     /**
-     * Current location in $_entry array
+     * The openSearch:startIndex element
      *
-     * @var int
+     * @var Zend_Gdata_Extension_OpenSearchStartIndex|null
      */
-    protected $_entryIndex = 0;
+    protected $_startIndex = null;
 
     /**
-     * Make accessing some individual elements of the feed easier.
+     * The openSearch:itemsPerPage element
      *
-     * Special accessors 'entry' and 'entries' are provided so that if
-     * you wish to iterate over an Atom feed's entries, you can do so
-     * using foreach ($feed->entries as $entry) or foreach
-     * ($feed->entry as $entry).
-     *
-     * @param  string $var The property to get.
-     * @return mixed
+     * @var Zend_Gdata_Extension_OpenSearchItemsPerPage|null
      */
-    public function __get($var)
+    protected $_itemsPerPage = null;
+
+    public function __construct($element = null)
     {
-        switch ($var) {
-            case 'entries':
-                return $this;
-            default:
-                return parent::__get($var);
-        }
+        $this->registerAllNamespaces(Zend_Gdata::$namespaces);
+        parent::__construct($element);
     }
 
-    /**
-     * Retrieves the DOM model representing this object and all children
-     *
-     * @param DOMDocument $doc
-     * @return DOMElement
-     */
     public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
     {
         $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        foreach ($this->_entry as $entry) {
-            $element->appendChild($entry->getDOM($element->ownerDocument));
+        if ($this->_totalResults != null) {
+            $element->appendChild($this->_totalResults->getDOM($element->ownerDocument));
         }
+        if ($this->_startIndex != null) {
+            $element->appendChild($this->_startIndex->getDOM($element->ownerDocument));
+        }
+        if ($this->_itemsPerPage != null) {
+            $element->appendChild($this->_itemsPerPage->getDOM($element->ownerDocument));
+        }
+
+        // ETags are special. We only support them in protocol >= 2.X.
+        // This will be duplicated by the HTTP ETag header.
+        if ($majorVersion >= 2) {
+            if ($this->_etag != null) {
+                $element->setAttributeNS($this->lookupNamespace('gd'),
+                                         'gd:etag',
+                                         $this->_etag);
+            }
+        }
+
         return $element;
     }
 
@@ -111,12 +133,20 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
     {
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
-        case $this->lookupNamespace('atom') . ':' . 'entry':
-            $newEntry = new $this->_entryClassName($child);
-            $newEntry->setHttpClient($this->getHttpClient());
-            $newEntry->setMajorProtocolVersion($this->getMajorProtocolVersion());
-            $newEntry->setMinorProtocolVersion($this->getMinorProtocolVersion());
-            $this->_entry[] = $newEntry;
+        case $this->lookupNamespace('openSearch') . ':' . 'totalResults':
+            $totalResults = new Zend_Gdata_Extension_OpenSearchTotalResults();
+            $totalResults->transferFromDOM($child);
+            $this->_totalResults = $totalResults;
+            break;
+        case $this->lookupNamespace('openSearch') . ':' . 'startIndex':
+            $startIndex = new Zend_Gdata_Extension_OpenSearchStartIndex();
+            $startIndex->transferFromDOM($child);
+            $this->_startIndex = $startIndex;
+            break;
+        case $this->lookupNamespace('openSearch') . ':' . 'itemsPerPage':
+            $itemsPerPage = new Zend_Gdata_Extension_OpenSearchItemsPerPage();
+            $itemsPerPage->transferFromDOM($child);
+            $this->_itemsPerPage = $itemsPerPage;
             break;
         default:
             parent::takeChildFromDOM($child);
@@ -125,228 +155,97 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
     }
 
     /**
-     * Get the number of entries in this feed object.
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
      *
-     * @return integer Entry count.
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
      */
-    public function count()
+    protected function takeAttributeFromDOM($attribute)
     {
-        return count($this->_entry);
+        switch ($attribute->localName) {
+        case 'etag':
+            // ETags are special, since they can be conveyed by either the
+            // HTTP ETag header or as an XML attribute.
+            $etag = $attribute->nodeValue;
+            if ($this->_etag === null) {
+                $this->_etag = $etag;
+            }
+            elseif ($this->_etag != $etag) {
+                require_once('Zend/Gdata/App/IOException.php');
+                throw new Zend_Gdata_App_IOException("ETag mismatch");
+            }
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+            break;
+        }
     }
 
     /**
-     * Required by the Iterator interface.
+     *  Set the value of the totalResults property.
      *
-     * @return void
+     * @param Zend_Gdata_Extension_OpenSearchTotalResults|null $value The
+     *        value of the totalResults property. Use null to unset.
+     * @return Zend_Gdata_Feed Provides a fluent interface.
      */
-    public function rewind()
-    {
-        $this->_entryIndex = 0;
-    }
-
-    /**
-     * Required by the Iterator interface.
-     *
-     * @return mixed The current row, or null if no rows.
-     */
-    public function current()
-    {
-        return $this->_entry[$this->_entryIndex];
-    }
-
-    /**
-     * Required by the Iterator interface.
-     *
-     * @return mixed The current row number (starts at 0), or NULL if no rows
-     */
-    public function key()
-    {
-        return $this->_entryIndex;
-    }
-
-    /**
-     * Required by the Iterator interface.
-     *
-     * @return mixed The next row, or null if no more rows.
-     */
-    public function next()
-    {
-        ++$this->_entryIndex;
-    }
-
-    /**
-     * Required by the Iterator interface.
-     *
-     * @return boolean Whether the iteration is valid
-     */
-    public function valid()
-    {
-        return 0 <= $this->_entryIndex && $this->_entryIndex < $this->count();
-    }
-
-    /**
-     * Gets the array of atom:entry elements contained within this
-     * atom:feed representation
-     *
-     * @return array Zend_Gdata_App_Entry array
-     */
-    public function getEntry()
-    {
-        return $this->_entry;
-    }
-
-    /**
-     * Sets the array of atom:entry elements contained within this
-     * atom:feed representation
-     *
-     * @param array $value The array of Zend_Gdata_App_Entry elements
-     * @return Zend_Gdata_App_Feed Provides a fluent interface
-     */
-    public function setEntry($value)
-    {
-        $this->_entry = $value;
+    function setTotalResults($value) {
+        $this->_totalResults = $value;
         return $this;
     }
 
     /**
-     * Adds an entry representation to the array of entries
-     * contained within this feed
+     * Get the value of the totalResults property.
      *
-     * @param Zend_Gdata_App_Entry An individual entry to add.
-     * @return Zend_Gdata_App_Feed Provides a fluent interface
+     * @return Zend_Gdata_Extension_OpenSearchTotalResults|null The value of
+     *         the totalResults property, or null if unset.
      */
-    public function addEntry($value)
-    {
-        $this->_entry[] = $value;
+    function getTotalResults() {
+        return $this->_totalResults;
+    }
+
+    /**
+     * Set the start index property for feed paging.
+     *
+     * @param Zend_Gdata_Extension_OpenSearchStartIndex|null $value The value
+     *        for the startIndex property. Use null to unset.
+     * @return Zend_Gdata_Feed Provides a fluent interface.
+     */
+    function setStartIndex($value) {
+        $this->_startIndex = $value;
         return $this;
     }
 
     /**
-     * Required by the ArrayAccess interface
+     * Get the value of the startIndex property.
      *
-     * @param int $key The index to set
-     * @param Zend_Gdata_App_Entry $value The value to set
-     * @return void
+     * @return Zend_Gdata_Extension_OpenSearchStartIndex|null The value of the
+     *         startIndex property, or null if unset.
      */
-    public function offsetSet($key, $value)
-    {
-        $this->_entry[$key] = $value;
+    function getStartIndex() {
+        return $this->_startIndex;
     }
 
     /**
-     * Required by the ArrayAccess interface
+     * Set the itemsPerPage property.
      *
-     * @param int $key The index to get
-     * @param Zend_Gdata_App_Entry $value The value to set
+     * @param Zend_Gdata_Extension_OpenSearchItemsPerPage|null $value The
+     *        value for the itemsPerPage property. Use nul to unset.
+     * @return Zend_Gdata_Feed Provides a fluent interface.
      */
-    public function offsetGet($key)
-    {
-        if (array_key_exists($key, $this->_entry)) {
-            return $this->_entry[$key];
-        }
+    function setItemsPerPage($value) {
+        $this->_itemsPerPage = $value;
+        return $this;
     }
 
     /**
-     * Required by the ArrayAccess interface
+     * Get the value of the itemsPerPage property.
      *
-     * @param int $key The index to set
-     * @param Zend_Gdata_App_Entry $value The value to set
+     * @return Zend_Gdata_Extension_OpenSearchItemsPerPage|null The value of
+     *         the itemsPerPage property, or null if unset.
      */
-    public function offsetUnset($key)
-    {
-        if (array_key_exists($key, $this->_entry)) {
-            unset($this->_entry[$key]);
-        }
-    }
-
-    /**
-     * Required by the ArrayAccess interface
-     *
-     * @param int $key The index to check for existence
-     * @return boolean
-     */
-    public function offsetExists($key)
-    {
-        return (array_key_exists($key, $this->_entry));
-    }
-
-   /**
-     * Retrieve the next set of results from this feed.
-     *
-     * @throws Zend_Gdata_App_Exception
-     * @return mixed|null Returns the next set of results as a feed of the same
-     *          class as this feed, or null if no results exist.
-     */
-    public function getNextFeed()
-    {
-        $nextLink = $this->getNextLink();
-        if (!$nextLink) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_Exception('No link to next set ' .
-            'of results found.');
-        }
-        $nextLinkHref = $nextLink->getHref();
-        $service = new Zend_Gdata_App($this->getHttpClient());
-
-        return $service->getFeed($nextLinkHref, get_class($this));
-    }
-
-   /**
-     * Retrieve the previous set of results from this feed.
-     *
-     * @throws Zend_Gdata_App_Exception
-     * @return mixed|null Returns the previous set of results as a feed of
-     *          the same class as this feed, or null if no results exist.
-     */
-    public function getPreviousFeed()
-    {
-        $previousLink = $this->getPreviousLink();
-        if (!$previousLink) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_Exception('No link to previous set ' .
-            'of results found.');
-        }
-        $previousLinkHref = $previousLink->getHref();
-        $service = new Zend_Gdata_App($this->getHttpClient());
-
-        return $service->getFeed($previousLinkHref, get_class($this));
-    }
-
-    /**
-     * Set the major protocol version that should be used. Values < 1 will
-     * cause a Zend_Gdata_App_InvalidArgumentException to be thrown.
-     *
-     * This value will be propogated to all child entries.
-     *
-     * @see _majorProtocolVersion
-     * @param (int|NULL) $value The major protocol version to use.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function setMajorProtocolVersion($value)
-    {
-        parent::setMajorProtocolVersion($value);
-        foreach ($this->entries as $entry) {
-            $entry->setMajorProtocolVersion($value);
-        }
-    }
-
-    /**
-     * Set the minor protocol version that should be used. If set to NULL, no
-     * minor protocol version will be sent to the server. Values < 0 will
-     * cause a Zend_Gdata_App_InvalidArgumentException to be thrown.
-     *
-     * This value will be propogated to all child entries.
-     *
-     * @see _minorProtocolVersion
-     * @param (int|NULL) $value The minor protocol version to use.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function setMinorProtocolVersion($value)
-    {
-        parent::setMinorProtocolVersion($value);
-        foreach ($this->entries as $entry) {
-            $entry->setMinorProtocolVersion($value);
-        }
+    function getItemsPerPage() {
+        return $this->_itemsPerPage;
     }
 
 }

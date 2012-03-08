@@ -3,51 +3,51 @@
 }
 
 body {
-  margin-top: 20px;
-  padding: 0;
-  background: #FFFFFF;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 13px;
-  color: #404040;
+    margin-top: 20px;
+    padding: 0;
+    background: #FFFFFF;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    color: #404040;
 }
 
 header {
-	height: 50px;
-	display: block;
+    height: 50px;
+    display: block;
 }
 
 a {
-	text-decoration: none;
-	color: #d72627;
+    text-decoration: none;
+    color: #d72627;
 }
 
 a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 span#lang{
-	text-decoration: none;
-	color: #d72627;
+    text-decoration: none;
+    color: #d72627;
 }
 
 span#lang:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 ul {
-	list-style: none;
-	vertical-align: top;
-	margin: 0;
-	padding: 0;
+    list-style: none;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 h2 {
-	font-size: 2em;
-	margin: 0;
+    font-size: 2em;
+    margin: 0;
 }
 
 
@@ -56,7 +56,7 @@ h2 {
 
 /* Header: Title, language, "Register for…" */
 #header-bar {
-	margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
     width: 900px;
@@ -64,134 +64,134 @@ h2 {
 }
 
 #language {
-	cursor: pointer;
-	font-size: 13px;
-	float: right;
-	padding-right: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    float: right;
+    padding-right: 30px;
 }
 
 #title {
-	float: left;
+    float: left;
 }
 
 
 
 /* Middle section: prototype screenshot, links */
 #middle {
-	margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     width: 900px;
 }
 
 #register-header {
-	float: left;
-	font-size: 2em;
-	width: 500px;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
+    float: left;
+    font-size: 2em;
+    width: 500px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #prototype {
-	display: inline;
-	float: left;
-	width: 500px;
+    display: inline;
+    float: left;
+    width: 500px;
 }
 
 .prototype-ss {
-	padding-left: 30px;
+    padding-left: 30px;
 }
 
 #archi-links {
-	display: inline;
-	float: left;
-	padding-top: 10px;
-	width: 400px;
+    display: inline;
+    float: left;
+    padding-top: 10px;
+    width: 400px;
 }
 
 ul li a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .archi {
-	width: 380px;
-	height: 60px;
-	text-align: left;
+    width: 380px;
+    height: 60px;
+    text-align: left;
 }
 
 a .archi:hover{
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .archi:hover {
-	background-color: #e6e6e6;
-	margin-left: 10px;
+    background-color: #e6e6e6;
+    margin-left: 10px;
 }
 
 /* Bottom-bar: forms, register button, logo */
 #bottom-bar {
-	margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     width: 900px;
 }
 
 #register {
-	display: inline;
-	float: left;
+    display: inline;
+    float: left;
 }
 
 #register-form {
-	display: inline;
-	float: left;
-	width: 540px;
-	margin-bottom: 10px;
+    display: inline;
+    float: left;
+    width: 540px;
+    margin-bottom: 10px;
 }
 
 .fields {
-	display: inline;
-	float: left;
-	width: 380px;
+    display: inline;
+    float: left;
+    width: 380px;
 }
 
 .fieldcontainer {
-	height: 40px; 
-	position: relative;
+    height: 40px; 
+    position: relative;
 }
 
 .label {
-	font-size: 2em;
-	position:absolute; 
-	padding-top:5px;
+    font-size: 2em;
+    position:absolute; 
+    padding-top:5px;
 }
 
 
 .large {
-	float: right;
-	font-size: 2em;
-	height: 40px;
-	width: 270px;
+    float: right;
+    font-size: 2em;
+    height: 40px;
+    width: 270px;
 }
 
 
 #register-button {
-	display: inline;
-	float: right;
+    display: inline;
+    float: right;
     color: #FFFFFF;
     height: 80px;
+    width: 140px;
     margin-top: 9px;
-    margin-left: 12px;
 }
 
 
 #register-button:hover {
-	background-position: 0 -15px;
-	text-decoration: none;
+    background-position: 0 -15px;
+    text-decoration: none;
 }
 
 .error {
-	border-style: solid;
-	border-color: red;
-	border-width: 2px;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
 }
 
 #results {
@@ -199,13 +199,13 @@ a .archi:hover{
 }
 
 #logo {
-	float: right;
-	padding-right:20px;
+    float: right;
+    padding-right:20px;
 }
 
 .btn {
-	font-size: 2em;
-	cursor: pointer;
+    font-size: 2em;
+    cursor: pointer;
     display: inline-block;
     line-height: normal;
     padding: 9px 14px;
@@ -216,15 +216,15 @@ a .archi:hover{
 }
 
 .shadow {
-	-moz-box-shadow: 5px 5px 5px #ccc;
-  	-webkit-box-shadow: 5px 5px 5px #ccc;
-  	box-shadow: 5px 5px 5px #ccc;
-  	border-style: solid;
-  	border-color: #8f9093;
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+    border-style: solid;
+    border-color: #8f9093;
 }
 
 .rounded {
-	-moz-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
     -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
     -webkit-border-radius: 6px;
     border-radius: 6px;
@@ -232,17 +232,17 @@ a .archi:hover{
 }
 
 .bluegrad {
-	background-color: #339BB9;
+    background-color: #339BB9;
     background-image: -moz-linear-gradient(center top , #5BC0DE, #339BB9);
     background-image: -khtml-gradient(linear, left top, left bottom, from(#5BC0DE), to(#339BB9) );
-	background-image: -ms-linear-gradient(top, #5BC0DE, #339BB9);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5BC0DE), color-stop(100%, #339BB9) );
-	background-image: -webkit-linear-gradient(top, #5BC0DE, #339BB9);
-	background-image: -o-linear-gradient(top, #5BC0DE, #339BB9);
-	background-image: linear-gradient(top, #5BC0DE, #339BB9);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#339bb9', GradientType=0 );
-	border-color: #339BB9 #339BB9 #22697D;
-	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    background-image: -ms-linear-gradient(top, #5BC0DE, #339BB9);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5BC0DE), color-stop(100%, #339BB9) );
+    background-image: -webkit-linear-gradient(top, #5BC0DE, #339BB9);
+    background-image: -o-linear-gradient(top, #5BC0DE, #339BB9);
+    background-image: linear-gradient(top, #5BC0DE, #339BB9);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#339bb9', GradientType=0 );
+    border-color: #339BB9 #339BB9 #22697D;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }

@@ -7,10 +7,10 @@
 <title>Digital Archive of Japan's 2011 Disasters</title>
 <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
 <meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
-<link href="/lib/landing.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="lib/landing.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-<script charset="utf-8" src="/lib/landing.js" type="text/javascript"></script>
+<script charset="utf-8" src="lib/landing.js" type="text/javascript"></script>
 
 
 </head>
@@ -19,7 +19,7 @@
 <div id="header-bar">
 	<header>
 		<div id="title">
-			<img src="/lib/images/header-jp.png">
+			<img src="lib/images/header-jp.png">
 		</div>
 		<div id="language">
 			<span id="lang">English</span>
@@ -58,7 +58,7 @@
 
 <div id="bottom-bar">
 <div id="register">
-	<form name="register-form" id="register-form" action="process.php" method="POST">  
+	<form name="register-form" id="register-form" action="" method="POST">  
 		<div class="fields">
 			<div class="fieldcontainer">
 				<div class="label">
@@ -71,6 +71,7 @@
 					<label for="email" id="email">Eメール</label>  
 				</div>
 				<input type="text" name="email" id="home-email-text-field" class="large" size="30" value="">
+				<input type="hidden" name="language" id="l" value="日本語">
 			</div>
 		</div>
 		<input type="submit" name="register" id="register-button" class="btn rounded bluegrad" value="新規登録"> 

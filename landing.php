@@ -73,10 +73,10 @@
 				<input type="text" name="email" id="home-email-text-field" class="large" size="30" value="">
 				<input type="hidden" name="language" id="l" value="日本語">
 			</div>
+			<div id="results" class="fieldcontainer" style="padding-top:15px;"></div>
 		</div>
 		<input type="submit" name="register" id="register-button" class="btn rounded bluegrad" value="新規登録"> 
 	</form>
-	<div id="results" class="fieldcontainer"></div>
 </div>
 
 <div id="logo">

@@ -37,7 +37,8 @@ When we are able to provide you with access, you will receive a separate email w
 
 Sincerely,
 
-The Jdarchive.org Staff";
+The Jdarchive.org Staff
+http://jdarchive.org/";
 	}
 	else {
 		$subject = 'ご登録ありがとうございます';
@@ -48,8 +49,8 @@ The Jdarchive.org Staff";
 
 皆様のご参加に深く感謝申し上げます。
 
-2011年東日本大震災デジタルアーカイブ・スタッフ一同';
-		
+2011年東日本大震災デジタルアーカイブ・スタッフ一同
+http://jdarchive.org/';		
 	}
 	
 	$mail->setSubject($subject);

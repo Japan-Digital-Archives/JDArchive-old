@@ -115,8 +115,9 @@ ul li a:hover {
 
 .archi {
     width: 380px;
-    height: 40px;
+    max-height: 60px;
     text-align: left;
+    padding: 13px 14px;
 }
 
 a .archi:hover{
@@ -180,6 +181,7 @@ a .archi:hover{
     height: 80px;
     width: 140px;
     margin-top: 9px;
+    padding: 9px 14px;
 }
 
 
@@ -209,7 +211,6 @@ a .archi:hover{
     cursor: pointer;
     display: inline-block;
     line-height: normal;
-    padding: 9px 14px;
     border-style: solid;
     border-width: 1px;
     background-color: #FFFFFF;

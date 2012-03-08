@@ -26,7 +26,7 @@ start();
 <table>
 	<tr>
 		<td>Tweets:</td>
-		<td><? echo $total; ?></td>
+		<td><? echo number_format($total); ?></td>
 	</tr>
 	<tr>
 		<td>Last tweet:</td>
@@ -34,7 +34,7 @@ start();
 	</tr>
 	<tr>
 		<td>Unique users:</td>
-		<td><? echo $totalusers; ?></td>
+		<td><? echo number_format($totalusers); ?></td>
 	</tr>
 </table>
 </div>

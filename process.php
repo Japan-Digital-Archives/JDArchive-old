@@ -1,7 +1,7 @@
 <?php
 
 // Zend library include path
-set_include_path(get_include_path() . PATH_SEPARATOR . "/lib/ZendFramework-1.11.11-minimal/library"); 
+set_include_path("/home/ubuntu/sites/jedarchive/lib/ZendFramework-1.11.11-minimal/library"); 
 include_once('lib/Google_Spreadsheet/Google_Spreadsheet.php');
 require_once 'Zend/Mail/Transport/Smtp.php';
 require_once 'Zend/Mail.php';

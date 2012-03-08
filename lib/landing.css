@@ -212,7 +212,8 @@ a .archi:hover{
     border-style: solid;
     border-width: 1px;
     background-color: #FFFFFF;
-    -webkit-appearance: button;
+    color: buttontext;
+    box-sizing: border-box;
 }
 
 .shadow {

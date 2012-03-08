@@ -43,7 +43,7 @@
 		<li id="l1"><a href="../explore/?la=ja">
 			<button class="btn shadow archi">このアーカイブについて</button>
 		</a></li>
-		<li id="l2"><a href="../search/?la=ja">
+		<li id="l2"><a href="../seeds/?la=ja">
 			<button class="btn shadow archi">ウェブ・アーカイブ検索</button>
 		</a></li>
 		<li id="l3"><a href="http://worldmap.harvard.edu/japanmap/">

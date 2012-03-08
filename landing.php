@@ -80,7 +80,7 @@ header("Vary: Accept-Encoding");
 		</div>
 		<input type="submit" name="register" id="register-button" class="btn rounded bluegrad" value="新規登録"> 
 	</form>
-	<div id="results"></div>
+	<div id="results" class="fieldcontainer"></div>
 </div>
 
 <div id="logo">

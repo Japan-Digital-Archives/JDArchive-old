@@ -11,10 +11,10 @@ header("Vary: Accept-Encoding");
 <title>Digital Archive of Japan's 2011 Disasters</title>
 <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
 <meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
-<link href="/lib/landing.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="lib/landing.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-<script charset="utf-8" src="/lib/landing.js" type="text/javascript"></script>
+<script charset="utf-8" src="lib/landing.js" type="text/javascript"></script>
 
 
 </head>
@@ -23,7 +23,7 @@ header("Vary: Accept-Encoding");
 <div id="header-bar">
 	<header>
 		<div id="title">
-			<img src="/lib/images/header-jp.png">
+			<img src="lib/images/header-jp.png">
 		</div>
 		<div id="language">
 			<span id="lang">English</span>
@@ -47,7 +47,7 @@ header("Vary: Accept-Encoding");
 		<li id="l1"><a href="../explore/?la=ja">
 			<button class="btn shadow archi">このアーカイブについて</button>
 		</a></li>
-		<li id="l2"><a href="../search/?la=ja">
+		<li id="l2"><a href="../seeds/?la=ja">
 			<button class="btn shadow archi">ウェブ・アーカイブ検索</button>
 		</a></li>
 		<li id="l3"><a href="http://worldmap.harvard.edu/japanmap/">
@@ -62,7 +62,7 @@ header("Vary: Accept-Encoding");
 
 <div id="bottom-bar">
 <div id="register">
-	<form name="register-form" id="register-form" action="process.php" method="POST">  
+	<form name="register-form" id="register-form" action="" method="POST">  
 		<div class="fields">
 			<div class="fieldcontainer">
 				<div class="label">
@@ -75,6 +75,7 @@ header("Vary: Accept-Encoding");
 					<label for="email" id="email">Eメール</label>  
 				</div>
 				<input type="text" name="email" id="home-email-text-field" class="large" size="30" value="">
+				<input type="hidden" name="language" id="l" value="日本語">
 			</div>
 		</div>
 		<input type="submit" name="register" id="register-button" class="btn rounded bluegrad" value="新規登録"> 

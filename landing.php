@@ -36,10 +36,10 @@ header("Vary: Accept-Encoding");
 <div id="content">
 
 <div id="middle">
-	<div id="register-header">試作モデル αlfa（要登録）:</div>
+	<div id="register-header">試作モデル αlpha（要登録）:</div>
 	
 	<div id="prototype">
-		<img class="prototype-ss" src="lib/images/prototype_ss2.png">
+		<img class="prototype-ss" src="lib/images/prototype_ss3.png">
 	</div>
 
 	<div id="archi-links">

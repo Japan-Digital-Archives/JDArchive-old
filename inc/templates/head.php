@@ -83,7 +83,7 @@ $(function(){
 });
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-22729281-1']);
+  _gaq.push(['_setAccount', 'UA-22729281-2']);
   _gaq.push(['_trackPageview']);
 
   (function() {

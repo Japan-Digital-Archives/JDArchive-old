@@ -49,7 +49,4 @@
         </ul>
       </div>
       <!-- end #sidebar -->
-<<<<<<< HEAD
        <?php endif ?>
-=======
->>>>>>> master

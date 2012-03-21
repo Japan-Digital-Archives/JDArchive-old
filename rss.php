@@ -9,7 +9,7 @@ $seeds = get_seeds($conditions, 100);
 $channel = array(
   "title" => "Digital Archive of the Japan 2011 Earthquake and Aftermath",
   "description" => "This rss feed contains the 100 most recent links added to the collection for archiving once.",
-  "link" => "http://www.jedarchive.org/rss.php"
+  "link" => "http://www.jdarchive.org/rss.php"
 );
 
 

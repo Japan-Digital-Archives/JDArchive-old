@@ -6,7 +6,7 @@
 <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
 <meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
 <link href="/lib/style.css" rel="stylesheet" type="text/css" media="screen" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <!--
 <script src="/lib/FaceBox/facebox.js"></script>
 <link href="/lib/FaceBox/facebox.css" rel="stylesheet" type="text/css" media="screen" />-->
@@ -14,7 +14,31 @@
 
 <!-- required stylesheet for CSSDropDownMenu -->
 <link rel="stylesheet" href="/lib/cssmenu.css" type="text/css" media="screen" />
+<link type="text/css" href="/static/css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="/static/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript">
+    $("document").ready(function(){
+        $("#massRejectWin").dialog({autoOpen: false, title: "Mass Seed Rejection", minWidth: 700});
+    });
 
+    function openWin(){
+        $("#massRejectWin").dialog('open');
+    }
+
+    function DoMassReject() {
+        if(confirm("Are you sure?") == true) {
+            var sendStr = "";     
+            $("#massRejectWin").find("input[type='checkbox']:checked").each(function() {
+                sendStr = sendStr + $(this).attr("id") + "|";
+            });
+            
+            $("#temp").load("/inc/massReject.php?ids=" + sendStr, function() {
+                document.location.href = document.location.href;
+            });
+            
+        }   
+    }
+</script>
 
 <script src="/lib/curate.js"></script>
 <script type="text/javascript">

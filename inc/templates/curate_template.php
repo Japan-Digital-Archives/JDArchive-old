@@ -141,7 +141,30 @@ $(function(){
 <div id="export">
 
 <p><a id="exportlink" href="export.php" onclick="return export_seeds();">Export verified seeds &raquo;</a></p>
-
+<p><a href="javascript:openWin();"><b>Mass Reject</b> &raquo;</a></p>
+<div id="massRejectWin" style="display:none;">
+    <table cellpadding="5" cellspacing="0">
+        <?php
+            $nvArr = array("verified" => "notV");
+            
+            $nvSeeds = get_seeds_paginated($nvArr, 1, 100);
+            
+            foreach ($nvSeeds as &$nvItem){
+                echo "<tr>";
+                echo "<td><input type='checkbox' id='" . $nvItem->sid . "'/></td>";
+                echo "<td>Seed #" . $nvItem->sid . "</td>";
+                echo "<td>" . $nvItem->title . "</td>";
+                echo "<td>Submitted by " . $nvItem->name . "</td>";
+                echo "<td>Added on " . $nvItem->added . "</td>";
+                echo "</tr>";
+            } 
+        ?>
+        <tr>
+            <td colspan="5"><center><input type="button" value="Reject Selected Seeds" onclick="DoMassReject()" /></center></td>
+        </tr>
+    </table>
+</div>
+<div id="temp" style="display:none;"></div>
 
 <table class="smallleft">
 <tr>

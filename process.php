@@ -77,8 +77,9 @@ $lang = $_POST["language"];
   
 $row = array
 (
-    "name" => $name
-    , "email" => $email
+    "name" => $name, 
+    "email" => $email,
+    "date applied" => date("m-d-y")
 );
 
 // successful add to spreadsheet

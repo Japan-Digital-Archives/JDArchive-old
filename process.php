@@ -73,13 +73,13 @@ $ss->useSpreadsheet("prototype applicants");
 $name = $_POST["name"];
 $email = $_POST["email"];
 $lang = $_POST["language"];
-
+$date = date("m-d-y");
   
 $row = array
 (
     "name" => $name, 
     "email" => $email,
-    "date applied" => date("m-d-y")
+    "date applied" => $date
 );
 
 // successful add to spreadsheet

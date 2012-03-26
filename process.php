@@ -79,7 +79,7 @@ $row = array
 (
     "name" => $name, 
     "email" => $email,
-    "date applied" => $date
+    "dateapplied" => $date
 );
 
 // successful add to spreadsheet

@@ -12,7 +12,7 @@ require_once('../inc/common.php');
                 && ($_FILES["picture"]["size"] < 50000000)) {
             $pic = 1;
         }
-        echo $pic;
+
         $rVal = array("<%email%>","<%title%>","<%url%>", "<%description%>", "<%pic%>");
         $nVal = array($email, $title, $url, $description, $pic);
 
@@ -88,8 +88,8 @@ require_once('../inc/common.php');
                             <b>Url of Issue:</b>
                         </td>
                         <td>
-                            <input type="textbox" id="url" name="url"/><br/>
-                            <span style="color:grey;font-size:10px;">Please Enter the URL of the page where you experienced the problem.</span>
+                            <input type="textbox" id="url" name="url" /><br/>
+                            <span style="color:grey;font-size:10px;">Please Enter the URL of the page where you experienced the problem. Must include http://</span>
                         </td>
                     </tr>
                     <tr>

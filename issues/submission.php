@@ -33,7 +33,14 @@ require_once('../inc/common.php');
         <title>Bug Submission Form</title>
         <script type="text/javascript" src="/static/js/jquery.js"></script>
         <script type="text/javascript" src="/static/js/jquery.validate.min.js"></script>
+        <style>
+            body
+            {
+                  font-family: "Lucida Grande", Tahoma, Helvetica, sans-serif;
+                  font-size: 12px;
+            }
 
+        </style>
         <script type="text/javascript">
             $("document").ready(function() {
                 $("#issueForm").validate({
@@ -81,11 +88,12 @@ require_once('../inc/common.php');
                             <b>Url of Issue:</b>
                         </td>
                         <td>
-                            <input type="textbox" id="url" name="url"/>
+                            <input type="textbox" id="url" name="url"/><br/>
+                            <span style="color:grey;font-size:10px;">Please Enter the URL of the page where you experienced the problem.</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <b>Issue Description:</b>
                         </td>
                         <td>
@@ -97,7 +105,8 @@ require_once('../inc/common.php');
                             <b>Picture:</b>
                         </td>
                         <td>
-                            <input type="file" name="picture" id="picture"/>
+                            <input type="file" name="picture" id="picture"/><br/>
+                            <span style="color:grey;font-size:10px;">Optional: Upload a Screenshot of the issue. jpg, png, and gif images accepted</span>
                         </td>
                     </tr>
                     <tr>

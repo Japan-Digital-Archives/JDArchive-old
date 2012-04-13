@@ -189,7 +189,40 @@ function stopRKey(evt) {
   if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
 } 
 
+$("document").ready(function() {
+    $("#url").blur(function() {
+        var tUrl = $("#url").val();
+        tUrl = tUrl.replace("http://","");
+        var cut = tUrl.indexOf("?");
+        if (cut != -1) {
+            tUrl = tUrl.substring(0, cut);
+        }
+        cut = tUrl.indexOf("#");
+        if (cut != -1) {
+            tUrl = tUrl.substring(0, cut);
+        }
+        //alert(tUrl);
+        
+        $.getJSON("/check_duplicates.php?url=" + tUrl, function(data) {
+            var divHtml = "";
+            $.each(data, function(key, val) {
+                divHtml += "<div>" + val + "</div>";
+            });
+            if(divHtml == "") {
 
+                if(lang == "ja") {
+                    divHtml = "類似するリンクは見つかりませんでした";
+                } else {
+                    divHtml = "No Similar links found!";
+                }
+            }
+            $("#duplicateDiv > div").html(divHtml);
+            $("#duplicateDiv > div > div:odd").css("background-color","#C6C6C6");
+
+            $("#duplicateDiv").show();
+        });
+    });
+});
 </script>
 
 
@@ -215,7 +248,15 @@ function stopRKey(evt) {
 <?php endif ?>
 <tr>
   <th><span data-ko="인터넷 URL">URL</span><span class="red">*</span></th>
-  <td><input type="text" name="url" size="60" value="<?php if (isset($bk_url)) echo $bk_url; ?>"/><br /><span class="hint" data-jp="ウェブサイトのURL" data-zh="请为该存档的网页提供一个完整的网上地址" data-ko="재해관련 웹페이지의 주소">Full URL of website to archive</span></td>
+  <td><input type="text" name="url" id="url" size="60" value="<?php if (isset($bk_url)) echo $bk_url; ?>"/><br /><span class="hint" data-jp="ウェブサイトのURL" data-zh="请为该存档的网页提供一个完整的网上地址" data-ko="재해관련 웹페이지의 주소">Full URL of website to archive</span>
+      <div id="duplicateDiv" style="display: none;">
+          <span style="color:red;font-weight: bold;">
+              <span data-jp="このURLがすでにデータベースにあるか確認">Is the URL already in the database?</span>
+          </span>
+          <div style="padding:5px;border:solid 1px black;font-style: italic;height: 100px; overflow-y:scroll; width: 538px;">
+          </div>
+      </div>
+  </td>
 </tr>
 <tr>
   <th><span data-jp="ウェブサイトのタイトル" data-zh="网页标题" data-ko="페이지 이름">Page Title</span><span class="red">*</span></th>

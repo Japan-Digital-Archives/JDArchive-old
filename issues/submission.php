@@ -1,5 +1,26 @@
 <?php
 require_once('../inc/common.php');
+$lang = "en";
+if(isset($_GET['la'])) {
+    $lang = $_GET['la'];
+}
+$emailTxt = "Email:";
+$issueTitle = "Issue Title:";
+$urlT = "Url of Issue";
+$issueDesc = "Issue Description";
+$picT = "Picture";
+$urlH = "Please Enter the URL of the page where you experienced the problem. Must include http://";
+$picH = "Optional: Upload a Screenshot of the issue. .jpg, .png and gif images accepted";
+
+if($lang == "jp") {
+    $emailTxt = "Eメール:";
+    $issueTitle = "問題のタイトル";
+    $urlT = "URL";
+    $issueDesc = "内容";
+    $picT = "写真";
+    $urlH = "問題があったページのURLを「http://」を含めてご記入下さい。";
+    $picH = "問題があったページのスクリーンショットを、jpg、png、またはgif形式でアップロードすることができます。";
+}
     if(isset($_POST['email']) && isset($_POST['title']) && isset($_POST['url']) && isset($_POST['description'])) {
         $baseStr = "INSERT INTO issues (email, createdAt, title, url, description, picture, approved) VALUE ('<%email%>', now(), '<%title%>', '<%url%>', '<%description%>', '<%pic%>', '0')";
 
@@ -30,6 +51,7 @@ require_once('../inc/common.php');
 
 <html>
     <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>Bug Submission Form</title>
         <script type="text/javascript" src="/static/js/jquery.js"></script>
         <script type="text/javascript" src="/static/js/jquery.validate.min.js"></script>
@@ -68,7 +90,7 @@ require_once('../inc/common.php');
                 <table cellpadding="5" cellspacing="0">
                     <tr>
                         <td>
-                            <b>Email:</b>
+                            <b><?php echo $emailTxt ?></b>
                         </td>
                         <td>
                             <input type="textbox" id="email" name="email" />
@@ -76,7 +98,7 @@ require_once('../inc/common.php');
                     </tr>
                     <tr>
                         <td>
-                            <b>Issue title:</b>
+                            <b><?php echo $issueTitle ?></b>
                         </td>
                         <td>
                             <input type="textbox" id="title" name="title" />
@@ -85,16 +107,16 @@ require_once('../inc/common.php');
 
                     <tr>
                         <td>
-                            <b>Url of Issue:</b>
+                            <b><?php echo $urlT ?></b>
                         </td>
                         <td>
                             <input type="textbox" id="url" name="url" /><br/>
-                            <span style="color:grey;font-size:10px;">Please Enter the URL of the page where you experienced the problem. Must include http://</span>
+                            <span style="color:grey;font-size:10px;"><?php echo $urlH ?></span>
                         </td>
                     </tr>
                     <tr>
                         <td valign="top">
-                            <b>Issue Description:</b>
+                            <b><?php echo $issueDesc ?></b>
                         </td>
                         <td>
                             <textarea id="description" rows="5" cols="50" name="description"></textarea>
@@ -102,11 +124,11 @@ require_once('../inc/common.php');
                     </tr>
                     <tr>
                         <td>
-                            <b>Picture:</b>
+                            <b><?php echo $picT ?></b>
                         </td>
                         <td>
                             <input type="file" name="picture" id="picture"/><br/>
-                            <span style="color:grey;font-size:10px;">Optional: Upload a Screenshot of the issue. jpg, png, and gif images accepted</span>
+                            <span style="color:grey;font-size:10px;"><?php echo $picH ?></span>
                         </td>
                     </tr>
                     <tr>

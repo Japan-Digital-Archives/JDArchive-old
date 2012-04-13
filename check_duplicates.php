@@ -4,7 +4,7 @@
     function sortLen($a,$b){
         return  strlen($a) - strlen($b);
     }
-    $yoursite = "jdarchive.org"; //Your site url without http://
+    $yoursite = "localhost"; //Your site url without http://
     $yoursite2 = "www.jdarchive.org"; //Type your domain with www. this time
 
     $referer = $_SERVER['HTTP_REFERER'];

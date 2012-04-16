@@ -1,38 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--[if lt IE 9 ]>    <html xmlns="http://www.w3.org/1999/xhtml" class="ie8">    <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Digital Archive of Japan's 2011 Disasters</title>
-<meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />
-<meta name="description" content="Digital Archive of the Japan 2011 Earthquake and Aftermath" />
-<link href="lib/landing.css" rel="stylesheet" type="text/css" media="screen" />
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-<script charset="utf-8" src="lib/landing.js" type="text/javascript"></script>
+<?php
 
+require_once(dirname(__FILE__). '/inc/common.php');
 
-</head>
+$language = language();
 
-<body>
+$referred = referred();
+
+start('_landing');
+
+?>
+
 <div id="header-bar">
 	<header>
 		<div id="title">
 			<img src="lib/images/header-jp.png">
 		</div>
-		<div id="language">
-			<span id="lang">English</span>
+		<div id="language">	
+			<?php language_bar($language, array('en', 'ja')); ?>
 		</div>
-		
 	</header>
 </div>
 
-
-<div id="content">
-
 <div id="middle">
-	<div id="register-header">試作モデル αlpha（要登録）:</div>
+	<div id="register-header" data-jp="" data-en="">試作モデル αlpha（要登録）:</div>
 	
 	<div id="prototype">
 		<img class="prototype-ss" src="lib/images/prototype_ss3.png">

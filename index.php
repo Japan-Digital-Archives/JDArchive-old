@@ -4,6 +4,7 @@
 <?php
 header("Cache-Control: must-revalidate, max-age=600");
 header("Vary: Accept-Encoding");
+
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

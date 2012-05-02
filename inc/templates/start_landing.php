@@ -2,7 +2,10 @@
 <!--[if lt IE 9 ]>    <html xmlns="http://www.w3.org/1999/xhtml" class="ie8">    <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" 
+      type="image/png" 
+      href="/lib/images/favicon-white.png" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Digital Archive of Japan's 2011 Disasters</title>
 <meta name="keywords" content="digital archive japan 2011 earthquake tsunami aftermath reischauer institute harvard" />

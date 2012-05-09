@@ -2,6 +2,11 @@
 
   $langs = array('en' => 'English', 'ja' => '日本語', 'ko' => '한국어', 'zh' => '中文');
 
+  function referred() {
+    $referred = isset($_GET["referred"]) ? $_GET["referred"] : '';
+    return $reffered;
+  }
+
   function language() {
     global $langs;
     $language = isset($_GET["la"]) ? $_GET["la"] : '';

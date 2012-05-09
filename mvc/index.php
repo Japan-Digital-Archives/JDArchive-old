@@ -13,7 +13,8 @@ include APPLICATION_PATH . '/globals.php';
 if ($_SERVER['HTTP_HOST'] == 'jdarchive.org' 
     || $_SERVER['HTTP_HOST'] == 'www.jdarchive.org'
     || $_SERVER['HTTP_HOST'] == 'jedarchive.org'
-    || $_SERVER['HTTP_HOST'] == 'www.jedarchive.org') 
+    || $_SERVER['HTTP_HOST'] == 'www.jedarchive.org'
+    || $_SERVER['HTTP_HOST'] == 'aws.jdarchive.org') 
 {
     define('APPLICATION_ENV', 'production');
 } elseif($_SERVER['HTTP_HOST'] == 'beta.jdarchive.org') {

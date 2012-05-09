@@ -1,9 +1,9 @@
 Options +FollowSymlinks
 
-<FilesMatch "^(quicksearch|edit_tag|edit|curate).php$">
+<FilesMatch "^(quicksearch|edit_tag|edit|curate|manage).php$">
 AuthName "Staff Access Only:"
 AuthType Basic
-AuthUserFile /usr/www/users/jedarchi/production/.htpasswd
+AuthUserFile /home/ubuntu/sites/jedarchive/.htpasswd
 Require user arne
 Require user jdstaff
 Require user mlak-admin
@@ -12,10 +12,11 @@ Require user mlak-admin
 <FilesMatch "^internal.php$">
 AuthName "Seed Staff Access Only:"
 AuthType Basic
-AuthGroupFile /usr/www/users/jedarchi/.htgrp
-AuthUserFile /usr/www/users/jedarchi/production/.htpasswd
+AuthGroupFile /home/ubuntu/.htgrp
+AuthUserFile /home/ubuntu/sites/jedarchive/.htpasswd
 Require valid-user
 </FilesMatch>
+
 
 RewriteEngine on
 

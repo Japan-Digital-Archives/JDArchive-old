@@ -1,10 +1,6 @@
-
 <?php
 header("Cache-Control: must-revalidate, max-age=600");
 header("Vary: Accept-Encoding");
-?>
-
-<?php
 
 require_once(dirname(__FILE__). '/inc/common.php');
 
@@ -81,8 +77,8 @@ start('_landing');
 
 
 </div>
-
+<!-- end #bottom-bar -->
 </div>
-
+<!-- end #content -->
 </body>
 </html>

@@ -3,3 +3,8 @@ image_uploads
 .settings
 .buildpath
 .vagrant
+common.php
+wp-config.php
+config.ini
+notes.txt
+py.cfg

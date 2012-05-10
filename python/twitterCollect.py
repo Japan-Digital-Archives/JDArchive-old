@@ -22,7 +22,7 @@ def getGeoString(obj):
 
 
 config = ConfigParser.ConfigParser()
-config.readfp(open('py.cfg'))
+config.readfp(open('/home/ubuntu/sites/jedarchive/python/py.cfg'))
 
 un = config.get("Database", "username")
 pw = config.get("Database", "password")

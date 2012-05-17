@@ -1,5 +1,5 @@
 {
-	"notSumbitTxt":"Not Yet Submitted", 
+	"notSubmitTxt":"Not Yet Submitted", 
 	"liveLinkTxt":"Live Link", 
 	"mostRecentTxt":"Most Recent", 
 	"earliestTxt":"Earliest", 

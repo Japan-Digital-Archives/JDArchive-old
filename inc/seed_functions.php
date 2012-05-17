@@ -65,15 +65,21 @@
             case 'verified':
               $c = 1;
               break;
-            default:
+            case 'notyet':
               $c = 0;
+            default:
+              $c = -1;
           }
         }
         if ($field == 'name' && $c == 'Anonymous') {
           $c = '';
         }
         if ($field != 'tags') {
-          $sql .= " $field = '$c' AND";
+          if ($field == 'verified' && $c == -1) {
+            $sql .= " $field != '2' AND";        
+          }
+          else
+            $sql .= " $field = '$c' AND";
         } else {
           $sids = get_sids_by_tag($c);
           if (!$sids) {
@@ -123,7 +129,7 @@
       $array['notyet'] = 0;
     }
     
-    $array['all'] = $array['verified'] + $array['rejected'] + $array['notyet'];
+    $array['all'] = $array['verified'] + $array['notyet'];
     
     return $array;
     
@@ -186,15 +192,21 @@
             case 'verified':
               $c = 1;
               break;
-            default:
+            case 'notyet':
               $c = 0;
+            default:
+              $c = -1;
           }
         }
         if ($field == 'name' && $c == 'Anonymous') {
           $c = '';
         }
         if ($field != 'tags') {
-          $sql .= " $field = '$c' AND";
+          if ($field == 'verified' && $c == -1) {
+            $sql .= " $field != '2' AND";        
+          }
+          else
+            $sql .= " $field = '$c' AND";
         } else {
           $sids = get_sids_by_tag($c);
           if (!$sids) {

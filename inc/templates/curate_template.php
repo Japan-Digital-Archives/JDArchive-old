@@ -14,6 +14,7 @@ $filterlang = isset($_GET['l']) ? $_GET['l'] : '';
 $people = get_submitters();
 
 // validate filters
+
 if ($filter != 'all' && $filter != 'verified' && $filter != 'notyet' && $filter != 'rejected') {
   $filter = 'all';
 }
@@ -30,9 +31,9 @@ $conditions = array();
 if ($submitter) {
   $conditions['name'] = $submitter;
 }
-if ($filter != 'all') {
+//if ($filter != 'all') {
   $conditions['verified'] = $filter;
-}
+//}
 if ($filtertag) {
   $conditions['tags'] = $filtertag;
 }
@@ -60,7 +61,7 @@ if ($count < $perpage * ($page - 1)) {
   header("Location: /$pagelink/?f=$filter&p=$newpage");
 }
 
-
+// TODO: add support for 'default' filter condition when retrieving seeds (in seed_functions)
 if ($q) {
   $seeds = get_seeds_search($q, $page, $filterlang);
 } else {
@@ -87,7 +88,7 @@ if (!file_exists($langPath)) {
 $langFileCont = file_get_contents($langPath);
 $transDict = json_decode($langFileCont, true);
 
-$notSumbitTxt = $transDict["notSumbitTxt"];
+$notSubmitTxt = $transDict["notSubmitTxt"];
 $liveLinkTxt = $transDict["liveLinkTxt"];
 $mostRecentTxt = $transDict["mostRecentTxt"];
 $earliestTxt = $transDict["earliestTxt"];
@@ -280,6 +281,7 @@ $(function(){
 <?php foreach ($seeds as $seed): ?>
 
 <?php
+
   $title = $seed->title ? $seed->title : $seed->url;
   $verified = '';
   switch ($seed->verified) {
@@ -343,7 +345,7 @@ $(function(){
   		$iaurl=$seed->url;
   		echo " <a href='$iaurl'>$liveLinkTxt</a> &nbsp;&nbsp;";
   		if ($currentSid > $lastExportId) {
-  			echo "<strong>$notSumbitTxt</strong>&nbsp;&nbsp;";
+  			echo "<strong>$notSubmitTxt</strong>&nbsp;&nbsp;";
   		} else if ($isArchived=='0') {
 			echo "<strong>$notInArchiveTxt</strong>&nbsp;&nbsp;";
 		}

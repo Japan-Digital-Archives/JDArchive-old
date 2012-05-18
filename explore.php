@@ -356,6 +356,8 @@
   <p>Collaboration with the <a href="http://kg-svr.net/">Science Visualization Research Center at Kwansei Gakuin University</a> and the <a href="http://svsnet.jp/">Association for Science Visualization Research</a>, along with All 311 Archives by the National Research Institute for Earth Science and Disaster Prevention</p>
   <p>This project aims at creating a global digital textbook for disaster prevention and research (for elementary and middle-high schools) by learning about the tragic experiences of the Great East Japan Earthquake. Contents are primarily based on the All 311 Archives by the National Research Institute for Earth Science and Disaster Prevention (NIED).</p>
   <br />
+  
+<h2>Notable Digital Image Collections</h2>
 
 <h3><a href="http://www.flickr.com/photos/hodrorg/sets/72157626424211318/"> JAPAN: Project Tohoku</a></h3>
   <p>The 11 March 2011 earthquake and tsunami damaged and destroyed 155,000 homes in northeastern Japan. All Hands launched Project Tohoku on 12 April 2011, focusing on volunteer-driven debris cleanup, home rehabilitation, and fresh food distribution. </p>

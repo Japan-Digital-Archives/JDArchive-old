@@ -358,6 +358,7 @@
   <br />
   
 <h2>Notable Digital Image Collections</h2>
+<br />
 
 <h3><a href="http://www.flickr.com/photos/hodrorg/sets/72157626424211318/"> JAPAN: Project Tohoku</a></h3>
   <p>The 11 March 2011 earthquake and tsunami damaged and destroyed 155,000 homes in northeastern Japan. All Hands launched Project Tohoku on 12 April 2011, focusing on volunteer-driven debris cleanup, home rehabilitation, and fresh food distribution. </p>

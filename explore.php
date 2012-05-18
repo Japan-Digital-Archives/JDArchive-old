@@ -40,13 +40,31 @@
 <p>震災関連アーカイブへの取り組みにおいて主導的役割を果たしているプロジェクトをいくつかご紹介致します。これらの多くのプロジェクトとは豊富な密接なパートナー関係にあり、豊富な情報量を持つアーカイブ・プラットフォームの構築に向けて連携しております。</p>
 <br />
 <div id = "projects">
-<h3><a href="http://www.archive-it.org/public/collection.html?id=2438">Japan Earthquake Internet Archive</a></h3>
-  <p>Virginia Tech: Crisis, Tragedy, and Recovery Network</p>
+
+
+<h3><a href="http://www.irides.tohoku.ac.jp/archive/shinrokuden.html">みちのく震録伝</a></h3>
+  <p>東北大学 災害科学国際研究所 (以前は<a href="http://www.dcrc.tohoku.ac.jp/archive/index.html">東北大学 防災科学研究拠点 東北大学大学院工学研究科附属災害制御研究センター</a>)</p>
+  <p>国立大学として地域のリーダー的役割を担ってきた東北大学は、新たに東日本大震災のデジタルアーカイブプロジェクトを始動させました。今回の震災に関して「みちのく震録伝」は産官学の諸機関と連携しつつ、被災地を中心としたあらゆる記憶、記録、事例を集めた総合的なアーカイブの構築を目指しており、復旧や復興の過程も記録し、ほぼリアルタイムで公開することを目指しています。プロジェクトが動き始めて間もないため、詳細については今後明らかになるようです。</p>
+  <br />
+  
+<h3><a href="http://311archives.jp/">東日本大震災・災害復興まるごとデジタルアーカイブス</a></h3>
+  <p>独立行政法人 防災科学技術研究所</p>
+  <p>３１１まるごとアーカイブスは、市民や被災自治体、国の研究機関、大学、NPO、ボランティア、民間企業などと官民恊働で取り組む東日本大震災支援のe-コミュニティ・プラットフォームです。
+被災地の失われた「過去」の記憶をデジタルで再生し、被災した「現在」と復興に向けた「未来」の映像や資料をデジタルで記録、そして被災地の復興状況や将来の防災学習・防災研究等の貴重な資料をまるごとアーカイブすることを目的としています。</p>
   <br />
 
-<h3><a href="http://archive-it.org/collections/2954">東日本大震災による福島第一原発事故後の日本の社会運動</a></h3>
-  <p>オーストラリア国立図書館</p>
-  <p>オーストラリア国立図書館がインターネットアーカイブと協働で構築するこのアーカイブは、東日本大震災によって複合災害を引き起こした福島第一原発事故に関する地域や市民団体の活動を記録するものです。被爆や放射能汚染の現状及び対応、原発について考える様々な市民グループや個人の活動に焦点を当てています。</p>
+<h3><a href="http://www.smt.city.sendai.jp/en/">3がつ11にちをわすれないために</a></h3>
+  <p>せんだいメディアテーク</p>
+  <p>「情報発信は支援活動を応援し、記録は未来への財産となるように」との理念のもと、日本における最先端の情報センターの一つであるせんだいメディアテークは、型にはまらないアーカイブプロジェクトを牽引してきました。市民、専門家、スタッフが恊働しながら復旧・復興プロセスを記録することに注力する一方、映像、写真、音声、テキストなどの多様なメディアを通じて発信し続けています。</p>
+  <br />
+  
+<h3><a href="http://savemlak.jp/wiki/saveMLAK">save MLAK</a></h3>
+  <p><a href="https://twitter.com/saveMLAK">save MLAKのツイッター</a></p>
+  <p>博物館・美術館（Museum）、図書館（Library）、文書館（Archives）、公民館（Kominkan） の関係者及び支援者によるサポートネットワークであるsaveMLAKは、東日本大震災によって被災した施設や人々が、 どのような被害を受けているのかという被災情報、どのような支援を必要としているのかという救援情報を共有し、施設の復旧や展示物の修復に向けて協力できる専門の知識や技能を持ったボランティアの派遣など、必要と思われることを提供しています。2011年東日本大震災デジタルアーカイブの収集・保存活動に対しても、被災した諸機関のウェブサイトについての情報を多数提供して下さっています。</p>
+  <br />
+  
+<h3><a href="http://www.archive-it.org/public/collection.html?id=2438">Japan Earthquake Internet Archive</a></h3>
+  <p>Virginia Tech: Crisis, Tragedy, and Recovery Network</p>
   <br />
   
 <h3><a href="http://warp.ndl.go.jp/WARP_disaster.html">政府官公庁および被災地域の自治体を中心とするウェブサイトの保存</a></h3>
@@ -54,36 +72,19 @@
   <p>国立国会図書館は日本における唯一の国立図書館として、今回の震災の体験を記録そして文化遺産として保存し、将来世代へと引き継ぐことを目的に、幅広くデジタル資料を収集・アーカイブしています。その中には、国立国会図書館法により使用許可取得が不要と定められた、政府官公庁や被災した地方自治体のウェブサイトなどが含まれます。国立国会図書館はインターネット・アーカイブや他のデジタルアーカイブに関わる非営利団体、そしてハーバード大学のエドウィン・O・ライシャワー日本研究所と協力関係にあります。</p>
   <br />
 
+<h3><a href="http://archive.shinsai.yahoo.co.jp/">Yahoo 写真保存プロジェクト</a></h3>
+  <p>Yahoo! JAPAN</p>
+  <p>このウェブサイトはYahoo! JAPANによるもので、東日本大震災の被災地の姿や思い出の品物の写真などを保存していくプロジェクトです。様々な方法での検索が簡単に行え、キーワード、位置情報（経度・緯度など）、撮影時期（震災前、震災後）、種類、都道府県、そして市町村などの条件により写真を探すことができます。APIプラットフォームへの公開アクセスが先頃発表され、社会に開かれたオープン・アクセスに向けたより幅広い協力を得ながらの写真アーカイブへとつながることでしょう。</p>
+  <br />
+
+<h3><a href="http://www.japanfocus.org/japans-3.11-earthquake-tsunami-atomic-meltdown">アジア太平洋ジャーナル：ジャパン・フォーカス</a></h3>
+  <p>アジア太平洋ジャーナルは、日本や太平洋地域に影響を与える諸問題についての掘り下げた論文を幅広く提供する雑誌です。震災後は特に地震、津波、とりわけ福島の原発事故に関わる英語で書かれた論文を精力的に掲載しています。</p>
+  <br/>
+  
 <h3><a href="http://www9.nhk.or.jp/311shogen/">NHK 東日本大震災アーカイブスe</a></h3>
 <h3><a href="http://www.nhk.or.jp/voice311/">NHK 東日本大震災音声アーカイブス</a></h3>
   <p>日本放送協会</p>
   <p>東日本大震災発生直後より放映された、ニュース及び復興のプロセス、被災者の証言、検証・分析などのドキュメンタリー映像を、グーグル地図情報と一緒に提供しています。日付、映像タイプ別、職業別証言などで効率よく検索できるのが特徴です。 <a href="http://www.nhk.or.jp/voice311/">音声アーカイブス</a>ではＮＨＫラジオセンターで放送された被災者の証言及びインタビュー番組を収録しています。</p>
-  <br />
-
-<h3><a href="http://www.irides.tohoku.ac.jp/archive/shinrokuden.html">みちのく震録伝</a></h3>
-  <p>東北大学 災害科学国際研究所 (以前は<a href="http://www.dcrc.tohoku.ac.jp/archive/index.html">東北大学 防災科学研究拠点 東北大学大学院工学研究科附属災害制御研究センター</a>)</p>
-  <p>国立大学として地域のリーダー的役割を担ってきた東北大学は、新たに東日本大震災のデジタルアーカイブプロジェクトを始動させました。今回の震災に関して「みちのく震録伝」は産官学の諸機関と連携しつつ、被災地を中心としたあらゆる記憶、記録、事例を集めた総合的なアーカイブの構築を目指しており、復旧や復興の過程も記録し、ほぼリアルタイムで公開することを目指しています。プロジェクトが動き始めて間もないため、詳細については今後明らかになるようです。</p>
-  <br />
-
-<h3><a href="http://www.smt.city.sendai.jp/en/">3がつ11にちをわすれないために</a></h3>
-  <p>せんだいメディアテーク</p>
-  <p>「情報発信は支援活動を応援し、記録は未来への財産となるように」との理念のもと、日本における最先端の情報センターの一つであるせんだいメディアテークは、型にはまらないアーカイブプロジェクトを牽引してきました。市民、専門家、スタッフが恊働しながら復旧・復興プロセスを記録することに注力する一方、映像、写真、音声、テキストなどの多様なメディアを通じて発信し続けています。</p>
-  <br />
-
-<h3><a href="http://311archives.jp/">東日本大震災・災害復興まるごとデジタルアーカイブス</a></h3>
-  <p>独立行政法人 防災科学技術研究所</p>
-  <p>３１１まるごとアーカイブスは、市民や被災自治体、国の研究機関、大学、NPO、ボランティア、民間企業などと官民恊働で取り組む東日本大震災支援のe-コミュニティ・プラットフォームです。
-被災地の失われた「過去」の記憶をデジタルで再生し、被災した「現在」と復興に向けた「未来」の映像や資料をデジタルで記録、そして被災地の復興状況や将来の防災学習・防災研究等の貴重な資料をまるごとアーカイブすることを目的としています。</p>
-  <br />
-  
-<h3><a href="http://savemlak.jp/wiki/saveMLAK">save MLAK</a></h3>
-  <p><a href="https://twitter.com/saveMLAK">save MLAKのツイッター</a></p>
-  <p>博物館・美術館（Museum）、図書館（Library）、文書館（Archives）、公民館（Kominkan） の関係者及び支援者によるサポートネットワークであるsaveMLAKは、東日本大震災によって被災した施設や人々が、 どのような被害を受けているのかという被災情報、どのような支援を必要としているのかという救援情報を共有し、施設の復旧や展示物の修復に向けて協力できる専門の知識や技能を持ったボランティアの派遣など、必要と思われることを提供しています。2011年東日本大震災デジタルアーカイブの収集・保存活動に対しても、被災した諸機関のウェブサイトについての情報を多数提供して下さっています。</p>
-  <br />
-
-<h3><a href="http://archive.shinsai.yahoo.co.jp/">Yahoo 写真保存プロジェクト</a></h3>
-  <p>Yahoo! JAPAN</p>
-  <p>このウェブサイトはYahoo! JAPANによるもので、東日本大震災の被災地の姿や思い出の品物の写真などを保存していくプロジェクトです。様々な方法での検索が簡単に行え、キーワード、位置情報（経度・緯度など）、撮影時期（震災前、震災後）、種類、都道府県、そして市町村などの条件により写真を探すことができます。APIプラットフォームへの公開アクセスが先頃発表され、社会に開かれたオープン・アクセスに向けたより幅広い協力を得ながらの写真アーカイブへとつながることでしょう。</p>
   <br />
   
 <h3><a href="http://www.miraikioku.com/">Google 写真保存プロジェクト：未来へのキオク</a></h3>
@@ -110,19 +111,23 @@
   <p>Google MapsとGoogle EarthのAPIを利用して作られた同ウェブサイトは、地図情報プラットフォーム上にツイッターの呟きを重ねる双方向のハイパーメディア環境を特徴とするデジタル情報システムで、大震災直後からテキストメッセージを地図情報と共に随時発信しています。</p>
   <br />
 
-<h3><a href="http://www.japanfocus.org/japans-3.11-earthquake-tsunami-atomic-meltdown">アジア太平洋ジャーナル：ジャパン・フォーカス</a></h3>
-  <p>アジア太平洋ジャーナルは、日本や太平洋地域に影響を与える諸問題についての掘り下げた論文を幅広く提供する雑誌です。震災後は特に地震、津波、とりわけ福島の原発事故に関わる英語で書かれた論文を精力的に掲載しています。</p>
-  <br/>
-
 <h3><a href="http://ajw.asahi.com/category/0311disaster/">3/11 Disaster in Japan - Asahi Shimbun, Asia & Japan Watch (朝日新聞　デジタル英語版)</a></h3>
   <p>朝日新聞</p>
   <p>朝日新聞のデジタル英語版Asahi Japan Watch は、東日本大震災に関するインターネット情報を総合的に公開しています。特に今なお収束していない第一福島原子力発電所に関する調査報道や読み応えのある記事は、地図情報、画像、図表などを交えながら背後で一体何が起きているのかに迫っています。</p>
+  <br />
+
+<h3><a href="http://archive-it.org/collections/2954">東日本大震災による福島第一原発事故後の日本の社会運動</a></h3>
+  <p>オーストラリア国立図書館</p>
+  <p>オーストラリア国立図書館がインターネットアーカイブと協働で構築するこのアーカイブは、東日本大震災によって複合災害を引き起こした福島第一原発事故に関する地域や市民団体の活動を記録するものです。被爆や放射能汚染の現状及び対応、原発について考える様々な市民グループや個人の活動に焦点を当てています。</p>
   <br />
 
 <h3><a href="http://twtr.jp/earthquake">ツイッターをアーカイブすること</a></h3>
   <p>米国議会図書館とツイッター</p>
   <p>2010年の4月に米国議会図書館とツイッターの間で取り交わされた協定によって、東日本大震災に関するツイッターの呟き情報もすべてアーカイブするされることになっていますが、現在構築中というだけで詳細については今のところ不明です。</p>
   <br />
+
+<h2>他のプロジェクト</h2>
+<br />
 
 <h3><a href="http://jp.1rick.com/"> Spatial Archive of Videos: QuakeMap.org: Japan 3/11 Video Map</a></h3>
   <p>リック・マーチン, フリーランスのジャーナリスト</p>
@@ -165,37 +170,6 @@
   <p>東日本大震災から得た教訓を学び、防災や復興に役立つデジタル教育教材づくり（主に小・中学生用）を目指すもので、教材の基本コンテンツは独立行政法人防災科学技術研究所が中心となって進めている「３１１まるごとアーカイブス」のデータを活用。</p>
   <br />
 
-<h3><a href="http://www.flickr.com/photos/hodrorg/sets/72157626424211318/"> JAPAN: Project Tohoku</a></h3>
-  <p>The 11 March 2011 earthquake and tsunami damaged and destroyed 155,000 homes in northeastern Japan. All Hands launched Project Tohoku on 12 April 2011, focusing on volunteer-driven debris cleanup, home rehabilitation, and fresh food distribution. </p>
-  <br />
-
-<h3><a href="http://www.flickr.com/photos/27673812@N05/sets/72157626279641922/"> Japan earthquake March 2011 - Caritas Internationals</a></h3>
-  <br />
-
-<h3><a href="http://www.flickr.com/photos/hodrorg/"> All Hands Volunteers' photostream</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/102561228392558983702">東北大学地域復興プロジェクト広報部's GalleryAlbums (15)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/112991062536891387570/zwcRGD?authkey=Gv1sRgCPmYt7DOm6mTfA">東日本大震災 中長期支援活動</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/okamotoatusi/EINSHOP#">義援隊活動報告</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiKesennumaMinamiSanriku#"> 2011 Tohoku earthquake tsunami (Kesennuma-MinamiSanriku)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiOnagawaIshinomaki#"> 2011 Tohoku earthquake tsunami (Onagawa-Ishinomaki)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiSendai#"> 2011 Tohoku earthquake tsunami (Sendai)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/109088386600066536569"> yuicco kitakamicity's Gallery</a></h3>
-  <br />
-
 
 </div>
 
@@ -231,40 +205,20 @@
 <p>Below is a list of some of the other leading projects engaged in archiving of the disasters, many of whom are close partners working with us in building a content rich archival platform.</p>
 <br />
 <div id = "projects">
-        <h3><a href="http://www.archive-it.org/public/collection.html?id=2438">Japan Earthquake Internet Archive</a></h3>
-  <p>Virginia Tech: Crisis, Tragedy, and Recovery Network</p>
-  <p>Digital media archive collected by the Virginia Tech: Crisis, Tragedy, and Recovery Network. The collection is hosted on “Archive-It”, a subscription service developed by the Internet Archive.</p>
-  <br />
-
-<h3><a href="http://archive-it.org/collections/2954">Japan, Social Movements after the Fukushima Nuclear Power Plants Crisis, March 11, 2011</a></h3>
-  <p>National Library of Australia</p>
-  <p>A collaboration of the National Library of Australia and Internet Archive, this project is to archive community responses to the Fukushima Nuclear Power Plants crisis and its aftermath with particular emphasis on social movements of various citizens groups and individuals toward nuclear radiation and contamination.</p>
-  <br />
-  
-<h3><a href="http://warp.ndl.go.jp/WARP_disaster.html">Web Archiving of Local Governments’ Websites in Disaster Areas (part of WARP [Web Archiving Project]</a></h3>
-  <p>The National Diet Library, JAPAN</p>
-  <p>As the only national library in Japan, the National Diet Library (NDL) can harvest and archive a wide array of government websites, including the websites of local governments affected by the disasters in Eastern Japan, and other digital materials without permission under current NDL Law. Records and personal experience of those who lived through the massive Eastern Japan Great Earthquake Disaster are to be preserved as cultural heritage to pass on to the future generations. The NDL is also collaborates with Internet Archive, a non-profit organization on digital library, and Edwin O. Reischauer Institute at Harvard University.</p>
-  <br />
-  
-<h3><a href="http://www9.nhk.or.jp/311shogen/">NHK Archives on the Great East Japan Earthquake</a></h3>
-<h3><a href="http://www.nhk.or.jp/voice311/">NHK Voice Archives on the Great East Japan Earthquake</a></h3>
-  <p>NHK (Nippon Hoso Kyokai, Japan Broadcasting Corporation)</p>
-  <p>NHK Archives on the Great East Japan Earthquake offers various images of this tragic event and the ongoing recovery processes that have been broadcasted on NHK since March 11th, including live coverage, news, testimonials, and analytical documentary films, along with pinpoint geographical information on the Google Maps. One can select and search by date, category of disasters and damage (e.g., tsunami, fire, nuclear power plant, building damage), and testimonials by occupation. In addition, <a href="http://www.nhk.or.jp/voice311/">NHK Voice Archives</a> contain interviews and testimonials aired on the NHK Radio Center.</p>
-  <br />
 
 <h3><a href="http://www.irides.tohoku.ac.jp/archive/shinrokuden.html">Digital Archive on Earthquakes in Tohoku</a></h3>
   <p>International Research Institute of Disaster Science (IRIDeS) (Formerly the <a href="http://www.dcrc.tohoku.ac.jp/archive/index.html">Tohoku University Disaster Control Research Center</a>)</p>
   <p>As a leading national university in the region, Tohoku University recently launched a digital archiving project on the Eastern Japan Great Earthquake Disaster. Collaborating with the government, industry, and academe, the project aims to build a comprehensive archive on disasters in the region, with a broad spectrum of memory, records, case studies. It aims to record the recovery and rebuilding process of the disaster and to disseminate information on a near real-time basis. As of this writing, details of the project are unknown since this archiving project has been released only recently.</p>
   <br />
 
-<h3><a href="http://recorder311.smt.jp/">To Not Forget March 11th</a></h3>
-  <p>Sendai Mediatheque</p>
-  <p>In view of the belief that the disaster relief effort can be supported by information dissemination and that records of the disaster can be priceless assets for the future, Sendai Mediatheque (SMT), one of the cutting-edge information centers in Japan, is leading a unique disaster recovery archiving project. In collaboration with citizens, experts, and SMT staff, this archive project focuses on recording the recovery and rebuilding process from the disaster while disseminating thoughts and information through various media, such as images, photos, sounds, and text.</p>
-  <br />
-  
 <h3><a href="http://311archives.jp/">All 311 Comprehensive Archiving Project</a></h3>
   <p>National Research Institute for Earth Science and Disaster Prevention [NIED]</p>
   <p>Collaborating with citizens and local governments affected by the disaster as well as research institutions, universities, NPOs, volunteers, and commercial companies, 311 Marugoto Archive offers an e-community platform to support disaster recovery and rebuilding efforts. The project aims to restore and regenerate a memory of the lost past by offering digitization of memory while recording the recovery process and valuable information resources produced in the process for future disaster education, disaster prevention and research as a whole.</p>
+  <br />
+  
+<h3><a href="http://recorder311.smt.jp/">To Not Forget March 11th</a></h3>
+  <p>Sendai Mediatheque</p>
+  <p>In view of the belief that the disaster relief effort can be supported by information dissemination and that records of the disaster can be priceless assets for the future, Sendai Mediatheque (SMT), one of the cutting-edge information centers in Japan, is leading a unique disaster recovery archiving project. In collaboration with citizens, experts, and SMT staff, this archive project focuses on recording the recovery and rebuilding process from the disaster while disseminating thoughts and information through various media, such as images, photos, sounds, and text.</p>
   <br />
 
 <h3><a href="http://savemlak.jp/wiki/saveMLAK">save MLAK (Save Museum, Library, Archives, and Kominkan)</a></h3>
@@ -272,9 +226,29 @@
   <p>The saveMLAK is a project led by the staff and supporters of museums, libraries, archives, and community centers (kōminkan) in Japan. The project is collecting information on the harm to people and damage to facilities caused by the Eastern Japan Great Earthquake Disaster as well as identifying their needs in the relief effort. The saveMLAK project works to provide the people and institutions affected by the disaster with whatever assistance that project members in the museum, library, archive, and the kōminkan community can provide. The project is contributing information about the many websites of affected institutions to the Digital Archive of Japan's 2011 Disasters for our web archiving efforts.</p>
   <br />
 
+<h3><a href="http://www.archive-it.org/public/collection.html?id=2438">Japan Earthquake Internet Archive</a></h3>
+  <p>Virginia Tech: Crisis, Tragedy, and Recovery Network</p>
+  <p>Digital media archive collected by the Virginia Tech: Crisis, Tragedy, and Recovery Network. The collection is hosted on “Archive-It”, a subscription service developed by the Internet Archive.</p>
+  <br />
+  
+<h3><a href="http://warp.ndl.go.jp/WARP_disaster.html">Web Archiving of Local Governments’ Websites in Disaster Areas (part of WARP [Web Archiving Project]</a></h3>
+  <p>The National Diet Library, JAPAN</p>
+  <p>As the only national library in Japan, the National Diet Library (NDL) can harvest and archive a wide array of government websites, including the websites of local governments affected by the disasters in Eastern Japan, and other digital materials without permission under current NDL Law. Records and personal experience of those who lived through the massive Eastern Japan Great Earthquake Disaster are to be preserved as cultural heritage to pass on to the future generations. The NDL is also collaborates with Internet Archive, a non-profit organization on digital library, and Edwin O. Reischauer Institute at Harvard University.</p>
+  <br />
+
 <h3><a href="http://archive.shinsai.yahoo.co.jp/">Yahoo Photo Archiving Project on the Japanese Earthquake and Tsunami March 11th 2011</a></h3>
   <p>Yahoo! JAPAN</p>
   <p>This site is a damaged photo recovery project by Yahoo! JAPAN. Easy to use various ways of search, one can search by keywords, geographical points (e.g., latitude, longitude), time period (pre-disaster, post-disaster), type, prefecture, and community. Yahoo’s recent release on their free-of-charge API platform to access <a href="http://archive.shinsai.yahoo.co.jp/">Yahoo Photo Archiving Project on the Japanese Earthquake and Tsunami March 11th 2011</a> may lead to a more collaborated image archive development for open access to society.</p>
+  <br />
+
+<h3><a href="http://www.japanfocus.org/japans-3.11-earthquake-tsunami-atomic-meltdown">The Asia-Pacific Journal: Japan Focus</a></h3>
+  <p>The Asia-Pacific Journal, which provides a range of in-depth articles on issues affecting Japan and the entire region has been especially active in the aftermath of the disasters in posting articles in the English language related to the earthquake, tsunami, and especially the nuclear disaster in Fukushima.</p>
+  <br/>
+  
+<h3><a href="http://www9.nhk.or.jp/311shogen/">NHK Archives on the Great East Japan Earthquake</a></h3>
+<h3><a href="http://www.nhk.or.jp/voice311/">NHK Voice Archives on the Great East Japan Earthquake</a></h3>
+  <p>NHK (Nippon Hoso Kyokai, Japan Broadcasting Corporation)</p>
+  <p>NHK Archives on the Great East Japan Earthquake offers various images of this tragic event and the ongoing recovery processes that have been broadcasted on NHK since March 11th, including live coverage, news, testimonials, and analytical documentary films, along with pinpoint geographical information on the Google Maps. One can select and search by date, category of disasters and damage (e.g., tsunami, fire, nuclear power plant, building damage), and testimonials by occupation. In addition, <a href="http://www.nhk.or.jp/voice311/">NHK Voice Archives</a> contain interviews and testimonials aired on the NHK Radio Center.</p>
   <br />
 
 <h3><a href="http://www.miraikioku.com/">Google Photo Archiving Project: Memory for Future</a></h3>
@@ -300,20 +274,24 @@
 <h3><a href="http://sendai.hypercities.com/">HyperCities Sendai (Voices from Sendai through Social Media) HyperCities</a></h3>
   <p>Built on the Google Maps and Google Earth APIs, HyperCities Sendai provides active digital media space with Twitters and has accumulated interactive communications on the Eastern Japan Great Earthquake Disaster along with geographical data.</p>
   <br />
-
-<h3><a href="http://www.japanfocus.org/japans-3.11-earthquake-tsunami-atomic-meltdown">The Asia-Pacific Journal: Japan Focus</a></h3>
-  <p>The Asia-Pacific Journal, which provides a range of in-depth articles on issues affecting Japan and the entire region has been especially active in the aftermath of the disasters in posting articles in the English language related to the earthquake, tsunami, and especially the nuclear disaster in Fukushima.</p>
-  <br/>
   
 <h3><a href="http://ajw.asahi.com/category/0311disaster/">3/11 Disaster in Japan - Asahi Shimbun, Asia & Japan Watch</a></h3>
   <p>The Asahi Shimbun</p>
   <p>This special website of Asia &Japan Watch (AJW), new English-language digital version of The Asahi Shimbun, provides readers with the Internet's comprehensive, archival coverage of the Japan’s Great Earthquake on March 11th, 2011. Particularly useful for in-depth coverage on the ongoing nuclear crisis at the Fukushima No.1 nuclear power plant along with real stories behind what is happening there as well as geographical data, images, and graphics.</p>
 <br />
 
+<h3><a href="http://archive-it.org/collections/2954">Japan, Social Movements after the Fukushima Nuclear Power Plants Crisis, March 11, 2011</a></h3>
+  <p>National Library of Australia</p>
+  <p>A collaboration of the National Library of Australia and Internet Archive, this project is to archive community responses to the Fukushima Nuclear Power Plants crisis and its aftermath with particular emphasis on social movements of various citizens groups and individuals toward nuclear radiation and contamination.</p>
+  <br />
+  
 <h3><a href="http://twtr.jp/earthquake">Twitter Archiving (Official Twitter Project)</a></h3>
   <p>Collaboration of Twitter and the Library of Congress</p>
   <p>As part of the Agreement made in April 2010 between Twitter and the Library of Congress, Twitter information on the Great East Japan Earthquake and Tsunami will be archived. However, the archive has been under construction, so further information is unknown at the moment.</p>
   <br />
+
+<h2>Other Projects</h2>
+<br />
 
 <h3><a href="http://jp.1rick.com/"> Spatial Archive of Videos: QuakeMap.org: Japan 3/11 Video Map</a></h3>
   <p>Rick Martin, freelance journalist</p>
@@ -356,41 +334,6 @@
   <p>Collaboration with the <a href="http://kg-svr.net/">Science Visualization Research Center at Kwansei Gakuin University</a> and the <a href="http://svsnet.jp/">Association for Science Visualization Research</a>, along with All 311 Archives by the National Research Institute for Earth Science and Disaster Prevention</p>
   <p>This project aims at creating a global digital textbook for disaster prevention and research (for elementary and middle-high schools) by learning about the tragic experiences of the Great East Japan Earthquake. Contents are primarily based on the All 311 Archives by the National Research Institute for Earth Science and Disaster Prevention (NIED).</p>
   <br />
-  
-<h2>Notable Digital Image Collections</h2>
-<br />
-
-<h3><a href="http://www.flickr.com/photos/hodrorg/sets/72157626424211318/"> JAPAN: Project Tohoku</a></h3>
-  <p>The 11 March 2011 earthquake and tsunami damaged and destroyed 155,000 homes in northeastern Japan. All Hands launched Project Tohoku on 12 April 2011, focusing on volunteer-driven debris cleanup, home rehabilitation, and fresh food distribution. </p>
-  <br />
-
-<h3><a href="http://www.flickr.com/photos/27673812@N05/sets/72157626279641922/"> Japan earthquake March 2011 - Caritas Internationals</a></h3>
-  <br />
-
-<h3><a href="http://www.flickr.com/photos/hodrorg/"> All Hands Volunteers' photostream</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/102561228392558983702"> Tohoku University's GalleryAlbums (15)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/112991062536891387570/zwcRGD?authkey=Gv1sRgCPmYt7DOm6mTfA"> APCAS NPO</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/okamotoatusi/EINSHOP#"> EINSHOP</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiKesennumaMinamiSanriku#"> 2011 Tohoku earthquake tsunami (Kesennuma-MinamiSanriku)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiOnagawaIshinomaki#"> 2011 Tohoku earthquake tsunami (Onagawa-Ishinomaki)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiSendai#"> 2011 Tohoku earthquake tsunami (Sendai)</a></h3>
-  <br />
-
-<h3><a href="https://picasaweb.google.com/109088386600066536569"> yuicco kitakamicity's Gallery</a></h3>
-  <br />
-
                                                                                                                              
 </div>
  <?php endif ?>

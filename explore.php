@@ -124,6 +124,79 @@
   <p>2010年の4月に米国議会図書館とツイッターの間で取り交わされた協定によって、東日本大震災に関するツイッターの呟き情報もすべてアーカイブするされることになっていますが、現在構築中というだけで詳細については今のところ不明です。</p>
   <br />
 
+<h3><a href="http://jp.1rick.com/"> Spatial Archive of Videos: QuakeMap.org: Japan 3/11 Video Map</a></h3>
+  <p>リック・マーチン, フリーランスのジャーナリスト</p>
+  <p>この動画検索システムは、Drupal 及び GMap and Locationのモジュールを用いて構築されており、三つのカテゴリー（地震の最中、津波が押し寄せている間、及び地震・津波が去った後）に区分して検索できます。フリーランスのジャーナリスト、リック・マーチンによって運営され、これまでに約120本のビデオが収録されています。</p>
+  <br />
+
+<h3><a href="http://kikigaki101.tokyofoundation.org/">被災地の聞き書き101</a></h3>
+  <p>公益財団法人 東京財団 と 特定非営利活動法人 共存の森ネットワーク</p>
+  <p>個が個に向き合い耳を傾けること（1 On 1）が大切であるという趣旨から、東日本大震災に遭われた101名の被災者とのインタービューを綴ったサイトです。約二時間に亘る一対一のインタビューの聞き手には、主催者である東京財団および共存の森ネットワークのスタッフのほか、その呼びかけに応じた様々な職業の社会人や大学生などがボランティアで参加しています。</p>
+  <br />
+
+<h3><a href="http://sites.google.com/site/fbnerjmap/"> 宗教者災害救援マップ</a></h3>
+  <p><a href="http://www.facebook.com/FBNERJ">宗教者災害救援ネットワーク</a></p>
+  <p><a href="http://www.indranet.jp/syuenren/">宗教者災害支援連絡会</a></p>
+  <p>グーグルマップに基づくこの地図情報システムは、宗教に関連した様々な団体、研究グループ、ボランティアなどの協力で運営され、災害状況の把握や救援のための情報共有、そして被災者や支援者たちの復興に向けた活動の記録を提供しています。宗教別あるいは各宗派ごとの情報が得られるのが特徴です。</p>
+  <br />
+
+<h3><a href="http://savethememory.jp/">セーブ・ザ・メモリープロジェクト</a></h3>
+  <p>株式会社リコー 富士通株式会社 株式会社アクシス 株式会社オフィス・サウス </p>
+  <p>セーブ・ザ・メモリープロジェクトは、「心の震災復興事業」として、リコージャパンや富士通などの写真関連企業により進められる写真のデジタル修復保存プロジェクトです。個人情報保護のため多くの修復された写真類は市役所等に設置された専用パソコンから検索できるようになっています。</p>
+  <br />
+
+<h3><a href="http://mittecontest.phj.jp/api/EntryList.ashx?key=tnf&cn=3&sector=145&page=1">日本財団 フォトコンテスト</a></h3>
+  <p>日本財団 & 株式会社フォトハイウェイ・ジャパン</p>
+  <p>2012年3月11日に撮影された震災に関する写真に焦点を当てた写真コンテストで日本財団が中心となって進めています。つい最近応募が締め切られたばかりのプロジェクトで詳細については今後明らかになることでしょう。</p>
+  <br />
+
+<h3><a href="http://jsis-bjk.cocolog-nifty.com/omoide/online_album.html">思い出サルベージアルバム・オンライン</a></h3>
+  <p>日本社会情報学会 日本社会情報学会災害支援チーム</p>
+  <p>日本社会情報学会が進める写真修復保存プロジェクトは、被災地で泥水にさらされた写真を集め、洗浄・複写・保存し、持ち主の手元に戻す過程のすべてを支援しています。過疎化が進み、情報技術の基盤も十分とは言えない宮城県山元町に支援地を絞り、次代へと伝えるべく地域の復興過程の記録にも取り組んでいます。</p>
+  <br />
+
+<h3><a href="http://tsunami-memorial.org/">津波祈念資料館</a></h3> 
+  <p>特定非営利活動法人 地球のステージ</p>
+  <p>特定非営利活動法人 地球のステージ （代表理事　精神科医 桑山紀彦氏） による災害の映像や物語のアーカイブプロジェクトです。大震災で受けた心の傷やPTSD（心的外傷後ストレス障害）の予防やその回復のための支援として、災害の映像や物語を共有できる環境をつくり、大切な「記憶」を次の世代に伝えていくことを目指しています。</p>
+  <br />
+
+<h3><a href="http://311archives.jp/index.php?gid=10579">防災マルチプル電子図鑑</a></h3>
+  <p><a href="http://kg-svr.net/">関西学院大学サイエンス映像研究センター</a>、<a href="http://svsnet.jp/">サイエンス映像学会</a>、独立行政法人 防災科学技術研究所</p>
+  <p>東日本大震災から得た教訓を学び、防災や復興に役立つデジタル教育教材づくり（主に小・中学生用）を目指すもので、教材の基本コンテンツは独立行政法人防災科学技術研究所が中心となって進めている「３１１まるごとアーカイブス」のデータを活用。</p>
+  <br />
+
+<h3><a href="http://www.flickr.com/photos/hodrorg/sets/72157626424211318/"> JAPAN: Project Tohoku</a></h3>
+  <p>The 11 March 2011 earthquake and tsunami damaged and destroyed 155,000 homes in northeastern Japan. All Hands launched Project Tohoku on 12 April 2011, focusing on volunteer-driven debris cleanup, home rehabilitation, and fresh food distribution. </p>
+  <br />
+
+<h3><a href="http://www.flickr.com/photos/27673812@N05/sets/72157626279641922/"> Japan earthquake March 2011 - Caritas Internationals</a></h3>
+  <br />
+
+<h3><a href="http://www.flickr.com/photos/hodrorg/"> All Hands Volunteers' photostream</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/102561228392558983702">東北大学地域復興プロジェクト広報部's GalleryAlbums (15)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/112991062536891387570/zwcRGD?authkey=Gv1sRgCPmYt7DOm6mTfA">東日本大震災 中長期支援活動</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/okamotoatusi/EINSHOP#">義援隊活動報告</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiKesennumaMinamiSanriku#"> 2011 Tohoku earthquake tsunami (Kesennuma-MinamiSanriku)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiOnagawaIshinomaki#"> 2011 Tohoku earthquake tsunami (Onagawa-Ishinomaki)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiSendai#"> 2011 Tohoku earthquake tsunami (Sendai)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/109088386600066536569"> yuicco kitakamicity's Gallery</a></h3>
+  <br />
+
+
 </div>
 
 
@@ -241,6 +314,80 @@
   <p>Collaboration of Twitter and the Library of Congress</p>
   <p>As part of the Agreement made in April 2010 between Twitter and the Library of Congress, Twitter information on the Great East Japan Earthquake and Tsunami will be archived. However, the archive has been under construction, so further information is unknown at the moment.</p>
   <br />
+
+<h3><a href="http://jp.1rick.com/"> Spatial Archive of Videos: QuakeMap.org: Japan 3/11 Video Map</a></h3>
+  <p>Rick Martin, freelance journalist</p>
+  <p>Build on the Drupal as well as the GMap and Location modules, this system offers searchable video collections on the disaster in three categories: 1) during the earthquake, 2) during the tsunami, and 3) after the quake/tsunami. This site has been maintained by a freelance journalist, Rick Martin and so far it contains about 120 videos.</p>
+  <br />
+
+<h3><a href="http://www.tokyofoundation.org/en/"> Hisaichi no Kikigaki 101</a></h3>
+  <p>The Tokyo Foundation / NPO Kyozon no Mori Network</p>
+  <p>Viewing the importance of personal approach by one-on-one listening to each story, this interview collection contains interviews with 101 people affected by the Great East Japan Earthquake and Tsunami. Each interview, approximately two-hours long, was first tape-recorded, then transcribed into the first-person narrative, has been conducted by volunteers in various occupations, along with staff by The Tokyo Foundation and NPO Forest Network.</p>
+  <br />
+
+
+<h3><a href="http://sites.google.com/site/fbnerjmap/"> Shukyosha Saigai Kyuen Map (Faith-Based Network for Earthquake Relief in Japan)</a></h3>
+  <p><a href="http://www.facebook.com/FBNERJ">Shukyosha Saigai Kyuen Network</a></p>
+  <p><a href="http://www.indranet.jp/syuenren/">Shukyosha Saigai Shien Renrakukai</a></p>
+  <p>Collaborating with disaster support networking groups formed by various religious organizations,  study groups, individuals, and volunteers, this GIS system on Google Maps offers information on the damage and recovery efforts as well as supporting activities and daily lives of the people affected by the disasters. Retrievable by type of denominations and religious organizations.</p>
+  <br />
+  
+<h3><a href="http://savethememory.jp/"> Save the Memory Project</a></h3>
+  <p>Ricoh, Fujitsu, Axis, Office South, etc.</p>
+  <p>This photo recovery project, organized by the photo industry such as Ricoh Japan and Fujitsu, aims to recover and preserve damaged photos and return them to the original owners to support disaster survivors’ mental health. In light of protecting personal information, access to the majority of the project collection is only available at designated terminals placed at town/city halls in the disaster affected areas in Tohoku.</p>
+  <br />
+
+<h3><a href="http://mittecontest.phj.jp/api/EntryList.ashx?key=tnf&cn=3&sector=145&page=1"> The Nippon Foundation Photo Contest</a></h3>
+  <p>The Nippon Foundation and Photo Highway Japan. Ltd.</p> 
+  <p>This latest digital photo contest project organized by The Nippon Foundation is to commemorate one year anniversary of the tragic event on March 11th. Much is unknown as of this writing as it is still too soon after the announcement of the project.</p>
+  <br />
+
+<h3><a href="http://jsis-bjk.cocolog-nifty.com/omoide/online_album.html"> Memory Salvage  Album Online</a></h3>
+  <p>The Japan Society for Socio-Information Studies-BJK</p>
+  <p>The photo recovery project led by the Japan Society for Socio-Information Studies supports the entire process of collecting damaged photos from the disaster areas, which includes washing and cleaning, digitizing, archiving, and returning the photos to the original owner. With exclusive focus on a rural and deserted community lacking sufficient IT infrastructure in Yamamoto-cho, Miyagi Prefecture, the project also records the recovery process of the community to pass on to the next generation.</p>
+  <br />
+
+<h3><a href="http://tsunami-memorial.org/">Tsunami Memorial Theater and Library</a></h3>
+    <p>NPO Global Stage</p>
+    <p>Led by a psychiatrist, the volunteer-based Tsunami Memorial Theater and Library supports a recovery process for those suffering PTSD from the Eastern Japan Great Earthquake Disaster. Creating a virtual space for images and stories sharable with patients and disaster victims, the project hopes to pass priceless memories to the next generations.</p>
+<br /> 
+
+<h3><a href="http://311archives.jp/index.php?gid=10579"> Disaster Prevention Multiple Digital Dictionary</a></h3>
+  <p>Collaboration with the <a href="http://kg-svr.net/">Science Visualization Research Center at Kwansei Gakuin University</a> and the <a href="http://svsnet.jp/">Association for Science Visualization Research</a>, along with All 311 Archives by the National Research Institute for Earth Science and Disaster Prevention</p>
+  <p>This project aims at creating a global digital textbook for disaster prevention and research (for elementary and middle-high schools) by learning about the tragic experiences of the Great East Japan Earthquake. Contents are primarily based on the All 311 Archives by the National Research Institute for Earth Science and Disaster Prevention (NIED).</p>
+  <br />
+
+<h3><a href="http://www.flickr.com/photos/hodrorg/sets/72157626424211318/"> JAPAN: Project Tohoku</a></h3>
+  <p>The 11 March 2011 earthquake and tsunami damaged and destroyed 155,000 homes in northeastern Japan. All Hands launched Project Tohoku on 12 April 2011, focusing on volunteer-driven debris cleanup, home rehabilitation, and fresh food distribution. </p>
+  <br />
+
+<h3><a href="http://www.flickr.com/photos/27673812@N05/sets/72157626279641922/"> Japan earthquake March 2011 - Caritas Internationals</a></h3>
+  <br />
+
+<h3><a href="http://www.flickr.com/photos/hodrorg/"> All Hands Volunteers' photostream</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/102561228392558983702"> Tohoku University's GalleryAlbums (15)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/112991062536891387570/zwcRGD?authkey=Gv1sRgCPmYt7DOm6mTfA"> APCAS NPO</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/okamotoatusi/EINSHOP#"> EINSHOP</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiKesennumaMinamiSanriku#"> 2011 Tohoku earthquake tsunami (Kesennuma-MinamiSanriku)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiOnagawaIshinomaki#"> 2011 Tohoku earthquake tsunami (Onagawa-Ishinomaki)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/shunichi.koshimura/2011TohokuEarthquakeTsunamiSendai#"> 2011 Tohoku earthquake tsunami (Sendai)</a></h3>
+  <br />
+
+<h3><a href="https://picasaweb.google.com/109088386600066536569"> yuicco kitakamicity's Gallery</a></h3>
+  <br />
+
                                                                                                                              
 </div>
  <?php endif ?>

@@ -233,11 +233,11 @@ $(function(){
 </div>
 
 <select name="l" class="droplang">
-  <option value="">すべての言語を検索</option>
-  <option value="chinese" <?php if ($filterlang == 'chinese') echo "selected"; ?>>中国語のみ</option>
-  <option value="english" <?php if ($filterlang == 'english') echo "selected"; ?>>英語のみ</option>
-  <option value="japanese" <?php if ($filterlang == 'japanese') echo "selected"; ?>>日本語のみ</option>
-  <option value="korean" <?php if ($filterlang == 'korean') echo "selected"; ?>>韓国語のみ</option>
+  <option value="" data-jp="すべての言語を検索" data-ko="모든 언어 검색" data-zh="搜索所有语言">Search All Languages</option>
+  <option value="chinese" <?php if ($filterlang == 'chinese') echo "selected"; ?> data-jp="中国語のみ" data-ko="오직 중국어" data-zh="只要中文">Only Chinese</option>
+  <option value="english" <?php if ($filterlang == 'english') echo "selected"; ?> data-jp="英語のみ" data-ko="오직 영어" data-zh="只要英文">Only English</option>
+  <option value="japanese" <?php if ($filterlang == 'japanese') echo "selected"; ?> data-jp="日本語のみ" data-ko="오직 일본어" data-zh="只要日语">Only Japanese</option>
+  <option value="korean" <?php if ($filterlang == 'korean') echo "selected"; ?> data-jp="韓国語のみ" data-ko="오직 한국어" data-zh="只要韩语">Only Korean</option>
 </select>
 </form>
 </div>

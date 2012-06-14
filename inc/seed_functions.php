@@ -67,6 +67,7 @@
               break;
             case 'notyet':
               $c = 0;
+              break;
             default:
               $c = -1;
           }
@@ -155,7 +156,7 @@
             $sql .= " sid IN ($sids) AND";
           }
         } else {
-          $sql .= " $field = '$c' AND";
+          $sql .= " $field = $c AND";
         }
       }
       $sql .= " 1=1";
@@ -194,6 +195,7 @@
               break;
             case 'notyet':
               $c = 0;
+              break;
             default:
               $c = -1;
           }
@@ -203,10 +205,10 @@
         }
         if ($field != 'tags') {
           if ($field == 'verified' && $c == -1) {
-            $sql .= " $field != '2' AND";        
+            $sql .= " $field != 2 AND";        
           }
           else
-            $sql .= " $field = '$c' AND";
+            $sql .= " $field = $c AND";
         } else {
           $sids = get_sids_by_tag($c);
           if (!$sids) {

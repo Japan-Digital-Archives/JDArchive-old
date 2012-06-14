@@ -87,6 +87,11 @@
   <p>東日本大震災発生直後より放映された、ニュース及び復興のプロセス、被災者の証言、検証・分析などのドキュメンタリー映像を、グーグル地図情報と一緒に提供しています。日付、映像タイプ別、職業別証言などで効率よく検索できるのが特徴です。 <a href="http://www.nhk.or.jp/voice311/">音声アーカイブス</a>ではＮＨＫラジオセンターで放送された被災者の証言及びインタビュー番組を収録しています。</p>
   <br />
   
+<h3><a href="http://www.nhk.or.jp/japan311/">NHK 東日本大震災プロジェクト</a></h3>
+  <p>NHKワールド</p>
+  <p>さらに、NHKワールドでも全世界に向けた英語による同様のウェブサイトを提供しています。ここでは、地図情報と共に、痛ましい複合災害となった東日本大震災の概要、及び現在も予断を許さない放射能汚染情報や、2011年3月以降NHKワールドで放映されたさまざまな映像やビデオメッセージを閲覧できます。例えば、「原子力ウォッチ」のセクションではニュースや分析的なドキュメンタリー、また、「復興ストーリーの記録」のセクションでは主に復興に向けた被災者の活動や感動的なエピソードなどが見られます。さらに、「人々の声」セクションでは、全世界から寄せられた励ましのメッセージや被災者の声などを見ることができます。</p>
+  <br />
+  
 <h3><a href="http://www.miraikioku.com/">Google 写真保存プロジェクト：未来へのキオク</a></h3>
   <p>Google Japan</p>
   <p>Google による「未来へのキオク」は、写真・動画共有サービスPicasaやYouTubeを用い、震災で失われた美しい風景や、懐かしい景色、また、写真・動画などの思い出を、個人の思いや願いが込められた募集テーマごとに投稿者からアップロードして頂き、それらを表示・公開するプロジェクトです。被災前の町の風景や震災後の被災地の現在の様子を比較できるのが特徴です。</p>
@@ -118,7 +123,7 @@
 
 <h3><a href="http://archive-it.org/collections/2954">東日本大震災による福島第一原発事故後の日本の社会運動</a></h3>
   <p>オーストラリア国立図書館</p>
-  <p>オーストラリア国立図書館がインターネットアーカイブと協働で構築するこのアーカイブは、東日本大震災によって複合災害を引き起こした福島第一原発事故に関する地域や市民団体の活動を記録するものです。被爆や放射能汚染の現状及び対応、原発について考える様々な市民グループや個人の活動に焦点を当てています。</p>
+  <p>オーストラリア国立図書館によるこのアーカイブは、東日本大震災によって複合災害を引き起こした福島第一原発事故に関する地域や市民団体の活動を記録するものです。被爆や放射能汚染の現状及び対応、原発について考える様々な市民グループや個人の活動に焦点を当てています。アーカイブシステムはインターネットアーカイブの「Archive it」に基づき構築されています。</p>
   <br />
 
 <h3><a href="http://twtr.jp/earthquake">ツイッターをアーカイブすること</a></h3>
@@ -251,6 +256,11 @@
   <p>NHK Archives on the Great East Japan Earthquake offers various images of this tragic event and the ongoing recovery processes that have been broadcasted on NHK since March 11th, including live coverage, news, testimonials, and analytical documentary films, along with pinpoint geographical information on the Google Maps. One can select and search by date, category of disasters and damage (e.g., tsunami, fire, nuclear power plant, building damage), and testimonials by occupation. In addition, <a href="http://www.nhk.or.jp/voice311/">NHK Voice Archives</a> contain interviews and testimonials aired on the NHK Radio Center.</p>
   <br />
 
+<h3><a href="http://www.nhk.or.jp/japan311/">NHK Great East Japan Earthquake Project</a></h3>
+  <p>NHK World</p>
+  <p>Furthermore, NHK World presents a similar project in English primarily geared toward audiences in the world. This project website provides an “Overview” of the tragic triple disaster along with a Radiation Map and various video messages and images aired on the NHK World since March 2011. For instance, “Nuclear Watch” covers news and analytical documentary films on nuclear issues, whereas “Documenting the Story” traces disaster recovery efforts along with presenting touching episodes of people affected by the disaster. In addition, under “People’s Voices,” video messages are posted by people from disaster affected areas and those from all over the world.</p>
+  <br />
+  
 <h3><a href="http://www.miraikioku.com/">Google Photo Archiving Project: Memory for Future</a></h3>
   <p>Google Japan</p>
   <p>The Memory for Future by Google provides opportunities to share and embed personal photographs in order to recover lost memorable landscape, scenes considered sweetly familiar, as well as photos and videos/movies, contributed by people through Picasa and YouTube applications in accordance to posted themes.  Differentiating images taken in the pre-disaster from the post-disaster, one can compare the two.</p>
@@ -282,7 +292,7 @@
 
 <h3><a href="http://archive-it.org/collections/2954">Japan, Social Movements after the Fukushima Nuclear Power Plants Crisis, March 11, 2011</a></h3>
   <p>National Library of Australia</p>
-  <p>A collaboration of the National Library of Australia and Internet Archive, this project is to archive community responses to the Fukushima Nuclear Power Plants crisis and its aftermath with particular emphasis on social movements of various citizens groups and individuals toward nuclear radiation and contamination.</p>
+  <p>The National Library of Australia aims to archive community responses to the Fukushima Nuclear Power Plants crisis and its aftermath. There is a particular emphasis on the social movements of various citizens’ groups and individuals reacting to nuclear contamination and its effect on people’s lives. The sites have been captured using the Internet Archive’s ‘Archive it’ service.</p>
   <br />
   
 <h3><a href="http://twtr.jp/earthquake">Twitter Archiving (Official Twitter Project)</a></h3>

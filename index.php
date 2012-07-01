@@ -136,7 +136,7 @@ $(function(){
 </div>
 
 <div id="middle">
-	<div id="register-header" data-jp="" data-en="">試作モデル αlpha（要登録）:</div>
+	<div id="register-header" data-jp="" data-en="">試作モデル alpha（要登録）:</div>
 	
 	<div id="prototype">
 		<img class="prototype-ss" src="lib/images/prototype_ss3.png">

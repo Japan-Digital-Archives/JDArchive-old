@@ -41,7 +41,7 @@ $(function(){
 		$('#title').html('<img src="lib/images/header-jp.png">');
 		
 		// change text in register header
-		$('#register-header').html('試作モデル αlpha（要登録）:');
+		$('#register-header').html('試作モデル Beta:');
 		
 		// change archive links
 		$("#archi-links").html( 
@@ -76,7 +76,7 @@ $(function(){
 	    $('#title').html('<img src="lib/images/header-en.png">');
 
 		// change text in register header
-		$('#register-header').html('Register to use our archive prototype:');
+		$('#register-header').html('Try our new beta:');
 		
 		// change archive links
 		$("#archi-links").html( 
@@ -136,10 +136,10 @@ $(function(){
 </div>
 
 <div id="middle">
-	<div id="register-header" data-jp="" data-en="">試作モデル new αlpha version（要登録）:</div>
+	<div id="register-header" data-jp="" data-en="">試作モデル Beta:</div>
 	
 	<div id="prototype">
-		<img class="prototype-ss" src="lib/images/prototype_ss3.png">
+		<a href="http://beta.jdarchive.org/"><img class="prototype-ss" src="lib/images/beta_homethumb.png"></a>
 	</div>
 
 	<div id="archi-links">
@@ -161,27 +161,7 @@ $(function(){
 </div>
 
 <div id="bottom-bar">
-<div id="register">
-	<form name="register-form" id="register-form" action="" method="POST">  
-		<div class="fields">
-			<div class="fieldcontainer">
-				<div class="label">
-			    	<label for="name" id="name" >お名前</label> 
-				</div> 
-				<input type="text" name="name" id="home-name-text-field" class="large" size="30" value="">
-			</div>
-			<div class="fieldcontainer" style="padding-top:15px;">
-				<div class="label">
-					<label for="email" id="email">Eメール</label>  
-				</div>
-				<input type="text" name="email" id="home-email-text-field" class="large" size="30" value="">
-				<input type="hidden" name="language" id="l" value="日本語">
-			</div>
-			<div id="results" class="fieldcontainer" style="padding-top:15px;"></div>
-		</div>
-		<input type="submit" name="register" id="register-button" class="btn rounded bluegrad" value="新規登録"> 
-	</form>
-</div>
+
 
 <div id="logo">
 	<img class="japaneselogo" src="lib/images/logo_large_ja.png">

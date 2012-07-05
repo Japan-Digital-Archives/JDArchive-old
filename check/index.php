@@ -6,7 +6,7 @@
 // .htaccess has been set to allow for /command/parameter/parameter structured URIs
 // simplify the resulting info:
 
-require_once(dirname(__FILE__). '/inc/common.php');
+require_once('../inc/common.php');
 
 $requestURI = explode('/', $_SERVER['REQUEST_URI']);
 $scriptName = explode('/',$_SERVER['SCRIPT_NAME']);

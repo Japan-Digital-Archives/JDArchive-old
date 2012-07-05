@@ -48,32 +48,34 @@ function getinfo($url) {
 		return;
 	}
 	
-	//$url=html_entity_decode($url,ENT_QUOTES,'UTF-8');
 	
-	$urlquery= "SELECT * FROM `seeds` WHERE `url` LIKE '".$url."'";
+	$urlquery= "SELECT * FROM `seeds` WHERE `url` LIKE '".$url."%' LIMIT 400";
 	
 	$numresults=mysql_query($urlquery);
 	$numrows=mysql_num_rows($numresults);
 	
+	
 	//Prepare the array for JSON encoding
 	if($numrows>0){
-		$row=mysql_fetch_array($numresults);
-		$response = array(
-		  "found" => 1,
-		  "title" => $row["title"],
-		  "url" => $row["url"],
-		  "id" => $row["sid"],
-		  "frequency" => $row["frequency"],
-		  "scope" => $row["scope"],
-		  "submitter" => $row["name"],
-		  "added" => $row["added"],
-		  "archived" => $row["isArchived"]
-		);
+		$response=array();
+		while ($row=mysql_fetch_array($numresults)){
+			$entry = array(
+			  "title" => $row["title"],
+			  "url" => $row["url"],
+			  "id" => $row["sid"],
+			  "frequency" => $row["frequency"],
+			  "scope" => $row["scope"],
+			  "submitter" => $row["name"],
+			  "added" => $row["added"],
+			  "archived" => $row["isArchived"]
+			);
+			//$entry=json_encode($entry);
+			array_push($response,$entry);
+		}
 
 	} else {
-		$response = array(
-			"found" => 0
-		);
+		$response = array();
+		
 	}
 	
 	return json_encode($response);

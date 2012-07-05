@@ -3,6 +3,9 @@
 // This is a simple API created in response to SaveMLAK request to have ability to confirm whether or not a given link has
 // been submitted to our seed database. - Konrad
 
+//NOTE: This only finds *exact matches* - I think we should add another command, 
+//perhaps "c=similar" allowing outsiders to find similar urls and returns them in an array.
+
 $u = isset($_GET['u']) ? $_GET['u'] : false; //The url to supply for the command
 $c = isset($_GET['c']) ? $_GET['c'] : false; //The command 
 
@@ -27,6 +30,7 @@ switch($c)
 	  //URL CHECK COMMAND
 	  // USAGE: jdarchive.org/check/url/[address to check]
 	  // RETURNS: JSON of the information we have for the url or the fact it does not exist
+	  // NOTE: URLs must be HTML encoded with urlencode() or similar, or else URLs with "?" or "&" will not be found
       case 'url' :
                 echo getinfo($u);   
                 break;
@@ -43,6 +47,8 @@ function getinfo($url) {
 		echo "ERROR: No url was supplied.";
 		return;
 	}
+	
+	//$url=html_entity_decode($url,ENT_QUOTES,'UTF-8');
 	
 	$urlquery= "SELECT * FROM `seeds` WHERE `url` LIKE '".$url."'";
 	

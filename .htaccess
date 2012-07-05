@@ -24,5 +24,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^news.*$ /news/index.php [NC,L]
+RewriteRule ^check.*$ /check/index.php [NC,L]
 RewriteRule ^testimonial.*$ /mvc/index.php [NC,L,QSA]
 RewriteRule ^([\w]+)(\/)*/?$ $1.php [NC,L]

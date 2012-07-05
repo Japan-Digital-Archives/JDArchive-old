@@ -49,7 +49,7 @@ function getinfo($url) {
 	}
 	
 	
-	$urlquery= "SELECT * FROM `seeds` WHERE `url` LIKE '".$url."%' LIMIT 400";
+	$urlquery= "SELECT * FROM `seeds` WHERE `url` LIKE '".mysql_real_escape_string($url)."%' LIMIT 400";
 	
 	$numresults=mysql_query($urlquery);
 	$numrows=mysql_num_rows($numresults);

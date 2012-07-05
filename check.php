@@ -44,13 +44,10 @@ function getinfo($url) {
 		return;
 	}
 	
-	//echo $url."<br />";
-	
-	$urlquery= "SELECT * FROM `seeds` WHERE `url` LIKE '".$url."%'";
+	$urlquery= "SELECT * FROM `seeds` WHERE `url` LIKE '".$url."'";
 	
 	$numresults=mysql_query($urlquery);
 	$numrows=mysql_num_rows($numresults);
-	echo "NUMROWS: $numrows";
 	
 	//Prepare the array for JSON encoding
 	if($numrows>0){

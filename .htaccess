@@ -1,6 +1,6 @@
 Options +FollowSymlinks
 
-<FilesMatch "^(quicksearch|edit_tag|edit|curate|manage).php$">
+<FilesMatch "^(edit_tag|edit|curate|manage).php$">
 AuthName "Staff Access Only:"
 AuthType Basic
 AuthUserFile /home/ubuntu/sites/jedarchive/.htpasswd

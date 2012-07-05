@@ -51,6 +51,8 @@ function getinfo($url) {
 	$numresults=mysql_query($urlquery);
 	$numrows=mysql_num_rows($numresults);
 	echo "NUMROWS: $numrows";
+	
+	//Prepare the array for JSON encoding
 	if($numrows>0){
 		$row=mysql_fetch_array($numresults);
 		$response = array(

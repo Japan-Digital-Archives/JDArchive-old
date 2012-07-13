@@ -203,7 +203,9 @@ a .archi:hover{
 }
 
 #logo {
+	visibility: hidden;
     float: right;
+    padding-top: 20px;
     padding-right:20px;
 }
 

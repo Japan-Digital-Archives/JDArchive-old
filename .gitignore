@@ -8,3 +8,4 @@ wp-config.php
 config.ini
 notes.txt
 py.cfg
+.DS_Store

@@ -257,7 +257,6 @@
   <br />
 
 <h3><a href="http://www.nhk.or.jp/japan311/">NHK Great East Japan Earthquake Project</a></h3>
-  <p>NHK World</p>
   <p>Furthermore, NHK provides a summary archive in English for audiences around the world, focusing on the recovery. The project features a television documentary series on the artists, athletes, scientists and public intellectuals who have given their support. The project website provides an “Overview” of the triple disaster along with a Radiation Map and video news reporting of the response and recovery aired on NHK World since March 2011. For instance, “Nuclear Watch” covers news and analysis on nuclear issues, whereas “Documenting the Story” traces the experiences of individuals coping with tragedy and rebuilding their lives. In “People’s Voices,” bloggers from the affected areas provide updates on the recovery in their communities and messages to people in the region can also be posted.</p>
   <br />
   
